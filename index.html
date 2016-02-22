@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">Latest Additions</h1>
+
+  <ul class="post-list">
+    {% for component in site.components %}
+      <li>
+        <h2>
+          <a class="component-link" href="{{ component.url | prepend: site.baseurl }}"><small>{{component.id}}</small> {{ component.title }}</a>
+        </h2>
+        {% if component.products %}
+          <p>
+            Product{% if component.products.size > 1 %}s{% endif %}:
+            {{ component.products | join: ', ' }}
+          </p>
+        {% endif %}
+        <p>Category: {{component.categories}}</p>
+        <p>Status: {{component.status}}</p>
+
+        <span class="post-meta">Updated: {{ component.date | date: "%b %-d, %Y" }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+
+<!--   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p> -->
+
+</div>
