@@ -1,0 +1,61 @@
+// pulling from the bootstrap variables;
+// gutter widths;
+$bs-gutter: $grid-gutter-width / 2;
+
+// breakpoint variables
+$xs: $screen-xs;
+$sm: $screen-sm; // 768
+$md: $screen-md; // 1024
+$lg: $screen-lg; // 1280
+
+$max-width: $lg; // used sometimes
+
+// mobile menu variables
+$mobile-menu-cap: 550px;
+$mobile-menu-ratio: 80%;
+$mobile-menu-width: $mobile-menu-cap * .8;
+
+// page header
+$page-header-height: 71px;
+
+// the smallest breakpoint size does not have a min-width
+$xs-only: (max-width: $screen-sm - 1);
+$sm-only: (min-width: $screen-sm, max-width: $screen-md - 1);
+$sm-xs-only: (max-width: $screen-md - 1);
+$sm-xs-md-only:(max-width: $screen-lg - 1);
+$md-only: (min-width: $screen-md, max-width: $screen-lg - 1);
+
+// box shadow used on landing page components;
+$shadow: 0 1px 3px rgba($black, .45);
+
+// for inset shadows, mainly used in menus
+$inset-shadow-right: inset -10px 0 10px -10px rgba($black, .25);
+$inset-shadow-left: inset 10px 0 10px -10px rgba($black,.25);
+
+// variables used in font weight declarations
+$light: 300;
+$normal: 400;
+$semibold: 600;
+$bold: 700;
+
+// Font Stacks
+$sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif: Arvo, Garamond, "Times New Roman", serif;
+
+// for border radius usage:
+$radius: 2px;
+
+// line heights
+$line-height: 1.42857;
+
+// for animations and transitions
+$duration: .3s;
+
+// for thin dividers
+$divider: 1px solid $divider-color;
+
+// old declarations of breakpoints - will merge with the others soon
+$screen: 'all';
+
+// focus state
+$focusstate: $blue-light auto 5px;

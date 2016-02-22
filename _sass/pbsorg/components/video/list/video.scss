@@ -1,0 +1,134 @@
+.video-list {
+  padding: ($bs-gutter * 4) $bs-gutter ($bs-gutter * 3);
+
+  @include breakpoint($sm) {
+    padding: ($bs-gutter * 4) ($bs-gutter * 2) ($bs-gutter * 2);
+  }
+
+  p.section-over-title {
+    background: $gray-medium;
+    color: $gray-primary;
+    font-weight: $bold;
+    font-size: 1.8rem;
+    margin: (-$bs-gutter * 2) (-$bs-gutter) ($bs-gutter * 2) (-$bs-gutter);
+    padding: ($bs-gutter) $bs-gutter;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    box-shadow: $shadow;
+
+    @include breakpoint($sm) {
+      padding: ($bs-gutter / 2) ($bs-gutter * 2);
+      margin: (-$bs-gutter * 4) (-$bs-gutter * 2) (-$bs-gutter * 2);
+      margin-bottom: ($bs-gutter * 3);
+    }
+    @include breakpoint($md) {
+      margin-bottom: ($bs-gutter * 4);
+    }
+  }
+
+  .section-title {
+    color: $gray-darker;
+    font-weight: $bold;
+    font-size: 2.1rem;
+    text-transform: uppercase;
+    margin: 0 0 ($bs-gutter / 2);
+    span {
+      font-weight: $bold;
+      margin-left: 5px;
+      padding-left: 12px;
+      position: relative;
+
+      &:before {
+        content: "";
+        display: block;
+        background: $gray-medium;
+        width: 1px;
+        position: absolute;
+        top: 3px;
+        bottom: 3px;
+        left: 0;
+      }
+    }
+  }
+
+  &__items {
+    @extend %clearfix;
+    margin-left: -($bs-gutter);
+    margin-right: -($bs-gutter);
+  }
+
+
+  &__item {
+    display: none;
+
+    // at the smallest breakpoints we only want the first 2 visible
+    &:nth-child(1),
+    &:nth-child(2) {
+      display: block;
+    }
+
+    @include breakpoint($sm) {
+      &:nth-child(3) {
+        display: block;
+      }
+    }
+
+    @include breakpoint($md) {
+      &:nth-child(4) {
+        display: block;
+      }
+    }
+  }
+
+  // when we have 8, we have two rows
+  &__items--count-8 {
+
+    .video-list__item {
+      @include breakpoint($sm) {
+        &:nth-child(3),
+        &:nth-child(4),
+        &:nth-child(5),
+        &:nth-child(6) {
+          display: block;
+        }
+
+        &:nth-child(4){
+          clear: left;
+        }
+      }
+
+      @include breakpoint($md) {
+        &:nth-child(7),
+        &:nth-child(8) {
+          display: block;
+        }
+
+        &:nth-child(4) {
+          clear: none;
+        }
+
+        &:nth-child(5) {
+          clear: left;
+        }
+      }
+    }
+  }
+
+  // only visible on mobile;
+  p.learn-more {
+    margin: 0 0 ($bs-gutter / 2);
+    text-align: center;
+    text-transform: capitalize;
+
+    .btn:hover {
+      background: rgba($blue, 0.1);
+    }
+  }
+
+  .video & {
+    .appended-shows {
+      display:none;
+    }
+  }
+
+}

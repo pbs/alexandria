@@ -1,0 +1,14 @@
+.shop-dropdown {
+  position: absolute;
+  left: -1px;
+  width: 190px;
+
+  li {
+    padding-bottom: $bs-gutter;
+
+    a {
+      color: $gray-darker;
+      font-size: 1.4rem;
+    }
+  }
+}

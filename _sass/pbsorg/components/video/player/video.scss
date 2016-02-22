@@ -1,0 +1,717 @@
+.video-player {
+  background: $gray-lighter;
+
+  &-wrapper {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%; // 16:9
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  // Passport overlay and content
+
+  // Custom breakpoints
+  $over375: 375px;
+  $over450: 450px;
+  $over515: 515px;
+  $over600: 600px;
+  $over750: 750px;
+  $over840: 840px;
+
+  .passport-overlay {
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: 0;
+    padding-bottom: 56.25%; // 16:9 to match video player
+    background-color: rgba($black, .7);
+    z-index: 1;
+
+    @include breakpoint($lg) {
+      width: 1280px;
+      height: 720px;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    .passport-content {
+      padding: $bs-gutter;
+
+      @include breakpoint($over375) {
+        padding: 7% 20% 0 7%;
+      }
+
+      @include breakpoint($over450) {
+        padding-right: 25%;
+      }
+
+      @include breakpoint($over750) {
+        padding-right: 30%;
+      }
+
+      @include breakpoint($md) {
+        padding: ($bs-gutter * 3) 28% 0 ($bs-gutter * 4);
+      }
+
+      @include breakpoint($lg) {
+        padding: ($bs-gutter * 7) 30% 0 ($bs-gutter * 8);
+      }
+
+      .passport-logo {
+        display: inline-block;
+        width: 17px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+
+        @include breakpoint($over375) {
+          width: 20px;
+        }
+
+        @include breakpoint($over515) {
+          width: 30px;
+          margin-right: 13px;
+          margin-bottom: $bs-gutter;
+        }
+
+        @include breakpoint($over600) {
+          width: 40px;
+          margin-right: 15px;
+          margin-bottom: 19px;
+        }
+
+        @include breakpoint($md) {
+          width: 50px;
+          margin-right: $bs-gutter;
+          margin-bottom: ($bs-gutter * 1.5);
+        }
+      }
+
+      .passport-title {
+        display: inline-block;
+        color: $white;
+        font-size: 1.8rem;
+        font-weight: $light;
+
+        @include breakpoint($over375) {
+          font-size: 2rem;
+        }
+
+        @include breakpoint($over515) {
+          font-size: 3rem;
+        }
+
+        @include breakpoint($over600) {
+          font-size: 3.5rem;
+        }
+
+        @include breakpoint($md) {
+          font-size: 4rem;
+        }
+      }
+
+      .station-name {
+        font-weight: $bold;
+      }
+
+      .passport-divider {
+        display: inline-block;
+        width: 1px;
+        height: 20px;
+        margin: 0 10px -4px 10px;
+        background-color: $white;
+
+        @include breakpoint($over375) {
+          height: 22px;
+          margin-right: 12px;
+          margin-left: 12px;
+        }
+
+        @include breakpoint($over515) {
+          height: 29px;
+          margin-right: 14px;
+          margin-left: 14px;
+        }
+
+        @include breakpoint($over600) {
+          height: 33px;
+          margin-right: $bs-gutter;
+          margin-left: $bs-gutter;
+        }
+
+        @include breakpoint($md) {
+          height: 37px;
+        }
+      }
+
+      .passport-restriction,
+      .passport-already {
+        margin-top: 5px;
+        color: $white;
+        font-family: $sans-serif;
+        font-size: 1.4rem;
+        font-weight: $normal;
+
+        @include breakpoint($over375) {
+          font-size: 1.6rem;
+        }
+
+        @include breakpoint($over515) {
+          font-size: 1.8rem;
+        }
+
+        @include breakpoint($over600) {
+          font-size: 2rem;
+        }
+
+        @include breakpoint($md) {
+          font-size: 2.6rem;
+        }
+      }
+
+      .passport-description {
+        display: none;
+
+        @include breakpoint($over600) {
+          display: block;
+          width: 450px;
+          color: $white;
+          font-size: 1.3rem;
+          font-weight: $light;
+          line-height: 1.4;
+        }
+
+        @include breakpoint($over750) {
+          width: auto;
+          font-size: 1.4rem;
+        }
+
+        @include breakpoint($over840) {
+          font-size: 1.6rem;
+        }
+
+        @include breakpoint($md) {
+          font-size: 1.9rem;
+        }
+      }
+
+      .buttons-horizontal {
+        display: block;
+
+        @include breakpoint($over600) {
+          margin-top: -($bs-gutter);
+        }
+
+        @include breakpoint($over750) {
+          margin-top: 0;
+        }
+
+        @include breakpoint($over840) {
+          display: none;
+        }
+      }
+
+      .buttons-vertical {
+        display: none;
+
+        @include breakpoint($over840) {
+          display: block;
+        }
+      }
+
+      .passport-sign-up,
+      .passport-sign-in {
+        display: inline-block;
+        margin: $bs-gutter ($bs-gutter * 2) $bs-gutter 0;
+        padding: 8px ($bs-gutter * 1.5);
+        border: 1px solid $green;
+        border-radius: $radius;
+        background-color: $green;
+        color: $white;
+        font-size: 1.2rem;
+
+        @include breakpoint($over375) {
+          margin: 20px ($bs-gutter * 2) 20px 0;
+          padding: 10px ($bs-gutter * 2);
+          font-size: 1.4rem;
+        }
+
+        @include breakpoint($over515) {
+          margin: ($bs-gutter * 1.5) ($bs-gutter * 2.5) ($bs-gutter * 1.5) 0;
+          padding: 12px ($bs-gutter * 2.5);
+          font-size: 1.6rem;
+        }
+
+        @include breakpoint($over600) {
+          margin-top: 10px;
+          font-size: 1.8rem;
+        }
+
+        @include breakpoint($md) {
+          margin: ($bs-gutter * 1.5) 0 ($bs-gutter * 3) 0;
+          padding: $bs-gutter ($bs-gutter * 2);
+          font-size: 2rem;
+        }
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      .passport-sign-in {
+        margin: $bs-gutter 0;
+        border: 1px solid $white;
+        background-color: transparent;
+
+        @include breakpoint($over515) {
+          margin: ($bs-gutter * 1.5) 0;
+        }
+
+        @include breakpoint($over840) {
+          margin-top: $bs-gutter;
+        }
+
+        @include breakpoint($md) {
+          margin-top: ($bs-gutter * 1.5);
+        }
+
+        &:hover {
+          background: rgba($white, .2);
+        }
+      }
+
+      .support {
+        display: block;
+        color: $white;
+        font-size: 1.2rem;
+
+        @include breakpoint($over375) {
+          position: absolute;
+          bottom: 10%;
+          font-size: 1.4rem;
+        }
+
+        @include breakpoint($md) {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+
+  // put a vertical dividing border between these columns (top row of featured brands);
+  // use the > so we don't target the nested grid;
+  div.article-body {
+    padding: 0 $bs-gutter 0 0;
+
+    &:after {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 1px;
+      height: 100%;
+      background-color: $gray-light;
+      content: "";
+
+      @include breakpoint($md) {
+        display: block;
+      }
+    }
+  }
+
+  // container for all content beneath the video;
+  div.article-body-wrapper {
+    padding: ($bs-gutter * 2) $bs-gutter ($bs-gutter * 4);
+
+    @include breakpoint($sm) {
+      padding: ($bs-gutter * 2) ($bs-gutter * 2) ($bs-gutter * 4);
+    }
+
+    @include breakpoint($md) {
+      padding: ($bs-gutter * 2) ($bs-gutter * 4) ($bs-gutter * 4);
+    }
+
+    @include breakpoint($lg) {
+      padding: ($bs-gutter * 2) ($bs-gutter * 6);
+    }
+  }
+
+  h1 {
+    margin: ($bs-gutter / 4) 0 0;
+    color: $gray-primary;
+    font-size: 2.6rem;
+    font-weight: $normal;
+  }
+
+  h2 {
+    margin: ($bs-gutter * 2) 0 0;
+    color: $gray-dark;
+    font-family: $serif;
+    font-size: 1.4rem;
+    font-weight: $bold;
+
+    + p,
+    + ul {
+      margin-top: $bs-gutter;
+    }
+
+    &:first-child {
+      margin: 0;
+    }
+  }
+
+  .icon-pbs-cc {
+    position: relative;
+    top: 2px;
+    font-size: 2rem;
+    vertical-align: middle;
+  }
+
+  p {
+    margin: 0;
+    color: $gray-primary;
+    font-size: 1.4rem;
+
+    &.info {
+      margin: $bs-gutter 0 0;
+
+      .passport-logo-wrapper {
+        display: inline-block;
+        position: relative;
+        width: 20px;
+        height: 20px;
+        margin-right: 7px;
+        margin-bottom: 3px;
+
+        @include breakpoint($md) {
+          width: 23px;
+          height: 23px;
+          margin-right: 10px;
+        }
+
+        .passport-logo {
+          width: 100%;
+          padding-bottom: 4px;
+        }
+      }
+
+      .video-info {
+        margin-left: 7px;
+        padding-left: 7px;
+        border-left: 1px solid $gray-primary;
+
+        &:first-child {
+          margin-left: 0;
+          padding-left: 0;
+          border-left: 0;
+        }
+      }
+    }
+
+    &.over-title {
+      margin-top: -6px;
+      color: $gray-dark;
+      font-family: $serif;
+      font-size: 1.3rem;
+      font-weight: $bold;
+      text-transform: uppercase;
+
+      a {
+        color: $gray-dark;
+      }
+    }
+
+    &.description {
+      margin: $bs-gutter 0 0;
+      font-size: 1.6rem;
+    }
+
+    &.watchlist {
+      margin: ($bs-gutter * 2) 0;
+    }
+
+    &.buy {
+      color: $gray-dark;
+
+      span.title {
+        display: block;
+        padding: 0 0 $bs-gutter;
+      }
+    }
+
+    &.problems {
+      a {
+        display: block;
+        position: relative;
+        // create equal space (including an actual space character) between the links and dividing border;
+        margin-right: 1rem;
+        padding-right: 1rem;
+        line-height: 2.5;
+        white-space: nowrap;
+
+        @include breakpoint($sm) {
+          border: 0;
+        }
+
+        @include breakpoint($md) {
+          display: inline-block;
+          margin-top: ($bs-gutter / 2);
+          border-right: $divider;
+          line-height: 1.5;
+        }
+
+        &:last-child {
+          border: 0;
+        }
+      }
+
+      .video-issues,
+      .cc-issues {
+        cursor: pointer;
+      }
+    }
+
+    &.favorite {
+      @include breakpoint($md) {
+        margin: 0;
+        float: left;
+      }
+    }
+
+    &.visit-website {
+      display: inline-block;
+      font-family: $serif;
+      font-size: 1.4rem;
+      font-weight: $bold;
+      vertical-align: middle;
+    }
+  }
+
+  ul.list-unstyled {
+    margin-bottom: 0;
+
+    li {
+      padding: ($bs-gutter / 2) 0;
+    }
+  }
+
+  div.utilities {
+    margin: $bs-gutter 0 0;
+    padding: $bs-gutter 0 0;
+    border-top: $divider;
+    color: $gray-dark;
+    font-family: $serif;
+    font-size: 1.4rem;
+    font-weight: $bold;
+  }
+
+  &__share {
+    padding: 0 $bs-gutter;
+
+    .video-player__share__title {
+      margin-top: 2px;
+      margin-bottom: ($bs-gutter + 7);
+      color: $gray-dark;
+      font-family: $serif;
+      font-size: 1.4rem;
+      font-weight: $bold;
+    }
+
+    &__links {
+      padding: 0;
+      list-style-type: none;
+    }
+
+    &__list-item {
+      margin-right: 3px;
+
+      @include breakpoint($xs) {
+        margin-right: 10px;
+      }
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+
+    &__link {
+      $linksize: 3rem;
+
+      font-size: $linksize;
+
+      &--facebook {
+        position: relative;
+        top: -1px;
+      }
+
+      &--twitter {
+        font-size: ($linksize + .05);
+      }
+
+      &--email,
+      &--google-plus {
+        position: relative;
+        top: 1px;
+        font-size: ($linksize - .36);
+      }
+
+      &--google-plus {
+        left: 1px;
+      }
+    }
+
+    .embed-modal-trigger {
+      display: none;
+      position: relative;
+      left: 3px;
+
+      @include breakpoint($md) {
+        display: inline-block;
+      }
+    }
+  }
+
+  // right column;
+  div.related {
+    margin: ($bs-gutter * 3) 0 0;
+    padding: ($bs-gutter * 2) 0 0;
+    border-top: $divider;
+    font-size: 1.4rem;
+
+    @include breakpoint($md) {
+      margin: 0;
+      padding: 0 0 0 $bs-gutter;
+      border: 0;
+    }
+
+    p {
+      color: $gray-dark;
+      font-size: 1.4rem;
+    }
+
+    .videoProblems,
+    .funding {
+      margin-right: ($bs-gutter * 2.5);
+      margin-left: $bs-gutter;
+
+      @include breakpoint($sm) {
+        float: left;
+      }
+
+      @include breakpoint($md) {
+        display: block;
+        width: 100%;
+        float: none;
+      }
+    }
+
+    .videoLinks {
+      display: none;
+
+      @include breakpoint($sm) {
+        display: inline-block;
+        width: 400px;
+        padding-left: 50px;
+        border-left: $divider;
+      }
+
+      @include breakpoint($md) {
+        display: block;
+        width: 100%;
+        margin-left: $bs-gutter;
+        padding-top: 50px;
+        padding-left: 0;
+        float: none;
+        border: 0;
+      }
+
+      li {
+        @include typography-truncate();
+      }
+    }
+  }
+
+  div.funding {
+    padding-top: 3rem;
+    color: $gray-dark;
+    font-size: 1.45rem;
+    font-style: italic;
+    font-weight: $normal;
+
+    @include breakpoint($sm) {
+      bottom: 0;
+    }
+  }
+
+}
+
+// Share Embed Code Modal
+.embed-modal {
+  display: none;
+  padding: 0;
+  font-family: $sans-serif;
+
+  .modal-body {
+
+    &__title {
+      color: $gray-primary;
+      text-align: center;
+    }
+
+    &__details {
+      display: inline;
+    }
+
+    &__show-title {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+    }
+
+    &__video-title {
+      font-size: 2.2rem;
+      font-weight: $normal;
+    }
+
+    &__airdate {
+      margin-top: 10px;
+      color: $gray-dark;
+      font-family: $sans-serif;
+      font-size: 1.3rem;
+      font-weight: $normal;
+    }
+
+    &__image {
+      display: inline-block;
+      width: 200px;
+      margin: 10px;
+      float: left;
+    }
+  }
+
+  .embed-code {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    font-family: $sans-serif;
+
+    &__direction {
+      display: inline-block;
+      margin-top: 5px;
+      font-size: 10px;
+      font-weight: normal;
+    }
+
+    .embed-text {
+      display: inline-block;
+      width: 90%;
+      font-size: 12px;
+    }
+  }
+}

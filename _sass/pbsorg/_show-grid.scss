@@ -1,0 +1,113 @@
+.show-poster-grid__container {
+  background: $gray-lighter;
+  margin: 0 auto;
+  padding-bottom: $bs-gutter;
+  padding-top: $bs-gutter;
+}
+
+.show-poster-grid {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  flex-flow: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 8px;
+  width: 317px;
+}
+
+.show-poster-grid__item {
+  box-shadow: $shadow;
+  @include aspect-ratio(9, 13.45);
+  margin: 4px;
+}
+
+.show-poster-grid__item-enter {
+  opacity: 0;
+
+  & .show-poster-grid__item-enter-active {
+    opacity: 1;
+    .show-poster-grid__link-container::after {
+      padding-bottom: 0;
+    }
+    transition: opacity 500ms ease-in, padding-bottom 500ms ease-in;
+  }
+}
+
+.show-poster-grid__item-leave {
+  opacity: 1;
+
+  & .show-poster-grid__item-leave-active {
+    opacity: 0.01;
+    .show-poster-grid__link-container::after {
+      padding-bottom: 0;
+    }
+    transition: opacity 300ms ease-in, padding-bottom 300ms ease-in;
+  }
+}
+
+.show-poster-grid__content {
+  width: 142px;
+  .show-poster-grid__content-image {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.fallback-image__container {
+  .show-poster-grid__link-container {
+    display: block;
+    @include aspect-ratio(9, 13.45);
+    height: 0;
+  }
+}
+
+/* media queries for keeping show grid centered */
+@media (min-width: 464px) {
+  .show-poster-grid {
+    width: 464px;
+  }
+  .show-poster-grid__item {
+    margin: 16px;
+  }
+  .show-poster-grid__content {
+    width: 165px;
+  }
+}
+
+@media (min-width: 612px) {
+  .show-poster-grid {
+    width: 612px;
+  }
+}
+
+@media (min-width: 761px) {
+  .show-poster-grid {
+    width: 761px;
+  }
+}
+
+@media (min-width: 768px) {
+  .show-poster-grid {
+    width: 608px;
+  }
+}
+
+@media (min-width: 804px) {
+  .show-poster-grid {
+    width: 804px;
+  }
+}
+
+@media (min-width: 1002px) {
+  .show-poster-grid {
+    width: 1002px;
+  }
+}
+
+@media (min-width: 1198px) {
+  .show-poster-grid {
+    width: 1198px;
+  }
+}

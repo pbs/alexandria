@@ -1,0 +1,27 @@
+// actual page-title component;
+.page-title {
+  background: $gray-lighter;
+  padding: ($bs-gutter * 2) $bs-gutter $bs-gutter $bs-gutter;
+
+  @include breakpoint($md) {
+    padding: ($bs-gutter * 3) $bs-gutter;
+  }
+
+  @include breakpoint($lg) {
+    padding: ($bs-gutter * 3) ($bs-gutter * 2);
+  }
+
+  h1 {
+    @include typography-l2-header();
+    font-size: 5.6rem;
+    margin: 0;
+
+    @include breakpoint($sm-only) {
+      font-size: 4.5rem;
+    }
+
+    @include breakpoint($xs-only) {
+      font-size: 3.0rem;
+    }
+  }
+}

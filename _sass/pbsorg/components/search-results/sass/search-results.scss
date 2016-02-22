@@ -1,0 +1,217 @@
+@import "./layout";
+@import "./header";
+@import "./facets";
+@import "./featured-article";
+@import "./featured-posters";
+
+// "video" search result;
+.result-video {
+  background: $white;
+  color: $gray-primary;
+  font-size: 1.6rem;
+  margin-top: 1px;
+  padding: ($bs-gutter * 1) $bs-gutter;
+
+  @include breakpoint($sm) {
+    padding: $bs-gutter;
+  }
+
+  &__info {
+    padding-right: 4px;
+  }
+
+  &__link {
+    @include aspect-ratio(16, 9);
+  }
+
+  .over-title {
+    font-size: 1rem;
+    margin: 0;
+    text-transform: uppercase;
+    @include breakpoint($sm) {
+      font-size: 1.3rem;
+    }
+    a {
+      color: $gray-dark;
+    }
+  }
+  h1 {
+    @include typography-l1-header();
+    font-size: 1.8rem;
+    margin: ($bs-gutter / 4) 0 0;
+
+    @include breakpoint($sm) {
+      font-size: 2.2rem;
+    }
+  }
+  .description {
+    margin: ($bs-gutter / 2) 0 0;
+    font-size: 1.6rem;
+  }
+  p.info {
+    font-size: 1.2rem;
+    margin: ($bs-gutter / 2) 0 0;
+    text-transform: capitalize;
+
+    @include breakpoint($sm) {
+      font-size: 1.6rem;
+    }
+
+    .passport-logo-wrapper {
+      display: inline-block;
+      position: relative;
+      width: 15px;
+      height: 15px;
+      margin-right: 5px;
+
+      @include breakpoint($sm) {
+        width: 18px;
+        height: 18px;
+      }
+
+      .passport-logo {
+        width: 100%;
+        margin-top: -3px;
+        box-shadow: none;
+      }
+    }
+  }
+
+  // right column - lets break it out of the grid, and into the gutter so it's closer to the image;
+  div.article-body {
+    margin: 0 0 0 (-$bs-gutter);
+  }
+}
+
+// "web" search result;
+article.result-web {
+  background: $white;
+  margin-top: 1px;
+  padding: ($bs-gutter * 1.5) $bs-gutter;
+
+  @include breakpoint($sm) {
+    padding: $bs-gutter;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    margin: 0;
+
+    @include breakpoint($sm) {
+      font-size: 1.8rem;
+    }
+  }
+  p.url {
+    font-size: 1.2rem;
+    margin: ($bs-gutter / 2) 0 0;
+    @include typography-truncate();
+
+    @include breakpoint($sm) {
+      font-size: 1.4rem;
+    }
+
+    a {
+      color: $green;
+    }
+  }
+  .description {
+    font-size: 1.4rem;
+    margin: ($bs-gutter / 2) 0 0;
+
+    @include breakpoint($sm) {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.col-search-results-right-rail {
+  .right-rail-container {
+    padding-bottom: 10px;
+    background-color: $white;
+    @include breakpoint($md) {
+      background-color: inherit;
+    }
+  }
+  .shop-logo-row {
+    @include breakpoint($md) {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      padding: 0;
+    }
+    &__logo {
+      @include breakpoint($md) {
+        width: 50%;
+      }
+
+    }
+  }
+  .img-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    @include breakpoint($md) {
+      display: inline-block;
+      margin: 0;
+      left: 0;
+    }
+  }
+  .view-all {
+    width: 50%;
+    display: inline-block;
+    padding-right: $bs-gutter;
+    font-size: 1.5rem;
+    float: right;
+    margin-left: 27%;
+  }
+  .shopItem-row {
+    padding: 10px;
+    margin: 0;
+    background-color: $white;
+  }
+  .shopItem {
+    padding: 5px;
+    height: auto;
+    border-bottom: 1px solid $gray-light;
+    @include breakpoint($sm-only) {
+      display: inline-block;
+      width: 32%;
+      margin-left: 5px;
+      border-bottom: none;
+      border-right: 1px solid $gray-light;
+      &:last-of-type {
+        border-right: none;
+      }
+    }
+    &:last-of-type {
+      border-bottom: none;
+    }
+    img {
+      display: inline-block;
+      width: 20%;
+    }
+    a, a:hover {
+      text-decoration: none;
+    }
+    &__title {
+      font-size: 16px;
+      display: inline-block;
+      width: 80%;
+      vertical-align: middle;
+
+      @include breakpoint($sm) {
+        width: 75%;
+        margin-left: 5px;
+      }
+      @include breakpoint($md) {
+        width: 70%;
+        @include typography-truncate();
+      }
+
+    }
+  }
+  .visit-shop {
+    text-align: center;
+    padding-top: $bs-gutter;
+  }
+}

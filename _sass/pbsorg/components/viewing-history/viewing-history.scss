@@ -1,0 +1,145 @@
+section.history-container{
+  background: $gray-lighter;
+  margin: 0 auto;
+  padding-bottom: $bs-gutter * 3;
+
+  @include breakpoint($sm) {
+    padding-bottom: 0;
+  }
+
+  @include breakpoint($lg) {
+    padding-bottom: $bs-gutter * 3;
+  }
+}
+
+.viewing-history-result-result__link-container {
+  display: block;
+  box-shadow: $shadow;
+  @include aspect-ratio(16, 9);
+}
+
+
+article.history-result {
+  background: $white;
+  color: $gray-primary;
+  border-bottom: 1px solid $gray-light;
+  font-size: 1.6rem;
+  margin: 1px $bs-gutter 0 $bs-gutter;
+  padding: $bs-gutter;
+
+  @include breakpoint($sm) {
+    margin: 1px 0 0 0;
+    padding: ($bs-gutter * 1.5) $bs-gutter;
+  }
+
+  @include breakpoint($md) {
+    padding: ($bs-gutter * 2) ($bs-gutter * 2);
+  }
+
+  @include breakpoint($lg) {
+    margin: 1px ($bs-gutter * 2) 0 ($bs-gutter * 2); 
+  }
+
+  .history-poster{
+    max-width: 325px;
+    height: auto;
+  }
+
+  .viewing-history-result-image {
+    width: 100%;
+  }
+
+  .history-info-table{
+    td{
+      border-top: 0;
+      padding: 4px;
+      font-size: 1.4rem;
+      font-weight: $semibold;
+    }
+  }
+
+  .link-remove{
+    font-family: $serif;
+    font-weight: $bold;
+    font-size: 1.4rem;
+    color: $blue;
+    margin-left: 8px;
+  }
+
+  .progress {
+    background-color: $gray-light;
+    border-radius: 0;
+    box-shadow: none;
+    height: 10px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    overflow: hidden;
+  }
+
+  .progress-bar-success {
+    background-color: $green;
+  }
+
+  p.over-title {
+    font-size: 1.2rem;
+    margin: 0;
+    text-transform: uppercase;
+
+    @include breakpoint($md) {
+      font-size: 1.4rem;
+    }
+  }
+
+  h1 {
+    color: $gray-primary;
+    font-size: 1.8rem;
+    margin: ($bs-gutter / 4) 0 0;
+    padding-bottom: 8px;
+
+    @include breakpoint($md) {
+      font-size: 2.2rem;
+    }
+
+    a {
+      color: $gray-primary;
+    }
+
+
+  }
+  p.description {
+    margin: ($bs-gutter / 2) 0 0;
+    font-size: 1.4rem;
+  }
+
+
+  p.info {
+    font-size: 1.4rem;
+    margin: ($bs-gutter / 2) 0 0;
+
+    .passport-logo-wrapper {
+      display: inline-block;
+      position: relative;
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+
+      .passport-logo {
+        width: 100%;
+        margin-top: -4px;
+      }
+    }
+  }
+
+  .remove-links{
+    text-align: right;
+    width: 100%;
+  }
+
+  div.article-body {
+    margin: 0;
+
+    @include breakpoint($sm) {
+      margin: 0 0 0 (-$bs-gutter);
+    }
+  }
+}

@@ -1,0 +1,165 @@
+.page-footer {
+  @extend %mobile-menu;
+
+  background: $gray-light;
+  font-weight: $light;
+  font-size: 1.6rem;
+  padding: 0 $bs-gutter;
+
+  // when we make the jump from single column to three column, add some space around the three columns;
+  @include breakpoint($sm) {
+    padding: ($bs-gutter * 4) ($bs-gutter * 4) 0;
+  }
+  @include breakpoint($md) {
+    padding: ($bs-gutter * 4) ($bs-gutter * 5) 0;
+  }
+  @include breakpoint($lg) {
+    padding: ($bs-gutter * 4) ($bs-gutter * 8) 0;
+  }
+
+  .row-with-dividers {
+    @include breakpoint($sm) {
+      // add some spacing between the links and legalese;
+      padding-bottom: ($bs-gutter * 4);
+    }
+  }
+
+  // columns of content in the footer (explore, connect, learn);
+  section {
+    padding-bottom: $bs-gutter*2;
+    padding-top: $bs-gutter*2;
+
+    @include breakpoint($xs-only) {
+      border-bottom: solid 1px $gray-lighter;
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    @include breakpoint($sm) {
+      padding: 0 $bs-gutter*2;
+      border-bottom: 0;
+      border-right: solid 1px $gray-medium;
+      &:last-child {
+        border-right: 0;
+      }
+    }
+
+    @include breakpoint($lg) {
+      padding: 0 $bs-gutter*3;
+    }
+
+  }
+
+  // titles for each column of links;
+  .section-title {
+    margin: 0 0 10px 0;
+    color: $gray-primary;
+    font-weight: $semibold;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+
+    @include breakpoint($sm) {
+      margin: 0 0 ($bs-gutter / 4);
+      padding: 0;
+      text-align: left;
+    }
+
+    @include breakpoint($md) {
+      margin: 0 0 ($bs-gutter / 2);
+    }
+
+    @include breakpoint($lg) {
+      margin: 0 0 $bs-gutter;
+    }
+  }
+
+  // list of links within each column;
+  ul {
+    margin: 0;
+    // making 2 columns by default, 1 above $sm
+    column-count: 2;
+    column-gap: 16px;
+    @include breakpoint($sm) {
+      column-count: 1;
+    }
+
+    li {
+      break-inside: avoid; // see https://css-tricks.com/almanac/properties/b/break-inside/
+      overflow: hidden; // fix for IE11 - see http://stackoverflow.com/questions/22547098/multi-columns-not-working-in-ie-11
+    }
+  }
+
+  .page-footer__explore-links {
+    //this one is a special case, it needs to be 2 columns again above $md
+    @include breakpoint($md) {
+      column-count: 2;
+    }
+  }
+
+  li {
+    margin: 0;
+    padding: ($bs-gutter / 2) 0;
+  }
+  a {
+    color: $gray-primary;
+  }
+  [class^=icon-] {
+    vertical-align: top;
+    width: 23px;
+    height: 23px;
+    font-size: 25px;
+    position: relative;
+    top: -3px;
+  }
+
+  // legalese container at the bottom of the footer;
+  .legal {
+    background: $gray-lighter;
+    margin: 0 (-$bs-gutter) (-$bs-gutter);
+    padding: $bs-gutter;
+
+    // break outside of the container padding;
+    @include breakpoint($sm) {
+      margin: 0 (-$bs-gutter * 4);
+    }
+    @include breakpoint($md) {
+      margin: 0 (-$bs-gutter * 6);
+    }
+    @include breakpoint($lg) {
+      margin: 0 (-$bs-gutter * 8);
+    }
+
+    // copyright info;
+    small {
+      color: $gray-primary;
+      display: block;
+      font-size: 1.2rem;
+      margin: $bs-gutter 0 0;
+
+      @include breakpoint($sm) {
+        margin: 0;
+        padding: 0 0 0 $bs-gutter;
+      }
+    }
+
+    // npr;
+    .partner {
+      color: $gray-primary;
+      font-size: 1.2rem;
+      margin: 0;
+
+      @include breakpoint($sm) {
+        float: right;
+        margin: $bs-gutter/4 0 0;
+        padding: 0 $bs-gutter 0 0;
+      }
+
+      img {
+        position: relative;
+        top: -1px;
+      }
+    }
+  }
+
+}

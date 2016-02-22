@@ -1,0 +1,92 @@
+article.store-featured {
+  position: relative;
+  overflow: hidden; //keeps images from bleeding above
+
+  // container for the background image;
+  div.background-image {
+    // at mobile, move it up under the content;
+    @include breakpoint($sm) {
+      margin-top: (-$bs-gutter * 5);
+    }
+
+    img {
+      width: 100%;
+    }
+
+    // at desktop, position it at the bottom of the container (which now has a fixed height);
+    @include breakpoint($sm) {
+      margin: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+    }
+  }
+
+  // container for the content (that overlays the image at the desktop);
+  div.article-body {
+    padding-top: $bs-gutter;
+
+    @include breakpoint($sm) {
+      padding: 0;
+      position: absolute;
+      top: ($bs-gutter * 2);
+      left: 0;
+      width: 100%;
+      z-index: 2;
+    }
+
+    @include breakpoint($md) {
+      top: ($bs-gutter * 4);
+    }
+  }
+
+  // container for an IMG;
+  h1 {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  img {
+    // float the logo to the right (only on desktop);
+    @include breakpoint($md) {
+      &.img-logo {
+        float: right;
+      }
+    }
+
+    // center the images on mobile;
+    @include breakpoint($xs-only) {
+      &.img-logo {
+        display: block;
+        margin: 0 auto;
+      }
+
+      &.img-h1 {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  // put a vertical dividing border between the image and text;
+  div.col-border {
+    position: relative;
+
+    &:before {
+      content: "";
+      display: none;
+      width: 1px;
+      background: $gray-light;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+
+      // only on desktop;
+      @include breakpoint($sm) {
+        display: block;
+      }
+    }
+  }
+}

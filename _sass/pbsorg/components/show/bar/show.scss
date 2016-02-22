@@ -1,0 +1,63 @@
+.show-bar {
+  display: none;
+  position: relative;
+  height: 100px;
+  padding: 0 ($bs-gutter * 2);
+  background-color: lighten($gray-medium, 8%);
+
+  @include breakpoint($sm) {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    max-width: 370px;
+    padding-right: ($bs-gutter * 2);
+    text-align: left;
+
+    @include breakpoint($md) {
+      max-width: 450px;
+    }
+
+    @include breakpoint($lg) {
+      max-width: 700px;
+    }
+  }
+
+  &__logo {
+    width: auto;
+    max-width: 450px;
+    max-height: 90px;
+  }
+
+  &__logo--text {
+    color: $black;
+    font-size: 2rem;
+  }
+
+  &__logo-link {
+    display: inline-block;
+    vertical-align: middle;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  .favorite {
+    margin-right: auto;
+    padding-right: ($bs-gutter * 4);
+  }
+
+  &__link--website {
+    min-width: 190px;
+
+    a {
+      color: $blue;
+      font-family: $serif;
+      font-size: 1.4rem;
+      font-weight: $bold;
+    }
+  }
+}

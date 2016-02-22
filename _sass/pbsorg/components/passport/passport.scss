@@ -1,0 +1,762 @@
+$passport-width: 800px; //used throughout
+
+#loadingOverlay .window .loading {
+  background-image: url(../images/loading.gif);
+}
+
+body[class^="passport"] {
+  background-color: $white;
+  .navbar {
+    @extend %clearfix;
+    height: 95px;
+  }
+
+  main {
+    padding-top: 95px;
+  }
+}
+
+// the logo
+.passport-logo {
+  width: 28px;
+  height: 28px;
+
+  .passport-congratulations & {
+    display: inline-block;
+    width: 45px;
+  }
+
+  // accompanying text for the station
+  &__station {
+    display: inline-block;
+    font-weight: $bold;
+  }
+}
+
+.passport-header {
+  @extend %clearfix;
+  width: 1280px;
+  margin: 0 auto;
+  border-bottom: $divider;
+  background-color: $gray-lighter;
+
+  h1 {
+    padding: 13px 10px;
+    float:left;
+    color: $gray-darker;
+    font-family: $sans-serif;
+    font-size: 3rem;
+    @include breakpoint($sm) {
+      font-size: 3.6rem;
+    }
+
+    @include breakpoint($xs-only) {
+      font-size: 2rem;
+      padding: 32px 0px 0 10px;
+      margin: 0;
+    }
+
+    font-weight: $light;
+
+    .withSeparator {
+      position: relative;
+      left: 5px;
+      top: 5px;
+      border-left: 1px solid darken($gray-light, 15%);
+      line-height: .8;
+      @include breakpoint($xs-only) {
+        padding: 2px 0 0 5px;
+      }
+    }
+
+    span {
+      float:left;
+      padding: 0 10px;
+
+      @include breakpoint($xs-only) {
+        padding: 4px 0 0 0;
+        letter-spacing: -1px;
+      }
+    }
+
+    .passportStation {
+      font-weight: $bold;
+    }
+  }
+
+  .pbs-logo,
+  .station-logo {
+    float: left;
+    border-right: 1px solid darken($gray-light, 15%);
+    margin: 29px 0 27px 5%;
+    padding-right: 10px;
+    max-height: 35px;
+
+    @include breakpoint($sm) {
+      margin: 17px 0 17px 20px;
+      padding-right: 30px;
+      max-height: 60px;
+    }
+
+    @include breakpoint($md) {
+      display: inline-block;
+    }
+  }
+
+  .station-logo-fallback {
+    display: inline-block;
+    float: left;
+    margin: 20px;
+    border-right: 1px solid darken($gray-light, 15%);
+    padding-right: 30px;
+    font-size: 3rem;
+    @include breakpoint($sm) {
+      font-size: 3.6rem;
+    }
+  }
+
+  .passport-logo {
+    float: left;
+    width: 26px;
+    height: 26px;
+    margin: 0 5px 0 0;
+    display: inline-block;
+    @include breakpoint($sm) {
+      width: 28px;
+      height: 28px;
+      margin-top: 6px;
+    }
+  }
+
+  .headerActivateText {
+    display: none;
+    @include breakpoint($md) {
+      display: inline;
+    }
+  }
+}
+
+.passport {
+  max-width: 1280px;
+  margin: 0 auto;
+  background-color: $white;
+
+  p {
+    margin-bottom: $bs-gutter;
+    font-size: 2.2rem;
+  }
+
+  h3 {
+    font-size: 3.2rem;
+    font-weight: $light;
+    margin-bottom: 65px;
+    margin-top: 0;
+  }
+
+  h4 {
+    font-size: 2rem;
+    line-height: 1.4em;
+    font-weight: $bold;
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+
+  img {
+    margin: 10px 0 25px 0;
+  }
+
+  input {
+    width: 100%;
+    max-width: 1000px;
+    border: 1px solid $gray-medium;
+    display: block;
+    padding: 8px 0 8px 13px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    height: 60px;
+    font-size: 2.2rem;
+
+    &.emails {
+      text-transform: none;
+      font-size: 1.6rem;
+    }
+
+    @include breakpoint($sm) {
+      float:left;
+      margin-right: 2%;
+      width: 62%;
+    }
+  }
+
+  [type="checkbox"] {
+    width: auto;
+    height: auto;
+    float: none;
+    display: inline;
+    margin-right: 2%;
+  }
+
+  label {
+    font-size: 1.5rem;
+    font-weight: $semibold;
+    margin-bottom: 10px;
+    margin: 0;
+    margin-top:35px;
+    line-height: 1.7em;
+    display: block;
+  }
+
+  .btn {
+    &.green-activation {
+      margin: 10px 0;
+      height: 43px;
+      color: $white;
+      font-family: $sans-serif;
+      background-color: $green;
+      border:1px solid darken($green, 15%);
+      padding:11px 32px;
+      font-size: 2.4rem;
+      font-weight: $normal;
+      text-transform: none;
+      width:100%;
+      height: 60px;
+
+      @include breakpoint($sm) {
+        width: 36%;
+        margin:0;
+      }
+
+      &.disabled {
+        opacity: .4;
+        background: $gray-medium;
+        border-color: $gray-dark;
+        cursor: none;
+      }
+    }
+
+    &.activation-transparent {
+      background-color:$white;
+      color: $gray-primary;
+      border-color: $gray-primary;
+    }
+
+    .buttonSpinner{
+      background: url('../images/loading.gif') no-repeat 0 0;
+      background-size: 38px 12px;
+      width: 38px;
+      height: 12px;
+      margin: 0 auto;
+      display: none;
+    }
+
+    &.mvodDefault {
+      display: block;
+      cursor: pointer;
+      border: 0;
+      background: $blue;
+      color: $white;
+      margin: 0 auto;
+      font-size: 2.2rem;
+      letter-spacing: .03em;
+      padding: 5px 0;
+      width: 40%;
+      max-width: 300px;
+      font-weight: bold;
+
+      a {
+        color: $white;
+      }
+
+      .buttonError {
+        display: none;
+        font-size: 1.4rem;
+      }
+
+      &.buttonErrorEnv {
+        background: lighten($red, 60%);;
+        border:2px solid $red;
+        color: $red;
+      }
+    }
+  }
+
+  .mvodSupportTextActivation {
+    @include breakpoint($sm) {
+      margin: 15px 0;
+    }
+  }
+
+  &__body {
+
+    &.firstScreen {
+      max-width: $passport-width;
+    }
+
+    &.loginScreen {
+      width: 90%;
+      margin: 0 auto;
+      max-width: 950px;
+    }
+    &.lastScreen {
+      padding-top:0px;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .disclaimer {
+      font-size: 1.6rem;
+    }
+
+    &.activationScreen {
+      max-width:640px;
+    }
+
+    .plusMedium {
+      font-weight: 500;
+      font-size: 1.05em;
+    }
+  }
+
+  $tall: min-height 750px;
+
+  .activationForm {
+    @extend %clearfix;
+    margin: 30px auto 100px;
+    @include breakpoint($sm) {
+      margin: 30px auto 160px;
+    }
+
+    padding:0;
+    @include breakpoint($tall) {
+      padding: 30px 0;
+    }
+
+    .mvodStationContainer {
+      width: 100%;
+
+      @include breakpoint($sm) {
+        float: left;
+        width: 48.5%;
+      }
+
+      padding: 35px 20px;
+      background-color: $gray-lighter;
+      border: 1px solid $gray-light;
+      position: relative;
+
+    }
+
+    .stationImageContainer {
+      padding:5px 18px;
+      border: 1px solid $gray-medium;
+      background-color: $white;
+      text-align: center;
+      img {
+        float:none;
+        background-color: $white;
+        margin:0 auto;
+        padding: 20px;
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .station-logo-fallback {
+        font-size: 6rem;
+      }
+    }
+
+    .socialLoginPanel {
+      padding: 0;
+      max-width: 380px;
+      margin: 30px auto;
+      @include breakpoint($sm) {
+        min-width: 300px;
+        margin: 0;
+      }
+    }
+
+    .confirm-buttons {
+      overflow: hidden;
+
+      .btn {
+        float: none;
+        display: block;
+        margin: 25px 0;
+        padding-top: 15px;
+
+        &.green-activation {
+          min-width: 280px;
+        }
+      }
+    }
+
+    .mvodSupportText {
+      position:absolute;
+      bottom: 17px;
+      left:20px;
+      font-size: 1.6rem;
+      font-style: italic;
+    }
+
+    .support-link {
+      font-size: 1.6rem;
+      margin: 30px 0;
+      @include breakpoint($sm) {
+        margin: 15px 0;
+      }
+    }
+
+    &.activationCode {
+      max-width: $passport-width;
+      padding: 0 25px;
+    }
+  }
+
+  // member lookup form
+  &-lookup-form {
+    @extend %clearfix;
+    width: 90%;
+    max-width: $passport-width;
+    margin: 0 auto;
+
+    &__response {
+      width: 90%;
+      max-width: $passport-width;
+      margin: 0 auto;
+      padding-top: $bs-gutter;
+      // for breathing room at the bottom of the page
+      padding-bottom: ($bs-gutter * 4);
+      border-top: 1px solid $divider;
+
+      &__message {
+        margin-bottom: 40px;
+      }
+    }
+
+    // need extra class for specificity
+    .passport-lookup-form__label {
+      margin-bottom: $bs-gutter;
+      font-size: 2.2rem;
+      font-weight: $normal;
+    }
+
+    // need extra class for specificity
+    .passport-lookup-form__user-email {
+      text-transform: none;
+    }
+
+    &__station-info {
+      margin-left: ($bs-gutter * 1);
+
+      @include breakpoint($sm) {
+        margin-left: ($bs-gutter * 3);
+      }
+    }
+  }
+
+  .congrats {
+
+    &__hero-image {
+      position: relative;
+      width: 100%;
+      height: 187px;
+      background: url('../images/passport_congratulations_hero.jpg') no-repeat;
+      background-position: center center;
+      background-size: cover;
+      background-attachment: inherit;
+
+      @include breakpoint($xs) {
+        height: 350px;
+      }
+
+      @include breakpoint($sm) {
+        height: 435px;
+      }
+
+      &:before {
+        display: block;
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 45px;
+        background: linear-gradient(to bottom, rgba($black,0) 0%,rgba($black,0.65) 100%);
+      }
+    }
+
+    &__hero-text {
+      width: 90%;
+      margin: 0 auto;
+      padding-top: 80px;
+
+      @include breakpoint($xs) {
+        padding-top: 150px;
+      }
+
+      @include breakpoint($sm) {
+        padding-top: 180px;
+      }
+    }
+
+    &__hero-headline {
+      width: 100%;
+      margin: 0 0 $bs-gutter 0;
+      text-align: center;
+      color: $white;
+      font-size: 3rem;
+      @include breakpoint($xs) {
+        font-size: 4rem;
+      }
+      @include breakpoint($sm) {
+        font-size: 6.1rem;
+      }
+      font-weight: $semibold;
+      text-shadow: 2px 2px 3px $black;
+
+      .passport__welcome {
+        display: none;
+        @include breakpoint($md) {
+          display: inline-block;
+        }
+      }
+    }
+
+    .passport-logo {
+      margin: 0 7px 0 16px;
+      position: relative;
+      top: -4px;
+      width: 24px;
+      height: 24px;
+      @include breakpoint($xs) {
+        width: 30px;
+        height: 30px;
+      }
+      @include breakpoint($sm) {
+        width: 45px;
+        height: 45px;
+        top: -6px;
+      }
+
+      &__station {
+        margin-right: 16px;
+        padding-right: 16px;
+        @include breakpoint($xs) {
+          margin-right: 20px;
+          padding-right: 20px;
+        }
+        border-right: 1px solid $white;
+        line-height: .8;
+      }
+    }
+
+    .passport__text {
+      font-weight: $light;
+    }
+
+    &__hero-subhead {
+      color:$white;
+      text-align: center;
+      width: 100%;
+      font-size: 1.4rem;
+      font-weight: normal;
+      line-height: 1.4;
+      @include breakpoint($xs) {
+        font-size: 1.6rem;
+      }
+      @include breakpoint($sm) {
+        font-size: 2.4rem;
+        padding: 0 20%;
+        margin-top: 15px;
+      }
+      @include breakpoint($md) {
+        width: 85%;
+        margin: 15px auto;
+      }
+    }
+
+    .plusMemberships {
+      overflow: auto;
+      position: absolute;
+      bottom: 0;
+      color:$white;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+
+      .membershipsText, .membershipsStations {
+        font-size: 1.2rem;
+      }
+
+      span {
+        font-size: 1.8rem;
+      }
+      img {
+        margin:0 10px;
+      }
+      .membershipsStations {  display: inline-block; }
+      .membershipsImages {
+        display: none;
+        .station-logo-fallback {
+          color: $white;
+          margin-right: 10px;
+        }
+      }
+
+      @include breakpoint($md) {
+        .membershipsText { font-size: 1.8rem; }
+        .membershipsStations {  display: none; }
+        .membershipsImages {  display: inline-block; }
+      }
+    }
+
+    &__message {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      margin: 0 auto;
+      max-width: 500px;
+      padding: 20px $bs-gutter;
+
+
+      @include breakpoint($md) {
+        width: 100%;
+        max-width: none;
+        background: url('../images/passport_brand_images.jpg') no-repeat;
+        background-size: 56%;
+        min-height: 650px;
+        padding-left: 61%;
+        padding-right: 20px;
+        padding-top: 80px;
+      }
+
+      @include breakpoint((min-height: 100px)) {
+        min-height: 850px;
+      }
+
+      &__title {
+        margin-bottom: $bs-gutter;
+        margin-top: 0;
+        font-size: 3rem;
+        font-weight: $light;
+
+        @include breakpoint($md) {
+          font-size: 4.0rem;
+        }
+      }
+
+      &__text {
+        font-size: 1.6rem;
+        line-height: 1.375;
+
+        @include breakpoint($md) {
+          order: 1;
+          margin-bottom: 40px;
+          font-size: 2.2rem;
+          line-height: 1.363;
+        }
+      }
+
+      .look-for-passport {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+
+
+        @include breakpoint($md) {
+          margin-left: -26%;
+
+        }
+
+
+        &__circle {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 86px;
+          min-width: 86px;
+          height: 86px;
+          margin-right: $bs-gutter;
+          border: solid 2px $blue-light;
+          border-radius: 50%;
+          background-color: rgba($black, .1);
+
+          @include breakpoint($md) {
+            height: 106px;
+            width: 106px;
+            background-color: rgba($black, .5);
+          }
+
+          .passport-logo {
+            width: 36px;
+            height: auto;
+            margin: 0; // overrides other styles
+            top: 0; // overrides other styles
+
+            @include breakpoint($md) {
+              width: 44px;
+            }
+          }
+        }
+
+        &__text {
+          font-size: 2rem;
+          margin-bottom: 0;
+        }
+      }
+
+      &__btn.btn {
+        display: block;
+        max-width: 330px;
+        width: auto;
+        margin: 0 0 40px 0;
+
+        @include breakpoint($md) {
+          order: 1;
+        }
+      }
+
+    }
+
+  }
+
+  ////////////
+
+  .errorMessages {
+    display: none;
+    font-size: 1.6rem;
+    font-weight: $semibold;
+    line-height: 130%;
+    margin: 0 auto;
+    color: $gray-darker;
+    padding: 10px 20px 0px 20px;
+    border: 2px solid $red;
+    margin: 30px 0 0;
+    list-style-type: none;
+    &.is-visible {
+      display: inline-block;
+    }
+    li {
+      margin: 0 0 10px 0;
+    }
+    a {
+      font-weight: bold;
+    }
+  }
+
+  &.noPadding {
+    padding-bottom: 0;
+  }
+
+
+  .selectStation {
+    padding: 0 0 40px;
+  }
+  .login {
+    padding: 0 0 40px;
+  }
+}
+
+.findStation {
+  font-weight: bold;
+  padding: 0 0 0 10px;
+}

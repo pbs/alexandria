@@ -1,0 +1,16 @@
+// mixins, variables, extends
+@import './includes';
+
+// video playback page components
+@import '../components/carousel/carousel';
+@import '../components/carousel/carousel-arrows';
+@import '../components/carousel/carousel-slides';
+@import '../components/carousel/show-strip/carousel';
+@import '../components/legos/legos';
+@import '../components/show/bar/show';
+@import '../components/video/block/video';
+@import '../components/video/list/video';
+@import '../components/video/player/video';
+@import '../components/video/popover/video';
+@import '../components/video/summary/video';
+@import '../components/video/video-grid';

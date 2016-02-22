@@ -1,0 +1,180 @@
+// updates to the base Bootstrap button style;
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  background: transparent;
+  border: 1px solid $blue;
+  border-radius: 2px;
+  color: $blue;
+  font-family: $serif;
+  font-weight: $bold;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.6rem;
+  line-height: 1;
+  padding: $bs-gutter ($bs-gutter * 2);
+
+  &:visited,
+  &:hover,
+  &:focus,
+  &:active {
+    background: rgba($blue, .1);
+    border-color: $blue;
+    color: $blue;
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+
+  .btn--ripple-effect {
+    background: $gray-light;
+  }
+
+  // add show to favorites
+  &--favorite {
+    @include btn-states() {
+      background: $gray-lighter;
+      border-color: $divider-color;
+      color: $gray-dark;
+    }
+
+    .btn--ripple-effect {
+      background: $yellow;
+    }
+
+    [class^=icon-] {
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    &.selected {
+      background: $yellow;
+      border-color: darken($yellow, 15%);
+      color: $white;
+    }
+
+    .no-js & {
+      display: none; //this won't work without javascript
+    }
+  }
+
+  // add video to watchlist
+  &--watchlist {
+    @include btn-states() {
+      background: $gray-light;
+      border-color: $gray-medium;
+      color: $gray-dark;
+    }
+
+    .btn--ripple-effect {
+      background: $brand-success;
+    }
+
+    [class^=icon-] {
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    &.selected {
+      background: $brand-success;
+      border-color: darken($green, 15%);
+      color: $white;
+    }
+  }
+
+  // remove an item from viewing history or watchlist
+  &--remove {
+    font-family: $sans-serif;
+    font-weight: $semibold;
+    font-size: 1.8rem;
+    line-height: 0.4;
+    padding: 6px 6px 9px 6px;
+    height: 24px;
+    background-color: $gray-lighter;
+    color: $blue-muted;
+    border: 1px solid $blue-muted;
+  }
+
+  // search the website - magnifying glass icon
+  &--search {
+    padding: $bs-gutter;
+    border: 0;
+  }
+
+  // CTA - Call To Action - e.g. donate;
+  &--cta {
+    @include btn-states() {
+      background-color: $red;
+      border-color: darken($red, 15%);
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  // visit (for producer website on show-details);
+  // Custom breakpoint for xs screens
+  $over400: 400px;
+  &--visit {
+    @include btn-states() {
+      font-size: 1.2rem;
+      color: $white;
+      background-color: $blue;
+
+      @include breakpoint($over400) {
+        font-size: 1.4rem;
+      }
+
+      @include breakpoint($md-only) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  // close button used in modals;
+  &--close {
+    position: absolute;
+    right: $bs-gutter;
+    top: 10px;
+    border: 0;
+    background: none;
+    color: $white;
+    font-size: 3rem;
+    font-weight: $bold;
+    cursor: pointer;
+  }
+
+  // inverts basic button colors to indicate a 'more important' button in a set of two
+  &--inverse {
+    color: $white;
+    background-color: $blue;
+  }
+
+  // not a specific button type, but a flag to indicate an interaction - the ripple effect;
+  &--ripple {
+    overflow: hidden;
+    position: relative;
+  }
+
+  // applied via JS;
+  &--ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: ripple-animation 2s;
+  }
+}
+
+@keyframes ripple-animation {
+  from {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  to {
+    transform: scale(100);
+    opacity: 0;
+  }
+}

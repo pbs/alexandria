@@ -1,0 +1,222 @@
+.carousel--hero {
+  padding: 0 0 24px;
+  background: $white;
+  color: $white;
+  line-height: 1.2;
+
+  // at the small breakpoint, the text overlaps the image;
+  @include breakpoint($sm) {
+    padding: 0;
+  }
+
+  &__slide {
+    position: relative;
+
+    @include breakpoint($sm) {
+      text-shadow: 1px 1px 3px rgba($black, 1);
+    }
+
+    // hide the additional slides until the carousel is initialized;
+    + .carousel--hero__slide {
+      display: none;
+    }
+
+    .slick-initialized & {
+      display: block;
+    }
+  }
+
+  // container needed for mobile and desktop view;
+  // contains the picture and the article body (used for desktop);
+  &__slide__picture-body {
+    position: relative;
+    background: $gray-dark; // in the event the path is broken, text will still be readable
+    overflow: hidden;
+
+    @include breakpoint($md) {
+      max-height: 719px;
+    }
+
+    @include breakpoint($lg) {
+      height: 487px;
+    }
+  }
+
+  // some styles needed on the <picture> element
+  &__picture {
+    position: relative;
+    height: 100%;
+    overflow: hidden; // without this, the :after element oddly wraps from left to right;
+
+    // add a background gradient (between image and text) so the text is easier to read;
+    &:after {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 500px;
+      height: 400px;
+      margin: 0 0 -200px -250px;
+      background: radial-gradient(ellipse at center, rgba($black, .75) 0%, rgba($white, 0) 70%);
+      content: '';
+
+      @include breakpoint($sm) {
+        width: 800px;
+        height: 640px;
+        margin: 0 0 -320px -400px;
+      }
+
+      @include breakpoint($lg) {
+        width: 1000px;
+        height: 800px;
+        margin: 0 0 -400px -500px;
+      }
+    }
+  }
+
+  // only the background image;
+  &__image {
+    width: 100%;
+    max-width: none;
+  }
+
+  // container for the content placed on top of the image;
+  &__slide__body {
+    position: absolute;
+    right: $bs-gutter;
+    bottom: $bs-gutter;
+    left: $bs-gutter;
+    font-weight: $light;
+
+    @include breakpoint($sm) {
+      right: auto;
+      bottom: ($bs-gutter * 2);
+      left: ($bs-gutter * 5);
+      z-index: 1;
+    }
+  }
+
+  // hidden except for mobile;
+  // duplicate of content inside div.article-body (that is hidden at moblie);
+  .article-body-xs {
+    padding: $bs-gutter $bs-gutter ($bs-gutter * 2);
+  }
+
+  a {
+    color: $white;
+  }
+
+  // container for the logo image;
+  &__headline__logo {
+    font-family: $sans-serif;
+    display: block;
+    width: 65%;
+    max-width: 380px;
+    max-height: 190px;
+    margin: 0;
+    font-size: 4rem;
+    @include breakpoint($sm) {
+      width: auto;
+    }
+    @include breakpoint($lg) {
+      margin-bottom: $bs-gutter/2;
+    }
+  }
+
+  &__headline--text,
+  .show-logo-fallback {
+    margin: 0;
+    font-size: 2.8rem;
+    font-weight: $light;
+    line-height: 1.3;
+
+    @include breakpoint($sm) {
+      font-size: 4rem;
+    }
+  }
+
+  hr {
+    height: 1px;
+    margin: $bs-gutter 0;
+    border: 0;
+    background: $white;
+    opacity: .5;
+  }
+
+  // text underneath the logo image;
+  .sub-title {
+    max-width: 250px;
+    margin: 0;
+    font-size: 1.6rem;
+    font-style: italic;
+    font-weight: $light;
+
+    @include breakpoint($sm) {
+      max-width: none;
+      font-size: 2rem;
+    }
+  }
+
+  // under the sub-title (duplicated in div.article-body-xs);
+  .description {
+    margin: 0;
+    font-size: 1.6rem;
+    line-height: 1.4;
+
+    @include breakpoint($sm) {
+      font-size: 1.5rem;
+    }
+
+    @include breakpoint($md) {
+      max-width: 320px;
+    }
+
+    a {
+      color: $gray-primary;
+
+      @include breakpoint($sm) {
+        color: $white;
+      }
+    }
+  }
+
+  .related-links {
+    margin: 0;
+    font-size: 1.6rem;
+
+    @include breakpoint($sm) {
+      margin: $bs-gutter 0 0;
+      padding: 0 0 0 19px;
+      font-size: 1.8rem;
+    }
+  }
+
+  .related-link-wrapper {
+    padding: ($bs-gutter * 1.5) 0;
+
+    @include breakpoint($sm) {
+      padding: ($bs-gutter / 2) 0;
+    }
+
+    + .related-link-wrapper {
+      border-top: $divider;
+
+      @include breakpoint($sm) {
+        border: 0;
+      }
+    }
+  }
+
+  .related-link {
+    color: $blue;
+
+    @include breakpoint($sm) {
+      color: $white; // above mobile, the text overlays the image, so make it readable;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}

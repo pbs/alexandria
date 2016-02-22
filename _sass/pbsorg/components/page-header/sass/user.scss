@@ -1,0 +1,365 @@
+.user-navbar--heavy-traffic {
+  //overrides hover event
+  &:hover,
+  &:focus {
+    border: 0;
+    margin-left: 1px;
+    background-color: $white;
+  }
+
+  &__dropdown {
+    //replaces user-name in Heavy Traffic Mode
+    &__username {
+      display: inline-block;
+      position: relative;
+      margin-top: 25px;
+      padding: 0 20px 18px 20px;
+      color: $blue;
+      font-family: $serif;
+      font-size: 16px;
+      font-weight: $bold;
+      overflow: hidden;
+    }
+  }
+}
+
+.user-dropdown--logged-out {
+  // from user.html
+  display: block;
+  padding-left: 20px;
+
+  @include breakpoint($md) {
+    padding-left: 0;
+  }
+
+  .form-signin {
+    max-width: 330px;
+    margin: 0 auto;
+    padding: $bs-gutter;
+
+    .form-signin-heading,
+    .checkbox {
+      margin-bottom: 10px;
+    }
+
+    .checkbox {
+      font-weight: normal;
+    }
+
+    .form-control {
+      position: relative;
+      height: auto;
+      padding: 10px;
+      font-size: 1.6rem;
+      box-sizing: border-box;
+
+      &:focus {
+        z-index: 2;
+      }
+    }
+
+    //Not sure where these are being used
+    input[type="username"] {
+      margin-bottom: $bs-gutter;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    input[type="password"] {
+      margin-bottom: 10px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+    .sign-up {
+      display: block;
+      width: 100%;
+      height: 30px;
+      margin: 0;
+      padding: 0;
+      color: $blue-light;
+      font-size: 1.4rem;
+      font-weight: $normal;
+      line-height: 45px;
+      text-align: center;
+    }
+  }
+
+  label.checkbox-label input[type=checkbox] {
+    position: relative;
+    bottom: 1px;
+    vertical-align: middle;
+  }
+}
+
+/////// NEW USER DROPDOWN STYLES HERE
+.user-dropdown {
+  display: none;
+  background: $gray-light;
+  box-shadow: $inset-shadow-right;
+  left: 245px;
+  padding: 28px 8px 16px 26px;
+  overflow: hidden;
+
+  @include breakpoint($md){
+    display: none;
+    padding: 28px 8px 16px 26px;
+    min-width: 160px;
+    max-width: $max-width;
+    position: absolute;
+    top: $page-header-height;
+    left: -1px;
+    background: $gray-lighter;
+    z-index: 2;
+    box-shadow: none;
+    overflow: hidden;
+    border: 1px solid $gray-light;
+    border-top: 0;
+
+    .nav-item:hover & {
+      .no-touchevents & {
+        display: flex;
+      }
+    }
+
+    &.is-open {
+      display: none; // this prevents the lower breakpoint styles from appearing if user left menu open at small screen
+    }
+
+    // we need the extra specificty here of the body selector
+    .touchevents body.user-dropdown-is-open & {
+      display: flex;
+    }
+
+    &.has-viewing-history {
+      left: 0;
+    }
+  }
+
+  &__links {
+    min-width: 120px;
+    margin-right: $bs-gutter*2;
+    padding: 10px 0 0 0;
+    list-style: none;
+
+    li {
+      margin: 0 0 ($bs-gutter/1.5) 0;
+
+      a {
+        color: $gray-primary;
+        font-size: 1.6rem;
+        line-height: ($line-height * 1.5);
+
+        @include breakpoint($md) {
+          font-size: 1.4rem;
+          line-height: $line-height;
+        }
+
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__viewing-history {
+    display: none;
+
+    @include breakpoint($md) {
+      display: block;
+      min-width: 320px; //gives enough room for the label
+      padding: 12px ($bs-gutter * 2);
+      border-left: 1px solid $gray-medium;
+
+      &__label {
+        margin-bottom: 5px;
+      }
+
+      &__video__image {
+        width: 100%;
+        position: static;
+      }
+
+      &__video__progress {
+        z-index: 5;
+      }
+
+      h3 {
+        margin-top: 0;
+        font-size: 1.4rem;
+      }
+
+      .history {
+        height: auto;
+        margin-left: auto;
+        color: $blue;
+        font-family: $serif;
+        font-size: 1.2rem;
+        font-weight: $bold;
+        line-height: $line-height;
+      }
+
+      &__video {
+        width: 227px;
+        margin-right: $bs-gutter*2;
+
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+
+        &__label {
+          font-size: 1.4rem;
+          margin-top: 5px;
+        }
+
+        .progress {
+          position: relative;
+          background-color: rgba($gray-light, 0.7);
+          border-radius: 0;
+          box-shadow: none;
+          height: 12px;
+          margin-bottom: 4px;
+          margin-top: -12px;
+          overflow: hidden;
+        }
+
+        .progress-bar-success {
+          background-color: $green;
+          height: 13px;
+        }
+      }
+    }
+  }
+}
+
+.user-name-toggle {
+  @include breakpoint($sm-xs-only) {
+    background-color: white;
+    margin-top: -15px;
+    padding-left: 20px;
+    height: 75px;
+    box-shadow: $inset-shadow-right;
+  }
+
+  @include breakpoint($lg) {
+    width: auto;
+    max-width: 400px;
+  }
+}
+
+.user-name {
+  color: $blue;
+  font-family: $sans-serif;
+  font-weight: $bold;
+
+  .user-dropdown--logged-out & {
+    color: $white;
+    font-family: $serif;
+
+    @include breakpoint($md) {
+      color: $blue;
+      font-family: $sans-serif;
+    }
+  }
+
+  @include breakpoint($md) {
+    max-width: 105px;
+    @include typography-truncate();
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+  }
+
+  @include breakpoint(1045px) {
+    max-width: 125px;
+  }
+
+  @include breakpoint(1100px) {
+    max-width: 175px;
+  }
+
+  //fine tuning
+  @include breakpoint(1150px) {
+    max-width: 235px;
+  }
+
+  @include breakpoint($lg) {
+    max-width: 285px;
+  }
+}
+
+.user-info__dropdown-control {
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: $light;
+  color: $blue;
+  background: transparent;
+  border: 0;
+
+  @include breakpoint($md) {
+    display: none;
+  }
+
+  &:active {
+    text-decoration: none;
+  }
+
+  [class*="icon"] {
+    margin-left: 5px;
+    color: $gray-medium;
+  }
+
+  &.is-open {
+
+    [class*="icon"] {
+      transform: rotate(180deg);
+    }
+
+    + .user-dropdown {
+      display: block;
+      @include breakpoint($md) {
+        display: none;
+      }
+    }
+  }
+}
+
+.header__image-container {
+  display: inline-block;
+  margin-right: 12px;
+  position: relative;
+
+  .user-info__image {
+    width: 50px;
+    border-radius: $radius;
+
+    @include breakpoint($md) {
+      width: 35px;
+      margin-bottom: 5px;
+    }
+  }
+
+  .passport-logo-with-image {
+    position: absolute;
+    bottom: -5px;
+    left: 40px;
+    width: 20px;
+
+    @include breakpoint($md) {
+      bottom: 0;
+      left: 25px;
+      width: 16px;
+    }
+  }
+}
+
+.passport-logo-no-image {
+  width: 20px;
+  margin-right: 10px;
+  padding-bottom: 3px;
+}

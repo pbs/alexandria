@@ -1,0 +1,154 @@
+// set all the vars so we don't have to repeat ourselves when the math is done for col-content width;
+$ad-width: 300px;
+$row-with-ad-padding: ($bs-gutter * 2);
+$col-content-margin: ($bs-gutter * 4);
+
+.row-with-ad,
+.row-with-ad-alt {
+  background: $white;
+  margin-bottom: 0;
+  padding: 0;
+  position: relative;
+
+  @include breakpoint($sm) {
+    margin-bottom: (-$bs-gutter);
+  }
+
+  @include breakpoint($md) {
+    margin-bottom: 0;
+    padding: ($bs-gutter * 2);
+  }
+
+  @include breakpoint($lg) {
+    padding-bottom: ($bs-gutter * 3);
+  }
+
+  // default width is 100% because at mobile, the ad isn't visible;
+  .col-content,
+  .col-content-alt {
+    position: relative;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+
+    .content-row,
+    .content-row-alt {
+      background-color: $white;
+      padding-bottom: $bs-gutter;
+      @include breakpoint($sm-only) {
+        padding: ($bs-gutter * 2);
+      }
+
+      .xs-full-width {
+        padding: 0;
+      }
+    }
+  }
+
+  // this column is a constant width - $ad-width + $row-with-ad-padding;
+  .col-ad,
+  .col-ad-alt {
+    display: none;
+    background: $white;
+    float: right;
+    margin-left: ($bs-gutter * 2);
+    margin-right: 0;
+    width: $ad-width;
+  }
+
+  // class to denote dividing bars should be added;
+  .col-divider {
+    padding: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    &:nth-of-type(1){
+      @include breakpoint($sm) {
+        border-right: $divider;
+      }
+    }
+  }
+
+  // remove drop shadow for themed landing-page-components in this ad row;
+  & [class*="theme"] {
+    &:after {
+      display: none;
+    }
+  }
+
+  // setting up a loop here for the three breakpoints that are used
+  $bps : (
+    sm : $sm,
+    md : $md,
+    lg : $lg
+  );
+
+  // ads only appear on desktop (.no-touchevents is supplied as a test)
+  // Above the desired breakpoint, the .col-content width is reduced, a second divider border is added, and the .col-ad is made visible
+  @each $bp, $variable in $bps {
+    html.no-touchevents &.row-with-ad-at-#{$bp} {
+      @include breakpoint($variable) {
+        .col-content,
+        .col-content-alt {
+          width: calc(100% - #{$ad-width + $col-content-margin/2});
+        }
+        .col-divider:nth-of-type(2) {
+          border-right: $divider;
+        }
+        .col-ad,
+        .col-ad-alt {
+          display: block;
+        }
+      }
+    }
+  }
+
+  // dont put a border on this version;
+  .col-content-no-border {
+    border: 0;
+  }
+
+//Specifically for the individual show page
+  .show & {
+    @include breakpoint($sm) {
+      padding-top: ($bs-gutter / 2);
+    }
+    @include breakpoint($md) {
+      padding: 30px 20px 20px 30px;
+      .producer-links {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+// Alternate styles for row-with-ad-alt on degraded show page
+
+.row-with-ad-alt {
+  min-height: 0;
+
+  .col-content-alt {
+    @include breakpoint($md) {
+      max-height: 500px;
+    }
+
+    .content-row-alt {
+      min-height: 0;
+      padding-left: 0;
+
+      @include breakpoint($sm) {
+        padding-left: 45px;
+      }
+
+      @include breakpoint($md) {
+        padding-left: 0px;
+        padding-bottom: 30px;
+      }
+    }
+  }
+
+  .col-ad-alt {
+    margin-top: -120px;
+  }
+}

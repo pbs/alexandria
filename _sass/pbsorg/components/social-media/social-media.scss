@@ -1,0 +1,325 @@
+.social-media {
+  @extend %clearfix;
+  min-height: 380px;
+  border-top: solid 50px $white; //adds a 'fake' 20px space that allows for the offset logo
+  background-size: cover;
+  background-image: url("../images/fpo/social-media/social-media__bg--xs.jpg");
+  .video-landing & {
+    @include breakpoint($md) {
+      border-bottom: 10px solid $white;
+    }
+  }
+
+  @include breakpoint($sm) {
+    border: 0; //above $sm we don't need the 20px space
+    background-image: url("../images/fpo/social-media/social-media__bg--sm.jpg");
+  }
+
+  @include breakpoint($md) {
+    background-image: url("../images/fpo/social-media/social-media__bg--md.jpg");
+  }
+
+  @include breakpoint($lg) {
+    background-image: url("../images/fpo/social-media/social-media__bg--lg.jpg");
+  }
+
+  &__intro {
+    overflow: visible;
+    position: relative;
+    margin-top: 7.2rem;
+    margin-bottom: 12px;
+    color: $white;
+    font-size: 2.8rem;
+    font-weight: $light;
+    text-align: center;
+    text-shadow: 0px 2px 4px rgba($black, .8);
+    @include breakpoint($sm) {
+      margin-top: 3rem;
+      margin-bottom: 2rem;
+      font-size: 3.3rem;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    top: -110px;
+    left: 0;
+    right: 0;
+    width: 76px;
+    margin: auto;
+    display: inline-block;
+    padding: $bs-gutter/4;
+    border: solid 1px $gray-medium;
+    background: $white;
+    border-radius: 4px;
+    text-align: center;
+
+    @include breakpoint($sm) {
+      position: relative;
+      margin-right: 2.5rem;
+      padding: 2px;
+      top: 0;
+      width: 60px;
+      height: 60px;
+      img {
+        width: 49px;
+        margin-top: 2px;
+      }
+    }
+  }
+
+  &__wrapper {
+    margin-bottom: 5rem;
+    padding: 3rem 2rem 2rem 2rem;
+    border-top: solid 1px $gray-dark;
+    border-bottom: solid 1px $gray-dark;
+    background: $white;
+    background: rgba($white, .96);
+
+    @include breakpoint($sm) {
+      margin-left: $bs-gutter;
+      margin-right: $bs-gutter;
+      border: solid 1px $gray-dark;
+
+      .row {
+        margin-bottom: 1rem;
+      }
+      [class*="col"] {
+        border-right: $divider;
+        &:last-child {
+          border: 0;
+        }
+      }
+    }
+
+    @include breakpoint($md) {
+      margin-left: $bs-gutter*2;
+      margin-right: $bs-gutter*2;
+      padding-left: $bs-gutter*3;
+    }
+
+    @include breakpoint($lg) {
+      // make custom widths so that the hashtags column can accommodate hashtags of max 20 chars.
+      .col-lg-7 {
+        width: 55.6%;
+      }
+
+      .col-lg-2 {
+        width: 20.4%;
+      }
+
+      .col-lg-3 {
+        width: 24%;
+      }
+    }
+  }
+
+  &__tweets {
+
+    &__header {
+      @extend %clearfix;
+      //margin-top: 1rem;
+      text-align: center;
+
+      @include breakpoint($sm) {
+        text-align: left;
+      }
+
+      [class*="icon"] {
+        margin-right: 0.8rem;
+        font-size: 3.4rem;
+        color: $gray-darker;
+        position: relative;
+        top: 6px;
+        display: inline-block;
+
+        @include breakpoint($sm) {
+          float: left;
+          top: -6px;
+        }
+      }
+
+      .short-header {
+        margin-bottom: $bs-gutter;
+        // have to override block !important in 'responsive-visibility.scss'
+        display: inline-block !important;
+        @include breakpoint($sm) {
+          display: none !important;
+        }
+      }
+
+      h3 {
+        display: inline-block;
+        font-size: 2rem;
+        font-weight: $semibold;
+        color: $gray-darker;
+        margin-top: 5px;
+      }
+    }
+
+  }
+
+  .slick-track {
+    display: table; // have to do this so tweets all end up the same height, regardless of how long the text is
+  }
+
+  .tweet {
+    display: none;
+    float: none; // have to override the floating for the table cell to work
+    font-size: 2.2rem;
+    color: $gray-primary;
+    &:first-child,
+    &.slick-slide {
+      display: table-cell; // as a table cell, they will all be the same height
+    }
+    //sometimes links in the tweets come in without spaces in between
+    a {
+      + a {
+        &:before {
+          content: ' ';
+        }
+      }
+    }
+  }
+
+  .fb-follow,
+  .fb-like {
+    display: inline-block;
+    transform: scale(1.5);  // only way to make the follow button bigger
+    margin-left: 22px;
+    margin-top: $bs-gutter;
+    overflow: hidden; // because no one wants to see the facebook popup
+  }
+
+  &__links {
+
+    &__wrapper {
+      @extend %clearfix;
+      text-align: center;
+      color: $gray-darker;
+      padding-top: 40px;
+
+      @include breakpoint($sm) {
+        text-align: left;
+        padding-top: 30px;
+      }
+      @include breakpoint($md) {
+        padding-top: 20px;
+      }
+      p {
+        font-size: 1.8rem;
+        margin-bottom: 1.4rem;
+
+        @include breakpoint($sm) {
+          float: left;
+          margin-right: 1rem;
+          margin-top: 5px;
+        }
+      }
+    }
+
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: $bs-gutter;
+
+    @include breakpoint($sm) {
+      float: left;
+    }
+  }
+
+  &__link__li {
+    display: inline-block;
+    margin-right: 1rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+  }
+
+  &__link {
+    display: inline-block;
+    width: 3.5rem;
+    height: 3.5rem;
+    border: solid 1px $gray-medium;
+    border-radius: $radius;
+    text-align: center;
+    transition: background $duration;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      background: $gray-light;
+    }
+
+    &__label {
+      font-size: 0; //visually hiding the text
+    }
+
+    [class*="icon"] {
+
+      font-size: 2rem;
+      position: relative; // for nudging
+      width: 33px;
+    }
+
+    [class*="facebook"] {
+      top: 2px;
+      left: -2px;
+      color: $facebook-blue;
+    }
+
+    [class*="twitter"] {
+      top: 4px;
+      color: $twitter-blue;
+    }
+
+    [class*="tumblr"] {
+      top: 4px;
+      color: $tumbler-blue;
+    }
+
+    [class*="pinterest"] {
+      top: 5px;
+      color: $pinterest-red;
+    }
+
+    [class*="instagram"] {
+      top: 4px;
+      color: $instagram-blue;
+    }
+
+    [class*="youtube"] {
+      color: $youtube-red;
+    }
+  }
+
+  &__social-cta {
+    .social-cta__intro {
+      margin-top: 1rem;
+      font-size: 1.8rem;
+      color: $gray-darker;
+      font-weight: $semibold;
+    }
+  }
+
+  &__hashtags {
+    padding: 0 12px 0 $bs-gutter;
+
+    .hashtags__intro {
+      margin-top: 1rem;
+      font-size: 1.8rem;
+      color: $gray-darker;
+      font-weight: $semibold;
+    }
+    .hashtags {
+      list-style-type: none;
+      padding: 0;
+      font-size: 1.8rem;
+
+      .hashtag {
+        @include typography-truncate();
+      }
+    }
+  }
+}

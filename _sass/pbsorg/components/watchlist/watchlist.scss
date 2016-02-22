@@ -1,0 +1,236 @@
+body.watchlist {
+  // allow page to scroll as items are dragged down/up.
+  // see http://stackoverflow.com/questions/2489332/why-isnt-scrolling-working-in-my-jquery-ui-sortable
+  overflow-x: visible;
+}
+
+.watchlist-wrapper{
+  padding: 0 $bs-gutter ($bs-gutter * 4);
+  background-color: $gray-lighter;
+
+  @include breakpoint($sm) {
+    padding: 0;
+  }
+
+  @include breakpoint($lg) {
+    padding: 0 ($bs-gutter * 2) ($bs-gutter * 4);
+  }
+}
+
+.limit-message {
+  position: relative;
+  font-size: 1.4rem;
+  margin: 0 ($bs-gutter * 2) $bs-gutter 0;
+
+  @include breakpoint($sm) {
+    font-size: 1.6rem;
+    margin: 0 ($bs-gutter * 3) ($bs-gutter * 1.5) 18px;
+  }
+
+  @include breakpoint($md) {
+    font-size: 1.8rem;
+    margin-top: -($bs-gutter * 1.5);
+    width: 575px;
+  }
+
+  @include breakpoint($lg) {
+    margin-left: 2px;
+  }
+}
+
+div.watchlist-container {
+  background: $white;
+}
+
+.watchlist-result__link-container {
+  display: block;
+  box-shadow: $shadow;
+  @include aspect-ratio(16, 9);
+}
+
+article.watchlist-result {
+  background: $white;
+  border: 1px solid $gray-light;
+  border-width: 1px 0;
+  color: $gray-primary;
+  font-size: 1.6rem;
+  margin-top: -1px;
+  padding: $bs-gutter;
+
+  @include breakpoint($md) {
+    padding: ($bs-gutter * 2);
+  }
+
+  &:first-child {
+    border-top: 0;
+  }
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  .watchlist-result-image {
+    width: 100%;
+  }
+
+  .sort-col {
+    @include breakpoint($md) {
+      padding-right: 4px;
+    }
+  }
+
+  .poster-container {
+    height: auto;
+    display: block;
+    position: relative;
+
+    .progress {
+      margin-top: -10px;
+      position: relative;
+      background-color: rgba($white, 0.6);
+    }
+  }
+
+  .watchlist-handle {
+
+    @include breakpoint($sm-only) {
+      padding: 0 ($bs-gutter/2);
+    }
+
+    .watchlist-grabber {
+      display: inline-block;
+      height: 36px;
+      width: auto;
+      cursor: move;
+      vertical-align: top;
+      user-select: none;
+      touch-callout: none;
+      pointer-events: none;
+      box-shadow: none;
+
+      @include breakpoint($sm-only) {
+        height: 28px;
+      }
+    }
+
+  }
+
+  .watchlist-info-spacer {
+    height: 32px;
+    @include breakpoint($sm-only) {
+      height: 16px;
+    }
+  }
+
+  .btn-reorder {
+    font-weight: $normal;
+    display: inline-block;
+    font-size: 2.6rem;
+    height: 36px;
+    width: 39px;
+    text-align: center;
+    color: $blue-muted;
+    background-color: $gray-lighter;
+    border: 1px solid $blue-muted;
+    border-radius: $radius;
+    vertical-align: bottom;
+    margin-left: 3px;
+
+    @include breakpoint($sm-only) {
+      font-size: 2rem;
+      height: 29px;
+      width: 32px;
+    }
+  }
+
+  .link-remove {
+    font-family: $serif;
+    font-weight: $bold;
+    font-size: 1.4rem;
+    color: $blue;
+    margin-left: 8px;
+  }
+
+  .progress {
+    background-color: $gray-light;
+    border-radius: 0;
+    box-shadow: none;
+    height: 10px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    overflow: hidden;
+  }
+
+  .progress-bar-success {
+    background-color: $green;
+    height: 12px;
+  }
+
+  p.over-title {
+    font-size: 1.2rem;
+    margin: 0;
+    text-transform: uppercase;
+
+    @include breakpoint($md) {
+      font-size: 1.4rem;
+    }
+  }
+
+  .watchlist-result__title {
+    font-size: 1.8rem;
+    color: $gray-primary;
+    margin: ($bs-gutter / 4) 0 0;
+    padding-bottom: 8px;
+
+    @include breakpoint($md) {
+      font-size: 2.2rem;
+    }
+
+    a {
+      color: $gray-primary;
+    }
+  }
+
+  p.description {
+    margin: ($bs-gutter / 2) 0 0;
+    padding: ($bs-gutter / 2) 0;
+    font-size: 1.4rem;
+  }
+
+  p.info {
+    font-size: 1.4rem;
+    margin: ($bs-gutter / 2) 0 0;
+
+    .passport-logo-wrapper {
+      display: inline-block;
+      position: relative;
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+
+      .passport-logo {
+        width: 100%;
+        margin-top: -3px;
+      }
+    }
+  }
+
+  .info-space {
+    padding-right: 32px
+  }
+
+  .remove-links {
+    text-align: right;
+    width: 100%;
+  }
+
+  // right column - lets break it out of the grid, and into the gutter so it's closer to the image;
+  div.article-body {
+    margin: 0 0 0 (-$bs-gutter);
+
+    @include breakpoint($xs-only) {
+      margin: 0;
+    }
+
+  }
+
+}

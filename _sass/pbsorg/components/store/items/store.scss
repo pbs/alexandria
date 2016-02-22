@@ -1,0 +1,157 @@
+section.store-items {
+  padding: $bs-gutter;
+
+  @include breakpoint($screen-sm) {
+    padding: ($bs-gutter * 2);
+  }
+
+  // centered title is an image;
+  h1.section-title {
+    @include typography-l1-header();
+    font-size: 1rem;
+    margin: 0 0 $bs-gutter;
+    text-align: center;
+
+    // at the larger breakpoints - add more space under the header/logo;
+    @include breakpoint($sm) {
+      margin-top: $bs-gutter;
+    }
+
+    @include breakpoint($md) {
+      margin-bottom: ($bs-gutter * 2);
+    }
+  }
+
+  .col-sm-6:first-child {
+    @include breakpoint($sm-only) {
+      padding-top: $bs-gutter;
+    }
+  }
+
+  article:first-child {
+    @include breakpoint($xs-only) {
+      padding-bottom: $bs-gutter;
+      border-bottom: $divider;
+    }
+  }
+
+  article {
+    padding-top: $bs-gutter;
+
+    @include breakpoint($sm) {
+      padding-top: 0;
+    }
+
+    .col-xs-3 {
+      padding-right: 0;
+    }
+
+    // center the content images;
+    img {
+      display: block;
+      margin: 0 auto;
+      padding-top: $bs-gutter;
+
+      @include breakpoint($sm) {
+        padding-top: 0;
+      }
+
+      @include breakpoint($md) {
+        width: 100%;
+        padding-top: 0;
+      }
+    }
+
+    h1 {
+      @include typography-l2-header();
+      font-size: 2.5rem;
+      margin: 0;
+
+      @include breakpoint($sm) {
+        margin-top: $bs-gutter;
+      }
+
+      @include breakpoint($lg) {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  p.description {
+    color: $gray-primary;
+    font-size: 1.4rem;
+    margin: ($bs-gutter / 2) $bs-gutter 0 0;
+  }
+
+  // not always visible;
+  p.link {
+    font-family: $serif;
+    font-weight: $bold;
+    font-size: 1.4rem;
+    margin: ($bs-gutter / 2) 0 0;
+  }
+
+  // centered button at the bottom of the component;
+  p.explore-more {
+    margin: ($bs-gutter * 2) 0 0;
+    text-align: center;
+    .btn:hover {
+      background: rgba($blue, 0.1);
+    }
+  }
+
+
+
+  // css copied from another component...
+
+
+  // class to denote dividing bars should be added;
+  // these columns need to be equal height;
+  // and at least as tall as their parent;
+  div.col-divider {
+    // adjust the styles when the columns are stacked instead of side-by-side;
+    @include breakpoint($sm) {
+      // ugh, important;
+      // it's used because of the custom grid and @extend in that grid;
+      padding-right: ($bs-gutter * 2) !important;
+    }
+
+    + div.col-divider {
+      margin: ($bs-gutter * 2) 0 0;
+      position: relative;
+
+      // adjust the styles when the columns are stacked instead of side-by-side;
+      @include breakpoint($sm) {
+        margin: 0;
+        padding-left: ($bs-gutter * 2);
+      }
+
+      &:before {
+        content: "";
+        display: none;
+        width: 1px;
+        background: $divider-color;
+        position: absolute;
+        top: (-$bs-gutter / 2);
+        bottom: (-$bs-gutter / 2);
+        left: 0;
+
+        // hide the dividing border when these columns are stacked instead of side-by-side;
+        @include breakpoint($sm) {
+          display: block;
+        }
+      }
+    }
+
+    &:last-child {
+      // ugh, important;
+      // it's used because of the custom grid and @extend in that grid;
+      padding-right: 0 !important;
+
+      // except when we need that extra space from the ad column;
+      @include breakpoint($lg) {
+        padding-right: $bs-gutter !important;
+      }
+    }
+  }
+}

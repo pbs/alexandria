@@ -1,0 +1,79 @@
+// container for all dots (slide pagination);
+.slick-dots {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  bottom: (-$bs-gutter * 2.5);
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  z-index: 3;
+
+  @include breakpoint($sm) {
+    bottom: ($bs-gutter / 2);
+  }
+
+  // dot container;
+  li {
+    position: relative;
+    display: inline-block;
+    height: $bs-gutter;
+    width: $bs-gutter;
+    margin: 0;
+    padding: ($bs-gutter / 4);
+    cursor: pointer;
+
+    // another dot container;
+    button {
+      font-size: 0;
+      line-height: 0;
+      display: block;
+      height: ($bs-gutter / 2);
+      width: ($bs-gutter / 2);
+      padding: 0;
+      cursor: pointer;
+      color: transparent;
+      border: 0;
+      outline: none;
+      background: transparent;
+
+      &:hover,
+      &:focus {
+        outline: none;
+
+        &:before {
+          opacity: 1;
+        }
+      }
+
+      // dot;
+      &:before {
+        content: "";
+        display: block;
+        height: ($bs-gutter / 2);
+        width: ($bs-gutter / 2);
+        border-radius: 100%;
+        background: $gray-light;
+        transition: opacity 0.5s;
+
+        @include breakpoint($sm) {
+          background: $white;
+          opacity: 0.6;
+        }
+      }
+    }
+
+    // active state;
+    &.slick-active button:before {
+      background: $gray-dark;
+
+      @include breakpoint($sm) {
+        background: $white;
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+.show-description {
+  max-width: 700px;
+  background-color: $white;
+  color: $gray-darker;
+
+  @include breakpoint($xs) {
+    padding-top: 0;
+    margin: 0 auto;
+  }
+
+  // move this up into the gutter;
+  @include breakpoint($sm) {
+    margin-top: -$bs-gutter;
+    margin-left: -$bs-gutter;
+  }
+
+  @include breakpoint($md) {
+    margin: 0 10px 0 -10px;
+  }
+
+  &__title {
+    color: $gray-primary;
+    font-weight: $bold;
+    font-size: 3.4rem;
+    margin: 0;
+    text-align: center;
+    padding-top: $bs-gutter;
+
+    @include breakpoint($sm) {
+      padding-top: 0;
+    }
+  }
+
+  p {
+    margin: $bs-gutter 0;
+
+    &.info {
+      font-size: 1.9rem;
+      font-weight: $normal;
+      font-style: italic;
+      margin: ($bs-gutter / 2) 0;
+      text-align: center;
+      padding-top: $bs-gutter;
+      @include typography-truncate();
+
+      @include breakpoint($sm) {
+        margin: 0;
+        text-align: left;
+        padding-bottom: $bs-gutter;
+        padding-top: 0;
+      }
+
+      @include breakpoint($md) {
+        padding-bottom: 0;
+      }
+    }
+
+    &.favorite {
+      margin: 0 0 $bs-gutter 0;
+
+      @include breakpoint($xs-only) {
+        margin-top: $bs-gutter;
+        text-align: center;
+      }
+    }
+
+    &.description {
+      border-top: $divider;
+      border-width: 1px 0;
+      font-size: 1.6rem;
+      margin: $bs-gutter/2 0 0 0;
+      padding: $bs-gutter 0;
+
+      @include breakpoint($xs-only) {
+        margin: 0 auto;
+      }
+
+      @include breakpoint($md-only) {
+        font-size: 1.4rem;
+      }
+
+      @include breakpoint($lg) {
+        margin-right: $bs-gutter;
+      }
+    }
+  }
+
+   .funding {
+    border-top: $divider;
+
+      .underwriting {
+        font-size: 1.45rem;
+        font-weight: $normal;
+        font-style: italic;
+      }
+    }
+
+  .more-detail {
+    font-style: italic;
+    font-size: 1.4rem;
+
+    @include breakpoint($md-only) {
+        font-size: 1.2rem;
+      }
+  }
+}

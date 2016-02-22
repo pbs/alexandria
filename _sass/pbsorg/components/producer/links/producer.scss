@@ -1,0 +1,174 @@
+// Custom breakpoint for xs screens
+$over400: 400px;
+
+.producer-links-wrapper {
+  padding: 10px;
+
+  @include breakpoint($over400) {
+    padding: 25px;
+  }
+
+  @include breakpoint($sm) {
+    padding: 0;
+  }
+}
+
+.producer-links {
+  margin: 0 auto;
+  border-radius: $radius;
+  text-align: center;
+  background-color: $gray-light;
+  max-width: 400px;
+  float: none;
+  padding: $bs-gutter;
+
+  @include breakpoint($over400) {
+    max-width: 500px;
+    padding: ($bs-gutter * 2) ($bs-gutter * 4);
+  }
+
+  @include breakpoint($sm) {
+    margin: -($bs-gutter) 0 0 0;
+    max-width: 400px;
+    border-left: 2px solid $gray-lighter;
+    border-right: 2px solid $gray-lighter;
+    border-radius: 0;
+    float: right;
+    padding: 20px;
+  }
+
+  @include breakpoint($lg) {
+    min-width: 250px;
+    margin-left: -($bs-gutter);
+    padding: 14px 20px 14px 20px;
+
+  }
+
+  h1.section-title {
+    font-size: 1rem; // because the content is an image;
+    margin: 0;
+
+    img {
+      display: block;
+      margin: 0 auto;
+
+      @include breakpoint($lg) {
+        margin: 0;
+      }
+    }
+  }
+
+
+  p.explore-more {
+    text-align: center;
+
+    @include breakpoint($sm) {
+      padding-left: 0px;
+    }
+
+    a {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      // we need as much space as we can use;
+      padding-left: 10px;
+      padding-right: 10px;
+      width: 100%;
+
+      @include breakpoint($md) {
+        display: block;
+      }
+    }
+  }
+
+  h2 {
+    color: $gray-darker;
+    font-weight: $bold;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    text-align: left;
+    text-transform: uppercase;
+    margin-top: 0;
+
+    @include breakpoint($over400) {
+      font-size: 1.2rem;
+    }
+
+    @include breakpoint($sm) {
+      font-size: 1rem;
+    }
+  }
+
+  .producer-feature {
+    position: relative;
+    margin: 0 auto;
+    text-align: left;
+
+    img {
+      min-width: 100%;
+    }
+
+    .featured-link {
+      display: inline-block;
+      font-size: 1.4rem;
+
+      @include breakpoint($over400) {
+        font-size: 1.6rem;
+      }
+
+      @include breakpoint($md) {
+        font-size: 1.8rem;
+      }
+
+    }
+  }
+
+  .list-unstyled {
+    padding: 25px 15px 0px 25px;
+    text-align: left;
+    margin: 0 auto;
+    font-size: 1.7rem;
+
+    @include breakpoint($md) {
+      padding-top: 15px;
+    }
+  }
+
+  li {
+    a {
+      display: block;
+    }
+
+    + li {
+      border-top: $divider;
+      margin-top: $bs-gutter;
+      padding-top: $bs-gutter;
+    }
+  }
+}
+
+// style the official website button when there is no producer content
+.show {
+  .row-with-ad{
+      .producer-links {
+          background-color: $gray-lighter;
+
+          .subtitle {
+              text-transform: uppercase;
+              font-family: $sans-serif;
+              font-size: 12px;
+              font-weight: bold;
+              color: gray;
+              text-align: left;
+              padding: 10px 0px;
+              margin-bottom: 0;
+          }
+          .list-unstyled {
+              padding: 0;
+          }
+      }
+
+    .explore-more {
+      text-align: center;
+    }
+  }
+}

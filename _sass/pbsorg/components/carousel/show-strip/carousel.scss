@@ -1,0 +1,84 @@
+.carousel-show-strip {
+  padding: ($bs-gutter * 4) $bs-gutter;
+
+  @include breakpoint($screen-sm) {
+    padding-right: ($bs-gutter * 2);
+    padding-left: ($bs-gutter * 2);
+  }
+
+  .section-title {
+    margin: 0 0 ($bs-gutter / 2);
+    color: $gray-darker;
+    font-weight: $bold;
+    font-size: 2.1rem;
+    text-transform: uppercase;
+  }
+
+  // carousel strip at the top of the component;
+  .carousel-container {
+    // we're going to show half of the last ARTICLE tag (slide);
+    // these styles set the container to allow for this;
+    overflow: hidden;
+    // right margin: expand the carousel into the gutter set by the component container so images bleed off the page;
+    // left margin: expand the carousel into the gutter so the padding (for the drop shadow) doesn't offset the image;
+    margin: 0 (-$bs-gutter) 0 -5px;
+    white-space: nowrap;
+
+    // provide more space for images to bleed off the page;
+    @include breakpoint($sm) {
+      margin-right: (-$bs-gutter * 2);
+    }
+  }
+
+  .show-promo {
+    // need a little padding to let box shadow be seen
+    padding-top: 3px;
+    padding-right: $bs-gutter;
+    padding-bottom: 3px;
+
+    @include breakpoint($sm) {
+      padding-right: ($bs-gutter * 2);
+    }
+
+    a,
+    img {
+      display: block;
+    }
+
+    img {
+      box-shadow: $shadow;
+      width: 100%;
+      max-width: 237px;
+    }
+  }
+
+  // hide additional slides before JS is initialized;
+  div.carousel-slide + div.carousel-slide {
+    display: none;
+  }
+
+  // once Slick is init, re-show the slides;
+  .slick-initialized  {
+    div.carousel-slide + div.carousel-slide {
+      display: block;
+    }
+
+    .carousel-show-strip__image-link {
+      @include fallback-gradient(#09385d, $blue, #1879C4, 20%);
+      .lazyload {
+        @include fallback-gradient($gray-medium, $gray-light, $gray-lighter, 50%);
+      }
+    }
+  }
+
+  &__image-link {
+    display: block;
+    @include aspect-ratio(9, 13.45);
+    @include fallback-text(data-gtm-label);
+    max-width: 230px;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

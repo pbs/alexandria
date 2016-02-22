@@ -1,0 +1,51 @@
+.page-header { // nested here to avoid changing styles on search results page
+  .header-search {
+
+    @include breakpoint($sm-xs-only) {
+      width: 95%;
+      margin-top: 15px;
+      border: 0;
+      border-bottom: 1px solid $gray-medium;
+      border-radius: 0;
+      background-color: transparent;
+      color: $gray-darker;
+      font-size: 1.6rem;
+    }
+
+    @include breakpoint($md) {
+      position: absolute;
+      top: 15px;
+      left: 9px;
+      width: 350px;
+      height: 42px;
+      font-size: 1.4rem;
+    }
+  }
+
+  .btn--search {
+    position: absolute;
+    top: 19px;
+    right: 6%;
+    padding: 5px 5px 0;
+    color: $gray-medium;
+    font-size: 2.8rem;
+
+    &:hover,
+    &:focus {
+      color: $gray-medium;
+    }
+
+    @include breakpoint($md) {
+      top: 20px;
+      right: 12px;
+      padding: 9px 15px 5px;
+      color: $blue;
+      font-size: 1.6rem;
+
+      &:hover,
+      &:focus {
+        color: $blue;
+      }
+    }
+  }
+}

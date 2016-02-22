@@ -1,0 +1,40 @@
+%clearfix {
+  &:before,
+  &:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// used to move the relevant page elements left or right when the mobile menu is invoked
+%mobile-menu {
+
+  transition: all $duration;
+
+  .nav-is-open & {
+    transform: translateX($mobile-menu-ratio);
+
+    @include breakpoint($mobile-menu-cap) {
+      transform: translateX($mobile-menu-width);
+    }
+
+
+  }
+
+  .station-is-open & {
+    transform: translateX(-$mobile-menu-ratio);
+
+    @include breakpoint($mobile-menu-cap) {
+      transform: translateX(-$mobile-menu-width);
+    }
+
+    @include breakpoint($md) {
+      transform: none;
+    }
+  }
+}
+
+

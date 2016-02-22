@@ -1,0 +1,114 @@
+@font-face {
+  font-family: "pbs-icons";
+  src:url("../fonts/pbs-icons.eot");
+  src:url("../fonts/pbs-icons.eot?#iefix") format("embedded-opentype"),
+  url("../fonts/pbs-icons.woff") format("woff"),
+  url("../fonts/pbs-icons.ttf") format("truetype"),
+  url("../fonts/pbs-icons.svg#pbs-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^=icon-] {
+  display: inline-block;
+}
+
+[class^="icon-pbs-"]:before,
+[class*=" icon-pbs-"]:before {
+  font-family: "pbs-icons" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// list of icons
+$icons : (
+  twitter-square: e000,
+  twitter: e603,
+  facebook: e602,
+  retweet: e001,
+  reply-mail: e002,
+  mail: e904,
+  favorite: e003,
+  facebook-square: e004,
+  instagram: e600,
+  pinterest: e601,
+  youtube: e605,
+  youtube-2: e604,
+  tumblr: e606,
+  tumblr-square: e607,
+  checkmark: e005,
+  share: e006,
+  embed2: e903,
+  cheveron-down: e60a,
+  cheveron-up: e60b,
+  search: e60c,
+  pbshead: e60d,
+  grid: e60e,
+  menu-hamburger: e60f,
+  remove: e610,
+  refresh: e611,
+  google: e612,
+  google-plus: e613,
+  google-plus2: e905,
+  cc: e614,
+  filter: e615,
+  play: e608,
+  pause: e609,
+  play-2: e901,
+  pause-2: e900
+);
+
+@each $icon, $value in $icons {
+  .icon-pbs-#{$icon}:before {
+    content: #{"\"\\"}#{$value + "\""};
+  }
+}
+
+.icon-pbs-twitter-square:before {
+  color: $twitter-blue;
+}
+
+.icon-pbs-facebook-square:before {
+  color: $facebook-blue;
+}
+
+.icon-pbs-google-plus2:before {
+  color: $gmail-red;
+}
+
+// inserting the play icon as a pseudo element. using ::before as ::after is being used for fallback gradients
+.has-play-icon {
+
+  &::before {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 64px;
+    height: 64px;
+    margin-top: -32px;
+    margin-left: -32px;
+    background-image: url('../images/svg/play.svg');
+    background-position: 0 0;
+    content: '';
+    z-index: 5;
+  }
+
+  &:hover,
+  &:focus {
+    &::before {
+      display: block;
+
+      // ensuring the icon doesn't appear on touch devices
+      .touchevents & {
+        display: none;
+      }
+    }
+  }
+}

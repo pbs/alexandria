@@ -1,0 +1,41 @@
+.popover-content {
+    display: none;
+  color: $gray-primary;
+
+  .popover__logo {
+    max-width: 300px;
+  }
+
+  .sub-title {
+    font-weight: $light;
+    font-style: italic;
+    font-size: 1.4rem;
+    margin: ($bs-gutter / 2) 0 0;
+  }
+
+  .description {
+    font-size: 1.6rem;
+    margin: ($bs-gutter / 2) 0 0;
+    padding-bottom: 32px;
+  }
+
+  .button {
+    font-size: 1.4rem;
+    margin: $bs-gutter 0 0;
+
+    .btn {
+      padding: $bs-gutter;
+
+      @include breakpoint($md) {
+        padding: auto;
+      }
+    }
+
+    a {
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

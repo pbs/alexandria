@@ -1,0 +1,501 @@
+// skip navigation link
+.skip-link {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 0;
+  background: $white;
+  font-size: 1.8rem;
+  text-align: center;
+  overflow: hidden;
+  z-index: 2000;
+
+  &:focus {
+    height: auto;
+    padding: $bs-gutter;
+  }
+}
+
+.page-header {
+  @extend %mobile-menu;
+
+  // clearing out bootstrap styles
+  padding-bottom: 0;
+  margin: 0;
+
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100vw;
+  height: 50px;
+  z-index: 5;
+  background: $white;
+  border-bottom: $divider;
+
+  @include breakpoint($md) {
+    justify-content: flex-start;
+    max-width: $max-width;
+    height: $page-header-height;
+    margin: 0 auto;
+  }
+
+  &__brand {
+    align-self: flex-end;
+    padding-right: 5px;
+
+    @include breakpoint($md) {
+      padding: 10px 20px;
+    }
+
+    .pbs-logo {
+      margin-bottom: 5px;
+
+      @include breakpoint($md) {
+        margin-bottom: 7px;
+      }
+    }
+  }
+
+  &__main-nav-trigger {
+    position: relative;
+    order: -1;
+    margin-right: auto;
+    border: 0;
+    background: transparent;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include breakpoint($md) {
+      display: none;
+    }
+
+    .icon-pbs-menu-hamburger {
+      padding: 3px $bs-gutter 0;
+      color: $gray-dark;
+      font-size: 2.6rem;
+
+      &:focus,
+      .nav-is-open & {
+        border-radius: $radius;
+        background: $gray-lighter;
+      }
+    }
+  }
+
+  &__station-container {
+    // avoid text jumping to accommodate border when it appears
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+
+    .station-is-open & {
+      border-right: 1px solid $gray-light;
+      border-left: 1px solid $gray-light;
+      background-color: $gray-lighter;
+    }
+
+    &:hover,
+    &:focus {
+      .station-is-open &,
+      .no-touchevents & {
+        border-right: 1px solid $gray-light;
+        border-left: 1px solid $gray-light;
+        background-color: $gray-lighter;
+
+        @include breakpoint($md) {
+          height: $page-header-height;
+          padding-bottom: 11px;
+        }
+
+        // hide user left-hand pipe when station parent is hovered
+        + .page-header__nav-items {
+          .nav-item--user:before {
+            width: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &__station-trigger {
+    position: relative;
+    height: 50px;
+    padding: 0 14px;
+    border: 0;
+    background: transparent;
+
+    @include breakpoint($md) {
+      width: 100%;
+      height: $page-header-height;
+
+      // this is here because firefox acts strangely when buttons have flexbox applied to it
+      &__inner {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      img {
+        display: inline;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      outline: none;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 9px;
+      bottom: 9px;
+      left: 0;
+      width: 1px;
+      background: $divider-color;
+      content: '';
+
+      @include breakpoint($md) {
+        top: 20px;
+        bottom: 20px;
+      }
+
+      .page-header__station-container:hover &,
+      .page-header__station-container:focus & {
+        .no-touchevents & {
+          width: 0;
+        }
+      }
+
+      .station-is-open & {
+        width: 0;
+      }
+    }
+
+    &::after {
+      right: 0;
+      left: 100%;
+    }
+  }
+
+  &__nav-items {
+    position: absolute;
+    top: 0;
+    left: -$mobile-menu-ratio;
+    width: $mobile-menu-ratio;
+    max-width: $mobile-menu-width;
+    margin: 0;
+    min-height: 100vh;
+    padding-left: 0;
+    transition: all $duration;
+    background: $gray-lighter;
+    box-shadow: $inset-shadow-right;
+
+    @include breakpoint($mobile-menu-cap) {
+      left: -$mobile-menu-width;
+    }
+
+    @include breakpoint($md) {
+      display: flex;
+      min-height: 0;
+      position: static;
+      flex-grow: 1;
+      max-width: none;
+      border-right: 0;
+      background: $white;
+      box-shadow: none;
+    }
+
+    .nav-is-open & {
+      height: 100vh;
+      overflow: scroll;
+      overflow-x: hidden;
+      overflow-y: auto;
+      outline: solid 1px transparent; // don't ask me why, but this fixes shadows on MSEdge
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+}
+
+.caret-position {
+  display: inline-block;
+  width: 15px;
+  height: auto;
+  margin-left: 6px;
+
+  .page-header__station-trigger & {
+    transform: rotate(-90deg);
+
+    .station-is-open & {
+      transform: rotate(90deg);
+    }
+
+    @include breakpoint($md) {
+      transform: none;
+
+      .page-header__station-container:hover & {
+        .no-touchevents & {
+          transform: rotate(180deg);
+        }
+      }
+
+      .station-is-open & {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .nav-item--user & {
+    display: none;
+
+    @include breakpoint($md) {
+      display: inline-block;
+    }
+
+    .user-dropdown-is-open & {
+      transform: rotate(180deg);
+    }
+  }
+
+  .nav-item--user:hover & {
+    .no-touchevents & {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.nav-item {
+  padding-bottom: 40px;
+  padding-left: 20px;
+  list-style-type: none;
+
+  @include breakpoint($md) {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    // avoid text jumping to accommodate border when it appears
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+
+    &:hover,
+    &:focus,
+    &.is-open {
+      height: $page-header-height;
+      padding-bottom: 11px;
+      border-right: 1px solid $gray-light;
+      border-left: 1px solid $gray-light;
+      background-color: $gray-lighter;
+    }
+  }
+
+  > a {
+    display: flex;
+    align-items: center;
+    color: $gray-primary;
+    font-size: 2rem;
+    font-weight: $light;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    @include breakpoint($md) {
+      font-size: 1.6rem;
+      font-weight: $normal;
+    }
+  }
+
+  .search-label {
+    display: none;
+
+    @include breakpoint($md) {
+      display: block;
+    }
+  }
+
+  &--search {
+    padding-bottom: 25px;
+    padding-left: 20px;
+
+    @include breakpoint($md) {
+      order: 1;
+      padding-bottom: 10px;
+    }
+  }
+
+  &--user {
+    position: relative;
+    padding-bottom: 20px;
+    padding-left: 0;
+
+    @include breakpoint($md) {
+      position: static; // needed or IE11 and flexbox don't play well
+      height: 70px;
+      margin-right: auto;
+      margin-left: -1px;
+      padding: 10px 15px;
+
+      &:hover,
+      &:focus {
+        .no-touchevents & {
+          border-right: 1px solid $gray-light;
+          border-left: 1px solid $gray-light;
+          background-color: $gray-lighter;
+
+          &:before {
+            width: 0;
+          }
+        }
+
+        .touchevents & {
+          border-right: 1px solid transparent;
+          border-left: 1px solid transparent;
+          background-color: transparent;
+        }
+      }
+
+      .user-dropdown-is-open & {
+        .touchevents & {
+          border-right: 1px solid $gray-light;
+          border-left: 1px solid $gray-light;
+          background-color: $gray-lighter;
+
+          &:before {
+            width: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &--home {
+    padding-left: 20px;
+
+    @include breakpoint($md) {
+      display: none;
+    }
+
+    @include breakpoint($lg) {
+      display: flex;
+    }
+  }
+
+  &--shop {
+    position: relative;
+  }
+
+  &--resume-video {
+    padding: 0 10px 30px;
+
+    &.is-hidden {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .progress {
+      position: relative;
+      height: 12px;
+      margin-top: -20px;
+      margin-bottom: 4px;
+      border-radius: 0;
+      background-color: rgba($gray-light, .7);
+      box-shadow: none;
+      overflow: hidden;
+    }
+
+    .progress-bar-success {
+      height: 13px;
+      background-color: $green;
+    }
+
+    .resume-video__link {
+      margin-bottom: ($bs-gutter / 2);
+      padding: 0;
+    }
+
+    &__title {
+      padding-bottom: 4px;
+      border-bottom: 1px solid $gray-medium;
+      color: $gray-primary;
+      font-size: 1.4rem;
+      font-weight: $bold;
+      text-transform: uppercase;
+    }
+
+    &__label {
+      font-size: 1.4rem;
+    }
+
+    @include breakpoint($md) {
+      display: none;
+    }
+  }
+
+  &--search__form {
+    position: relative;
+
+    @include breakpoint($md) {
+      display: none;
+      position: absolute;
+      top: $page-header-height;
+      right: 0;
+      width: 366px;
+      height: $page-header-height;
+      border: $divider;
+      border-top: 0;
+      background: $gray-lighter;
+
+      .nav-item--search:hover &,
+      .nav-item--search:focus &,
+      .nav-item--search.is-open & {
+        display: block;
+      }
+    }
+  }
+}
+
+.dropdown {
+  //display: none;
+  position: absolute;
+  top: $page-header-height;
+  left: 0;
+  width: 100%;
+  max-width: $max-width;
+  padding: 20px;
+  border: 1px solid $gray-light;
+  border-top: 0;
+  background: $gray-lighter;
+  z-index: 2;
+  visibility: hidden;
+  transition: visibility 100ms linear 150ms;
+
+  .nav-item:hover & {
+    .no-touchevents & {
+      @include breakpoint($md) {
+        visibility: visible;
+      }
+    }
+  }
+}
+
+.nav-is-open {
+  .ad--adhesion {
+    display: none;
+  }
+}
+
+@import 'station';
+@import 'shows';
+@import 'user';
+@import 'tv_schedules';
+@import 'shop';
+@import 'donate';
+@import 'search';

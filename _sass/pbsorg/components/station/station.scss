@@ -1,0 +1,300 @@
+.station {
+  background-color: $white;
+
+  &.l-container__inner {
+    @include breakpoint($sm) {
+      background-color: $gray-lighter;
+      background-image: linear-gradient(#1E6DB2, #BCDBED);
+    }
+  }
+  // container for all the content in this component;
+  .section-body {
+    padding: ($bs-gutter * 2) $bs-gutter ($bs-gutter * 4) $bs-gutter;
+    background-position: bottom center;
+    background-attachment: fixed; //to get the parallax effect
+
+    @include breakpoint(max-width $screen-xs-max) {
+      background-image: none !important; // don't want a background below sm, overriding the JS with !important
+    }
+
+    @include breakpoint($sm) {
+      padding: ($bs-gutter * 1.5) ($bs-gutter * 2.5);
+      background-size: cover;
+    }
+
+    @include breakpoint($md) {
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: $bs-gutter*4;
+    }
+
+    @include breakpoint($lg) {
+      padding-left: $bs-gutter*3;
+      padding-right: $bs-gutter*3;
+      padding-top: $bs-gutter*4;
+      background-size: 1280px auto;
+    }
+
+    @include breakpoint((min-height 1280px)($lg)) {
+      background-size: 100vh auto;
+    }
+  }
+
+  // translucent box wrapping content
+  .station__wrapper {
+    @extend %clearfix;
+    background: $white;
+    background: rgba($white, .95);
+
+    @include breakpoint($sm) {
+      padding: ($bs-gutter*1.5) $bs-gutter ($bs-gutter*1.5) $bs-gutter;
+      margin: 0 0 20rem 0;
+    }
+
+    @include breakpoint($md) {
+      margin-bottom: 26rem;
+    }
+
+    > [class*="col"] {
+
+      @include breakpoint($sm) {
+        padding-top: $bs-gutter;
+      }
+
+      &:nth-child(2) {
+        padding-left: 0;
+
+        @include breakpoint($sm) {
+          border-left: solid 1px $gray-light;
+        }
+
+        @include breakpoint($md) {
+          padding-left: $bs-gutter;
+          border-right: solid 1px $gray-light;
+        }
+      }
+      &:last-child {
+        border-right: 0;
+      }
+    }
+  }
+
+  // container for each column of content;
+  // this is the target of JS that sets equal heights;
+  .section-content {
+    position: relative;
+    margin-bottom: $bs-gutter / 2;
+
+    // left column;
+    &.station-donate {
+      padding-top: $bs-gutter;
+      padding-bottom: $bs-gutter;
+      @include breakpoint($sm) {
+        padding-right: $bs-gutter;
+      }
+
+    }
+
+    .station__tagline {
+      display: none;
+
+      @include breakpoint($sm) {
+        display: block;
+      }
+
+      margin-bottom: $bs-gutter * 2;
+      color: $gray-dark;
+      font-family: $serif;
+      font-size: 1.3rem;
+      font-weight: $bold;
+      text-align: center;
+    }
+    // middle and right column;
+    &.station-links {
+      padding-right: $bs-gutter;
+      padding-left: $bs-gutter;
+
+      // at mobile these are stacked, so no border for the second column;
+      @include breakpoint($xs-only) {
+        padding: ($bs-gutter * 2) 0 0;
+      }
+
+      @include breakpoint($sm) {
+        padding-left: $bs-gutter * 4;
+      }
+
+      @include breakpoint($md) {
+        padding-right: $bs-gutter * 1.5;
+        padding-left: $bs-gutter * 3;
+      }
+
+      li:first-child {
+        padding-top: 0;
+      }
+
+      li:last-child {
+        padding-bottom: 0;
+        margin-bottom: $bs-gutter;
+      }
+    }
+
+    // right column (when visible);
+    &.station-schedule {
+      padding-left: $bs-gutter;
+
+      &--just-link {
+        text-align: center;
+      }
+
+      .section-title {
+        margin-bottom: $bs-gutter;
+        font-size: 2.4rem;
+      }
+    }
+  }
+
+  // left column;
+  .section-title {
+    @include typography-l1-header();
+    margin: 0;
+    font-size: 1.9rem;
+    text-align: center;
+  }
+
+  // container for the sponsor logo;
+  .sponsor {
+    margin: ($bs-gutter) 0;
+
+    .station-logo {
+      @include breakpoint($md-only) {
+        max-width: 200px;
+      }
+    }
+
+    a,
+    img {
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+  }
+
+  .donate {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    text-align: center;
+
+    @include breakpoint($sm) {
+      padding: $bs-gutter;
+    }
+
+    .station-donate {
+      background-color: $red;
+      border-color: darken($red, 15%);
+    }
+  }
+
+  // center column;
+  // list of links for this station;
+  ul {
+    font-size: 1.7rem;
+    font-weight: $semibold;
+    margin: 0;
+
+    @include breakpoint($sm) {
+      font-size: 1.6rem;
+    }
+  }
+
+  li {
+    margin-bottom: $bs-gutter * 2; // 32px
+    padding: 0;
+    text-align: center;
+
+    @include breakpoint($sm) {
+      text-align: left;
+    }
+  }
+
+  // right column;
+  // view whole schedule
+  p.view-all {
+    font-size: 1.5rem;
+    margin: -2px 0 0; // negative margin to it lines up with the h2;
+  }
+
+  // schedule header;
+  .station-schedule__header {
+    margin: 0;
+    color: $gray-darker;
+    font-weight: $bold;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  // schedule table;
+  .table-striped {
+    color: $gray-primary;
+    font-size: 1.6rem;
+    margin: ($bs-gutter / 2) 0 0;
+
+    tr {
+      background: transparent;
+
+      &:first-child td {
+        border-width: 0;
+      }
+    }
+
+    td {
+      border-color: $divider-color;
+      padding: $bs-gutter ($bs-gutter / 2);
+
+      &:first-child {
+        padding-left: 0;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+.stationContentMobile {
+  text-align: center;
+
+  .station-intro {
+    font-size: 2rem;
+    padding-top: $bs-gutter;
+  }
+
+  .station-links {
+    text-align: left;
+    padding: ($bs-gutter * 2) ($bs-gutter * 3);
+
+    .station-links-header {
+      font-size: 1.6rem;
+      font-weight: $bold;
+      padding-bottom: 3px;
+      border-bottom: 2px solid $divider-color;
+    }
+
+    .padded-div { // for increased specificity to override styles in page-header.scss
+
+      .local-station-regular {
+        font-size: 2rem;
+        font-weight: $semibold;
+        color: $blue;
+        line-height: 1;
+        display: block;
+        height: auto;
+        padding: $bs-gutter 0;
+        text-align: left;
+      }
+    }
+  }
+}

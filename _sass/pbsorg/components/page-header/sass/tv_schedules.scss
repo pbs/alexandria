@@ -1,0 +1,104 @@
+.tv-schedules-dropdown {
+  display: none;
+  padding: 0 0 ($bs-gutter * 2) ($bs-gutter * 3);
+  flex-direction: column;
+
+  @include breakpoint($md) {
+    .nav-item:hover & {
+      .no-touchevents & {
+        display: flex;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: $bs-gutter;
+    padding: ($bs-gutter / 2) 0;
+    color: $gray-darker;
+    font-size: 15px;
+    font-weight: $semibold;
+    text-transform: uppercase;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: row;
+
+    h3 {
+      margin-top: 0;
+      padding-top: ($bs-gutter / 2);
+    }
+
+    &--day {
+      width: 49%;
+      padding-bottom: ($bs-gutter * 4);
+
+      &:nth-of-type(2) {
+        padding-left: ($bs-gutter * 2);
+        border-left: $divider;
+
+        @include breakpoint($lg) {
+          padding-left: ($bs-gutter * 3);
+        }
+      }
+
+      ul {
+        padding-left: 0;
+      }
+    }
+  }
+  
+
+  &__individual-show {
+    display: flex;
+    margin-right: ($bs-gutter * 4);
+    padding: ($bs-gutter / 2) 0 ($bs-gutter / 2) 5px;
+    border-bottom: $divider;
+    font-size: 1.4rem;
+    flex-direction: row;
+
+    @include breakpoint($lg) {
+      margin-right: ($bs-gutter * 5);
+    }
+
+    &:last-of-type {
+      border: 0;
+    }
+
+    &__time {
+      width: 20%;
+
+      @include breakpoint($lg) {
+        width: 18%;
+      }
+    }
+
+    &__title {
+      width: 75%;
+
+      @include breakpoint($lg) {
+        width: 81%;
+      }
+    }
+
+  }
+
+  &__footer {
+    margin: (- $bs-gutter * 4) ($bs-gutter * 4) $bs-gutter 0;
+
+    a {
+      float: right;
+      color: $blue !important; //necessary for override
+      font-family: $serif;
+      font-size: 1.4rem !important; //necessary for override
+      font-weight: $bold;
+      letter-spacing: 1px;
+      text-decoration: none;
+      padding-top: $bs-gutter;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.funders {
+  @extend %clearfix;
+  margin-bottom: $bs-gutter;
+
+  .section-title {
+    display: inline-block;
+    margin: ($bs-gutter / 2) $bs-gutter ($bs-gutter / 2) 0;
+    color: $gray-darker;
+    font-size: 1.2rem;
+    font-weight: $semibold;
+    line-height: 1.8;
+
+    // there are a couple breakpoints where we have room for three logos next to this title
+    @include breakpoint(550px) {
+      float: left;
+    }
+
+    // at $sm we need to go back to no float
+    @include breakpoint($sm) {
+      float: none;
+    }
+
+    // finally, at the largest breakpoint, we have room for all three again
+    @include breakpoint($lg) {
+      float: left;
+    }
+  }
+
+  &__logo {
+    margin-right: $bs-gutter;
+    margin-bottom: $bs-gutter;
+    float: left;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  iframe {
+    display: inline;
+  }
+}

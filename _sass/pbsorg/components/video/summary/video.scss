@@ -1,0 +1,108 @@
+// The video summary is a very common component used across the site. It is imported into other components.
+
+.video-summary {
+  margin-right: -$bs-gutter;
+  margin-bottom: $bs-gutter * 2;
+  margin-left: -$bs-gutter;
+
+  @include breakpoint($sm) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  // the class is applied onMouseOver of the popover HTML;
+  &.video-summary-hover {
+    // re-invoking this so the play icon stays visible while the popover is visible
+    .has-play-icon::before {
+      display: block;
+    }
+  }
+
+  // ensuring the play icon doesn't appear on touch interfaces
+  .touchevents & {
+    .has-play-icon::before {
+      display: none;
+    }
+  }
+
+  .image--needs-fallback {
+    height: auto;
+  }
+
+  &__link {
+    @extend .video-grid__link-container;
+    margin-bottom: $bs-gutter / 2;
+  }
+
+  &__over-title {
+    margin: 0 0 0 $bs-gutter;
+
+    @include breakpoint($sm) {
+      margin-left: 0;
+    }
+  }
+
+  &__show-title-link {
+    font-family: $serif;
+    font-size: 1.4rem;
+    font-weight: $bold;
+    text-transform: uppercase;
+
+    @include breakpoint($sm) {
+      font-size: 1.2rem;
+    }
+
+    &,
+    &:link,
+    &:visited {
+      color: $gray-dark;
+    }
+  }
+
+  &__title {
+    margin: 0 0 0 $bs-gutter;
+
+    @include breakpoint($sm) {
+      margin-left: 0;
+    }
+  }
+
+  &__video-title-link {
+    @include typography-truncate();
+    display: block;
+    font-size: 1.8rem;
+
+    @include breakpoint($sm) {
+      font-size: 1.6rem;
+    }
+
+    &,
+    &:link,
+    &:visited {
+      color: $gray-primary;
+    }
+  }
+
+  &__duration {
+    margin-left: $bs-gutter;
+    font-size: 1.5rem;
+    font-weight: $light;
+
+    @include breakpoint($sm) {
+      margin-left: 0;
+    }
+  }
+
+  .passport-logo-wrapper {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin-right: 2px;
+
+    .passport-logo {
+      width: 100%;
+      margin-top: -3px;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+.pagination {
+  width: 100%;
+  padding: $bs-gutter 0;
+  text-align: center;
+
+  @include breakpoint($sm) {
+    padding-bottom: 0;
+  }
+
+  // all pagination links (even prev / next);
+  a {
+    display: inline-block;
+    cursor: pointer;
+    padding: ($bs-gutter / 4) $bs-gutter;
+    font-size: 1.9rem;
+    position: relative;
+
+    // 1024 needs to reduce the font size so it'll all fit on one line;
+    @include breakpoint($md) {
+      font-size: 1.6rem;
+    }
+    @include breakpoint($lg) {
+      font-size: 1.9rem;
+    }
+
+    // on state;
+    &.selected {
+      color: $gray-primary;
+      cursor: default;
+    }
+
+    // remove underline after tap on touch devices
+    &:hover {
+      .touchevents & {
+        text-decoration: none;
+      }
+    }
+
+    // dividing border between each link;
+    + a:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 4px;
+      bottom: 4px;
+      width: 1px;
+      background: $gray-primary;
+      left: 0;
+    }
+  }
+
+  // for the super simple version
+  &--simple {
+    width: 100%;
+    margin: 0 auto $bs-gutter*2 auto;
+    position: relative;
+    font-size: 1.8rem;
+
+    a.pagination__previous {
+      position: absolute;
+      left: 50%;
+      margin-left: -165px;
+    }
+
+    a.pagination__next {
+      position: absolute;
+      right: 50%;
+      margin-right: -130px;
+    }
+  }
+
+
+}

@@ -1,0 +1,246 @@
+// header above the facet form;
+header.facet-header {
+  @extend %clearfix;
+  background: $gray-light;
+  color: $gray-primary;
+  font-size: 1.7rem;
+  padding: $bs-gutter;
+
+  @include breakpoint($sm) {
+    padding: $bs-gutter ($bs-gutter * 2);
+  }
+
+  // what did the user search on;
+  h1 {
+    font-size: 1.8rem;
+    margin: 0;
+
+    // and how many results are there;
+    span.count {
+      font-weight: $bold;
+    }
+
+    span.count,
+    span.text {
+      display: none;
+      margin-right: 0.5em;
+
+      @include breakpoint($md) {
+        display: inline;
+      }
+    }
+
+    form {
+      position: relative;
+      display: inline-block;
+      background: $white; //faking the search input feel
+      width: 100%;
+      border: solid 1px $gray-medium;
+      @include breakpoint($sm) {
+        width: 300px;
+      }
+      @include breakpoint($md) {
+        width: 400px;
+      }
+    }
+
+    [type="search"] {
+      width: 100%;
+      padding-right: 57px; //accounts for button - lets search strings run long
+      border: 0;
+      background: transparent;
+      line-height: $line-height;
+    }
+
+    .btn--search {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      padding-top: 10px;
+      padding-bottom: 8px;
+    }
+  }
+
+  // trigger to hide/show the facets (non-mobile views only);
+  div.more {
+    padding-top: 12px;
+    font-size: 1.7rem;
+    float: right;
+    white-space: nowrap;
+
+    a {
+      cursor: pointer;
+      margin-right: 1em;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    span.title {
+      font-weight: $bold;
+      margin-right: 1em;
+    }
+
+    i.count {
+      display: none;
+
+      @include breakpoint($lg) {
+        display: inline-block;
+      }
+    }
+  }
+
+  // trigger to hide/show the facets (mobile view only);
+  a.more {
+    margin-top: $bs-gutter;
+    cursor: pointer;
+    font-weight: $bold;
+    font-size: 1.4rem;
+    float: right;
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  i.count {
+    background: $blue;
+    border-radius: 5px;
+    color: $white;
+    display: inline-block;
+    font-size: 1.3rem;
+    font-style: normal;
+    line-height: 25px;
+    margin: 0 0 0 8px;
+    height: 24px;
+    width: 24px;
+    text-align: center;
+  }
+}
+
+// container for the facets filter form;
+div.facet-form {
+  @extend %clearfix;
+  background: $gray-lighter;
+  color: $gray-primary;
+  padding: ($bs-gutter * 2) $bs-gutter;
+
+  // at the mobile size, the form is a fixed height (JS set) scrollable container;
+  @include breakpoint($xs-only) {
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+
+  // this is odd padding...
+  // but it visually starts the right column at about 50%;
+  // the code seems odd, but it looks fine;
+  @include breakpoint($sm-only) {
+    padding: $bs-gutter $bs-gutter ($bs-gutter * 3) ($bs-gutter * 6);
+
+    // at the small breakpoint the columns are 2x2;
+    // without this clear style, the columns could float in an odd way (because they aren't equal heights);
+    [class*=col-]:nth-child(2n+1) {
+      clear: left;
+    }
+  }
+
+  @include breakpoint($md) {
+    padding: ($bs-gutter * 2);
+  }
+}
+
+// container for each category of facets (nested in search-results-form);
+// hidden by default, exposed by a link in the header;
+div.facet-category {
+  margin-top: ($bs-gutter * 2);
+
+  @include breakpoint($xs-only) {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  // facets are no longer stacked, we dont need the margin anymore;
+  @include breakpoint($md) {
+    margin-top: 0;
+  }
+
+  // facet header;
+  h1 {
+    font-weight: $bold;
+    font-size: 1.2rem;
+    margin: 0;
+    text-transform: uppercase;
+    text-decoration: underline;
+
+    em {
+      font-style: italic;
+
+      &:before {
+        content: "(";
+      }
+      &:after {
+        content: ")";
+      }
+    }
+  }
+
+  // facet container;
+  ul {
+    font-size: 1.6rem;
+    margin: 0;
+
+    ul {
+      @include breakpoint($sm) {
+        margin: 0 0 0 $bs-gutter;
+      }
+
+      li:first-child {
+        padding-top: $bs-gutter;
+      }
+      li:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  li {
+    padding: ($bs-gutter / 2) 0;
+  }
+
+  // facet;
+  a {
+    cursor: pointer;
+    position: relative;
+
+    i {
+      display: none;
+      font-size: 80%;
+      position: absolute;
+      left: -16px;
+      top: 50%;
+      margin-top: -7px;
+    }
+
+    &.selected i {
+      display: block;
+    }
+  }
+
+  // count for each facet;
+  span.count {
+    font-weight: $bold;
+
+    &:before {
+      content: " | ";
+      font-weight: $normal;
+    }
+  }
+}
+
+.search-filter-category__value--no-count {
+  color: $gray-medium;
+  &:hover {
+    color: $gray-medium;
+    text-decoration: none;
+  }
+}

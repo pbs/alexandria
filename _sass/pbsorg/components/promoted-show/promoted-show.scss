@@ -1,0 +1,134 @@
+.promoted-show {
+  background: $gray-light;
+  padding: ($bs-gutter * 2) $bs-gutter 1px $bs-gutter;
+
+  &__inner {
+    padding: 0;
+    background: $white;
+    margin-bottom: 5rem;
+    box-shadow: 0px 1px 3px rgba($black, .45);
+
+  }
+
+  .col-sm-7 {
+    padding-left: 14px; //weird first column issue
+  }
+
+  .col-sm-4 {
+    @include breakpoint ($sm-only) {
+      padding-left: 0;
+    }
+  }
+
+  .img-responsive {
+    width: 100%;
+  }
+
+  &__header {
+    font-family: $serif;
+    font-weight: $bold;
+    font-size: 1rem;
+    margin-left: $bs-gutter * 2;
+
+    @include breakpoint($sm) {
+      margin: $bs-gutter $bs-gutter ($bs-gutter / 2) 0;
+    }
+
+    @include breakpoint($md) {
+      margin: 14px 0 7px 0;
+    }
+  }
+
+  // Custom breakpoints
+  $over-900: (min-width: 900px);
+  $over-1200: (min-width: 1200px);
+
+  &__intro {
+    display: inline-block;
+    margin: $bs-gutter 0;
+    font-size: 1.3rem;
+    color: $gray-dark;
+    text-transform: uppercase;
+
+    @include breakpoint($sm) {
+      font-size: 1.2rem;
+      margin: 0 0 ($bs-gutter / 2) 0;
+    }
+
+    @include breakpoint($over-900) {
+      font-size: 1.3rem;
+    }
+
+    @include breakpoint($md) {
+      margin: $bs-gutter 0;
+    }
+  }
+
+  &__logo {
+    display: block;
+    max-width: 140px;
+
+    @include breakpoint($sm-only) {
+      margin-left: 0;
+      width: 100px;
+    }
+  }
+
+  // a fallback in case a logo isn't supplied
+  &__name {
+    display: block;
+    font-size: 3.2rem;
+  }
+
+  &__description,
+  &__hashtag {
+    font-size: 1.8rem;
+    margin: $bs-gutter ($bs-gutter * 2);
+
+    @include breakpoint($sm) {
+      font-size: 1.2rem;
+      margin: ($bs-gutter / 2) $bs-gutter ($bs-gutter / 2) 0;
+    }
+
+    @include breakpoint($over-900) {
+      font-size: 1.4rem;
+      margin: $bs-gutter $bs-gutter $bs-gutter 0;
+    }
+
+    @include breakpoint($md) {
+      margin: $bs-gutter ($bs-gutter * 1.5) $bs-gutter 0;
+    }
+
+    @include breakpoint($over-1200) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__cta {
+    text-align: center;
+    margin-bottom: $bs-gutter * 2;
+    margin-top: $bs-gutter * 2;
+
+    @include breakpoint($sm) {
+      text-align: left;
+      margin-bottom: $bs-gutter;
+      margin-top: ($bs-gutter / 4);
+    }
+
+    @include breakpoint($md) {
+      margin-top: $bs-gutter * 2;
+    }
+
+    .btn {
+      @include breakpoint($sm) {
+        font-size: 1.4rem;
+        padding: 12px 30px;
+      }
+
+      @include breakpoint($over-900) {
+        font-size: 1.6rem;
+        padding: $bs-gutter ($bs-gutter * 2);
+      }
+    }
+  }
+}

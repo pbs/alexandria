@@ -1,0 +1,70 @@
+// typography;
+@mixin typography-l1-header () {
+  color: $gray-primary;
+
+  a {
+    color: $gray-primary;
+  }
+}
+@mixin typography-l2-header () {
+  color: $gray-primary;
+  font-weight: $light;
+
+  a {
+    color: $gray-primary;
+  }
+}
+@mixin typography-truncate () {
+  line-height: 1.4; // so descenders don't get cut off;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin aspect-ratio($width, $height) {
+  height: inherit;
+  position: relative;
+  &::after {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-bottom: ($height / $width) * 100%;
+  }
+}
+
+@mixin fallback-gradient($color1, $color2, $color3, $middlePercent) {
+  background: -moz-radial-gradient(center, ellipse cover, $color3 0%, $color2 $middlePercent, $color2 $middlePercent, $color1 100%);
+  background: -webkit-radial-gradient(center, ellipse cover, $color3 0%, $color2 $middlePercent, $color2 $middlePercent, $color1 100%);
+  background: radial-gradient(ellipse at center, $color3 0%, $color2 $middlePercent, $color2 $middlePercent, $color1 100%);
+}
+
+@mixin fallback-text($data-attr) {
+  position: relative;
+  &::before {
+    color: $white;
+    content: attr($data-attr) '';
+    font-size: 1.4rem;
+    position: absolute;
+    padding: 65px 10px 10px 10px;
+    top: 0;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba($black, .8);
+    width: 100%;
+    white-space: pre-wrap;
+    @include breakpoint($sm) {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+// used in creating buttons to make sure we have all states covered
+@mixin btn-states() {
+  &,
+  &:link,
+  &:visited,
+  &:hover,
+  &:focus,
+  &:active {
+    @content
+  }
+}

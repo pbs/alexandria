@@ -1,0 +1,97 @@
+.schedule {
+  // left column;
+  .row-with-ad & {
+    padding: 0 20px;
+  }
+
+  .section-title {
+    margin: 0;
+    color: $gray-darker;
+    font-size: 2.3rem;
+    font-weight: $light;
+  }
+
+  .schedule-title {
+    display: inline-block;
+    position: relative;
+    margin-left: 10px;
+    padding-left: 12px;
+    border-left: 1px solid $gray-medium;
+  }
+
+  // right column;
+  // view whole schedule
+  .view-all {
+    margin: ($bs-gutter / 2) 0 0 0;
+    float: none;
+    text-align: right;
+  }
+
+  // schedule table;
+  .schedule__table {
+    margin: 4px 0;
+    color: $gray-primary;
+    font-size: 1.6rem;
+
+    tr {
+       &:first-child td {
+        border: 0;
+      }
+    }
+
+    td {
+      padding: $bs-gutter ($bs-gutter / 2);
+      border-color: $gray-light;
+
+      &:first-child {
+        padding-left: 0;
+        white-space: nowrap;
+      }
+    }
+
+    .schedule__time {
+      max-width: 90px;
+      overflow: hidden;
+    }
+  }
+
+  &--just-link {
+    text-align: center;
+
+    .section-title {
+      width: 100%;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding: 0;
+    }
+  }
+}
+
+.localize {
+  height: 100%;
+  margin-right: 3px;
+  margin-left: 3px;
+  background-color: darken($white, 3%);
+  color: $gray-dark;
+  text-align: center;
+
+  &__title {
+    margin-top: ($bs-gutter * 3);
+    font-weight: $light;
+  }
+
+  &__subtitle {
+    margin-top: 0;
+    padding: $bs-gutter ($bs-gutter * 3.5);
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+
+  .localize-pin {
+    margin-right: $bs-gutter;
+  }
+
+  .explore-more {
+    margin-bottom: ($bs-gutter * 5);
+  }
+}

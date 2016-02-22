@@ -1,0 +1,22 @@
+// mixins, variables, extends
+@import './includes';
+
+// home page components
+@import '../components/carousel/carousel';
+@import '../components/carousel/carousel-arrows';
+@import '../components/carousel/carousel-dots';
+@import '../components/carousel/carousel-slides';
+@import '../components/carousel/show-strip/carousel';
+@import '../components/carousel/hero/carousel';
+@import '../components/carousel/verticals/carousel';
+@import '../components/promoted-show/promoted-show';
+@import '../components/row-with-ad/row-with-ad';
+@import '../components/schedule/schedule';
+@import '../components/social-media/social-media';
+@import '../components/station/station';
+@import '../components/store/featured/store';
+@import '../components/verticals/verticals';
+@import '../components/video/block/video';
+@import '../components/video/popover/video';
+@import '../components/video/summary/video';
+@import '../components/video/video-grid';

@@ -1,0 +1,1034 @@
+$headerHeight: 63px;
+$modalSignInWidth: 550px;
+
+.none { display: none !important; }
+
+.modalOverlay {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // height at 100% causes bug in Safari, this is alternative
+  height: 100vh;
+  // the z-index used in global chrome localization overlay, has to be higher than the z-index in bootstrap's navbar
+  background-color: rgba($black, .8);
+  z-index: 10000; // must be this high to appear overtop webui popover plugin
+  overflow-y: scroll;
+  align-items: center;
+}
+
+.modalWindow {
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: auto;
+  margin: 0 auto;
+  background-color: $white;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+
+  // allow modal to float mid-screen on desktop
+  $tinyheight: (min-height: 600px);
+
+  @include breakpoint($xs-only) {
+    .btn--modal-error {
+      padding: 8px;
+    }
+  }
+
+  .no-touchevents & {
+    @include breakpoint($tinyheight) {
+      position: static;
+    }
+  }
+
+  .modalTitle {
+    position: relative;
+    height: 65px;
+    padding: 5px 10px;
+    background-color: $gray-dark;
+    color: $white;
+    overflow: hidden;
+
+    .pbs-head {
+      position: absolute;
+      bottom: 10px;
+      top: 10px;
+      left: 10px;
+      width: 45px;
+      height: 45px;
+
+      .face {
+        fill: $white;
+      }
+
+      .circle {
+        fill: $gray-primary;
+      }
+    }
+
+    .title-divider {
+      position: absolute;
+      bottom: 15px;
+      left: 68px;
+      width: 1px;
+      height: 35px;
+      background-color: $white;
+    }
+
+    h2 {
+      position: absolute;
+      bottom: 12px;
+      left: 80px;
+      color: $white;
+      font-family: $sans-serif;
+      font-size: 2.5rem;
+      font-weight: $normal;
+    }
+
+    .error-modal {
+      bottom: 20px;
+      left: 20px;
+    }
+  }
+
+  .modalContent {
+    color: $gray-darker;
+    overflow: hidden;
+
+    a {
+      color: $blue;
+    }
+
+    .modalLoginStation {
+      width: 100%;
+      text-align: center;
+
+      img {
+        width: auto;
+        margin: $bs-gutter/2 0;
+      }
+    }
+
+    .modalLoginWithoutStation {
+      padding-top: 20px;
+    }
+  }
+
+  button {
+    font-weight: $bold;
+
+    &.showStatesModal {
+      float: left;
+    }
+  }
+}
+
+// LOGIN WINDOW
+#loginModalWindow {
+  width: 100%;
+  max-width: 487px;
+}
+
+// social login panel //
+// styles specific to social login buttons in sign-in.scss
+
+.socialLoginPanel {
+  margin: 0 auto;
+  padding: 10px 20px 20px 20px;
+  font-size: 1.5rem;
+
+  .modalContent & {
+    max-width: 328px;
+  }
+
+  .socialList {
+    &.mvodInvite {
+      @include breakpoint($md) {
+        width: auto;
+      }
+
+      li {
+        width: 100%;
+        margin: 10px 0;
+        float: none;
+
+        @include breakpoint($sm) {
+          &.facebookColor {
+            margin: 0;
+          }
+
+          &.inviteLink {
+            display: none;
+          }
+        }
+
+        @include breakpoint($md) {
+          width: 30%;
+          float: left;
+          font-size: 1.5rem;
+
+          &.facebookColor {
+            margin: 0 3%;
+          }
+
+          &.inviteLink {
+            display: inline-block;
+          }
+        }
+      }
+
+      .copyLabel {
+        width: 34%;
+        height: 100%;
+        margin-right: 1%;
+        float: left;
+        font-size: 1.6rem;
+        font-weight: $bold;
+        line-height: 2.625;
+      }
+
+      #copyInput {
+        width: 64%;
+        height: 100%;
+        margin: 0;
+        padding: 10px;
+        border: 1px solid $gray-dark;
+        font-size: 1.4rem;
+        text-transform: lowercase;
+      }
+    }
+
+    &.minimize {
+      @include breakpoint($xs-only) {
+        width: 178px;
+        padding: 13px 0;
+
+        li {
+          margin: 0 10px;
+          float: left;
+
+          &.facebookColor {
+            margin: 0;
+          }
+
+          .loginText {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &.isWrapped {
+      width: 110px;
+    }
+  }
+}
+
+// VIDEO PLAYBACK PROBLEM WINDOW
+#videoProblemModalWindow {
+  width: 100%;
+  height: 100%;
+
+  @include breakpoint($xs) {
+    width: auto;
+    height: auto;
+  }
+
+  .modalContent {
+    height: 100%;
+    padding: 20px 15px;
+    color: $gray-dark;
+
+    @include breakpoint($xs) {
+      padding: 15px;
+    }
+
+    @include breakpoint($sm) {
+      padding: 22px 20px;
+    }
+  }
+
+  .message {
+    font-size: 1.6rem;
+    line-height: 1.375;
+    flex: 1 1 auto;
+
+    a {
+      color: $blue;
+    }
+  }
+
+  .footnote {
+    color: $gray-dark;
+    font-size: 1.3rem;
+    line-height: 1.38;
+    flex: 1 1 auto;
+
+    &.hideOnDevice {
+      @include breakpoint(xs-only) {
+        display: none;
+      }
+    }
+  }
+
+  #errorSubmitted {
+    display: none;
+    flex: 1 1 auto;
+  }
+
+  #videoErrorForm {
+    margin: 25px 0;
+    font-weight: $bold;
+    overflow: hidden;
+    flex: 1 1 auto;
+
+    @include breakpoint($xs) {
+      margin: 10px 0;
+    }
+
+    @include breakpoint($sm) {
+      width: auto;
+      max-width: 428px;
+      height: auto;
+      margin: 25px 0;
+    }
+
+    label {
+      margin-right: 10px;
+      float: left;
+      font-size: 1.6rem;
+      line-height: 1.375;
+    }
+
+    select {
+      width: 300px;
+      padding: 2px;
+      float: left;
+      border: 1px solid $gray-medium;
+      font-size: 1.3rem;
+
+      @include breakpoint($sm) {
+        width: 300px;
+      }
+    }
+
+    .condTextBox {
+      display: none;
+      padding: 10px 0 0;
+      clear: both;
+
+      textarea {
+        width: 96.6%;
+        height: 45px;
+        padding: 5px;
+        border: 1px solid $gray-medium;
+
+        @include breakpoint($xs-only) {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .buttons {
+    margin-top: 20px;
+    float: right;
+    flex: 1 1 auto;
+
+    @include breakpoint($xs) {
+      margin-top: 10px;
+    }
+
+    button {
+      float: left;
+
+      &:last-child {
+        margin-left: 14px;
+      }
+    }
+  }
+}
+
+// SEARCH MODAL
+#searchModal {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+
+  @include breakpoint($sm) {
+    width: auto;
+    height: 480px;
+
+    .modalContent {
+      height: auto;
+    }
+  }
+
+  .modalTitle {
+    min-height: 52px;
+  }
+
+  .modalContent {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    flex: 1 1 auto;  // TODO: is this redundant with declarations above?
+  }
+
+  .searchTabs {
+    display: block;
+    min-height: 38px;
+    margin: 10px 2%;
+    overflow: hidden;
+    flex: 1 1 auto;
+
+    li {
+      width: 30%;
+      margin: 0 1.6%;
+      padding: 8px;
+      float: left;
+      background-color: $gray-light;
+      text-align: center;
+      cursor: pointer;
+
+      &.activeTab {
+        background-color: $blue-muted;
+        font-weight: $bold;
+
+        a {
+          color: $black;
+        }
+      }
+    }
+  }
+
+  .modalSection {
+    padding: 7px 3.6%;
+    overflow-y: scroll;
+    flex: 1 1 auto;
+
+    .videoTypesLinks {
+      margin-top: 20px;
+
+      .removeFilterX {
+        padding-right: 20px;
+        color: $gray-darker;
+        font-size: 2.4rem;
+      }
+    }
+
+    .searchPageChapter {
+      display: none;
+      margin-top: 0;
+      padding: 0;
+      border: 0;
+      color: $black;
+
+      &.active {
+        display: block;
+      }
+    }
+
+    li {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+// LOCALIZE MODAL
+#localizeModalWindow {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+
+  @include breakpoint($xs) {
+    width: auto;
+    height: auto;
+  }
+
+  .modalTitle {
+    min-height: 52px;
+  }
+
+  .modalContent {
+    display: flex;
+    background-color: $gray-lighter;
+    color: $gray-primary;
+    flex: 1 1 auto;
+    flex-direction: column;
+  }
+  // enter zip code screen
+  #enterZipCode {
+    padding: 20px;
+    flex: 1 1 auto;
+
+    @include breakpoint($xs) {
+      padding: 36px 20px;
+    }
+
+    // message
+    p {
+      font-size: 1.7rem;
+      line-height: 1.29;
+    }
+    // form container
+    .form {
+      margin-top: 28px;
+      overflow: hidden;
+    }
+    // zip input label
+    small {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 1.2rem;
+      font-weight: $bold;
+    }
+    // zip input
+    #zipInput {
+      width: 226px;
+      height: 38px;
+      padding: 5px 10px;
+      float: left;
+      border: 1px solid $gray-medium;
+      border-radius: 0;
+      line-height: 38px;
+    }
+    // error message
+    .errorMsg {
+      margin-top: 6px;
+      clear: both;
+      color: $red;
+
+      @include breakpoint($xs) {
+        margin-top: auto;
+      }
+    }
+    // find station button
+    #getStations {
+      width: 172px;
+      margin-left: 10px;
+    }
+  }
+  // select station based on zip code
+  #selectStation {
+    display: flex;
+    padding-bottom: 0;
+    color: $gray-primary;
+    flex-direction: column;
+    flex: 1 1 auto;
+
+    @include breakpoint($xs) {
+      padding-bottom: 36px;
+    }
+
+    // stations container
+    .stationsList {
+      border-top: 1px solid $gray-light;
+      border-bottom: 1px solid $gray-light;
+      overflow-y: auto;
+      flex: 1 1 auto;
+
+      .stationItem {
+        height: 80px;
+        padding: 22px 20px;
+        border-top: 1px solid $gray-light;
+        cursor: pointer;
+        overflow: hidden;
+
+        &:first-child {
+          border-top: 0 none;
+        }
+
+        h3 {
+          float: left;
+          font-size: 1.6rem;
+          font-weight: $bold;
+        }
+
+        span {
+          float: right;
+          font-size: 1.4rem;
+          font-style: italic;
+        }
+
+        p {
+          margin-top: 8px;
+          float: left;
+          clear: both;
+          font-size: 1.5rem;
+          font-weight: $light;
+        }
+      }
+    }
+  }
+
+  #enterZipCodeTitle {
+    display: none;
+  }
+  // go back button
+  #goBack {
+    width: 114px;
+    min-height: 38px;
+    max-height: 38px;
+    margin: 10px 0 10px 10px;
+    flex: 1 1 auto;
+
+    @include breakpoint($xs) {
+      margin: 30px 0 0 20px;
+    }
+  }
+}
+
+//PLUS MODAL
+#plusModalWindow {
+  min-width: 710px;
+
+  .modalContent {
+    padding: 30px;
+    overflow: hidden;
+
+    .pannelTop {
+      overflow: hidden;
+
+      .pannelText {
+        width: 65%;
+        float: left;
+        line-height: 1.4em;
+
+        span {
+          font-weight: 500;
+        }
+      }
+
+      .pannelImage {
+        width: 35%;
+        float: right;
+      }
+
+      .pannelUrl {
+        width: 100%;
+        margin: 20px 0;
+        float: left;
+        font-weight: $bold;
+      }
+    }
+
+    .pannelButtons {
+      width: 100%;
+      overflow: hidden;
+
+      button {
+        min-width: 146px;
+        margin-left: 30px;
+        float: right;
+
+        &.grey {
+          background-color: $gray-dark;
+        }
+      }
+    }
+  }
+}
+
+.localizeModalWindowAuto {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 61%;
+  flex-direction: column;
+
+  @include breakpoint($xs) {
+    height: 80%;
+  }
+
+  @include breakpoint($sm) {
+    width: auto;
+    height: 526px;
+  }
+
+  .modalTitle {
+    min-height: 38px;
+    padding: 10px 14px;
+
+    @include breakpoint($sm) {
+      min-height: 52px;
+    }
+
+    h2 {
+      font-size: 1em;
+    }
+  }
+
+  .modalContent {
+    display: flex;
+    color: $gray-primary;
+    flex-direction: column;
+    flex: 1 1 auto;
+  }
+
+  .autoLocalizationContainer,
+  #autoSelectStation,
+  .modalBottomContainer {
+    flex: 1 1 auto;
+  }
+
+  .autoLocalizationContainer {
+    min-height: 80px;
+    max-height: 80px;
+    padding: 10px 15px;
+    overflow: hidden;
+
+    @include breakpoint($xs) {
+      min-height: 105px;
+      padding: 10px 20px;
+    }
+
+    @include breakpoint($sm) {
+      min-height: 152px;
+      padding: 20px;
+    }
+
+    h3 {
+      display: none;
+    }
+
+    p {
+      margin-top: 5px;
+      font-size: 1.5rem;
+      font-weight: $normal;
+
+      .paragraph {
+        display: inline-block;
+        margin-top: 0;
+
+        @include breakpoint($xs) {
+          display: inline;
+        }
+      }
+    }
+
+    .autoLocalizationText {
+      width: 100%;
+      float: left;
+      font-size: .85em;
+
+      @include breakpoint($sm) {
+        p {
+          margin-top: 15px;
+          font-size: 1.5rem;
+
+          .paragraph {
+            display: block;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+
+    .modalStationImage {
+      display: none;
+      float: right;
+
+      @include breakpoint($sm) {
+        display: block;
+      }
+    }
+  }
+
+  #autoSelectStation {
+    display: none;
+    color: $gray-primary;
+    overflow-y: auto;
+    // stations container
+    .stationsList {
+      border-top: 1px solid $gray-light;
+      border-bottom: 1px solid $gray-light;
+
+      .stationItem {
+        height: 48px;
+        padding: 18px 20px 0;
+        border-top: 1px solid $gray-light;
+        background: $white;
+        cursor: pointer;
+        overflow: hidden;
+
+        @include breakpoint($sm) {
+          height: 80px;
+          padding: 22px 20px;
+        }
+
+        &.active {
+          background: $blue-muted;
+        }
+
+        &:first-child {
+          border-top: 0 none;
+        }
+
+        h3 {
+          float: left;
+          font-size: 1.6rem;
+          font-weight: $bold;
+
+          strong.commonName {
+            display: block;
+
+            @include breakpoint($sm) {
+              display: none;
+            }
+          }
+
+          strong.flagship {
+            display: none;
+
+            @include breakpoint($sm) {
+              display: block;
+            }
+          }
+        }
+
+        span {
+          float: right;
+          font-size: 1.4rem;
+          font-style: italic;
+        }
+
+        p {
+          display: none;
+          margin-top: 8px;
+          float: left;
+          clear: both;
+          font-size: 1.5rem;
+          font-weight: $light;
+
+          @include breakpoint($sm) {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+
+  button {
+    margin: 20px;
+
+    &.modalMoreStations {
+      float: left;
+    }
+
+    &.modalConfirmStaion {
+      float: right;
+    }
+  }
+
+  .modalBottomContainer {
+    min-height: 46px;
+    max-height: 64px;
+    overflow: hidden;
+
+    @include breakpoint($sm) {
+      min-height: 80px;
+      max-height: 80px;
+    }
+
+    button {
+      margin: 12px 15px;
+
+      @include breakpoint($xs) {
+        margin: 12px 15px;
+      }
+
+      @include breakpoint($sm) {
+        margin: 20px;
+      }
+    }
+  }
+}
+
+html.ieFix {
+  .localizeModalWindowAuto {
+    display: block;
+    min-height: 400px;
+
+    .modalTitle {
+      height: 10%;
+    }
+
+    .modalContent {
+      display: block;
+      height: 90%;
+
+      .autoLocalizationContainer {
+        height: 30%;
+        min-height: 0;
+      }
+
+      .modalBottomContainer {
+        clear: both;
+      }
+
+      #autoSelectStation {
+        width: 100%;
+        height: 40%;
+        float: left;
+
+        .stationsList {
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+// This is used for a visual feedback after logging in with a third party social network
+#loadingOverlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba($black, .2);
+  z-index: 7;
+
+  .window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 170px;
+    height: 90px;
+    margin-top: -45px;
+    margin-left: -85px;
+    background: $black;
+    color: $gray-light;
+    font-size: 1.2rem;
+    font-weight: $bold;
+    text-align: center;
+
+    .loading {
+      width: 100%;
+      height: 60px;
+      background-image: url('../img/loading.gif');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 38px 12px;
+    }
+  }
+}
+
+// This is a informal tooltip for adding videos/programs to watchlist
+.tooltip {
+  position: absolute;
+  width: 270px;
+  margin-top: -5px;
+  z-index: 6;
+
+  .message {
+    width: 100%;
+    padding: 10px;
+    background-color: $white;
+    color: $black;
+    font-size: 1.2rem;
+    font-weight: $bold;
+    line-height: 1.5em;
+  }
+
+  .indicator {
+    width: 100%;
+    height: 9px;
+    background-image: url('../images/popup_indicator.png');
+    background-repeat: no-repeat;
+    background-position: 247px 0;
+    background-size: 17px 9px;
+  }
+}
+
+.modal-window--heavy-traffic {
+  @include breakpoint($xs) {
+    margin: auto;
+    padding: 0 80px 20px 80px;
+  }
+
+  .modal-content {
+    // This gets rid of bootstrap's rounded corners:
+    border-radius: 0;
+
+    @include breakpoint($xs) {
+      width: auto;
+      max-width: 450px;
+      margin-top: 200px;
+    }
+  }
+
+  .modal-body {
+    padding: 20px 40px 40px 40px;
+    font-size: 1.5em;
+  }
+
+  .modal-title {
+    padding: 0 10px;
+
+    h2 {
+      left: 30px;
+      font-size: 2.2rem;
+
+      @include breakpoint($sm) {
+        left: 80px;
+        font-size: 2.6rem;
+      }
+    }
+
+    .closeBtn {
+      margin-top: 0;
+    }
+  }
+}
+
+#autolocalizationOverlay {
+  background-color: rgba($black, .55);
+}
+
+// Find More Stations modal window styles are placed here to override their styling in localization.css, a file to which we don't have access through pbsorg.
+.pbs-cleanslate {
+  .pbs-find-stations {
+    font-family: $sans-serif;
+
+    .modalContent {
+      background-color: $gray-lighter;
+    }
+
+    #enterZipCode {
+      background-color: $gray-lighter;
+
+      #searchByZip,
+      #serchByRegion {
+        height: 45px;
+        border: 1px solid darken($brand-success, 15%);
+        border-radius: $radius;
+        background-color: $brand-success;
+        font-family: $sans-serif;
+        font-size: 1.4rem;
+        font-weight: $light;
+      }
+
+      #zipInput,
+      #regionSelect {
+        height: 45px;
+        border-radius: $radius;
+        background-color: $white;
+        color: $gray-primary;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+//overriding modal styling coming from JAWS
+#pbs-modal-window .modalContent .customMsg {
+  text-align: center;
+}

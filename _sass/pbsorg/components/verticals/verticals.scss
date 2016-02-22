@@ -1,0 +1,50 @@
+.verticals {
+  padding: 0 $bs-gutter*2 $bs-gutter*2 0;
+  -webkit-font-smoothing: antialiased;
+
+  article {
+    border: $divider;
+    margin: 0 0 $bs-gutter;
+    padding: $bs-gutter;
+  }
+
+  .slick-track {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  p:not(.view-more) {
+    font-size: 1.6rem;
+    margin: 0;
+
+    &.view-all {
+      text-align: right;
+      font-size: 1.4rem;
+    }
+  }
+
+  &__cta {
+    margin: ($bs-gutter / 2) 0 0;
+    font-family: $serif;
+    font-size: 1.6rem;
+    font-weight: $bold;
+  }
+
+  // break into the gutter with the body content;
+  div.article-body {
+    margin: 0 0 0 (-$bs-gutter);
+  }
+
+  .img-responsive {
+    width: auto;
+  }
+
+  .col-sm-4 {
+    text-align: center;
+
+    .img-responsive {
+      display: inline;
+    }
+  }
+}

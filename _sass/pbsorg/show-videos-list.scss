@@ -1,0 +1,9 @@
+// mixins, variables, extends
+@import './popular-videos-list';
+
+// show video list page components
+@import '../components/pagination/pagination';
+@import '../components/video/catalog/video';
+@import '../components/video/popover/video';
+@import '../components/video/summary/video';
+@import '../components/video/video-grid';

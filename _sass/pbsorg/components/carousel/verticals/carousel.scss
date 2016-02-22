@@ -1,0 +1,121 @@
+.carousel--verticals {
+  font-weight: $light;
+  padding: ($bs-gutter * 4) $bs-gutter;
+
+  @include breakpoint($sm) {
+    padding: ($bs-gutter * 4) ($bs-gutter * 2) ($bs-gutter * 2);
+  }
+
+  // carousel of brands (below the featured brands);
+  .carousel-container {
+    overflow-x: hidden;
+    // right margin: expand the carousel into the gutter set by the component container so images bleed off the page;
+    // left margin: expand the carousel into the gutter so the padding (for the drop shadow) doesn't offset the image;
+    margin: 0 (-$bs-gutter) 0 -5px;
+
+    // provide more space for images to bleed off the page;
+    @include breakpoint($sm) {
+      margin-right: (-$bs-gutter * 2);
+    }
+  }
+  .slick-track {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+
+    .slick-slide {
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+    }
+  }
+  // hide additional slides before JS is initialized;
+  article + article {
+    display: none;
+  }
+
+  // once Slick is init, re-show the slides;
+  .slick-initialized article + article {
+    display: block;
+  }
+
+  // hide the carousel arrows on mobile;
+  .touchevents & {
+    @include breakpoint($xs-only) {
+      button.slick-next,
+      button.slick-prev {
+        display: none !important; // need to override inline styles set by the jQuery plugin;
+      }
+    }
+  }
+
+  // expand the container for the slides;
+  // this way the last ARTICLE tag (slide) can be cut off;
+  // the width of the visible slides will be adjusted to fill this space;
+  div.slick-list {
+    margin-right: (-$bs-gutter * 6);
+  }
+
+  // title above the carousel;
+  .section-title {
+    color: $gray-darker;
+    font-weight: $bold;
+    font-size: 2.1rem;
+    text-transform: uppercase;
+    margin: 0 0 ($bs-gutter / 2);
+  }
+
+  // each slide in the carousel;
+  article {
+    float: left;
+    margin-right: 10px; // space out each slide;
+    padding: 5px; // provide room for the dropshadow;
+    width: 300px; // generic size pre-JS init;
+
+    @include breakpoint($sm) {
+      margin-right: ($bs-gutter * 2);
+    }
+
+    // wrapper to house the drop shadow;
+    .article-body {
+      background: $white;
+      padding-bottom: 108px;
+      position: relative;
+      box-shadow: $shadow;
+    }
+
+    p {
+      padding: 0 $bs-gutter;
+
+      &.description {
+        color: $gray-primary;
+        font-size: 1.4rem;
+        margin: $bs-gutter 0 0;
+
+        a {
+          color: $gray-primary;
+        }
+      }
+
+      // make sure all logos are lined up - at the bottom;
+      &.logo {
+        margin-left: -10px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        img {
+          max-width: 150px;
+          display: block;
+          margin: 0 auto;
+
+          @include breakpoint($sm) {
+            max-width: 180px;
+          }
+        }
+      }
+    }
+  }
+}

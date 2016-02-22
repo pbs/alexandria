@@ -1,0 +1,223 @@
+.video-block {
+  padding: ($bs-gutter * 4) $bs-gutter ($bs-gutter * 3) $bs-gutter ;
+
+  @include breakpoint($sm) {
+    padding: ($bs-gutter * 4) ($bs-gutter * 2) 0 ($bs-gutter * 2);
+  }
+
+  .section-title {
+    color: $gray-darker;
+    font-weight: $bold;
+    font-size: 2.1rem;
+    text-transform: uppercase;
+    margin: 0 0 ($bs-gutter / 2);
+
+    span {
+      font-weight: $bold;
+      margin-left: 5px;
+      padding-left: 12px;
+      position: relative;
+
+      &:before {
+        content: "";
+        display: block;
+        background: $gray-medium;
+        width: 1px;
+        position: absolute;
+        top: 3px;
+        bottom: 3px;
+        left: 0;
+      }
+    }
+  }
+
+  // most popular video;
+  article.featured {
+    background: $white;
+    box-shadow: $shadow;
+    font-size: 1.5rem;
+    color: $gray-primary;
+    // if there is a row of content after this, give that row some space;
+    + div.row {
+      @include breakpoint($sm) {
+        margin-top: ($bs-gutter * 2);
+      }
+    }
+
+    div.article-body {
+      height: 100%;
+
+      @include breakpoint($sm) {
+        padding-top: $bs-gutter;
+      }
+
+      @include breakpoint($md) {
+        width: auto;
+        margin: $bs-gutter $bs-gutter (-$bs-gutter) (-$bs-gutter);
+        padding: 0 0 0 $bs-gutter;
+      }
+      @include breakpoint($lg) {
+        margin: $bs-gutter $bs-gutter (-$bs-gutter) $bs-gutter;
+        padding: 0;
+      }
+    }
+    // to counteract the large white space on the right of the picture at larger breakpoints
+    .col-sm-7.col-md-7 {
+      @include breakpoint($md) {
+        overflow: hidden;
+      }
+      @include breakpoint($lg) {
+        padding-right: 0;
+      }
+    }
+    .col-sm-5.col-md-5 {
+      @include breakpoint($sm) {
+        padding-left: ($bs-gutter / 2);
+      }
+
+      @include breakpoint($md) {
+        min-height: 100%;
+        position: relative;
+        padding-left: $bs-gutter;
+      }
+    }
+
+    .episode-details__title {
+      @include typography-l2-header();
+      font-size: 2rem;
+      color: $gray-primary;
+      line-height: 1.2;
+      margin: ($bs-gutter / 4) $bs-gutter $bs-gutter 0;
+      @include breakpoint($sm) {
+        font-size: 2.1rem;
+        margin-bottom: ($bs-gutter / 4);
+        @include typography-truncate;
+      }
+      @include breakpoint($md) {
+        font-size: 3rem;
+        margin: ($bs-gutter / 4) $bs-gutter $bs-gutter 0;
+        white-space: normal;
+      }
+      @include breakpoint($lg) {
+        font-size: 3.2rem;
+      }
+      .video-title {
+        @include typography-truncate;
+      }
+    }
+
+    p {
+      font-size: 1.4rem;
+    }
+
+    .description {
+      font-size: 1.4rem;
+      margin-right: $bs-gutter;
+      display: none;
+
+      @include breakpoint($sm) {
+        display: block;
+      }
+
+      @include breakpoint($md) {
+        font-size: 1.6rem;
+      }
+    }
+
+    .duration {
+      margin: $bs-gutter 0 0;
+
+      @include breakpoint($sm-only) {
+        margin-top: 0;
+      }
+
+      .passport-logo-wrapper {
+        display: inline-block;
+        position: relative;
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+
+        .passport-logo {
+          width: 100%;
+        }
+      }
+    }
+    .watchlist {
+      margin: $bs-gutter 0 0;
+
+      .btn--watchlist {
+        font-size: 1.4rem;
+        padding: 12px 30px;
+
+        @include breakpoint($md) {
+          font-size: 1.6rem;
+        }
+      }
+    }
+    .social-buttons {
+      @include breakpoint($md) {
+        width: 90%;
+        bottom: 0;
+        position: absolute;
+      }
+    }
+    .share {
+      border-top: $divider;
+      font-size: 1.2rem;
+      margin-top: $bs-gutter;
+      padding: $bs-gutter 0;
+      right: $bs-gutter;
+      z-index: 1;
+      display: none;
+      @include breakpoint($md) {
+        width: 95%;
+        display: block;
+        bottom: 0;
+      }
+      @include breakpoint($lg) {
+        width: 90%;
+      }
+      a {
+        font-size: 2rem;
+        line-height: 1;
+        margin-left: 0.5rem;
+        vertical-align: middle;
+      }
+    }
+    .over-title {
+      color: $gray-dark;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      margin: 0;
+    }
+  }
+
+
+
+  // container for the explore-more button at the bottom of this component;
+  .explore-more {
+    margin: 0;
+    text-align: center;
+    text-transform: capitalize;
+    @include breakpoint($screen-sm) {
+      margin-top: ($bs-gutter * 1);
+      margin-bottom: $bs-gutter * 2;
+    }
+
+    .btn:hover {
+      background: rgba($blue, 0.1);
+    }
+
+    // hide this button above $sm, except on the home page
+    @include breakpoint($sm) {
+      display: none;
+
+      .home & {
+        display: block;
+      }
+    }
+
+  }
+
+}

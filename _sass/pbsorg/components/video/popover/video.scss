@@ -1,0 +1,52 @@
+// more popover styling can be found at jquery.qtip.scss
+
+// this HTML is in the page, but not shown;
+.video-popover {
+  color: $gray-primary;
+  display: none;
+
+  .over-title {
+    font-size: 1.4rem;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    @include typography-l1-header();
+    font-size: 2.1rem;
+    margin: 0;
+  }
+
+  .description {
+    font-size: 1.6rem;
+    margin: $bs-gutter 0 0;
+  }
+
+  &__duration {
+    padding-top: $bs-gutter;
+    font-size: 1.4rem;
+    font-weight: $normal;
+  }
+
+  .watchlist {
+    font-size: 1.4rem;
+    margin: $bs-gutter 0 0;
+    .btn {
+      padding: $bs-gutter ($bs-gutter * 2);
+    }
+  }
+
+  .share {
+    border-top: 1px solid $gray-medium;
+    font-size: 1.4rem;
+    margin: $bs-gutter 0 0;
+    padding: $bs-gutter 0 0;
+
+    a {
+      font-size: 2rem;
+      line-height: 1;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+  }
+}

@@ -1,0 +1,273 @@
+.video-catalog {
+  padding: ($bs-gutter * 2) $bs-gutter;
+
+  @include breakpoint($sm) {
+    padding: ($bs-gutter * 2);
+  }
+
+  // kill the drop shadow;
+  &:after {
+    display: none;
+  }
+
+  h1.section-title {
+    color: $gray-darker;
+    font-weight: $light;
+    font-size: 3.2rem;
+    margin: 0;
+    text-transform: capitalize;
+
+    @include breakpoint($sm) {
+      font-size: 4.4rem;
+    }
+    @include breakpoint($md) {
+      font-size: 5rem;
+    }
+    @include breakpoint($lg) {
+      font-size: 5.6rem;
+    }
+  }
+
+  ul.video-catalog-nav {
+    font-weight: $light;
+    list-style: none;
+    margin: $bs-gutter 0 0;
+    padding: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+    @extend %clearfix;
+
+    @include breakpoint($sm) {
+      font-size: 1.8rem;
+    }
+    @include breakpoint($md) {
+      font-size: 2rem;
+    }
+    @include breakpoint($lg) {
+      font-size: 2.4rem;
+    }
+
+    strong {
+      font-weight: $semibold;
+    }
+
+    li {
+      margin: 0;
+      padding: 0;
+      float: left;
+
+      + li {
+        margin: 0 0 0 12px;
+        padding: 0 0 0 12px;
+        position: relative;
+
+        @include breakpoint($sm) {
+          margin: 0 0 0 $bs-gutter;
+          padding: 0 0 0 $bs-gutter;
+        }
+
+        &:before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          width: 1px;
+          content: "";
+          display: block;
+          background: $gray-darker;
+        }
+      }
+    }
+  }
+
+  p.description {
+    font-size: 1.6rem;
+    margin: $bs-gutter 0 0;
+
+    @include breakpoint($sm) {
+      font-size: 1.4rem;
+    }
+    @include breakpoint($md) {
+      font-size: 1.7rem;
+    }
+    @include breakpoint($lg) {
+      font-size: 1.9rem;
+    }
+  }
+
+  div.img {
+    margin: (-$bs-gutter * 2) (-$bs-gutter) 0;
+    position: relative;
+
+    @include breakpoint($sm) {
+      margin: (-$bs-gutter * 2) (-$bs-gutter * 2) 0;
+    }
+
+    h1.section-title {
+      color: $white;
+      position: absolute;
+      bottom: $bs-gutter;
+      left: $bs-gutter;
+      right: $bs-gutter;
+
+      @include breakpoint($sm) {
+        left: ($bs-gutter * 2);
+        right: ($bs-gutter * 2);
+      }
+    }
+
+    picture {
+      overflow: hidden; // without this, the :after element oddly wraps from left to right;
+      position: relative;
+
+      // add a background gradient (between image and text) so the text is easier to read;
+      &:after {
+        content: "";
+        display: block;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        width: 500px;
+        height: 400px;
+        margin: 0 0 -200px -250px;
+        background: radial-gradient(ellipse at center,  rgba($black, 0.75) 0%, rgba($white, 0) 70%);
+
+        @include breakpoint($sm) {
+          width: 800px;
+          height: 640px;
+          margin: 0 0 -320px -400px;
+        }
+
+        @include breakpoint($lg) {
+          width: 1000px;
+          height: 800px;
+          margin: 0 0 -400px -500px;
+        }
+      }
+    }
+
+    // container for the description;
+    + div.row {
+      padding: 0 0 ($bs-gutter * 2);
+    }
+  }
+
+  &__items {
+    margin: 0 -($bs-gutter);
+    padding: ($bs-gutter * 2) 0 0;
+  }
+
+  &__item {
+
+    @include breakpoint($sm) {
+      &:nth-child(3n + 1) {
+        clear: left;
+      }
+    }
+
+    @include breakpoint($md) {
+      &:nth-child(3n + 1) {
+        clear: none;
+
+      }
+
+      &:nth-child(4n + 1) {
+        clear: left;
+      }
+    }
+  }
+
+  article.video-promo {
+    padding: 0 0 ($bs-gutter * 2);
+
+    p.over-title {
+      font-size: 1.2rem;
+      margin: ($bs-gutter / 2) 0 0;
+      text-transform: uppercase;
+
+      + h1 {
+        margin: 0;
+      }
+    }
+
+    h1 {
+      @include typography-l1-header();
+      font-size: 1.8rem;
+      margin: ($bs-gutter / 2) 0 0;
+
+      @include breakpoint($md) {
+        font-size: 1.6rem;
+      }
+
+      a {
+        color: $gray-primary;
+        @include typography-truncate();
+      }
+    }
+
+    p.duration {
+      color: $gray-primary;
+      font-weight: $light;
+      font-size: 1.4rem;
+      margin: 0;
+
+      .passport-logo-wrapper {
+        display: inline-block;
+        position: relative;
+        width: 20px;
+        height: 20px;
+        margin-right: 2px;
+
+        .passport-logo {
+          width: 100%;
+          margin-top: -3px;
+        }
+      }
+    }
+
+    // mobile only;
+    @include breakpoint($xs-only) {
+      margin: 0 (-$bs-gutter);
+      padding: 0 0 ($bs-gutter * 3);
+
+      img {
+        box-shadow: none;
+        width: 100%;
+      }
+
+      p.over-title {
+        font-size: 1.4rem;
+        padding: 0 $bs-gutter;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+        padding: 0 $bs-gutter;
+        font-weight: $normal;
+        @include breakpoint($sm) {
+          font-size: 1.6rem;
+        }
+      }
+      .video-title {
+        text-transform:capitalize;
+        font-weight: $headings-font-weight;
+      }
+
+      p.duration {
+        font-size: 2rem;
+        padding: 0 $bs-gutter;
+      }
+    }
+  }
+
+  // only visible on mobile;
+  p.learn-more {
+    margin: 0;
+    text-align: center;
+  }
+
+  .video-content-empty {
+    margin-top: $bs-gutter;
+    margin-left: $bs-gutter;
+  }
+}

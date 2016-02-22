@@ -1,0 +1,300 @@
+.show-filter-form {
+  form {
+    background: $gray-light;
+    padding: 18px $bs-gutter 6px $bs-gutter;
+    border-bottom: 1px solid $gray-medium;
+    border-top: 1px solid $gray-medium;
+
+    label,
+    span {
+      color: $gray-primary;
+      font-size: 1.4rem;
+      font-weight: normal;
+      padding-bottom: ($bs-gutter / 2);
+      display: block;
+    }
+
+    .btn {
+      background: none repeat scroll 0 0 transparent;
+      border: 0 none;
+      border-radius: $radius;
+      color: $gray-darker;
+      margin-right: 8px;
+      padding: 0px 10px;
+      font-size: 1.5rem;
+      @include breakpoint($sm) {
+        margin-right: 8px;
+        padding: 6px 10px;
+      }
+
+      &:hover,
+      &:focus,
+      &.selected-btn {
+        background: none repeat scroll 0 0 $blue;
+        border: 0 none;
+        border-radius: 2px;
+        color: $white;
+        margin-right: 8px;
+        padding: 6px 10px;
+        span{
+          color:white;
+        }
+      }
+
+      span{
+        color: $gray-darker;
+        display: inline;
+        font-size: 1.8rem;
+        font-weight: normal;
+        padding-bottom: 0;
+      }
+    }
+
+    .icon-pbs-grid {
+      line-height: 0;
+      vertical-align: middle;
+    }
+
+    .top-sort-row {
+      margin: 0;
+      padding: $bs-gutter 0 ($bs-gutter * 2) 0;
+      .sort-buttons {
+        display: inline-block;
+      }
+
+    }
+
+    .station-search {
+      width: auto;
+      margin-top: 10px;
+      p {
+        margin-bottom: 10px;
+      }
+      [type="checkbox"] {
+        display: inline-block;
+        font-size: 30px;
+      }
+      .station-name {
+        display: inline-block;
+        margin-left: 10px;
+      }
+      @include breakpoint($md) {
+        margin-left: 2rem;
+      }
+    }
+
+    .has-feedback input {
+      font-size: 16px;
+      height: 40px;
+      margin-top: -5px;
+      padding: 6px;
+      border:1px solid $gray-medium;
+      border-radius: 0;
+    }
+    .form-control-feedback {
+      top: 33px;
+      font-size: 16px;
+    }
+    //Taking out the 'x' that automatically appears in textboxes in IE
+    input[type=text]::-ms-clear {
+      display: none;
+    }
+
+    .styled-select {
+      width: 100%;
+      height: 40px;
+      overflow: hidden;
+      background: url('../images/select_arrow.png') no-repeat right $white;
+      border:1px solid $gray-medium;
+    }
+
+    .styled-select select:focus {
+      outline: rgba(102, 175, 233, 0.3) auto 3px;
+    }
+
+    .styled-select select {
+      background: transparent;
+      width: 100%;
+      padding: 5px;
+      font-size: 16px;
+      line-height: 1;
+      border-radius: 0;
+      height: 38px;
+      -webkit-appearance: none;
+      -moz-appearance:none;
+      border: 0;
+      overflow: visible;
+    }
+
+    .large-filters{
+      float: right;
+      div{
+        display: inline-block;
+      }
+      @include breakpoint($md-only) {
+        margin: 0;
+        padding: 0;
+      }
+      @include breakpoint($lg) {
+        padding-left: ($bs-gutter / 2);
+      }
+    }
+
+    .sorting-options {
+      position: absolute;
+      right: 7%;
+      top: 85px;
+      @include breakpoint($sm) {
+        right: 3%;
+        top: 70px;
+      }
+      @include breakpoint($md) {
+          right: 2%;
+          top: 112px;
+        }
+
+
+      div {
+        display: inline-block;
+      }
+    }
+  }
+
+  &__layout-buttons {
+    display: inline-block;
+    margin-left: 20px;
+    @include breakpoint($md) {
+      margin-right: 0;
+      margin-left: 14px;
+      width: auto;
+      position: relative;
+    }
+    @include breakpoint($lg) {
+      margin-left: 0;
+    }
+  }
+
+  .divider{
+    border-right:1px solid $gray-medium;
+    padding-right: 3px;
+    margin-right: 10px;
+    display: inline-block;
+    @include breakpoint($sm) {
+      padding-right: 20px;
+      margin-right: ($bs-gutter * 2);
+      padding-right: ($bs-gutter);
+    }
+    @include breakpoint($md) {
+      margin-right: 0;
+      padding-right: 0;
+    }
+    @include breakpoint($lg) {
+      margin-right: ($bs-gutter * 2);
+      padding-right: ($bs-gutter/2);
+    }
+  }
+
+  span.inline {
+    display: inline !important;
+    padding-left: ($bs-gutter / 4);
+  }
+
+  .results {
+
+    div.results-table{
+      margin: 0 10px;
+    }
+
+    // list results;
+    .table-bordered {
+      border-collapse: collapse;
+      border: solid $gray-lighter;
+    }
+    .table-bordered > thead > tr > th {
+      margin-left: 8px;
+      color: $gray-darker;
+      text-transform: uppercase;
+      padding: $bs-gutter;
+    }
+    .table-bordered > thead > tr > th,
+    .table-bordered > tbody > tr > td {
+      border: 1px solid $gray-medium;
+    }
+    @include breakpoint($xs-only) {
+      .table-bordered > tbody > tr > td{
+        border: 0;
+        border-bottom: 1px solid $gray-medium;
+      }
+      .video-count {
+        margin-top: 10px;
+        color: $gray-dark;
+        white-space: pre;
+      }
+    }
+
+    table {
+      margin: 4px 0 0;
+      font-size: 16px;
+
+      @include breakpoint($xs-only) {
+        table {
+          margin: 0;
+        }
+      }
+
+      th{
+        font-family: $serif;
+        font-weight: $bold;
+        font-size: 13px;
+        background-color: $gray-light;
+      }
+      td{
+        padding: 14px
+      }
+    }
+  }
+
+  .show-container {
+    /*****
+    .hover-scale {
+      transform: scale(1, 1);
+      transition-duration: 500ms;
+      transition-timing-function: ease-out;
+
+      -webkit-transform: scale(1, 1);
+      -webkit-transition-duration: 500ms;
+      -webkit-transition-timing-function: ease-out;
+
+      -moz-transform: scale(1, 1);
+      -moz-transition-duration: 500ms;
+      -moz-transition-timing-function: ease-out;
+
+      -ms-transform: scale(1, 1);
+      -ms-transition-duration: 500ms;
+      -ms-transition-timing-function: ease-out;
+    }
+    .hover-scale:hover {
+      transform: scale(1.15, 1.15);
+      transition-duration: 500ms;
+      transition-timing-function: ease-out;
+
+      -webkit-transform: scale(1.15, 1.15);
+      -webkit-transition-duration: 500ms;
+      -webkit-transition-timing-function: ease-out;
+
+      -moz-transform: scale(1.15, 1.15);
+      -moz-transition-duration: 500ms;
+      -moz-transition-timing-function: ease-out;
+
+      -ms-transform: scale(1.15, 1.15);
+      -ms-transition-duration: 500ms;
+      -ms-transition-timing-function: ease-out;
+    }
+    *****/
+  }
+}
+
+.shows-landing__no-results-header {
+  font-size: 18px;
+  padding: 0 20px 20px;
+}

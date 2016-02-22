@@ -1,0 +1,519 @@
+section.favorite-block {
+  padding: ($bs-gutter * 4) $bs-gutter ($bs-gutter * 3);
+
+  @include breakpoint($sm) {
+    padding: ($bs-gutter * 4) ($bs-gutter * 2) ($bs-gutter * 2);
+  }
+
+  h1.section-title {
+    color: $gray-primary;
+    font-size: 3.2rem;
+    margin: 0 0 $bs-gutter;
+
+    span {
+      font-weight: $bold;
+      margin-left: 5px;
+      padding-left: 12px;
+      position: relative;
+
+      &:before {
+        content: "";
+        display: block;
+        background: $gray-medium;
+        width: 1px;
+        position: absolute;
+        top: 8px;
+        bottom: 8px;
+        left: 0;
+      }
+    }
+  }
+
+  // most popular story;
+  article.featured {
+    background: $white;
+    box-shadow: $shadow;
+    font-size: 1.5rem;
+    color: $gray-primary;
+
+    // if there is a row of content after this, give that row some space;
+    + div.row {
+      margin-top: ($bs-gutter * 2);
+    }
+
+    div.article-body {
+      margin: 0 0 0 (-$bs-gutter);
+      padding: $bs-gutter $bs-gutter 0 0;
+      position: relative;
+
+      // large device - padding bottom might push the container below the image which is bad;
+      @include breakpoint($lg) {
+        padding: ($bs-gutter * 2) ($bs-gutter * 2) 0 $bs-gutter;
+      }
+    }
+
+    p.over-title {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    h1 {
+      @include typography-l2-header();
+      font-size: 2.1rem;
+      line-height: 1.2;
+      margin: ($bs-gutter / 4) 0 $bs-gutter;
+      @include typography-truncate();
+
+      @include breakpoint($sm) {
+        font-size: 2.5rem;
+      }
+      @include breakpoint($md) {
+        font-size: 3rem;
+      }
+      @include breakpoint($lg) {
+        font-size: 3.2rem;
+      }
+    }
+
+    p {
+      font-size: 1.4rem;
+
+      &.description {
+        font-size: 1.6rem;
+        margin: 0;
+      }
+
+      &.duration {
+        margin: $bs-gutter 0 0;
+      }
+
+      &.watchlist {
+        margin: $bs-gutter 0 0;
+      }
+
+    }
+  }
+
+  div.share {
+    margin: 0;
+    padding: $bs-gutter 0;
+    position: absolute;
+    // positioning needs to match the padding of it's container;
+    right: $bs-gutter;
+    bottom: 0;
+    left: 0;
+
+    border-top: $divider;
+    font-size: 1.2rem;
+    z-index: 1;
+
+    @include breakpoint($lg) {
+      right: ($bs-gutter * 2);
+      left: $bs-gutter;
+    }
+
+    a {
+      margin-left: .5rem;
+      font-size: 2rem;
+      line-height: 1;
+      vertical-align: middle;
+    }
+  }
+
+  // other popular stories;
+  article.video-promo {
+    img {
+      box-shadow: $shadow;
+    }
+
+    p.over-title {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      margin: ($bs-gutter / 2) 0 0;
+
+      + h1 {
+        margin: 0;
+      }
+    }
+
+    h1 {
+      @include typography-l1-header();
+      margin: ($bs-gutter / 2) 0 0;
+      font-size: 1.8rem;
+
+      @include breakpoint($md) {
+        font-size: 1.6rem;
+      }
+
+      a {
+        @include typography-truncate();
+        color: $gray-primary;
+      }
+    }
+
+    p.duration {
+      color: $gray-primary;
+      font-weight: $light;
+      font-size: 1.6rem;
+      margin: 0;
+    }
+
+    // mobile only;
+    @include breakpoint($xs-only) {
+      margin: 0 (-$bs-gutter);
+      padding: 0 0 ($bs-gutter * 3);
+
+      img {
+        box-shadow: none;
+      }
+
+      p.over-title {
+        padding: 0 $bs-gutter;
+        font-size: 1.4rem;
+      }
+
+      h1 {
+        padding: 0 $bs-gutter;
+        font-size: 2.4rem;
+      }
+
+      p.duration {
+        padding: 0 $bs-gutter;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  // container for the explore-more button at the bottom of this component;
+  p.explore-more {
+    margin: 0;
+    text-align: center;
+
+    @include breakpoint($screen-sm) {
+      margin-top: ($bs-gutter * 4);
+    }
+  }
+}
+
+section.carousel-favorite-show {
+  margin-top: 0;
+  background-color: $gray-lighter;
+  padding: ($bs-gutter / 2) $bs-gutter $bs-gutter;
+
+  -webkit-box-shadow: 0 3px 4px 0px $gray-medium;
+  -moz-box-shadow: 0 3px 4px 0px $gray-medium;
+  box-shadow: 0 3px 4px 0px $gray-medium;
+
+  @include breakpoint($screen-sm) {
+    padding: ($bs-gutter / 4) ($bs-gutter * 2) ($bs-gutter * 2);
+  }
+
+  .favorite-show-upper-text {
+    width: 90%;
+    max-width: 1250px;
+    display: block;
+    position: absolute;
+    margin-bottom: $bs-gutter;
+    margin-top: (-$bs-gutter);
+    @include breakpoint($lg) {
+      max-width: 1200px;
+    }
+  }
+
+  div.section-title {
+    font-weight: $normal;
+    font-size: 1.4rem;
+    margin-bottom: $bs-gutter;
+    float: left;
+  }
+
+  .editFavorites {
+    float: right;
+  }
+
+  a.editLink {
+    font-family: $serif;
+    font-weight: $bold;
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+  }
+
+  .favorite-show-jumpto-list {
+    width: 100%;
+    overflow: hidden;
+    height: auto;
+  }
+
+  // fallback image, same as show strip
+  .fallback {
+    position: relative;
+
+    &__title {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding: 75px 10px 10px 10px;
+      color: $white;
+      font-size: 1.4rem;
+      @include breakpoint($sm) {
+        font-size: 1.8rem;
+      }
+      text-align: center;
+      text-shadow: 1px 1px 1px rgba($black, .8);
+      white-space: pre-wrap;
+    }
+
+    &__image {
+      position: relative;
+    }
+  }
+
+  // carousel strip at the top of the component;
+  div.carousel-container {
+    // we're going to show half of the last ARTICLE tag (slide);
+    // these styles set the container to allow for this;
+    overflow-x: hidden;
+    // right margin: expand the carousel into the gutter set by the component container so images bleed off the page;
+    // left margin: expand the carousel into the gutter so the padding (for the drop shadow) doesn't offset the image;
+    margin: $bs-gutter (-$bs-gutter) 0 -5px;
+    white-space: nowrap;
+    display: block;
+
+    .carousel-slide {
+      max-width: 237px; //prevents awkwardly large posters at middle breakpoints
+    }
+
+    article {
+      padding-right: ($bs-gutter * 2) - 10; // minus 10 because of the padding around the PICTURE for the padding on the IMG;
+
+      a,
+      img {
+        display: block;
+        width: 100%;
+      }
+
+      // set padding so the drop shadow can be displayed without getting cut off;
+      picture {
+        padding: 5px;
+      }
+      img {
+        box-shadow: $shadow;
+        width: 100%;
+        max-width: 237px;
+      }
+    }
+  }
+
+  // hide additional slides before JS is initialized;
+  div.carousel-slide + div.carousel-slide {
+    display: none;
+  }
+
+  // once Slick is init, re-show the slides;
+  .slick-initialized div.carousel-slide + div.carousel-slide {
+    display: block;
+  }
+
+  // expand the container for the slides;
+  // this way the last ARTICLE tag (slide) can be cut off;
+  // the width of the visible slides will be adjusted to fill this space;
+  div.slick-list {
+    margin-right: (-$bs-gutter * 4);
+
+    @include breakpoint($sm) {
+      margin-right: (-$bs-gutter * 6);
+    }
+  }
+
+}
+
+#favoritesModal {
+  .modal-content{
+    border-radius: 0;
+  }
+  .modal-header {
+    border-bottom: none;
+  }
+
+  .modal-title {
+    color: $gray-primary;
+    font-weight: $light;
+    font-size: 3.0rem;
+    display: inline-block;
+
+    @include breakpoint($xs-only) {
+      font-size: 2.6rem;
+    }
+  }
+
+  .closeBtn {
+    font-size: 3rem;
+    font-weight: $bold;
+    cursor: pointer;
+    color: $gray-medium;
+    float: right;
+    padding-right: 10px;
+    margin-top: -10px;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .modal-footer {
+    width: 100%;
+    text-align: right;
+    background-color: $white;
+    &__button {
+      font-family: $serif;
+      font-weight: $bold;
+      font-size: 1.5rem;
+      color: $blue;
+      margin-top: 8px;
+      padding: ($bs-gutter / 2) $bs-gutter;
+      opacity: 1;
+      text-shadow: none;
+      font-weight: normal;
+      display: inline-block;
+      border: 1px solid $gray-medium;
+      background-color: $gray-lighter;
+      // box-shadow: 1px 1px 1px $gray-medium;
+    }
+    .cancel {
+      margin-right: 30px;
+    }
+  }
+
+  div.favlist-wrapper{;
+    background-color: $white;
+  }
+
+  div.favlist-container {
+    // cf. http://stackoverflow.com/questions/1735372/jquery-sortable-list-scroll-bar-jumps-up-when-sorting
+    // prevent a scrolling bug/feature of jQuery UI sortable();
+    overflow: auto;
+  }
+
+  article.favlist-result {
+    background: $white;
+    border: 1px solid $gray-light;
+    border-width: 1px 0;
+    color: $gray-primary;
+    font-size: 1.6rem;
+    margin-top: -1px;
+    padding: $bs-gutter;
+
+    &:first-child {
+      border-top: 0;
+    }
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    .sort-col {
+      @include breakpoint($sm) {
+        margin-right: (-$bs-gutter);
+      }
+    }
+
+    .remove-col{
+      @include breakpoint($xs-only) {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+
+    .favlist-handle {
+      cursor: move;
+
+      .favlist-grabber {
+        display: inline-block;
+        height: 30px;
+        width: auto;
+        padding-right: 6px;
+        cursor: move;
+        vertical-align: top;
+        -webkit-user-select: none; /* Chrome all / Safari all */
+        -moz-user-select:none;
+        -ms-user-select:none;
+        user-select: none;
+        -webkit-touch-callout:none;
+        -moz-touch-callout:none;
+        -ms-touch-callout:none;
+        touch-callout:none;
+        pointer-events: none;
+        -webkit-pointer-events: none;
+        -moz-pointer-events: none;
+        -ms-pointer-events: none;
+      }
+
+      div {
+        cursor: move;
+      }
+    }
+
+    .favlist-info-spacer {
+      height: 32px;
+      @include breakpoint($sm-only) {
+        height: 16px;
+      }
+    }
+
+    .btn--remove {
+      font-weight: $semibold;
+      font-size: 1.6rem;
+      font-family: $sans-serif;
+      line-height: 0.4;
+      padding: 7px;
+      height: 24px;
+      background-color: $gray-lighter;
+      color: $blue-muted;
+      border: 1px solid $blue-muted;
+    }
+
+    .btn-reorder {
+      font-weight: $normal;
+      display: inline-block;
+      font-size: 2.1rem;
+      height: 30px;
+      width: 33px;
+      text-align: center;
+      color: $blue-muted;
+      background-color: $gray-lighter;
+      border: 1px solid $blue-muted;
+      border-radius: 2px;
+      vertical-align: bottom;
+    }
+
+    .link-remove {
+      font-family: $serif;
+      font-weight: $bold;
+      font-size: 1.4rem;
+      color: $blue;
+      margin-left: 8px;
+    }
+
+    p.fav-title {
+      color:$gray-primary;
+      font-size: 1.8rem;
+      margin: 3px 0 0 0;
+      @include breakpoint($xs-only) {
+        font-size: 1.4rem;
+      }
+    }
+
+    .remove-links {
+      text-align: right;
+      width: 100%;
+    }
+    // right column - lets break it out of the grid, and into the gutter so it's closer to the image;
+    div.article-body {
+      margin: 0 0 0 (-$bs-gutter);
+
+      @include breakpoint($xs-only) {
+        margin: 0;
+      }
+
+    }
+  }
+}

@@ -1,0 +1,44 @@
+section.empty {
+  background: $gray-lighter;
+  color: $gray-primary;
+  padding: ($bs-gutter * 2) $bs-gutter ($bs-gutter * 4);
+  text-align: center;
+
+  @include breakpoint($sm) {
+    padding: ($bs-gutter * 2) ($bs-gutter * 2) ($bs-gutter * 6);
+  }
+
+  // wrapper for all content;
+  // add a max-width so the content doesn't spread across wide pages;
+  div.body {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin: 22px 0 0;
+
+    @include breakpoint($md) {
+      font-size: 2rem;
+    }
+
+    @include breakpoint($lg) {
+      font-size: 2.6rem;
+    }
+  }
+
+  p {
+    font-size: 1.4rem;
+    margin: $bs-gutter 0 0;
+
+    @include breakpoint($md) {
+      font-size: 1.6rem;
+    }
+  }
+}

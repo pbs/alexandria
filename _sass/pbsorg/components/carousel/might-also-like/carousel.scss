@@ -1,0 +1,69 @@
+section.carousel-might-also-like {
+  padding: ($bs-gutter * 4) $bs-gutter $bs-gutter;
+
+  @include breakpoint($screen-sm) {
+    padding: ($bs-gutter * 4) ($bs-gutter * 2) ($bs-gutter * 2);
+  }
+
+  h1.section-title {
+    @include typography-l2-header();
+    font-size: 3.2rem;
+    margin: 0 0 $bs-gutter;
+  }
+
+  // carousel strip at the top of the component;
+  div.carousel-container {
+    // we're going to show half of the last ARTICLE tag (slide);
+    // these styles set the container to allow for this;
+    overflow-x: hidden;
+    // right margin: expand the carousel into the gutter set by the component container so images bleed off the page;
+    // left margin: expand the carousel into the gutter so the padding (for the drop shadow) doesn't offset the image;
+    margin: 0 (-$bs-gutter) 0 -5px;
+    white-space: nowrap;
+
+    article {
+      padding-right: $bs-gutter;
+
+      a,
+      img {
+        display: block;
+      }
+
+      // set padding so the drop shadow can be displayed without getting cut off;
+      picture {
+        padding: 5px;
+      }
+      img {
+        box-shadow: $shadow;
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
+    // provide more space for images to bleed off the page;
+    @include breakpoint($sm) {
+      margin-right: (-$bs-gutter * 2);
+
+      article {
+        padding-right: ($bs-gutter * 2);
+      }
+    }
+  }
+
+  // hide additional slides before JS is initialized;
+  div.carousel-slide + div.carousel-slide {
+    display: none;
+  }
+
+  // once Slick is init, re-show the slides;
+  .slick-initialized div.carousel-slide + div.carousel-slide {
+    display: block;
+  }
+
+  // expand the container for the slides;
+  // this way the last ARTICLE tag (slide) can be cut off;
+  // the width of the visible slides will be adjusted to fill this space;
+  div.slick-list {
+    margin-right: (-$bs-gutter * 6);
+  }
+}

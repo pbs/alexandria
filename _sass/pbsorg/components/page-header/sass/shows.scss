@@ -1,0 +1,121 @@
+.shows-dropdown {
+  padding: 20px 50px;
+  font-size: 1.4rem;
+
+  a {
+    color: $gray-darker;
+  }
+
+  &__popular {
+    @include breakpoint($lg) {
+      .section-title {
+        margin-bottom: 0;
+      }
+    }
+
+    &-shows {
+      margin-top: -($bs-gutter);
+      margin-bottom: $bs-gutter;
+
+      @include breakpoint($lg) {
+        columns: 2;
+        column-gap: 16px;
+      }
+
+      li {
+        padding-top: $bs-gutter;
+
+        @include breakpoint($lg) {
+          margin: 0;
+          overflow: hidden; // fix for IE11 - see http://stackoverflow.com/questions/22547098/multi-columns-not-working-in-ie-11
+          break-inside: avoid; // see https://css-tricks.com/almanac/properties/b/break-inside/
+        }
+      }
+    }
+  }
+
+  &__local {
+    padding: 0 ($bs-gutter * 2);
+    line-height: 20px;
+
+    &-shows {
+      margin-bottom: $bs-gutter;
+
+      &__individual {
+        margin-bottom: $bs-gutter;
+      }
+    }
+  }
+
+  &__featured {
+    padding: 0 ($bs-gutter * 2);
+
+    &__show-poster {
+      max-width: 140px;
+      margin-right: 16px;
+      color: $white;
+      font-size: 1.4rem;
+      text-align: center;
+    }
+
+    &-info {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__btn {
+    margin-top: 10px;
+    padding: 6px $bs-gutter;
+    line-height: 30px;
+    color: $blue !important; //important is for Firefox
+    font-size: 1.4rem;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .fallback-image__container {
+    width: 87%;
+    @include aspect-ratio(9, 13.45);
+  }
+
+  // titles for each column of links;
+  &__section-title {
+    margin: 0;
+    padding: $bs-gutter 0;
+    color: $gray-darker;
+    font-size: 15px;
+    font-weight: $semibold;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include breakpoint($sm) {
+      margin: 0 0 $bs-gutter/4;
+      padding: 0;
+      text-align: left;
+    }
+
+    @include breakpoint($md) {
+      margin: 0 0 $bs-gutter/2;
+    }
+
+    @include breakpoint($lg) {
+      margin: 0 0 $bs-gutter;
+    }
+  }
+
+  .row-with-dividers {
+    padding-bottom: 4px;
+    // use the > so we don't target the nested grid;
+
+    > [class*="col"] {
+      border-right: solid 1px $gray-light;
+
+      &:last-child {
+        border: 0;
+      }
+    }
+  }
+}
