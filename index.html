@@ -10,7 +10,7 @@ layout: default
     {% for component in site.components %}
       <li>
         <h2>
-          <a class="component-link" href="{{ component.url | prepend: site.baseurl }}"><small>{{component.id}}</small> {{ component.title }}</a>
+          <a class="component-link" href="{{ component.url | prepend: site.baseurl }}"><small>{{component.code}}</small> {{ component.title }}</a>
         </h2>
         {% if component.products %}
           <p>

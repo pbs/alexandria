@@ -1,19 +1,19 @@
 ---
 layout: post
-title:  "Verticals"
-date:   2016-02-16
+title:  "Schedule 2"
+date:   2015-09-10
 category: content
 products:
-- pbs.org
+- bento
 status: in development
-code: c19
+code: c14
 example: |
   <section class="verticals">
     <article>
       <div class="row">
         <div class="col-xs-4 col-md-12x4">
           <a href="">
-            <img class="img-responsive" src="http://dl47xs20witg8.cloudfront.net/images/fpo/verticals/logo-pbs-kids.68a4a83d8cc9.png" alt="Visit PBS KIDS"></a>
+            <img class="img-responsive" src="/static/images/fpo/verticals/logo-pbs-kids.png" alt="Visit PBS KIDS"></a>
         </div>
         <div class="col-xs-8 col-md-12x8">
           <div class="article-body">
@@ -31,7 +31,7 @@ example: |
       <div class="row">
         <div class="col-xs-4 col-md-12x4">
           <a href="">
-            <img class="img-responsive" src="http://dl47xs20witg8.cloudfront.net/images/fpo/verticals/logo-pbs-learning-media.5ceff18af299.png" alt="Visit PBS Learning Media">
+            <img class="img-responsive" src="/static/images/fpo/verticals/logo-pbs-learning-media.png" alt="Visit PBS Learning Media">
           </a>
         </div>
         <div class="col-xs-8 col-md-12x8">
@@ -51,7 +51,5 @@ example: |
 ---
 
 Donec ante. Sed at velit. Vestibulum at purus at urna porttitor sodales. Nullam pulvinar, urna interdum eleifend sodales, eros est tempus quam, quis ultricies nibh elit vitae urna. Donec pretium arcu at quam. Quisque tristique, lacus id tempor blandit, quam massa imperdiet lorem, porta fermentum quam ante ac tortor. Curabitur mauris lectus, dapibus ut, ornare sit amet, vulputate sit amet, erat.
-
-Blah.
 
 

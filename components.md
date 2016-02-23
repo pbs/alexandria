@@ -4,15 +4,13 @@ title: Components
 permalink: /components/
 ---
 
-Example typography, etc goes here
-
-## Components
 
 <ul class="post-list">
   {% for component in site.components %}
     <li>
       <h2>
-        <a class="component-link" href="{{ component.url | prepend: site.baseurl }}"><small>{{component.id}}</small> {{ component.title }}</a>
+      <small>{{component.id}}</small>
+        <a class="component-link" href="{{ component.url | prepend: site.baseurl }}">{{ component.title }}</a>
       </h2>
       {% if component.products %}
         <p>

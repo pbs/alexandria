@@ -2,11 +2,11 @@
 layout: post
 title:  "Schedule"
 date:   2015-09-10
-categories: content
+category: video
 products:
-- pbs.org
+- bento
 status: in development
-id: c03_v1
+code: c13
 example: |
   <section class="verticals">
     <article>
