@@ -4,7 +4,7 @@ title:  "Verticals"
 date:   2016-02-16
 category: content
 products:
-- pbs.org
+- pbs-org
 status: in development
 code: c19
 example: |
