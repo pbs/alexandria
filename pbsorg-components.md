@@ -4,7 +4,6 @@ title: PBS.org Components
 permalink: /components/pbs-org/
 ---
 
-
 <ul class="post-list">
   {% assign components = site.components | sort: 'code' %}
   {% for component in components %}

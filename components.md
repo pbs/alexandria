@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Components
+title: All Components
 permalink: /components/
 ---
 
