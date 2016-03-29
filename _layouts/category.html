@@ -19,22 +19,15 @@ layout: default
 
     {% assign print = false %}
     {% if page.product %}
-      {% if component.products contains page.product and component.category == page.category %}
+      {% if component.products contains page.product and component.categories contains page.category %}
         {% assign print = true %}
       {% endif %}
-    {% elsif component.category == page.category %}
+    {% elsif component.categories contains page.category %}
       {% assign print = true %}
     {% endif %}
 
     {% if print %}
-      <li>
-        <a href="{{ component.url }}">
-          {{ component.code }}: {{ component.title }}
-          {% if page.product == null %}
-            | {{ component.products }}
-          {% endif %}
-        </a>
-      </li>
+      {% include post-li.html %}
     {% endif %}
 
   {% endfor %}

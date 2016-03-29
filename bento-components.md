@@ -2,8 +2,10 @@
 layout: page
 title: Bento Components
 permalink: /components/bento/
+product: bento
 ---
 
+{% include product-nav.html %}
 
 <ul class="post-list">
   {% for component in site.components %}
