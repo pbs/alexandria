@@ -6,11 +6,28 @@
   {% if component.products %}
     <p>
       Product{% if component.products.size > 1 %}s{% endif %}:
-      {{ component.products | join: ', ' }}
+
+      {% for product in component.products %}
+        <a href="/components/{{ product }}">
+        {% if product == 'pbs-org' %}
+          PBS.org
+        {% else %}
+          {{ product|capitalize }}
+        {% endif %}
+        </a>
+        {% if forloop.last == false %}, {% endif %}
+      {% endfor %}
     </p>
   {% endif %}
-  <p>Category: {{component.categories}}</p>
-  <p>Status: {{component.status}}</p>
+  <p>Category:
+    {% for category in component.categories %}
+      <a href="/components/{{ category|downcase }}">
+        {{ category | capitalize }}
+      </a>
+      {% if forloop.last == false %}, {% endif %}
+    {% endfor %}
+    </p>
+  <p>Status: {{component.status| capitalize }}</p>
 
   <span class="post-meta">Updated: {{ component.date | date: "%b %-d, %Y" }}</span>
 </li>
