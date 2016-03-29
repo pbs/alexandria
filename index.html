@@ -7,22 +7,11 @@ layout: default
   <h1 class="page-heading">Latest Additions</h1>
 
   <ul class="post-list">
-    {% for component in site.components %}
-      <li>
-        <h2>
-          <a class="component-link" href="{{ component.url | prepend: site.baseurl }}"><small>{{component.code}}</small> {{ component.title }}</a>
-        </h2>
-        {% if component.products %}
-          <p>
-            Product{% if component.products.size > 1 %}s{% endif %}:
-            {{ component.products | join: ', ' }}
-          </p>
-        {% endif %}
-        <p>Category: {{component.categories}}</p>
-        <p>Status: {{component.status}}</p>
+    {% for component in site.components reversed limit:5 %}
 
-        <span class="post-meta">Updated: {{ component.date | date: "%b %-d, %Y" }}</span>
-      </li>
+
+      {% include post-li.html %}
+
     {% endfor %}
   </ul>
 
