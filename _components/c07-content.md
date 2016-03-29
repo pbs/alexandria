@@ -2,7 +2,8 @@
 layout: post
 title: Content
 date: 2015-09-22T00:00:00.000Z
-category: content
+category:
+  - content
 products:
   - pbs-org
 status: in development
