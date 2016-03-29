@@ -14,11 +14,10 @@
       </a>
 
       <div class="trigger">
-        {% for page in site.pages reversed %}
-          {% if page.title %}
-          <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-          {% endif %}
-        {% endfor %}
+        <a class="page-link" href="/components/bento/">Bento Components</a>
+        <a class="page-link" href="/components/pbs-org/">PBS.org Components</a>
+        <a class="page-link" href="/component-categories/">Categories</a>
+
       </div>
     </nav>
 
