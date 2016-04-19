@@ -1,4 +1,7 @@
 <ul class="component-nav component-nav--{{ page.product }}">
+  <li class="component-nav--item">
+    <a href="/components/{{ page.product }}/">All {{ page.product|capitalize }} Products</a>
+  </li>
   {% for category in site.data.categories  %}
   <li class="component-nav--item">
     <a href="/components/{{ page.product }}/{{ category.slug }}">{{ category.name }}</a>
