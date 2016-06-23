@@ -27,7 +27,25 @@ $content-width:    1280px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
+// Neutrals
+$white: #ffffff;
+$black: #000000; //used seldomly
 
+$gray-primary: #222222;
+$gray-darker: #4b4b4b;
+$gray-dark: #707070;
+$gray-medium: #b3b3b3;
+$gray-light: #e0e0e0;
+$gray-lighter: #f3f3f3;
+
+// Hues
+$blue: #126eb5;
+$blue-muted: #8fa6bc;
+$blue-light: #00aaeb;
+
+$red: #ac031f;
+$yellow: #e9ba15;
+$green: #70B406;
 
 // Using media queries with like this:
 // @include media-query($on-palm) {
@@ -50,3 +68,23 @@ $on-laptop:        800px;
         "layout",
         "syntax-highlighting"
 ;
+
+.swatch {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  padding: 15px;
+  border: solid 1px $gray-medium;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  vertical-align: top;
+  line-height: 1.4;
+  border-radius: 2px;
+
+  &--icon {
+    height: auto;
+    font-size: 4rem;
+  }
+}
+

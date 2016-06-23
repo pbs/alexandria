@@ -2,7 +2,7 @@
 title: Alexandria | The PBS Component Library
 email: component-librarian@pbs.org
 description: > # this means to ignore newlines until "baseurl:"
-  A Design Style Guide and Component library for PBS digital properties
+  A Component Library and Design System for PBS digital properties
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://www.pbs.org" # the base hostname & protocol for your site
 twitter_username: pbs
