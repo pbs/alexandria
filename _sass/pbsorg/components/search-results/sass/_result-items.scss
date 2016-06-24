@@ -1,0 +1,147 @@
+.search-results-list {
+  margin-bottom: 2px;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.search-result-web-item {
+  margin-bottom: 1px;
+  padding: $gap-large $gap;
+  background-color: $white;
+
+  @include breakpoint($sm) {
+    padding: $gap;
+  }
+
+  &__title {
+    display: block;
+    font-size: $ernie;
+
+    @include breakpoint($sm) {
+      font-size: $oscar;
+    }
+  }
+
+  &__url-container {
+    @include typography-truncate();
+    margin-top: $gap-half;
+  }
+
+  // Need the full class name here to override link color styles
+  .search-result-web-item__url {
+    color: $green;
+    font-size: $abby;
+    line-height: $line-height;
+
+    @include breakpoint($sm) {
+      font-size: $elmo;
+    }
+  }
+
+  &__description {
+    margin-top: $gap-half;
+    font-size: $elmo;
+
+    @include breakpoint($sm) {
+      font-size: $ernie;
+    }
+  }
+}
+
+.search-result-video-item {
+  display: flex;
+  margin-bottom: 1px;
+  padding: $gap;
+  background-color: $white;
+  font-size: $ernie;
+
+  &__image-link {
+    @include aspect-ratio(16, 8.9);
+    width: 50%;
+    margin-right: $gap;
+
+    @include breakpoint($sm) {
+      width: 33%;
+    }
+  }
+
+  &__image-container-image {
+    @include aspect-ratio(16, 8.9);
+    position: absolute;
+  }
+
+  &__info {
+    width: 50%;
+    padding-right: $gap-quarter;
+
+    @include breakpoint($sm) {
+      width: 66%;
+    }
+  }
+
+  // Need the full class name here to override link color styles
+  .search-result-video-item__show-title {
+    display: block;
+    margin: 0;
+    color: $gray-dark;
+    font-family: $serif;
+    font-size: $abby;
+    text-transform: uppercase;
+
+    @include breakpoint($sm) {
+      font-size: $elmo;
+    }
+  }
+
+  // Need the full class name here to override link color styles
+  .search-result-video-item__video-title {
+    color: $gray-primary;
+    font-size: $oscar;
+    line-height: 1.1;
+
+    @include breakpoint($sm) {
+      font-size: 2.2rem;
+    }
+  }
+
+  &__video-description {
+    display: none;
+
+    @include breakpoint($sm) {
+      display: block;
+    }
+  }
+
+  &__video-metrics {
+    margin-top: $gap-half;
+    font-size: $abby;
+    text-transform: capitalize;
+
+    @include breakpoint($sm) {
+      font-size: $ernie;
+    }
+  }
+
+  .passport-logo-wrapper {
+    display: inline-block;
+    position: relative;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+
+    @include breakpoint($sm) {
+      width: 18px;
+      height: 18px;
+    }
+
+    .passport-logo {
+      width: 100%;
+      margin-top: -3px;
+      box-shadow: none;
+    }
+  }
+
+  &__video-type {
+    margin-left: $gap-quarter;
+  }
+}

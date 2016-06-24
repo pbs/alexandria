@@ -1,7 +1,7 @@
 // create spacing for the absolutely position nav (dots);
 .carousel {
   position: relative;
-  padding: 0 0 ($bs-gutter * 2 + 24);
+  padding-bottom: ($gap-double + 24);
 
   @include breakpoint($sm) {
     padding: 0;
@@ -10,20 +10,20 @@
   // Style the play and pause buttons
   .slick-pause {
     position: absolute;
-    top: $bs-gutter;
-    right: $bs-gutter;
+    top: $gap;
+    right: $gap;
     border: 0;
     outline: none;
     background-color: transparent;
     color: rgba($white, .8);
-    font-size: 2rem;
+    font-size: $snuffy;
     cursor: pointer;
     z-index: 4;
 
     @include breakpoint($sm) {
       top: auto;
       right: 20px;
-      bottom: $bs-gutter;
+      bottom: $gap;
       font-size: 2.5rem;
     }
 
@@ -35,10 +35,10 @@
   // adjust positioning of the dots on mobile;
 
   .slick-dots {
-    bottom: ($bs-gutter / 4);
+    bottom: $gap-quarter;
 
     @include breakpoint($sm) {
-      bottom: $bs-gutter;
+      bottom: $gap;
     }
 
     [role="button"] {

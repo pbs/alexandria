@@ -27,17 +27,17 @@
 
 
 // Small grid
-@media (min-width: $screen-sm-min) {
+@include breakpoint($sm) {
   @include make-grid(sm);
 }
 
 // Medium grid
-@media (min-width: $screen-md-min) {
+@include breakpoint($md) {
   @include make-grid(md);
 }
 
 // Large grid
-@media (min-width: $screen-lg-min) {
+@include breakpoint($lg) {
   @include make-grid(lg);
 }
 

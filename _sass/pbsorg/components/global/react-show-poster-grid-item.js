@@ -1,14 +1,13 @@
 'use strict';
 
-let jQuery = window.jQuery || require('jquery'),
-  React = window.React || require('react'),
-  ReactDOM = window.ReactDOM || require('react-dom'),
-  PureRenderMixin = React.addons.PureRenderMixin,
-  ImageWithFallback = require('./react-image-with-fallback'),
-  ShowPosterGridItem;
+import jQuery from 'jquery';
+import React from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 
-ShowPosterGridItem = React.createClass({
-  
+const ImageWithFallback = require('./react-image-with-fallback');
+
+const ShowPosterGridItem = React.createClass({
+
   /**
    * Array of any mixin libraries for react
    */

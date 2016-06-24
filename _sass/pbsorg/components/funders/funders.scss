@@ -1,12 +1,12 @@
 .funders {
-  @extend %clearfix;
-  margin-bottom: $bs-gutter;
+  @include clearfix();
+  margin-bottom: $gap;
 
   .section-title {
     display: inline-block;
-    margin: ($bs-gutter / 2) $bs-gutter ($bs-gutter / 2) 0;
+    margin: $gap-half $gap $gap-half 0;
     color: $gray-darker;
-    font-size: 1.2rem;
+    font-size: $abby;
     font-weight: $semibold;
     line-height: 1.8;
 
@@ -27,8 +27,8 @@
   }
 
   &__logo {
-    margin-right: $bs-gutter;
-    margin-bottom: $bs-gutter;
+    margin-right: $gap;
+    margin-bottom: $gap;
     float: left;
 
     &:last-child {

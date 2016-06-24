@@ -1,0 +1,86 @@
+// Structure
+.page-wrapper {
+  position: relative;
+
+  &__inner {
+    @include mobile-menu();
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+
+    .nav-is-open &,
+    .station-is-open & {
+      z-index: 99999;
+
+      @include breakpoint($md) {
+        z-index: -1;
+      }
+    }
+  }
+}
+
+// accounting for the fixed menu
+main {
+  @include mobile-menu();
+
+  padding-top: 50px;
+
+  @include breakpoint($md) {
+    padding-top: $page-header-height;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.clearfix {
+  @include clearfix();
+}
+
+// Quick Flexbox Grid for equal height rows
+.row--flex {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+
+  &--sm {
+    @include breakpoint($sm) {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+    }
+  }
+
+  &--md {
+    @include breakpoint($md) {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+    }
+  }
+
+  &--lg {
+    @include breakpoint($lg) {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+    }
+  }
+}
+
+// This is for the l-container layout method
+.l-container {
+  &__outer {
+    @include clearfix(); // applying a proper clearfix
+  }
+
+  &__inner {
+    max-width: $lg;
+    margin: 0 auto;
+  }
+}

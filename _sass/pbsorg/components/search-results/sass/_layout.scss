@@ -1,91 +1,80 @@
-div.row-search-results {
-  @extend %clearfix;
-  padding: 0;
-  position: relative;
+// Custom breakpoint to accommodate iPad landscape layout
+// Extends $md breakpoint by one pixel
+$md-alt: $md + 1px;
+
+.search-results-section {
+  display: none;
+  flex-direction: column;
+  width: 100%;
 
   @include breakpoint($sm) {
-    padding: ($bs-gutter * 2);
+    padding: $gap-double;
   }
 
-  // content;
-  div.col-search-results-content {
-    @include breakpoint($md) {
-      margin-right: 332px; // provide space for the absolutely positioned ad column;
-    }
-  }
-
-  // related (fixed width, non-bootstrap-grid, because of the fixed width ad);
-  div.col-search-results-right-rail {
-    margin: 2px 0 0;
-
-    @include breakpoint($md) {
-      margin: 0;
-      width: 300px;
-      padding: 32px 0 0;
-      position: absolute;
-      top: 0;
-      right: ($bs-gutter * 2);
-    }
-
-    // space out any immediate children;
-    > * {
-      margin-top: 1px;
-
-      @include breakpoint($md) {
-        margin: 0 0 ($bs-gutter * 4);
-      }
-    }
-  }
-
-  // hide the ad at these breakpoints even if on desktop;
-  div.ad {
-    @include breakpoint($xs-only) {
-      display: none;
-    }
-    @include breakpoint($sm-only) {
-      display: none;
-    }
+  @include breakpoint($md-alt) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
   }
 }
 
-// container for all search result articles (including featured results);
-div.results-articles {
-  position: relative;
+.search-app--is-loaded {
+  .search-results-section {
+    display: flex;
+  }
+}
 
-  // added during an Ajax load of content;
-  &.results-articles-loading {
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: $gray-light;
-      opacity: 0.5;
+
+.search-results__main {
+  flex-grow: 2;
+  width: 100%;
+
+  @include breakpoint($md-alt) {
+    min-width: 0;
+    padding-right: $gap-double;
+  }
+}
+
+.search-results__rail--right {
+
+  @include breakpoint($md-alt) {
+    flex: none;
+  }
+
+  .ad {
+
+    display: none;
+
+    @include breakpoint($md-alt) {
+      display: block;
+    }
+
+    &__wrapper {
+    padding-top: 24px;
     }
   }
+
 }
 
 .no-search-results {
   margin: 0 auto;
-  padding: 60px 20px 80px;
+  padding: 60px 20px 80px 20px;
   text-align: center;
   width: 100%;
   max-width: 500px;
-}
 
-.no-search-results__icon {
-  color: $gray-medium;
-  font-size: 3.6rem;
-}
+  &__icon {
+    color: $gray-medium;
+    font-size: 3.6rem;
+  }
 
-.no-search-results__header {
-  font-size: 2.2rem;
-  margin: 0;
-  padding-bottom: 10px;
-}
+  &__header {
+    font-size: 2.2rem;
+    margin: 0;
+    padding-bottom: 10px;
+  }
 
-.no-search-results__description {
-  font-size: 1.5rem;
+  &__description {
+    font-size: $zoe;
+  }
 }

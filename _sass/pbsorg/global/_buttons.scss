@@ -1,36 +1,30 @@
 // updates to the base Bootstrap button style;
 .btn {
-  display: inline-block;
-  margin-bottom: 0;
-  text-align: center;
-  vertical-align: middle;
-  touch-action: manipulation;
-  background: transparent;
-  border: 1px solid $blue;
-  border-radius: 2px;
-  color: $blue;
-  font-family: $serif;
-  font-weight: $bold;
-  -webkit-font-smoothing: antialiased;
-  font-size: 1.6rem;
-  line-height: 1;
-  padding: $bs-gutter ($bs-gutter * 2);
-
-  &:visited,
-  &:hover,
-  &:focus,
-  &:active {
-    background: rgba($blue, .1);
-    border-color: $blue;
-    color: $blue;
-  }
-
-  &:active {
-    box-shadow: none;
-  }
+  @include btn(); // shared button styling
 
   .btn--ripple-effect {
     background: $gray-light;
+  }
+
+  // sign in button seen in side user menu
+  &--sign-in {
+    @include btn-states() {
+      background: $blue;
+      border-color: $blue;
+      color: $white;
+      font-size: $oscar;
+      font-family: $serif;
+      text-decoration: none;
+
+      // turns back into a regular link at md
+      @include breakpoint($md) {
+        background: transparent;
+        border: 0;
+        color: $blue;
+        font-family: $sans-serif;
+        font-size: $ernie;
+      }
+    }
   }
 
   // add show to favorites
@@ -64,7 +58,7 @@
   // add video to watchlist
   &--watchlist {
     @include btn-states() {
-      background: $gray-light;
+      background: $gray-lighter;
       border-color: $gray-medium;
       color: $gray-dark;
     }
@@ -89,7 +83,7 @@
   &--remove {
     font-family: $sans-serif;
     font-weight: $semibold;
-    font-size: 1.8rem;
+    font-size: $oscar;
     line-height: 0.4;
     padding: 6px 6px 9px 6px;
     height: 24px;
@@ -100,7 +94,7 @@
 
   // search the website - magnifying glass icon
   &--search {
-    padding: $bs-gutter;
+    padding: $gap;
     border: 0;
   }
 
@@ -110,7 +104,6 @@
       background-color: $red;
       border-color: darken($red, 15%);
       color: $white;
-      text-decoration: none;
     }
   }
 
@@ -119,16 +112,16 @@
   $over400: 400px;
   &--visit {
     @include btn-states() {
-      font-size: 1.2rem;
+      font-size: $abby;
       color: $white;
       background-color: $blue;
 
       @include breakpoint($over400) {
-        font-size: 1.4rem;
+        font-size: $elmo;
       }
 
       @include breakpoint($md-only) {
-        font-size: 1.2rem;
+        font-size: $abby;
       }
     }
   }
@@ -136,7 +129,7 @@
   // close button used in modals;
   &--close {
     position: absolute;
-    right: $bs-gutter;
+    right: $gap;
     top: 10px;
     border: 0;
     background: none;

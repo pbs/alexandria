@@ -1,157 +1,152 @@
-section.store-items {
-  padding: $bs-gutter;
+.store-items {
+  display: flex;
+  flex-direction: column;
+  padding: $gap;
 
-  @include breakpoint($screen-sm) {
-    padding: ($bs-gutter * 2);
+  @include breakpoint($sm) {
+    padding: $gap-double;
   }
 
-  // centered title is an image;
-  h1.section-title {
-    @include typography-l1-header();
-    font-size: 1rem;
-    margin: 0 0 $bs-gutter;
-    text-align: center;
-
-    // at the larger breakpoints - add more space under the header/logo;
-    @include breakpoint($sm) {
-      margin-top: $bs-gutter;
-    }
-
-    @include breakpoint($md) {
-      margin-bottom: ($bs-gutter * 2);
-    }
-  }
-
-  .col-sm-6:first-child {
-    @include breakpoint($sm-only) {
-      padding-top: $bs-gutter;
-    }
-  }
-
-  article:first-child {
-    @include breakpoint($xs-only) {
-      padding-bottom: $bs-gutter;
-      border-bottom: $divider;
-    }
-  }
-
-  article {
-    padding-top: $bs-gutter;
+  &__section-title {
+    align-self: center;
+    margin: 0 auto;
 
     @include breakpoint($sm) {
-      padding-top: 0;
+      margin-bottom: $gap-large;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint($sm) {
+      flex-direction: row;
     }
 
-    .col-xs-3 {
-      padding-right: 0;
+    &.store-items--two {
+      @include breakpoint($sm) {
+        justify-content: center;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    padding: $gap 0;
+    border-top: $divider;
+
+    @include breakpoint($sm) {
+      flex: 1 0 0;
+      width: 50%;
+      align-items: flex-start;
+      padding: 0 $gap;
+      border-top: 0;
+      border-left: $divider;
     }
 
-    // center the content images;
-    img {
+    .store-items--three & {
+      @include breakpoint($sm) {
+        display: block;
+      }
+    }
+
+    &:first-child {
+      border-top: 0;
+
+      @include breakpoint($sm) {
+        border-left: 0;
+      }
+    }
+
+    &__image {
       display: block;
-      margin: 0 auto;
-      padding-top: $bs-gutter;
+      flex: 1 0 0;
+      width: 25%;
+      padding-right: $gap;
 
-      @include breakpoint($sm) {
-        padding-top: 0;
-      }
-
-      @include breakpoint($md) {
-        width: 100%;
-        padding-top: 0;
-      }
-    }
-
-    h1 {
-      @include typography-l2-header();
-      font-size: 2.5rem;
-      margin: 0;
-
-      @include breakpoint($sm) {
-        margin-top: $bs-gutter;
-      }
-
-      @include breakpoint($lg) {
-        font-size: 3rem;
-      }
-    }
-  }
-
-  p.description {
-    color: $gray-primary;
-    font-size: 1.4rem;
-    margin: ($bs-gutter / 2) $bs-gutter 0 0;
-  }
-
-  // not always visible;
-  p.link {
-    font-family: $serif;
-    font-weight: $bold;
-    font-size: 1.4rem;
-    margin: ($bs-gutter / 2) 0 0;
-  }
-
-  // centered button at the bottom of the component;
-  p.explore-more {
-    margin: ($bs-gutter * 2) 0 0;
-    text-align: center;
-    .btn:hover {
-      background: rgba($blue, 0.1);
-    }
-  }
-
-
-
-  // css copied from another component...
-
-
-  // class to denote dividing bars should be added;
-  // these columns need to be equal height;
-  // and at least as tall as their parent;
-  div.col-divider {
-    // adjust the styles when the columns are stacked instead of side-by-side;
-    @include breakpoint($sm) {
-      // ugh, important;
-      // it's used because of the custom grid and @extend in that grid;
-      padding-right: ($bs-gutter * 2) !important;
-    }
-
-    + div.col-divider {
-      margin: ($bs-gutter * 2) 0 0;
-      position: relative;
-
-      // adjust the styles when the columns are stacked instead of side-by-side;
-      @include breakpoint($sm) {
-        margin: 0;
-        padding-left: ($bs-gutter * 2);
-      }
-
-      &:before {
-        content: "";
-        display: none;
-        width: 1px;
-        background: $divider-color;
-        position: absolute;
-        top: (-$bs-gutter / 2);
-        bottom: (-$bs-gutter / 2);
-        left: 0;
-
-        // hide the dividing border when these columns are stacked instead of side-by-side;
+      .store-items--two  & {
         @include breakpoint($sm) {
-          display: block;
+          width: 50%;
+        }
+      }
+
+      .store-items--three & {
+        @include breakpoint($sm) {
+          width: 100%;
+          padding-bottom: $gap;
+        }
+      }
+
+      img {
+        width: auto;
+        max-height: 175px;
+        margin: 0 auto;
+      }
+    }
+
+    &__info {
+      flex: 1 0 0;
+      width: 50%;
+
+      // specificity needed here to override global link styles
+      .store-items__item__title {
+        color: $gray-primary;
+      }
+
+      @include breakpoint($sm) {
+        padding-bottom: $gap;
+        text-align: left;
+      }
+
+      .store-items--three & {
+        @include breakpoint($sm) {
+          padding: 0 $gap;
+          width: 100%;
         }
       }
     }
 
-    &:last-child {
-      // ugh, important;
-      // it's used because of the custom grid and @extend in that grid;
-      padding-right: 0 !important;
+    &__title {
+      @include typography-l2-header();
+      font-size: 2.3rem;
 
-      // except when we need that extra space from the ad column;
-      @include breakpoint($lg) {
-        padding-right: $bs-gutter !important;
+      @include breakpoint($sm) {
+        margin-top: $gap;
       }
+
+      @include breakpoint($lg) {
+        font-size: 2.7rem;
+      }
+    }
+
+    &__description {
+      margin: $gap-half $gap 0 0;
+      color: $gray-darker;
+      font-size: $elmo;
+    }
+
+    // not always visible;
+    &__link {
+      margin: $gap-half 0 0 0;
+      font-family: $serif;
+      font-size: $elmo;
+      font-weight: $bold;
+    }
+  }
+
+  // centered button at the bottom of the component;
+  &__explore-more {
+    margin: $gap-double 0 0 0;
+    text-align: center;
+
+    .btn:hover {
+      background: rgba($blue, .1);
+    }
+
+    @include breakpoint($sm) {
+      margin-top: $gap-triple;
     }
   }
 }

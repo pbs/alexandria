@@ -1,11 +1,15 @@
-let
-  jQuery = window.jQuery || require('jquery'),
-  React = window.React || require('react'),
-  ReactDOM = window.ReactDOM || require('react-dom'),
-  PureRenderMixin = React.addons.PureRenderMixin,
-  NoList;
+'use strict';
 
-NoList = React.createClass({
+import jQuery from 'jquery';
+import React from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
+import Modal from '../modal/modal';
+import * as SignInModal from '../sign-in/sign-in';
+
+
+const NoList = React.createClass({
+
+  signInModal: undefined,
 
   /**
    * Array of any mixin libraries for react
@@ -13,11 +17,25 @@ NoList = React.createClass({
   mixins: [PureRenderMixin],
 
   /**
+   * After component is rendered to DOM.
+   */
+  componentDidMount() {
+    const options = {
+      modalId: '#loginModalWindow',
+      modalTrigger: '.viewing-history__cta-btn',
+      focusTarget: '#modal-login__dialog',
+      childView: SignInModal
+    };
+
+    this.signInModal = new Modal(options);
+  },
+
+  /**
    * Renders component.
    */
   render() {
 
-    let content = this.getView();
+    const content = this.getView();
 
     return (
       <section className="no-list">
@@ -33,9 +51,9 @@ NoList = React.createClass({
    */
   getView() {
 
-    let headerText = 'You need to be signed in to see your viewing history',
-      descriptionText = <a href="#" onClick={this.onClickProfileSignIn}>Sign in or create an account now</a>,
-      imagePath = window.PBS_STATIC_URL + 'images/empty/viewing-history.png';
+    let headerText = 'You need to be signed in to see your viewing history';
+    let descriptionText = <button className='viewing-history__cta-btn' aria-haspopup='true' onClick={this.onClickProfileSignIn}>Sign in or create an account now</button>;
+    const imagePath = window.PBS_STATIC_URL + 'images/empty/viewing-history.png';
 
     // only display something if we know it has been attempted to fetch
     // this is to prevent the wrong scren from being show for a flash
@@ -57,9 +75,9 @@ NoList = React.createClass({
           <div className="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
             <div className="body">
               <img className="img-responsive" src={imagePath} alt="No viewing history yet" />
-              <div className="watchlist__cta-text signed-in-text">
-                <h1 className="watchlist__cta-header">{headerText}</h1>
-                <p className="watchlist__cta-description">{descriptionText}</p>
+              <div className="viewing-history__cta-text signed-in-text">
+                <h1 className="viewing-history__cta-header">{headerText}</h1>
+                <p className="viewing-history__cta-description">{descriptionText}</p>
               </div>
             </div>
           </div>
@@ -71,10 +89,12 @@ NoList = React.createClass({
   /**
    * Callback for it they click to sign in
    */
-  onClickProfileSignIn() {
+  onClickProfileSignIn(e) {
 
-    if (window.PBS && window.PBS.Profile) {
-      window.PBS.Profile.signIn();
+    e.preventDefault();
+
+    if (this.signInModal) {
+      this.signInModal.show();
     }
 
   }

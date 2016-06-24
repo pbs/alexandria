@@ -1,212 +1,207 @@
 // Universal styles for both passport login and modal window
-.socialLoginPanel {
-  .socialList {
-    overflow: hidden;
-    padding: 15px 0;
-    margin: 0 auto;
+.sign-in {
+  &__service-list {
     width: 100%;
-    font-size: 1.6rem;
+    margin: 0 auto;
+    padding: 15px 0;
+    font-size: $ernie;
     list-style-type: none;
 
     @include breakpoint($sm) {
       padding: 30px 0;
     }
+  }
 
-    li {
-      float: none;
+  &__link {
+    position: relative;
+    height: 45px;
+    margin: 0;
+    float: none;
+    cursor: pointer;
+
+    a {
+      display: block;
       height: 45px;
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      margin: 0px;
 
-      a {
-        height: 45px;
-        display: block;
-      }
-
-      &.facebookColor {
-        background-color: $facebook-blue;
-        margin: 10px 0;
-      }
-      &.googleColor {
-        margin-left: 0;
-        background-color: $gmail-red;
-      }
-      &.twitterColor {
-        margin-left: 0;
-        background-color: $twitter-blue;
-      }
-      &.yahooColor {
-        background-color: $yahoo-purple;
-        display: none;
-        /*remove this when adding yahoo back, also change .socialList width */
-      }
-      &.pbsColor {
-        background-color: $blue-light;
-      }
-      &:last-child {
-        margin-right: 0;
-      }
-      .loginIcon {
-        display: block;
-        width: 34px;
-        height: 34px;
-        margin: 6px;
-        float: left;
-        text-align: center;
-        background-repeat: no-repeat;
-        background-size: 34px 163px;
-      }
-      [class*="icon-pbs"]{
-        margin-top: 2px;
-        margin-left: 6px;
-        color: $white;
-        font-size: 30px;
-        line-height: 1;
-      }
-      [class*="icon-pbs-facebook"]{
-        margin-left: 0;
-        margin-top: 0;
-      }
-      .loginText {
-        display: block;
-        float: left;
-        color: $white;
-        line-height: 36px;
-        border-left: 1px solid rgba($white, .2);
-        padding-left: 20px;
-        margin-top: 4px;
-        margin-left: 5px;
+      &:focus {
+        outline: $focusstate;
       }
     }
 
-    .separator {
-      z-index: 1;
-      position: relative;
-      text-align: center;
-      padding: 10px 0 0 0;
-        &:before {
-        border-top: 1px solid $gray-light;
-        content:"";
-        margin: 0 auto;
-        position: absolute;
-        top: 50%; left: 0; right: 0; bottom: 0;
-        width: 100%;
-        z-index: -1;
-        }
-      .or {
-        border: none;
-        z-index: 1;
-        background-color: $white;
-        padding: 5px 20px;
-      }
+    &--google {
+      margin-left: 0;
+      background-color: $gmail-red;
+    }
+
+    &--facebook {
+      margin: 10px 0;
+      background-color: $facebook-blue;
+    }
+
+    &--pbs {
+      margin-top: 45px;
+      background-color: $blue-light;
     }
   }
 
-  .message,
-  .answer-show {
+  &__icon {
     display: block;
-    font-size: 1.3rem;
+    width: 34px;
+    height: 34px;
+    margin: 6px;
+    float: left;
+    background-repeat: no-repeat;
+    background-size: 34px 163px;
+    text-align: center;
+
+    [class*="icon-pbs"] {
+      margin-top: 2px;
+      margin-left: 6px;
+      color: $white;
+      font-size: 3rem;
+      line-height: 1;
+    }
+
+    .icon-pbs-facebook {
+      margin-top: 0;
+      margin-left: 0;
+    }
+  }
+
+  &__text {
+    display: block;
+    margin-top: $gap-quarter;
+    margin-left: 5px;
+    padding-left: 20px;
+    float: left;
+    border-left: 1px solid rgba($white, .2);
+    color: $white;
+    line-height: 36px;
+  }
+
+  &__separator {
+    position: relative;
+    height: 45px;
+    padding-top: 10px;
+    text-align: center;
+    z-index: 1;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      margin: 0 auto;
+      border-top: $divider;
+      content: '';
+      z-index: -1;
+    }
+
+    &__text {
+      padding: 5px 20px;
+      border: 0;
+      background-color: $white;
+      z-index: 1;
+    }
+  }
+
+  &__message {
+    display: block;
+    font-size: $elmo;
     font-weight: $normal;
     line-height: 1.25;
 
-    &.register {
+    &--register {
       margin-bottom: 20px;
+
       a {
         font-weight: $semibold;
       }
     }
-    &.question {
-      a {
-        font-weight: $semibold;
+
+    &--question {
+      padding: 0;
+      margin-bottom: 7px;
+      border: 0;
+      background: transparent;
+      color: $blue;
+      font-weight: $semibold;
+
+      &:hover {
+        text-decoration: underline;
       }
     }
-    &.inFooter {
+
+    &--footer {
+      padding-top: 10px;
+      border-top: $divider;
       color: $gray-dark;
-      font-size: 1.2rem;
-      &.first {
-        padding-top: 10px;
-        border-top: 1px solid $gray-light;
-      }
+      font-size: $abby;
     }
   }
-  .answer-hidden {
-    display: none;
+}
+
+// Modal-specific styles
+.modal-login {
+  &__dialog {
+    @include breakpoint($md) {
+      max-width: 480px;
+    }
+  }
+
+  &__station {
+    width: 100%;
+    max-width: 288px;
+    margin: 0 auto;
+    text-align: center;
+
+    &-logo {
+      width: auto;
+      margin-bottom: $gap-half;
+    }
+  }
+
+  &__social-login-panel {
+    max-width: 288px;
+    margin: 0 auto;
   }
 }
 
 // Passport-specific styles for login page
-.mvodSocialLinks {
-  text-align:left;
-  width:100%;
+.passport__sign-in,
+.passport__sign-in__confirm {
+  width: 100%;
   padding: 30px 0;
+  text-align: left;
 
   @include breakpoint($sm) {
-    float:right;
     width: 51.5%;
-    padding: 0 16px 50px 30px;
+    padding: 0 $gap 50px 30px;
+    float: right;
   }
 
   @include breakpoint($md) {
     padding-left: 50px;
   }
 
-  .socialLoginPanel {
-
-    .socialList {
-      li {
-        @extend %clearfix;
-        display: block;
-        height: 52px;
-        margin: 20px 0;
-        font-size: 1.8rem;
-
-        @include breakpoint($sm) {
-          max-width: 340px;
-        }
-
-        @include breakpoint($md) {
-          font-size: 2.0rem;
-        }
-
-        border-radius: $radius;
-      }
-
-      .pbsColor {
-        margin-bottom: 10px;
-      }
-
-      a {
-        @extend %clearfix;
-        height: 68px;
-      }
-      .loginText {
-        margin-top: 8px;
-      }
-
-      i {
-        margin-top: 5px;
-        &[class*="facebook"] {
-          margin-top: 2px;
-        }
-      }
-    }
+  &__panel {
+    max-width: 288px;
   }
 
-  .message {
-    &.register {
-      font-size: 1.9rem;
+  .sign-in__message {
+    &--register {
+      font-size: $snuffy;
     }
 
-    &.question {
-      font-size: 1.5rem;
+    &--question {
+      font-size: $zoe;
     }
 
-    &.inFooter.first {
-      font-size: 1.4rem;
+    &--footer {
+      font-size: $elmo;
       line-height: 1.9rem;
     }
   }
 }
-

@@ -1,11 +1,24 @@
 'use strict';
 
 import $ from 'jquery';
+import queryString from 'query-string';
+import * as SignInModal from '../../sign-in/sign-in';
+import Modal from '../../modal/modal';
+
+let _signInModal;
 
 /**
- * @todo: move other sign-in code to here
- * and clean up global variables
+ * Shows sign in modal.
  */
+const _showModal = (customParams) => {
+
+  const data = customParams || {};
+
+  if (_signInModal) {
+    _signInModal.show(data);
+  }
+
+};
 
 /**
  * When 'Sign In' is clicked in navigation.
@@ -14,10 +27,7 @@ import $ from 'jquery';
 const _onSignInClick = (e) => {
 
   e.preventDefault();
-
-  if (window.PBS) {
-    window.PBS.Profile.signIn('LNK', 'Home', 'sign-in', window.location.href);
-  }
+  _showModal();
 
 };
 
@@ -29,9 +39,7 @@ const _onSignOutClick = (e) => {
 
   e.preventDefault();
 
-  if (window.PBS) {
-    window.PBS.Profile.signOut();
-  }
+  SignInModal.signOut();
 
 };
 
@@ -40,8 +48,40 @@ const _onSignOutClick = (e) => {
  */
 const _addEvents = () => {
 
-  $('.nav-user__links__sign-out').on('click', _onSignOutClick);
-  $('.btn--sign-in').on('click', _onSignInClick);
+  $('.js-user-dropdown__sign-out').on('click', _onSignOutClick);
+  $('.js-user-dropdown__sign-in').on('click', _onSignInClick);
+
+};
+
+const _setupSignInModal = () => {
+
+  const options = {
+    modalId: '#loginModalWindow',
+    modalTrigger: '.btn--sign-in',
+    focusTarget: '#modal-login__dialog',
+    childView: SignInModal
+  };
+
+  _signInModal = new Modal(options);
+
+};
+
+/**
+ * Checks for re-direct and if we need to open the sign-in modal.
+ */
+const _checkForMvodRedirect = () => {
+
+  const params = queryString.parse(window.location.search);
+
+  if (params.showSignIn === 'true' && params.returnURL) {
+
+    _showModal({
+      code: 'MVOD',
+      action: 'Upsell screen',
+      type: 'sign-in',
+      url: params.returnURL
+    });
+  }
 
 };
 
@@ -51,6 +91,8 @@ const _addEvents = () => {
 const init = () => {
 
   _addEvents();
+  _setupSignInModal();
+  _checkForMvodRedirect();
 
 };
 

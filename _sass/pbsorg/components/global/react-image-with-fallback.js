@@ -1,11 +1,11 @@
 'use strict';
 
-let jQuery = window.jQuery || require('jquery'),
-  ImageWithFallback;
+import jQuery from 'jquery';
+import React from 'react';
 
 require('picturefill');
 
-ImageWithFallback = React.createClass({
+const ImageWithFallback = React.createClass({
 
   /**
    * Returns the initial state before the component is mounted.
@@ -21,7 +21,7 @@ ImageWithFallback = React.createClass({
    * Callback invoked immediately before initial render.
    */
   componentWillMount() {
-    
+
     // if no path given, setup fallback to prevent 404
     if (!this.props.path || this.props.isBroken) {
       this.setFallbackState();
@@ -58,7 +58,6 @@ ImageWithFallback = React.createClass({
    */
   setFallbackState() {
 
-    // @todo: get multiple gradients from design
     // and add in logic for class names
     if (!this.state.fallbackImage) {
       this.setState({fallbackImage: true}, this.updateParentOfBrokenImage());
@@ -82,11 +81,13 @@ ImageWithFallback = React.createClass({
   getImageView() {
 
     if (!this.state.fallbackImage) {
-      let path = this.props.crop ? this.props.path + this.props.crop : this.props.path;
+      const path = this.props.crop ? this.props.path + this.props.crop : this.props.path;
+      const srcsetPath = this.props.crop2x ? this.props.path + this.props.crop + ' 1x, ' + this.props.path + this.props.crop2x + ' 2x' : null;
 
       return <img
         className={this.props.customClass + '-image image--needs-fallback'}
         src={path}
+        srcSet={srcsetPath}
         alt={this.props.title}
         ref="react-image--needs-fallback"
         onError={this.onImageError} />;
@@ -106,7 +107,7 @@ ImageWithFallback = React.createClass({
    */
   render() {
 
-    let view = this.getImageView();
+    const view = this.getImageView();
 
     return (
       <div className={this.props.customClass}>

@@ -1,0 +1,55 @@
+.search-results__pagination {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+
+  &-list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    &-item {
+      border-right: 1px solid $black;
+      &:last-child {
+        border-right: 0;
+      }
+    }
+  }
+
+  &-link {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: $blue;
+    cursor: pointer;
+    &--selected,
+    &--selected:hover {
+      color: $black;
+      cursor: default;
+      text-decoration: none;
+    }
+  }
+
+  &-list-item,
+  &-direction {
+    font-size: $ernie;
+    padding: 5px $gap;
+    @include breakpoint($sm) {
+      font-size: $snuffy;
+    }
+  }
+
+  &-direction {
+    border: 0;
+    background: transparent;
+    color: $blue;
+    cursor: pointer;
+    &--next {
+      border-left: 1px solid $black;
+    }
+    &--prev {
+      border-right: 1px solid $black;
+    }
+  }
+}

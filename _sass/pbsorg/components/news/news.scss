@@ -1,0 +1,163 @@
+.news {
+  border-bottom: 1px solid $gray-medium;
+
+  &__title {
+    margin: $gap-quad $gap $gap-half $gap;
+    color: $gray-darker;
+    font-size: $snuffy;
+    font-weight: $bold;
+    text-transform: uppercase;
+
+    @include breakpoint($sm) {
+      margin-left: $gap-double;
+    }
+  }
+
+  &__featured-story {
+    position: relative;
+    margin-bottom: $gap-double;
+
+    &__link {
+      display: block;
+
+      @include breakpoint($sm) {
+        position: relative;
+        margin: 0 $gap-double;
+      }
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+
+    &__image {
+      margin-bottom: $gap;
+      box-shadow: $shadow;
+    }
+
+    &__headlines {
+      padding: 0 $gap;
+
+      @include breakpoint($sm) {
+        position: absolute;
+        bottom: $gap;
+        left: $gap-triple;
+        width: 33%;
+        padding: $gap;
+        background: rgba($black, .4);
+        -webkit-backdrop-filter: blur(3px);
+        backdrop-filter: blur(3px);
+      }
+    }
+
+    &__subtitle {
+      @include grey-serif-title();
+      margin: 0 0 3px 0;
+
+      @include breakpoint($sm) {
+        text-shadow: $shadow;
+      }
+
+      a {
+        color: $gray-dark;
+
+        @include breakpoint($sm) {
+          color: $white;
+        }
+      }
+    }
+
+    &__title {
+      margin: 0;
+      color: $gray-primary;
+      font-size: $snuffy;
+      font-weight: $bold;
+      text-transform: uppercase;
+
+      @include breakpoint($sm) {
+        text-shadow: $shadow;
+      }
+
+      a {
+        color: $gray-primary;
+
+        @include breakpoint($sm) {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  &__stories {
+    margin: 0 $gap;
+
+    @include breakpoint($sm) {
+      display: flex;
+      margin: 0 $gap-double;
+    }
+  }
+
+  &__story {
+    display: flex;
+    margin-bottom: $gap-double;
+
+    @include breakpoint($sm) {
+      flex-direction: column;
+      width: 33%;
+      max-width: 33%;
+      margin-right: $gap-double;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &__image-link {
+      display: block;
+      max-width: calc(50% - #{$gap / 2});
+      margin-right: $gap;
+
+      @include breakpoint($sm) {
+        max-width: 100%;
+        margin: 0 0 12px 0;
+        box-shadow: $shadow;
+      }
+    }
+
+    &__image {
+      width: 100%;
+    }
+
+    &__headlines {
+      max-width: calc(50% - #{$gap / 2});
+      overflow: hidden;
+
+      @include breakpoint($sm) {
+        max-width: 100%;
+      }
+    }
+
+    &__subtitle {
+      @include grey-serif-title();
+      @include typography-truncate();
+      margin: 0 0 3px 0;
+
+      @include breakpoint($sm) {
+        white-space: normal;
+      }
+
+      a {
+        color: $gray-dark;
+      }
+    }
+
+    &__title {
+      margin: 0;
+
+      &-link {
+        @include dark-sans-title();
+      }
+    }
+  }
+}

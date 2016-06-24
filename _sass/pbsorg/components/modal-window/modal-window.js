@@ -1,5 +1,5 @@
 import jQuery from 'jquery';
-import Modal from '../../scripts/new-modal';
+import Modal from '../modal/modal';
 
 /**
  * Modal for Heavy Traffic Mode, appears after uses are redirected from a disabled page
@@ -22,10 +22,10 @@ jQuery(($) => {
   const setupHeavyTrafficModal = () => {
     const options = {
       modalId: '#heavyTrafficModalWindow',
-      focusTarget: 'btn--close'
+      focusTarget: '#modal-heavy-traffic_dialog'
     };
     const heavyTrafficModal = new Modal(options);
-    heavyTrafficModal.showModal();
+    heavyTrafficModal.show();
   };
 
   init();

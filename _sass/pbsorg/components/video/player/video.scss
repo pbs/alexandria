@@ -4,312 +4,46 @@
   &-wrapper {
     position: relative;
     height: 0;
-    padding-bottom: 56.25%; // 16:9
+    padding-bottom: $video-ratio;
+    background-color: $black; // this matches the iframe
+
+    // Using an ::after pseudo element to indicate a video loading
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 10%; // centering by % - 100% - 80% / 2
+      width: 80%;
+      transform: translateY(-40%); // to center the text vertically (optically) without knowing height
+      color: $white;
+      font-size: $snuffy;
+
+      @include breakpoint($xs) {
+        font-size: 3rem;
+      }
+
+      font-weight: $light;
+      text-align: center;
+      text-shadow: $shadow;
+      content: 'Loading Player…';
+    }
 
     iframe {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
+      max-width: 100%;
       height: 100%;
-    }
-  }
-
-  // Passport overlay and content
-
-  // Custom breakpoints
-  $over375: 375px;
-  $over450: 450px;
-  $over515: 515px;
-  $over600: 600px;
-  $over750: 750px;
-  $over840: 840px;
-
-  .passport-overlay {
-    position: absolute;
-    right: 0;
-    left: 0;
-    height: 0;
-    padding-bottom: 56.25%; // 16:9 to match video player
-    background-color: rgba($black, .7);
-    z-index: 1;
-
-    @include breakpoint($lg) {
-      width: 1280px;
-      height: 720px;
-      margin: 0 auto;
-      padding: 0;
-    }
-
-    .passport-content {
-      padding: $bs-gutter;
-
-      @include breakpoint($over375) {
-        padding: 7% 20% 0 7%;
-      }
-
-      @include breakpoint($over450) {
-        padding-right: 25%;
-      }
-
-      @include breakpoint($over750) {
-        padding-right: 30%;
-      }
-
-      @include breakpoint($md) {
-        padding: ($bs-gutter * 3) 28% 0 ($bs-gutter * 4);
-      }
-
-      @include breakpoint($lg) {
-        padding: ($bs-gutter * 7) 30% 0 ($bs-gutter * 8);
-      }
-
-      .passport-logo {
-        display: inline-block;
-        width: 17px;
-        margin-right: 10px;
-        margin-bottom: 10px;
-
-        @include breakpoint($over375) {
-          width: 20px;
-        }
-
-        @include breakpoint($over515) {
-          width: 30px;
-          margin-right: 13px;
-          margin-bottom: $bs-gutter;
-        }
-
-        @include breakpoint($over600) {
-          width: 40px;
-          margin-right: 15px;
-          margin-bottom: 19px;
-        }
-
-        @include breakpoint($md) {
-          width: 50px;
-          margin-right: $bs-gutter;
-          margin-bottom: ($bs-gutter * 1.5);
-        }
-      }
-
-      .passport-title {
-        display: inline-block;
-        color: $white;
-        font-size: 1.8rem;
-        font-weight: $light;
-
-        @include breakpoint($over375) {
-          font-size: 2rem;
-        }
-
-        @include breakpoint($over515) {
-          font-size: 3rem;
-        }
-
-        @include breakpoint($over600) {
-          font-size: 3.5rem;
-        }
-
-        @include breakpoint($md) {
-          font-size: 4rem;
-        }
-      }
-
-      .station-name {
-        font-weight: $bold;
-      }
-
-      .passport-divider {
-        display: inline-block;
-        width: 1px;
-        height: 20px;
-        margin: 0 10px -4px 10px;
-        background-color: $white;
-
-        @include breakpoint($over375) {
-          height: 22px;
-          margin-right: 12px;
-          margin-left: 12px;
-        }
-
-        @include breakpoint($over515) {
-          height: 29px;
-          margin-right: 14px;
-          margin-left: 14px;
-        }
-
-        @include breakpoint($over600) {
-          height: 33px;
-          margin-right: $bs-gutter;
-          margin-left: $bs-gutter;
-        }
-
-        @include breakpoint($md) {
-          height: 37px;
-        }
-      }
-
-      .passport-restriction,
-      .passport-already {
-        margin-top: 5px;
-        color: $white;
-        font-family: $sans-serif;
-        font-size: 1.4rem;
-        font-weight: $normal;
-
-        @include breakpoint($over375) {
-          font-size: 1.6rem;
-        }
-
-        @include breakpoint($over515) {
-          font-size: 1.8rem;
-        }
-
-        @include breakpoint($over600) {
-          font-size: 2rem;
-        }
-
-        @include breakpoint($md) {
-          font-size: 2.6rem;
-        }
-      }
-
-      .passport-description {
-        display: none;
-
-        @include breakpoint($over600) {
-          display: block;
-          width: 450px;
-          color: $white;
-          font-size: 1.3rem;
-          font-weight: $light;
-          line-height: 1.4;
-        }
-
-        @include breakpoint($over750) {
-          width: auto;
-          font-size: 1.4rem;
-        }
-
-        @include breakpoint($over840) {
-          font-size: 1.6rem;
-        }
-
-        @include breakpoint($md) {
-          font-size: 1.9rem;
-        }
-      }
-
-      .buttons-horizontal {
-        display: block;
-
-        @include breakpoint($over600) {
-          margin-top: -($bs-gutter);
-        }
-
-        @include breakpoint($over750) {
-          margin-top: 0;
-        }
-
-        @include breakpoint($over840) {
-          display: none;
-        }
-      }
-
-      .buttons-vertical {
-        display: none;
-
-        @include breakpoint($over840) {
-          display: block;
-        }
-      }
-
-      .passport-sign-up,
-      .passport-sign-in {
-        display: inline-block;
-        margin: $bs-gutter ($bs-gutter * 2) $bs-gutter 0;
-        padding: 8px ($bs-gutter * 1.5);
-        border: 1px solid $green;
-        border-radius: $radius;
-        background-color: $green;
-        color: $white;
-        font-size: 1.2rem;
-
-        @include breakpoint($over375) {
-          margin: 20px ($bs-gutter * 2) 20px 0;
-          padding: 10px ($bs-gutter * 2);
-          font-size: 1.4rem;
-        }
-
-        @include breakpoint($over515) {
-          margin: ($bs-gutter * 1.5) ($bs-gutter * 2.5) ($bs-gutter * 1.5) 0;
-          padding: 12px ($bs-gutter * 2.5);
-          font-size: 1.6rem;
-        }
-
-        @include breakpoint($over600) {
-          margin-top: 10px;
-          font-size: 1.8rem;
-        }
-
-        @include breakpoint($md) {
-          margin: ($bs-gutter * 1.5) 0 ($bs-gutter * 3) 0;
-          padding: $bs-gutter ($bs-gutter * 2);
-          font-size: 2rem;
-        }
-
-        &:hover {
-          text-decoration: none;
-        }
-      }
-
-      .passport-sign-in {
-        margin: $bs-gutter 0;
-        border: 1px solid $white;
-        background-color: transparent;
-
-        @include breakpoint($over515) {
-          margin: ($bs-gutter * 1.5) 0;
-        }
-
-        @include breakpoint($over840) {
-          margin-top: $bs-gutter;
-        }
-
-        @include breakpoint($md) {
-          margin-top: ($bs-gutter * 1.5);
-        }
-
-        &:hover {
-          background: rgba($white, .2);
-        }
-      }
-
-      .support {
-        display: block;
-        color: $white;
-        font-size: 1.2rem;
-
-        @include breakpoint($over375) {
-          position: absolute;
-          bottom: 10%;
-          font-size: 1.4rem;
-        }
-
-        @include breakpoint($md) {
-          font-size: 1.6rem;
-        }
-      }
+      z-index: 1;
     }
   }
 
   // put a vertical dividing border between these columns (top row of featured brands);
   // use the > so we don't target the nested grid;
-  div.article-body {
-    padding: 0 $bs-gutter 0 0;
+  .article-body {
+    padding-right: $gap;
 
-    &:after {
+    &::after {
       display: none;
       position: absolute;
       top: 0;
@@ -317,7 +51,7 @@
       width: 1px;
       height: 100%;
       background-color: $gray-light;
-      content: "";
+      content: '';
 
       @include breakpoint($md) {
         display: block;
@@ -326,39 +60,39 @@
   }
 
   // container for all content beneath the video;
-  div.article-body-wrapper {
-    padding: ($bs-gutter * 2) $bs-gutter ($bs-gutter * 4);
+  .article-body-wrapper {
+    padding: $gap-double $gap $gap-quad $gap;
 
     @include breakpoint($sm) {
-      padding: ($bs-gutter * 2) ($bs-gutter * 2) ($bs-gutter * 4);
+      padding: $gap-double $gap-double $gap-quad $gap-double;
     }
 
     @include breakpoint($md) {
-      padding: ($bs-gutter * 2) ($bs-gutter * 4) ($bs-gutter * 4);
+      padding: $gap-double $gap-quad $gap-quad $gap-quad;
     }
 
     @include breakpoint($lg) {
-      padding: ($bs-gutter * 2) ($bs-gutter * 6);
+      padding: $gap-double ($gap * 6);
     }
   }
 
-  h1 {
-    margin: ($bs-gutter / 4) 0 0;
+  &__title {
+    margin: $gap-quarter 0 0 0;
     color: $gray-primary;
     font-size: 2.6rem;
     font-weight: $normal;
   }
 
-  h2 {
-    margin: ($bs-gutter * 2) 0 0;
+  &__section-title {
+    margin: $gap-double 0 0 0;
     color: $gray-dark;
     font-family: $serif;
-    font-size: 1.4rem;
+    font-size: $elmo;
     font-weight: $bold;
 
     + p,
     + ul {
-      margin-top: $bs-gutter;
+      margin-top: $gap;
     }
 
     &:first-child {
@@ -369,157 +103,135 @@
   .icon-pbs-cc {
     position: relative;
     top: 2px;
-    font-size: 2rem;
+    font-size: $snuffy;
     vertical-align: middle;
   }
 
-  p {
-    margin: 0;
-    color: $gray-primary;
-    font-size: 1.4rem;
+  &__info {
+    margin: $gap 0 0 0;
 
-    &.info {
-      margin: $bs-gutter 0 0;
-
-      .passport-logo-wrapper {
-        display: inline-block;
-        position: relative;
-        width: 20px;
-        height: 20px;
-        margin-right: 7px;
-        margin-bottom: 3px;
-
-        @include breakpoint($md) {
-          width: 23px;
-          height: 23px;
-          margin-right: 10px;
-        }
-
-        .passport-logo {
-          width: 100%;
-          padding-bottom: 4px;
-        }
-      }
-
-      .video-info {
-        margin-left: 7px;
-        padding-left: 7px;
-        border-left: 1px solid $gray-primary;
-
-        &:first-child {
-          margin-left: 0;
-          padding-left: 0;
-          border-left: 0;
-        }
-      }
-    }
-
-    &.over-title {
-      margin-top: -6px;
-      color: $gray-dark;
-      font-family: $serif;
-      font-size: 1.3rem;
-      font-weight: $bold;
-      text-transform: uppercase;
-
-      a {
-        color: $gray-dark;
-      }
-    }
-
-    &.description {
-      margin: $bs-gutter 0 0;
-      font-size: 1.6rem;
-    }
-
-    &.watchlist {
-      margin: ($bs-gutter * 2) 0;
-    }
-
-    &.buy {
-      color: $gray-dark;
-
-      span.title {
-        display: block;
-        padding: 0 0 $bs-gutter;
-      }
-    }
-
-    &.problems {
-      a {
-        display: block;
-        position: relative;
-        // create equal space (including an actual space character) between the links and dividing border;
-        margin-right: 1rem;
-        padding-right: 1rem;
-        line-height: 2.5;
-        white-space: nowrap;
-
-        @include breakpoint($sm) {
-          border: 0;
-        }
-
-        @include breakpoint($md) {
-          display: inline-block;
-          margin-top: ($bs-gutter / 2);
-          border-right: $divider;
-          line-height: 1.5;
-        }
-
-        &:last-child {
-          border: 0;
-        }
-      }
-
-      .video-issues,
-      .cc-issues {
-        cursor: pointer;
-      }
-    }
-
-    &.favorite {
-      @include breakpoint($md) {
-        margin: 0;
-        float: left;
-      }
-    }
-
-    &.visit-website {
+    .passport-logo-wrapper {
       display: inline-block;
-      font-family: $serif;
-      font-size: 1.4rem;
-      font-weight: $bold;
-      vertical-align: middle;
+      position: relative;
+      width: 20px;
+      height: 20px;
+      margin-right: 7px;
+      margin-bottom: 3px;
+
+      @include breakpoint($md) {
+        width: 23px;
+        height: 23px;
+        margin-right: 10px;
+      }
+
+      .passport-logo {
+        width: 100%;
+        padding-bottom: $gap-quarter;
+      }
+    }
+
+    &__details {
+      margin-left: 7px;
+      padding-left: 7px;
+      border-left: 1px solid $gray-primary;
+      font-size: $elmo;
+
+      &:first-child {
+        margin-left: 0;
+        padding-left: 0;
+        border-left: 0;
+      }
     }
   }
 
-  ul.list-unstyled {
-    margin-bottom: 0;
+  .over-title {
+    margin-top: -6px;
+    color: $gray-dark;
+    font-family: $serif;
+    font-size: $elmo;
+    font-weight: $bold;
+    text-transform: uppercase;
 
-    li {
-      padding: ($bs-gutter / 2) 0;
+    a {
+      color: $gray-dark;
     }
   }
 
-  div.utilities {
-    margin: $bs-gutter 0 0;
-    padding: $bs-gutter 0 0;
+  &__description {
+    margin: $gap 0 0 0;
+    color: $gray-primary;
+    font-size: $ernie;
+  }
+
+  &__watchlist {
+    margin: $gap-double 0;
+  }
+
+  &__utilities {
+    margin-top: $gap;
+    padding-top: $gap;
     border-top: $divider;
     color: $gray-dark;
     font-family: $serif;
-    font-size: 1.4rem;
+    font-size: $elmo;
     font-weight: $bold;
   }
 
+  &__buy-options {
+    color: $gray-dark;
+
+    &__title {
+      display: block;
+      padding-bottom: $gap;
+    }
+
+    .icon-pbs-apple,
+    .icon-pbs-dvd {
+      padding-top: 6px;
+    }
+
+    .icon-pbs-apple {
+      font-size: 2.4rem;
+    }
+
+    .icon-pbs-dvd {
+      position: relative;
+      top: $gap-quarter;
+      font-size: $snuffy;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    &__text {
+      position: relative;
+      bottom: 2px;
+      padding: 0 $gap-double 0 12px;
+      color: $gray-dark;
+      font-family: $sans-serif;
+      font-size: $zoe;
+      font-weight: $normal;
+    }
+  }
+
+  .list-unstyled {
+    margin-bottom: 0;
+
+    li {
+      padding: $gap-half 0;
+    }
+  }
+
   &__share {
-    padding: 0 $bs-gutter;
+    padding: 0 $gap;
 
     .video-player__share__title {
       margin-top: 2px;
-      margin-bottom: ($bs-gutter + 7);
+      margin-bottom: ($gap + 7);
       color: $gray-dark;
       font-family: $serif;
-      font-size: 1.4rem;
+      font-size: $elmo;
       font-weight: $bold;
     }
 
@@ -570,6 +282,10 @@
       display: none;
       position: relative;
       left: 3px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: $blue;
 
       @include breakpoint($md) {
         display: inline-block;
@@ -578,27 +294,83 @@
   }
 
   // right column;
-  div.related {
-    margin: ($bs-gutter * 3) 0 0;
-    padding: ($bs-gutter * 2) 0 0;
+  &__related {
+    margin-top: $gap-triple;
+    padding-top: $gap-double;
     border-top: $divider;
-    font-size: 1.4rem;
+    font-size: $elmo;
 
     @include breakpoint($md) {
       margin: 0;
-      padding: 0 0 0 $bs-gutter;
+      padding: 0 0 0 $gap;
       border: 0;
     }
 
-    p {
-      color: $gray-dark;
-      font-size: 1.4rem;
+    &__problems {
+
+      &__links {
+        margin-top: $gap;
+        color: $gray-dark;
+        font-size: $elmo;
+
+        p {
+          display: inline;
+
+          @include breakpoint($md) {
+            border-right: $divider;
+
+            //removes border from cc link
+            &:last-of-type {
+              margin-left: $gap;
+              border: 0;
+            }
+          }
+        }
+
+        a {
+          display: block;
+          position: relative;
+          line-height: 2.5;
+          white-space: nowrap;
+
+          @include breakpoint($sm) {
+            margin-right: $gap;
+          }
+
+          @include breakpoint($md) {
+            display: inline-block;
+            margin-top: $gap-half;
+            line-height: 1.5;
+          }
+
+          .video-issues,
+          .cc-issues {
+            cursor: pointer;
+          }
+        }
+
+        .video-issues {
+          margin: $gap-half $gap $gap-half 0;
+          padding: 0;
+          border: 0;
+          background: transparent;
+          color: $blue;
+
+          @include breakpoint($md) {
+            margin: $gap-half $gap 0 0;
+          }
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
     }
 
-    .videoProblems,
-    .funding {
-      margin-right: ($bs-gutter * 2.5);
-      margin-left: $bs-gutter;
+    &__problems,
+    &__funding {
+      margin-right: $gap-larger;
+      margin-left: $gap;
 
       @include breakpoint($sm) {
         float: left;
@@ -611,7 +383,7 @@
       }
     }
 
-    .videoLinks {
+    &__links {
       display: none;
 
       @include breakpoint($sm) {
@@ -624,7 +396,7 @@
       @include breakpoint($md) {
         display: block;
         width: 100%;
-        margin-left: $bs-gutter;
+        margin-left: $gap;
         padding-top: 50px;
         padding-left: 0;
         float: none;
@@ -635,18 +407,19 @@
         @include typography-truncate();
       }
     }
-  }
 
-  div.funding {
-    padding-top: 3rem;
-    color: $gray-dark;
-    font-size: 1.45rem;
-    font-style: italic;
-    font-weight: $normal;
+    &__funding {
+      padding-top: 3rem;
+      color: $gray-dark;
+      font-size: 1.45rem;
+      font-style: italic;
+      font-weight: $normal;
 
-    @include breakpoint($sm) {
-      bottom: 0;
+      @include breakpoint($sm) {
+        bottom: 0;
+      }
     }
+
   }
 
 }
@@ -664,25 +437,33 @@
       text-align: center;
     }
 
+    &__info {
+      display: flex;
+    }
+
     &__details {
       display: inline;
     }
 
     &__show-title {
-      font-size: 1.2rem;
+      font-size: $abby;
       text-transform: uppercase;
     }
 
     &__video-title {
-      font-size: 2.2rem;
+      font-size: $oscar;
       font-weight: $normal;
+
+      @include breakpoint($lg) {
+        font-size: 2.2rem;
+      }
     }
 
     &__airdate {
       margin-top: 10px;
       color: $gray-dark;
       font-family: $sans-serif;
-      font-size: 1.3rem;
+      font-size: $abby;
       font-weight: $normal;
     }
 
@@ -692,7 +473,22 @@
       margin: 10px;
       float: left;
     }
+
+    &__edit-dimensions {
+      display: flex;
+      justify-content: center;
+
+      &--width,
+      &--height {
+        padding: 20px 10px 10px 10px;
+
+        input {
+          max-width: 55px;
+        }
+      }
+    }
   }
+
 
   .embed-code {
     display: flex;
@@ -704,14 +500,20 @@
     &__direction {
       display: inline-block;
       margin-top: 5px;
-      font-size: 10px;
+      font-size: 1rem;
       font-weight: normal;
     }
 
     .embed-text {
       display: inline-block;
       width: 90%;
-      font-size: 12px;
+      font-size: $abby;
     }
   }
+
+  input[readonly]:focus {
+    outline: 1px solid $gray-medium;
+    box-shadow: 0 0 4px $gray-medium;
+  }
+
 }

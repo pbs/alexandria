@@ -1,14 +1,14 @@
 section.favorite-block {
-  padding: ($bs-gutter * 4) $bs-gutter ($bs-gutter * 3);
+  padding: $gap-quad $gap $gap-triple $gap;
 
   @include breakpoint($sm) {
-    padding: ($bs-gutter * 4) ($bs-gutter * 2) ($bs-gutter * 2);
+    padding: $gap-quad $gap-double $gap-double $gap-double;
   }
 
   h1.section-title {
     color: $gray-primary;
     font-size: 3.2rem;
-    margin: 0 0 $bs-gutter;
+    margin-bottom: $gap;
 
     span {
       font-weight: $bold;
@@ -22,8 +22,8 @@ section.favorite-block {
         background: $gray-medium;
         width: 1px;
         position: absolute;
-        top: 8px;
-        bottom: 8px;
+        top: $gap-half;
+        bottom: $gap-half;
         left: 0;
       }
     }
@@ -33,36 +33,36 @@ section.favorite-block {
   article.featured {
     background: $white;
     box-shadow: $shadow;
-    font-size: 1.5rem;
+    font-size: $zoe;
     color: $gray-primary;
 
     // if there is a row of content after this, give that row some space;
     + div.row {
-      margin-top: ($bs-gutter * 2);
+      margin-top: $gap-double;
     }
 
     div.article-body {
-      margin: 0 0 0 (-$bs-gutter);
-      padding: $bs-gutter $bs-gutter 0 0;
+      margin-left: (-$gap);
+      padding: $gap $gap 0 0;
       position: relative;
 
       // large device - padding bottom might push the container below the image which is bad;
       @include breakpoint($lg) {
-        padding: ($bs-gutter * 2) ($bs-gutter * 2) 0 $bs-gutter;
+        padding: $gap-double $gap-double 0 $gap;
       }
     }
 
     p.over-title {
-      font-size: 1.2rem;
+      font-size: $abby;
       text-transform: uppercase;
       margin: 0;
     }
 
     h1 {
       @include typography-l2-header();
-      font-size: 2.1rem;
+      font-size: $snuffy;
       line-height: 1.2;
-      margin: ($bs-gutter / 4) 0 $bs-gutter;
+      margin: $gap-quarter 0 $gap 0;
       @include typography-truncate();
 
       @include breakpoint($sm) {
@@ -77,19 +77,19 @@ section.favorite-block {
     }
 
     p {
-      font-size: 1.4rem;
+      font-size: $elmo;
 
       &.description {
-        font-size: 1.6rem;
+        font-size: $ernie;
         margin: 0;
       }
 
       &.duration {
-        margin: $bs-gutter 0 0;
+        margin-top: $gap;
       }
 
       &.watchlist {
-        margin: $bs-gutter 0 0;
+        margin-top: $gap;
       }
 
     }
@@ -97,25 +97,25 @@ section.favorite-block {
 
   div.share {
     margin: 0;
-    padding: $bs-gutter 0;
+    padding: $gap 0;
     position: absolute;
     // positioning needs to match the padding of it's container;
-    right: $bs-gutter;
+    right: $gap;
     bottom: 0;
     left: 0;
 
     border-top: $divider;
-    font-size: 1.2rem;
+    font-size: $abby;
     z-index: 1;
 
     @include breakpoint($lg) {
-      right: ($bs-gutter * 2);
-      left: $bs-gutter;
+      right: $gap-double;
+      left: $gap;
     }
 
     a {
       margin-left: .5rem;
-      font-size: 2rem;
+      font-size: $snuffy;
       line-height: 1;
       vertical-align: middle;
     }
@@ -128,9 +128,9 @@ section.favorite-block {
     }
 
     p.over-title {
-      font-size: 1.2rem;
+      font-size: $abby;
       text-transform: uppercase;
-      margin: ($bs-gutter / 2) 0 0;
+      margin-top: $gap-half;
 
       + h1 {
         margin: 0;
@@ -139,11 +139,11 @@ section.favorite-block {
 
     h1 {
       @include typography-l1-header();
-      margin: ($bs-gutter / 2) 0 0;
-      font-size: 1.8rem;
+      margin-top: $gap-half;
+      font-size: $oscar;
 
       @include breakpoint($md) {
-        font-size: 1.6rem;
+        font-size: $ernie;
       }
 
       a {
@@ -155,32 +155,32 @@ section.favorite-block {
     p.duration {
       color: $gray-primary;
       font-weight: $light;
-      font-size: 1.6rem;
+      font-size: $ernie;
       margin: 0;
     }
 
     // mobile only;
-    @include breakpoint($xs-only) {
-      margin: 0 (-$bs-gutter);
-      padding: 0 0 ($bs-gutter * 3);
+    @include breakpoint($below-sm) {
+      margin: 0 (-$gap);
+      padding: $gap-triple;
 
       img {
         box-shadow: none;
       }
 
       p.over-title {
-        padding: 0 $bs-gutter;
-        font-size: 1.4rem;
+        padding: 0 $gap;
+        font-size: $elmo;
       }
 
       h1 {
-        padding: 0 $bs-gutter;
+        padding: 0 $gap;
         font-size: 2.4rem;
       }
 
       p.duration {
-        padding: 0 $bs-gutter;
-        font-size: 2rem;
+        padding: 0 $gap;
+        font-size: $snuffy;
       }
     }
   }
@@ -190,8 +190,8 @@ section.favorite-block {
     margin: 0;
     text-align: center;
 
-    @include breakpoint($screen-sm) {
-      margin-top: ($bs-gutter * 4);
+    @include breakpoint($sm) {
+      margin-top: $gap-quad;
     }
   }
 }
@@ -199,14 +199,14 @@ section.favorite-block {
 section.carousel-favorite-show {
   margin-top: 0;
   background-color: $gray-lighter;
-  padding: ($bs-gutter / 2) $bs-gutter $bs-gutter;
+  padding: $gap-half $gap $gap $gap;
 
   -webkit-box-shadow: 0 3px 4px 0px $gray-medium;
   -moz-box-shadow: 0 3px 4px 0px $gray-medium;
   box-shadow: 0 3px 4px 0px $gray-medium;
 
-  @include breakpoint($screen-sm) {
-    padding: ($bs-gutter / 4) ($bs-gutter * 2) ($bs-gutter * 2);
+  @include breakpoint($sm) {
+    padding: $gap-quarter $gap-double $gap-double $gap-double;
   }
 
   .favorite-show-upper-text {
@@ -214,8 +214,8 @@ section.carousel-favorite-show {
     max-width: 1250px;
     display: block;
     position: absolute;
-    margin-bottom: $bs-gutter;
-    margin-top: (-$bs-gutter);
+    margin-bottom: $gap;
+    margin-top: -$gap;
     @include breakpoint($lg) {
       max-width: 1200px;
     }
@@ -223,8 +223,8 @@ section.carousel-favorite-show {
 
   div.section-title {
     font-weight: $normal;
-    font-size: 1.4rem;
-    margin-bottom: $bs-gutter;
+    font-size: $elmo;
+    margin-bottom: $gap;
     float: left;
   }
 
@@ -235,8 +235,8 @@ section.carousel-favorite-show {
   a.editLink {
     font-family: $serif;
     font-weight: $bold;
-    font-size: 1.4rem;
-    margin-bottom: 4px;
+    font-size: $elmo;
+    margin-bottom: $gap-quarter;
   }
 
   .favorite-show-jumpto-list {
@@ -255,9 +255,9 @@ section.carousel-favorite-show {
       width: 100%;
       padding: 75px 10px 10px 10px;
       color: $white;
-      font-size: 1.4rem;
+      font-size: $elmo;
       @include breakpoint($sm) {
-        font-size: 1.8rem;
+        font-size: $oscar;
       }
       text-align: center;
       text-shadow: 1px 1px 1px rgba($black, .8);
@@ -276,7 +276,7 @@ section.carousel-favorite-show {
     overflow-x: hidden;
     // right margin: expand the carousel into the gutter set by the component container so images bleed off the page;
     // left margin: expand the carousel into the gutter so the padding (for the drop shadow) doesn't offset the image;
-    margin: $bs-gutter (-$bs-gutter) 0 -5px;
+    margin: $gap (-$gap) 0 -5px;
     white-space: nowrap;
     display: block;
 
@@ -285,7 +285,7 @@ section.carousel-favorite-show {
     }
 
     article {
-      padding-right: ($bs-gutter * 2) - 10; // minus 10 because of the padding around the PICTURE for the padding on the IMG;
+      padding-right: $gap-double - 10; // minus 10 because of the padding around the PICTURE for the padding on the IMG;
 
       a,
       img {
@@ -319,10 +319,10 @@ section.carousel-favorite-show {
   // this way the last ARTICLE tag (slide) can be cut off;
   // the width of the visible slides will be adjusted to fill this space;
   div.slick-list {
-    margin-right: (-$bs-gutter * 4);
+    margin-right: -$gap-quad;
 
     @include breakpoint($sm) {
-      margin-right: (-$bs-gutter * 6);
+      margin-right: (-$gap * 6);
     }
   }
 
@@ -333,7 +333,7 @@ section.carousel-favorite-show {
     border-radius: 0;
   }
   .modal-header {
-    border-bottom: none;
+    border-bottom: 0;
   }
 
   .modal-title {
@@ -342,7 +342,7 @@ section.carousel-favorite-show {
     font-size: 3.0rem;
     display: inline-block;
 
-    @include breakpoint($xs-only) {
+    @include breakpoint($below-sm) {
       font-size: 2.6rem;
     }
   }
@@ -367,10 +367,10 @@ section.carousel-favorite-show {
     &__button {
       font-family: $serif;
       font-weight: $bold;
-      font-size: 1.5rem;
+      font-size: $zoe;
       color: $blue;
-      margin-top: 8px;
-      padding: ($bs-gutter / 2) $bs-gutter;
+      margin-top: $gap-half;
+      padding: $gap-half $gap;
       opacity: 1;
       text-shadow: none;
       font-weight: normal;
@@ -396,12 +396,12 @@ section.carousel-favorite-show {
 
   article.favlist-result {
     background: $white;
-    border: 1px solid $gray-light;
+    border: $divider;
     border-width: 1px 0;
     color: $gray-primary;
-    font-size: 1.6rem;
+    font-size: $ernie;
     margin-top: -1px;
-    padding: $bs-gutter;
+    padding: $gap;
 
     &:first-child {
       border-top: 0;
@@ -412,12 +412,12 @@ section.carousel-favorite-show {
 
     .sort-col {
       @include breakpoint($sm) {
-        margin-right: (-$bs-gutter);
+        margin-right: -$gap;
       }
     }
 
     .remove-col{
-      @include breakpoint($xs-only) {
+      @include breakpoint($below-sm) {
         padding-right: 0;
         padding-left: 0;
       }
@@ -461,7 +461,7 @@ section.carousel-favorite-show {
 
     .btn--remove {
       font-weight: $semibold;
-      font-size: 1.6rem;
+      font-size: $ernie;
       font-family: $sans-serif;
       line-height: 0.4;
       padding: 7px;
@@ -474,31 +474,31 @@ section.carousel-favorite-show {
     .btn-reorder {
       font-weight: $normal;
       display: inline-block;
-      font-size: 2.1rem;
+      font-size: $snuffy;
       height: 30px;
       width: 33px;
       text-align: center;
       color: $blue-muted;
       background-color: $gray-lighter;
       border: 1px solid $blue-muted;
-      border-radius: 2px;
+      border-radius: $radius;
       vertical-align: bottom;
     }
 
     .link-remove {
       font-family: $serif;
       font-weight: $bold;
-      font-size: 1.4rem;
+      font-size: $elmo;
       color: $blue;
-      margin-left: 8px;
+      margin-left: $gap-half;
     }
 
     p.fav-title {
       color:$gray-primary;
-      font-size: 1.8rem;
-      margin: 3px 0 0 0;
-      @include breakpoint($xs-only) {
-        font-size: 1.4rem;
+      font-size: $oscar;
+      margin-top: 3px;
+      @include breakpoint($below-sm) {
+        font-size: $elmo;
       }
     }
 
@@ -508,9 +508,9 @@ section.carousel-favorite-show {
     }
     // right column - lets break it out of the grid, and into the gutter so it's closer to the image;
     div.article-body {
-      margin: 0 0 0 (-$bs-gutter);
+      margin-left: (-$gap);
 
-      @include breakpoint($xs-only) {
+      @include breakpoint($below-sm) {
         margin: 0;
       }
 

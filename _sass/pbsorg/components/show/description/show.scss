@@ -4,14 +4,14 @@
   color: $gray-darker;
 
   @include breakpoint($xs) {
-    padding-top: 0;
     margin: 0 auto;
+    padding-top: 0;
   }
 
   // move this up into the gutter;
   @include breakpoint($sm) {
-    margin-top: -$bs-gutter;
-    margin-left: -$bs-gutter;
+    margin-top: -$gap;
+    margin-left: -$gap;
   }
 
   @include breakpoint($md) {
@@ -19,12 +19,12 @@
   }
 
   &__title {
-    color: $gray-primary;
-    font-weight: $bold;
-    font-size: 3.4rem;
     margin: 0;
+    padding-top: $gap;
+    color: $gray-primary;
+    font-size: 3.4rem;
+    font-weight: $bold;
     text-align: center;
-    padding-top: $bs-gutter;
 
     @include breakpoint($sm) {
       padding-top: 0;
@@ -32,22 +32,23 @@
   }
 
   p {
-    margin: $bs-gutter 0;
+    margin: $gap 0;
 
     &.info {
-      font-size: 1.9rem;
-      font-weight: $normal;
-      font-style: italic;
-      margin: ($bs-gutter / 2) 0;
-      text-align: center;
-      padding-top: $bs-gutter;
       @include typography-truncate();
+
+      margin: $gap-half 0;
+      padding-top: $gap;
+      font-size: $snuffy;
+      font-style: italic;
+      font-weight: $normal;
+      text-align: center;
 
       @include breakpoint($sm) {
         margin: 0;
-        text-align: left;
-        padding-bottom: $bs-gutter;
         padding-top: 0;
+        padding-bottom: $gap;
+        text-align: left;
       }
 
       @include breakpoint($md) {
@@ -56,51 +57,83 @@
     }
 
     &.favorite {
-      margin: 0 0 $bs-gutter 0;
+      margin: 0 0 $gap 0;
 
-      @include breakpoint($xs-only) {
-        margin-top: $bs-gutter;
+      @include breakpoint($below-sm) {
+        margin-top: $gap;
         text-align: center;
       }
     }
 
     &.description {
+      margin: $gap-half 0 0 0;
+      padding: $gap 0;
       border-top: $divider;
       border-width: 1px 0;
-      font-size: 1.6rem;
-      margin: $bs-gutter/2 0 0 0;
-      padding: $bs-gutter 0;
+      font-size: $ernie;
 
-      @include breakpoint($xs-only) {
+      @include breakpoint($below-sm) {
         margin: 0 auto;
       }
 
       @include breakpoint($md-only) {
-        font-size: 1.4rem;
+        font-size: $elmo;
       }
 
       @include breakpoint($lg) {
-        margin-right: $bs-gutter;
+        margin-right: $gap;
       }
     }
   }
 
-   .funding {
+  // for the manually programmed series links
+  &__series {
+
+    &__intro {
+      color: $gray-dark;
+      font-size: $abby;
+      font-weight: $bold;
+      text-transform: uppercase;
+    }
+
+    &__links {
+      font-size: $ernie;
+    }
+
+    &__link {
+      display: inline-block;
+      margin-right: 10px;
+      padding-right: 10px;
+      border-right: 1px solid $gray-primary;
+      line-height: 1;
+
+      &:last-child {
+        margin-right: 0;
+        padding-right: 0;
+        border-right: 0;
+      }
+    }
+  }
+
+  .funding {
     border-top: $divider;
 
-      .underwriting {
-        font-size: 1.45rem;
-        font-weight: $normal;
-        font-style: italic;
-      }
+    .underwriting {
+      font-size: 1.45rem;
+      font-style: italic;
+      font-weight: $normal;
     }
+  }
+
+
 
   .more-detail {
+    font-size: $elmo;
     font-style: italic;
-    font-size: 1.4rem;
 
     @include breakpoint($md-only) {
-        font-size: 1.2rem;
-      }
+      font-size: $abby;
+    }
   }
+
 }

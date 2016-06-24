@@ -1,39 +1,24 @@
 // mixins, variables, extends
 @import './includes';
 
-////////////
-// customized bootstrap imports
-///////////
-@import './bootstrap/mixins';
+// Reset and print styles
+@import './global/normalize';
+@import './global/print'; // originally a bootstrap file, with customizations added
 
-// Reset and dependencies
-@import './bootstrap/normalize';
-@import './bootstrap/print';
-
-// Core CSS - these were all originally bootstrap files
-@import './global/scaffolding';
+// Core CSS
+@import './global/base';
 @import './global/type';
 @import './global/grid';
+@import './global/structure';
 @import './global/tables';
 @import './global/forms';
 
-// Components
-@import './bootstrap/component-animations';
-@import './global/progress-bars'; // was originally a bootstrap file
-
-// Components w/ JavaScript
-@import './bootstrap/modals';
-
 // Utility classes
-@import './bootstrap/responsive-utilities';
-
-////////////
-// end bootstrap imports
-///////////
+@import './global/responsive-utilities';
 
 // global styles
-@import './global/base'; // base styles (side wide defaults - after bootstrap);
 @import './global/icons'; // font based icons;
 @import './global/jquery.qtip.scss'; // built-in styles for the popovers
 @import './global/buttons';
 @import './global/fallback-images';
+@import './global/progress-bars'; // was originally a bootstrap file

@@ -1,15 +1,15 @@
-var
-  jQuery = window.jQuery || require('jquery'),
-  React = window.React || require('react'),
-  ReactDOM = window.ReactDOM || require('react-dom'),
-  PureRenderMixin = React.addons.PureRenderMixin,
-  ImageWithFallback = require('../global/react-image-with-fallback'),
-  FallbackImage = require('../../scripts/_fallback-image'),
-  VideoItem;
+'use strict';
+
+import jQuery from 'jquery';
+import React from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
+
+const ImageWithFallback = require('../global/react-image-with-fallback');
+const FallbackImage = require('../../scripts/_fallback-image');
 
 require('picturefill');
 
-VideoItem = React.createClass({
+const VideoItem = React.createClass({
 
   /**
    * Array of any mixin libraries for react
@@ -71,20 +71,22 @@ VideoItem = React.createClass({
       <article className="history-result">
         <div className="row">
           <div className="col-md-4 col-sm-4 hidden-xs">
-            <a href={"/video/" + this.props.video.id} className={linkClasses}>
+            <a href={this.props.video.url} className={linkClasses}>
             <ImageWithFallback
                   customClass="viewing-history-result"
                   textOverlay={false}
                   isBroken={this.state.hasBrokenImage}
                   onBrokenImage={this.onBrokenImage}
                   path={this.props.video.image}
+                  crop='.crop.350x197.jpg'
+                  crop2x='.crop.700x394.jpg'
                   title={this.props.video.show.title + ', ' + this.props.video.title} />
             </a>
           </div>
           <div className="col-md-4 col-sm-6 col-xs-10">
             <div className="article-body">
-              <p className="over-title"><a href={'/show/' + this.props.video.show.id}>{this.props.video.show.title}</a></p>
-              <h1><a href={'/video/' + this.props.video.id}>{this.props.video.title}</a></h1>
+              <p className="over-title"><a href={this.props.video.show.url}>{this.props.video.show.title}</a></p>
+              <h1><a href={this.props.video.url}>{this.props.video.title}</a></h1>
 
               {(this.props.video.last_viewed) ? <p className="description hidden-xs">Last Viewed on {formattedLastViewedDate}</p> : ''}
               <div className="progress">
@@ -117,7 +119,7 @@ VideoItem = React.createClass({
           <div className="col-md-2  col-sm-2 col-xs-2 remove-col">
             <div className="remove-links">
                 <button onClick={this.onRemoveButtonClick} className="btn btn--remove remove-history">
-                  <span className="visuallyhidden">Remove</span>
+                  <span className="visuallyhidden">Remove {this.props.video.show.title} {this.props.video.title} from viewing history</span>
                   <span aria-hidden="true">x</span>
                 </button>
                 <a onClick={this.onRemoveButtonClick} className="link-remove hidden-xs hidden-sm remove-history">Remove</a>

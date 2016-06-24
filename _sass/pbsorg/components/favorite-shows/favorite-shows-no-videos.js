@@ -1,11 +1,14 @@
-let
-  jQuery = window.jQuery || require('jquery'),
-  React = window.React || require('react'),
-  ReactDOM = window.ReactDOM || require('react-dom'),
-  PureRenderMixin = React.addons.PureRenderMixin,
-  NoFavorites;
+'use strict';
 
-NoFavorites = React.createClass({
+import jQuery from 'jquery';
+import React from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
+import Modal from '../modal/modal';
+import * as SignInModal from '../sign-in/sign-in';
+
+const NoFavorites = React.createClass({
+
+  signInModal: undefined,
 
   /**
    * Array of any mixin libraries for react
@@ -13,11 +16,25 @@ NoFavorites = React.createClass({
   mixins: [PureRenderMixin],
 
   /**
+   * After component is rendered to DOM.
+   */
+  componentDidMount() {
+    const options = {
+      modalId: '#loginModalWindow',
+      modalTrigger: '.favorites__cta-btn',
+      focusTarget: '#modal-login__dialog',
+      childView: SignInModal
+    };
+
+    this.signInModal = new Modal(options);
+  },
+
+  /**
    * Renders component.
    */
   render() {
 
-    let content = this.getView();
+    const content = this.getView();
 
     return (
       <section className="no-favorites">
@@ -33,9 +50,9 @@ NoFavorites = React.createClass({
    */
   getView() {
 
-    let headerText = 'You need to be signed in to add shows to your Favorites.',
-      descriptionText = <a href="#" onClick={this.onClickProfileSignIn}>Sign in or create an account now</a>,
-      imagePath = window.PBS_STATIC_URL + 'images/empty/favorites.png';
+    let headerText = 'You need to be signed in to add shows to your Favorites.';
+    let descriptionText = <button className='favorites__cta-btn' aria-haspopup='true' onClick={this.onClickProfileSignIn}>Sign in or create an account now</button>;
+    const imagePath = window.PBS_STATIC_URL + 'images/empty/favorites.png';
 
     // only display something if we know it has been attempted to fetch
     // this is to prevent the wrong screen from being shown for a flash
@@ -71,10 +88,11 @@ NoFavorites = React.createClass({
   /**
    * Callback for it they click to sign in
    */
-  onClickProfileSignIn() {
+  onClickProfileSignIn(e) {
+    e.preventDefault();
 
-    if (window.PBS && window.PBS.Profile) {
-      window.PBS.Profile.signIn('LINK', 'Home', 'sign-in', window.location.href);
+    if (this.signInModal) {
+      this.signInModal.show();
     }
 
   }

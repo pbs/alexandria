@@ -1,0 +1,150 @@
+.search-filters {
+  display: none;
+  font-size: $oscar;
+  width: 100%;
+}
+
+.search-app--is-loaded {
+  .search-filters {
+    display: block;
+  }
+}
+
+.search-filters__links {
+  display: flex;
+  justify-content: flex-end;
+  padding: 22px $gap;
+  @include breakpoint($sm) {
+    padding-right: $gap-double;
+  }
+}
+
+.search-filters__more-link {
+  border: 0;
+  background: transparent;
+  color: $blue;
+  cursor: pointer;
+  font-size: $elmo;
+  font-weight: 700;
+  @include breakpoint($sm) {
+    padding-top: 5px;
+    font-size: $oscar;
+    font-weight: 400;
+  }
+}
+
+.search-filters__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 11px 0;
+}
+
+.search-filters__more-section {
+  background-color: $gray-lighter;
+  padding: $gap $gap $gap-double $gap;
+  @include breakpoint($sm) {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    padding: $gap-double ($gap * 6);
+  }
+  @include breakpoint($md) {
+    padding: $gap $gap-double;
+  }
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.search-filters__detailed-list-container {
+  margin: 0 auto;
+  padding: 0 20% 20px 20%;
+
+  @include breakpoint($sm) {
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    width: 50%;
+  }
+
+  @include breakpoint($md) {
+    width: 25%;
+    max-width: 310px;
+    padding-left: 20px;
+  }
+
+  .search-filters__detailed-list-container {
+    padding: 5px 20px 0 20px;
+
+    @include breakpoint($sm) {
+      width: 100%;
+    }
+  }
+
+  .search-filters__detailed-list-item {
+    padding: 5px 0;
+
+    &-link {
+      border: 0;
+      background: transparent;
+      color: $blue;
+    }
+
+    &-count {
+      padding-left: 15px;
+
+      &::before {
+        content: '';
+        border-left: 1px solid $black;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: $gap-half;
+      }
+    }
+  }
+}
+
+.search-filters__detailed-list-header {
+  font-size: $abby;
+  font-weight: 700;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+.search-filters__detailed-list {
+  font-size: $ernie;
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+
+  &-item {
+    position: relative;
+
+    &-link {
+      cursor: pointer;
+    }
+
+    &-count {
+      position: relative;
+      font-weight: 700;
+    }
+
+    &-remove-icon {
+      left: -$gap-large;
+      position: absolute;
+    }
+  }
+}
+
+.search-filters__list--by-type {
+  .search-filters__detailed-list-item {
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 1em;
+    &-remove-icon {
+      display: none;
+    }
+  }
+}

@@ -16,7 +16,7 @@
       padding: 0 20px 18px 20px;
       color: $blue;
       font-family: $serif;
-      font-size: 16px;
+      font-size: $ernie;
       font-weight: $bold;
       overflow: hidden;
     }
@@ -26,16 +26,33 @@
 .user-dropdown--logged-out {
   // from user.html
   display: block;
-  padding-left: 20px;
+  margin-top: 26px;
+  margin-left: 20px;
+  padding: 12px;
 
   @include breakpoint($md) {
-    padding-left: 0;
+    height: $page-header-height;
+    margin-top: 0;
+    margin-left: 0;
+    padding: 20px 12px;
+  }
+
+  &__text {
+    font-family: $serif;
+    font-weight: $bold;
+
+    @include breakpoint($md) {
+      position: relative;
+      top: -2px;
+      font-family: $sans-serif;
+      color: $blue;
+    }
   }
 
   .form-signin {
     max-width: 330px;
     margin: 0 auto;
-    padding: $bs-gutter;
+    padding: $gap;
 
     .form-signin-heading,
     .checkbox {
@@ -50,7 +67,7 @@
       position: relative;
       height: auto;
       padding: 10px;
-      font-size: 1.6rem;
+      font-size: $ernie;
       box-sizing: border-box;
 
       &:focus {
@@ -60,7 +77,7 @@
 
     //Not sure where these are being used
     input[type="username"] {
-      margin-bottom: $bs-gutter;
+      margin-bottom: $gap;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
     }
@@ -78,7 +95,7 @@
       margin: 0;
       padding: 0;
       color: $blue-light;
-      font-size: 1.4rem;
+      font-size: $elmo;
       font-weight: $normal;
       line-height: 45px;
       text-align: center;
@@ -92,28 +109,43 @@
   }
 }
 
+
 /////// NEW USER DROPDOWN STYLES HERE
 .user-dropdown {
   display: none;
+  padding: $gap $gap-half $gap 20px;
   background: $gray-light;
   box-shadow: $inset-shadow-right;
-  left: 245px;
-  padding: 28px 8px 16px 26px;
+
   overflow: hidden;
 
-  @include breakpoint($md){
+  .mobile-user-menu-is-open & {
+    display: block;
+
+    @include breakpoint($md) {
+      display: none;
+    }
+  }
+
+  .desktop-user-menu-is-open & {
+    @include breakpoint($md) {
+      display: flex;
+    }
+  }
+
+  @include breakpoint($md) {
     display: none;
-    padding: 28px 8px 16px 26px;
+    padding: 28px $gap-half $gap 26px;
     min-width: 160px;
     max-width: $max-width;
     position: absolute;
     top: $page-header-height;
-    left: -1px;
+    left: 240px; // magic value - best bad choice available
     background: $gray-lighter;
     z-index: 2;
     box-shadow: none;
     overflow: hidden;
-    border: 1px solid $gray-light;
+    border: $divider;
     border-top: 0;
 
     .nav-item:hover & {
@@ -127,7 +159,7 @@
     }
 
     // we need the extra specificty here of the body selector
-    .touchevents body.user-dropdown-is-open & {
+    .touchevents body.desktop-user-menu-is-open & {
       display: flex;
     }
 
@@ -138,26 +170,50 @@
 
   &__links {
     min-width: 120px;
-    margin-right: $bs-gutter*2;
-    padding: 10px 0 0 0;
+    margin-right: $gap-double;
+    padding: 0;
     list-style: none;
 
+    @include breakpoint($md) {
+      padding-top: 10px;
+      margin-right: 12px;
+    }
+
     li {
-      margin: 0 0 ($bs-gutter/1.5) 0;
+      margin-bottom: 6px;
+
+      @include breakpoint($md) {
+        margin-bottom: 12px;
+      }
 
       a {
         color: $gray-primary;
-        font-size: 1.6rem;
-        line-height: ($line-height * 1.5);
+        font-size: $ernie;
+        line-height: 2;
 
         @include breakpoint($md) {
-          font-size: 1.4rem;
+          font-size: $elmo;
           line-height: $line-height;
         }
+      }
+
+      .user-dropdown__links__sign-out {
+        padding: 0;
+        border: 0;
+        background: transparent;
+        color: $blue;
+        font-size: $ernie;
+        line-height: 2;
 
         &:hover,
         &:focus {
           text-decoration: underline;
+        }
+
+        @include breakpoint($md) {
+          color: $gray-primary;
+          font-size: $elmo;
+          line-height: $line-height;
         }
       }
     }
@@ -169,14 +225,14 @@
     @include breakpoint($md) {
       display: block;
       min-width: 320px; //gives enough room for the label
-      padding: 12px ($bs-gutter * 2);
+      padding: 12px $gap-double;
       border-left: 1px solid $gray-medium;
 
       &__label {
         margin-bottom: 5px;
       }
 
-      &__video__image {
+      &__video-image {
         width: 100%;
         position: static;
       }
@@ -185,9 +241,9 @@
         z-index: 5;
       }
 
-      h3 {
+      &__title {
         margin-top: 0;
-        font-size: 1.4rem;
+        font-size: $elmo;
       }
 
       .history {
@@ -195,21 +251,21 @@
         margin-left: auto;
         color: $blue;
         font-family: $serif;
-        font-size: 1.2rem;
+        font-size: $abby;
         font-weight: $bold;
         line-height: $line-height;
       }
 
       &__video {
         width: 227px;
-        margin-right: $bs-gutter*2;
+        margin-right: $gap-double;
 
         &:nth-child(2n) {
           margin-right: 0;
         }
 
         &__label {
-          font-size: 1.4rem;
+          font-size: $elmo;
           margin-top: 5px;
         }
 
@@ -219,7 +275,7 @@
           border-radius: 0;
           box-shadow: none;
           height: 12px;
-          margin-bottom: 4px;
+          margin-bottom: $gap-quarter;
           margin-top: -12px;
           overflow: hidden;
         }
@@ -233,13 +289,47 @@
   }
 }
 
+.watchlist-counter{
+  display: inline-block;
+  background-color: $red;
+  border-radius: 4px;
+  color: $white;
+  margin-left: $gap-quarter;
+  padding: 2px 6px;
+  line-height: 20px;
+}
+
 .user-name-toggle {
-  @include breakpoint($sm-xs-only) {
-    background-color: white;
-    margin-top: -15px;
+  width: 100%;
+  position: relative;
+  border: 0;
+  background: $white;
+
+
+  &:hover,
+  &:focus {
+    cursor: default;
+  }
+
+  @include breakpoint($below-md) {
+    background-color: $white;
     padding-left: 20px;
-    height: 75px;
+    height: 78px;
     box-shadow: $inset-shadow-right;
+    &:hover,
+    &:focus {
+      cursor: pointer;
+    }
+  }
+
+  @include breakpoint($md) {
+    height: $page-header-height;
+    padding-left: 14px;
+    background: transparent;
+
+    .desktop-user-menu-is-open & {
+      background: $gray-lighter;
+    }
   }
 
   @include breakpoint($lg) {
@@ -248,27 +338,27 @@
   }
 }
 
+// Needed to help with flexbox styles in Firefox
+.user-name-content {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
 .user-name {
+  @include typography-truncate();
   color: $blue;
   font-family: $sans-serif;
   font-weight: $bold;
+  font-size: $snuffy;
 
-  .user-dropdown--logged-out & {
-    color: $white;
-    font-family: $serif;
-
-    @include breakpoint($md) {
-      color: $blue;
-      font-family: $sans-serif;
-    }
-  }
 
   @include breakpoint($md) {
     max-width: 105px;
-    @include typography-truncate();
     display: inline-block;
     position: relative;
     overflow: hidden;
+    font-size: $ernie;
   }
 
   @include breakpoint(1045px) {
@@ -290,12 +380,12 @@
 }
 
 .user-info__dropdown-control {
+  bottom: -12px;
   position: absolute;
-  top: 50px;
   right: 10px;
   text-decoration: none;
   cursor: pointer;
-  font-size: 1.4rem;
+  font-size: $elmo;
   font-weight: $light;
   color: $blue;
   background: transparent;
@@ -312,27 +402,21 @@
   [class*="icon"] {
     margin-left: 5px;
     color: $gray-medium;
-  }
 
-  &.is-open {
-
-    [class*="icon"] {
+    .mobile-user-menu-is-open & {
       transform: rotate(180deg);
-    }
-
-    + .user-dropdown {
-      display: block;
-      @include breakpoint($md) {
-        display: none;
-      }
     }
   }
 }
 
 .header__image-container {
   display: inline-block;
-  margin-right: 12px;
   position: relative;
+  margin-right: 20px;
+
+  @include breakpoint($md) {
+    margin-right: 14px;
+  }
 
   .user-info__image {
     width: 50px;
@@ -340,26 +424,28 @@
 
     @include breakpoint($md) {
       width: 35px;
-      margin-bottom: 5px;
     }
   }
 
-  .passport-logo-with-image {
+  + .passport-logo-image__container {
     position: absolute;
-    bottom: -5px;
-    left: 40px;
+    bottom: 0;
+    left: $gap-larger;
     width: 20px;
 
     @include breakpoint($md) {
-      bottom: 0;
+      bottom: -1px;
       left: 25px;
       width: 16px;
     }
   }
 }
 
-.passport-logo-no-image {
-  width: 20px;
-  margin-right: 10px;
-  padding-bottom: 3px;
+.passport-logo-image {
+  height: 20px;
+
+  &__container {
+    width: 20px;
+    margin-right: 10px;
+  }
 }

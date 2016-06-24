@@ -22,16 +22,16 @@
   // right column;
   // view whole schedule
   .view-all {
-    margin: ($bs-gutter / 2) 0 0 0;
+    margin-top: $gap-half;
     float: none;
     text-align: right;
   }
 
   // schedule table;
   .schedule__table {
-    margin: 4px 0;
+    margin: $gap-quarter 0;
     color: $gray-primary;
-    font-size: 1.6rem;
+    font-size: $ernie;
 
     tr {
        &:first-child td {
@@ -40,7 +40,7 @@
     }
 
     td {
-      padding: $bs-gutter ($bs-gutter / 2);
+      padding: $gap $gap-half;
       border-color: $gray-light;
 
       &:first-child {
@@ -76,22 +76,22 @@
   text-align: center;
 
   &__title {
-    margin-top: ($bs-gutter * 3);
+    margin-top: $gap-triple;
     font-weight: $light;
   }
 
   &__subtitle {
     margin-top: 0;
-    padding: $bs-gutter ($bs-gutter * 3.5);
-    font-size: 1.6rem;
+    padding: $gap ($gap * 3.5);
+    font-size: $ernie;
     line-height: 2rem;
   }
 
   .localize-pin {
-    margin-right: $bs-gutter;
+    margin-right: $gap;
   }
 
   .explore-more {
-    margin-bottom: ($bs-gutter * 5);
+    margin-bottom: ($gap * 5);
   }
 }

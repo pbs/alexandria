@@ -1,7 +1,7 @@
 // set all the vars so we don't have to repeat ourselves when the math is done for col-content width;
 $ad-width: 300px;
-$row-with-ad-padding: ($bs-gutter * 2);
-$col-content-margin: ($bs-gutter * 4);
+$row-with-ad-padding: $gap-double;
+$col-content-margin: $gap-quad;
 
 .row-with-ad,
 .row-with-ad-alt {
@@ -10,17 +10,21 @@ $col-content-margin: ($bs-gutter * 4);
   padding: 0;
   position: relative;
 
+  .passport-landing & {
+    background: $gray-lighter;
+  }
+
   @include breakpoint($sm) {
-    margin-bottom: (-$bs-gutter);
+    margin-bottom: -$gap;
   }
 
   @include breakpoint($md) {
     margin-bottom: 0;
-    padding: ($bs-gutter * 2);
+    padding: $gap-double;
   }
 
   @include breakpoint($lg) {
-    padding-bottom: ($bs-gutter * 3);
+    padding-bottom: $gap-triple;
   }
 
   // default width is 100% because at mobile, the ad isn't visible;
@@ -34,9 +38,9 @@ $col-content-margin: ($bs-gutter * 4);
     .content-row,
     .content-row-alt {
       background-color: $white;
-      padding-bottom: $bs-gutter;
+      padding-bottom: $gap;
       @include breakpoint($sm-only) {
-        padding: ($bs-gutter * 2);
+        padding: $gap-double;
       }
 
       .xs-full-width {
@@ -51,9 +55,13 @@ $col-content-margin: ($bs-gutter * 4);
     display: none;
     background: $white;
     float: right;
-    margin-left: ($bs-gutter * 2);
+    margin-left: $gap-double;
     margin-right: 0;
     width: $ad-width;
+
+    .passport-landing & {
+      background: transparent;
+    }
   }
 
   // class to denote dividing bars should be added;
@@ -112,7 +120,7 @@ $col-content-margin: ($bs-gutter * 4);
 //Specifically for the individual show page
   .show & {
     @include breakpoint($sm) {
-      padding-top: ($bs-gutter / 2);
+      padding-top: $gap-half;
     }
     @include breakpoint($md) {
       padding: 30px 20px 20px 30px;

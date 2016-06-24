@@ -23,7 +23,7 @@ jQuery(($) => {
     setupCache();
     addEvents();
     setupSortableList();
-  
+
   },
 
   /**
@@ -39,7 +39,7 @@ jQuery(($) => {
    * Attaches event handlers.
    */
   addEvents = () => {
-    
+
     _cache.removeShowButton.on('click', onRemoveShowButtonClick);
 
     // addNewShowToFavorites event is declared in app/components/favorite-shows/favorite-shows.js
@@ -54,7 +54,7 @@ jQuery(($) => {
 
     let showToDelete = $(e.target).closest('.favlist-result'),
       index = showToDelete.index();
-    
+
     removeShowFromFavoritesCarousel(index);
 
     showToDelete.fadeOut(600, () => {
@@ -103,7 +103,6 @@ jQuery(($) => {
      */
     if (showID === 'Nova') {
       jQuery.get('/components/carousel/favorite-show/ajax-search-results.json', function (data) {
-        // window.newFavoriteShowhandblebarsTemplate is declared in ./_handlebars.js
         let $html = jQuery(window.newFavoriteShowhandblebarsTemplate(data));
         jQuery('#favoriteShowsCarouselDiv div.carousel-container').slick('slickAdd', $html, 0);
         alert('Page reload is needed now.');

@@ -6,7 +6,7 @@ article.store-featured {
   div.background-image {
     // at mobile, move it up under the content;
     @include breakpoint($sm) {
-      margin-top: (-$bs-gutter * 5);
+      margin-top: (-$gap * 5);
     }
 
     img {
@@ -25,19 +25,19 @@ article.store-featured {
 
   // container for the content (that overlays the image at the desktop);
   div.article-body {
-    padding-top: $bs-gutter;
+    padding-top: $gap;
 
     @include breakpoint($sm) {
       padding: 0;
       position: absolute;
-      top: ($bs-gutter * 2);
+      top: $gap-double;
       left: 0;
       width: 100%;
       z-index: 2;
     }
 
     @include breakpoint($md) {
-      top: ($bs-gutter * 4);
+      top: $gap-quad;
     }
   }
 
@@ -56,7 +56,7 @@ article.store-featured {
     }
 
     // center the images on mobile;
-    @include breakpoint($xs-only) {
+    @include breakpoint($below-sm) {
       &.img-logo {
         display: block;
         margin: 0 auto;

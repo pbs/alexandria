@@ -1,33 +1,61 @@
 .pagination {
+  display: flex;
+  justify-content: center;
+  position: relative;
   width: 100%;
-  padding: $bs-gutter 0;
+  margin: 0 auto $gap-double auto;
+  padding: $gap 0;
+  font-size: $snuffy;
   text-align: center;
 
-  @include breakpoint($sm) {
-    padding-bottom: 0;
+  // styles to apply to all children
+  &__univ-feature > *,
+  &__min-feature > *,
+  &__full-feature > * {
+    position: relative;
+    padding: $gap-quarter 10px;
+
+    @include breakpoint($sm) {
+      padding: $gap-quarter $gap;
+    }
+  }
+
+  // pagination features for both small and large screens
+  &__univ-feature {
+    display: inline-block;
+    position: relative;
+  }
+
+  // minimal pagination features for small screens
+  &__min-feature {
+    display: flex;
+    position: relative;
+    flex-wrap: nowrap;
+    align-items: baseline;
+
+    @include breakpoint($sm) {
+      display: none;
+    }
+  }
+
+  // full pagination features for large screens
+  &__full-feature {
+    display: none;
+    position: relative;
+
+    @include breakpoint($sm) {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: baseline;
+    }
   }
 
   // all pagination links (even prev / next);
   a {
     display: inline-block;
-    cursor: pointer;
-    padding: ($bs-gutter / 4) $bs-gutter;
-    font-size: 1.9rem;
     position: relative;
-
-    // 1024 needs to reduce the font size so it'll all fit on one line;
-    @include breakpoint($md) {
-      font-size: 1.6rem;
-    }
-    @include breakpoint($lg) {
-      font-size: 1.9rem;
-    }
-
-    // on state;
-    &.selected {
-      color: $gray-primary;
-      cursor: default;
-    }
+    font-size: $snuffy;
+    cursor: pointer;
 
     // remove underline after tap on touch devices
     &:hover {
@@ -35,39 +63,21 @@
         text-decoration: none;
       }
     }
-
-    // dividing border between each link;
-    + a:before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 4px;
-      bottom: 4px;
-      width: 1px;
-      background: $gray-primary;
-      left: 0;
-    }
   }
 
-  // for the super simple version
-  &--simple {
-    width: 100%;
-    margin: 0 auto $bs-gutter*2 auto;
-    position: relative;
-    font-size: 1.8rem;
-
-    a.pagination__previous {
-      position: absolute;
-      left: 50%;
-      margin-left: -165px;
-    }
-
-    a.pagination__next {
-      position: absolute;
-      right: 50%;
-      margin-right: -130px;
-    }
+  &__ellipsis {
+    padding: 0;
   }
 
-
+  // add divider between pages where necessary
+  &__has-divider::before {
+    display: block;
+    position: absolute;
+    top: $gap-quarter;
+    bottom: $gap-quarter;
+    left: 0;
+    width: 1px;
+    background: $gray-primary;
+    content: '';
+  }
 }

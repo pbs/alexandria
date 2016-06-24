@@ -1,6 +1,6 @@
 .promoted-show {
   background: $gray-light;
-  padding: ($bs-gutter * 2) $bs-gutter 1px $bs-gutter;
+  padding: $gap-double $gap 1px $gap;
 
   &__inner {
     padding: 0;
@@ -28,10 +28,10 @@
     font-family: $serif;
     font-weight: $bold;
     font-size: 1rem;
-    margin-left: $bs-gutter * 2;
+    margin-left: $gap-double;
 
     @include breakpoint($sm) {
-      margin: $bs-gutter $bs-gutter ($bs-gutter / 2) 0;
+      margin: $gap $gap $gap-half 0;
     }
 
     @include breakpoint($md) {
@@ -45,22 +45,22 @@
 
   &__intro {
     display: inline-block;
-    margin: $bs-gutter 0;
-    font-size: 1.3rem;
+    margin: $gap 0;
+    font-size: $elmo;
     color: $gray-dark;
     text-transform: uppercase;
 
     @include breakpoint($sm) {
-      font-size: 1.2rem;
-      margin: 0 0 ($bs-gutter / 2) 0;
+      margin: 0 0 $gap-half 0;
+      font-size: $abby;
     }
 
     @include breakpoint($over-900) {
-      font-size: 1.3rem;
+      font-size: $elmo;
     }
 
     @include breakpoint($md) {
-      margin: $bs-gutter 0;
+      margin: $gap 0;
     }
   }
 
@@ -82,52 +82,52 @@
 
   &__description,
   &__hashtag {
-    font-size: 1.8rem;
-    margin: $bs-gutter ($bs-gutter * 2);
+    font-size: $oscar;
+    margin: $gap $gap-double;
 
     @include breakpoint($sm) {
-      font-size: 1.2rem;
-      margin: ($bs-gutter / 2) $bs-gutter ($bs-gutter / 2) 0;
+      font-size: $abby;
+      margin: $gap-half $gap $gap-half 0;
     }
 
     @include breakpoint($over-900) {
-      font-size: 1.4rem;
-      margin: $bs-gutter $bs-gutter $bs-gutter 0;
+      font-size: $elmo;
+      margin: $gap $gap $gap 0;
     }
 
     @include breakpoint($md) {
-      margin: $bs-gutter ($bs-gutter * 1.5) $bs-gutter 0;
+      margin: $gap $gap-large $gap 0;
     }
 
     @include breakpoint($over-1200) {
-      font-size: 1.8rem;
+      font-size: $oscar;
     }
   }
 
   &__cta {
     text-align: center;
-    margin-bottom: $bs-gutter * 2;
-    margin-top: $bs-gutter * 2;
+    margin-bottom: $gap-double;
+    margin-top: $gap-double;
 
     @include breakpoint($sm) {
       text-align: left;
-      margin-bottom: $bs-gutter;
-      margin-top: ($bs-gutter / 4);
+      margin-bottom: $gap;
+      margin-top: $gap-quarter;
     }
 
     @include breakpoint($md) {
-      margin-top: $bs-gutter * 2;
+      margin-top: $gap-double;
     }
 
     .btn {
       @include breakpoint($sm) {
-        font-size: 1.4rem;
+        font-size: $elmo;
         padding: 12px 30px;
       }
 
       @include breakpoint($over-900) {
-        font-size: 1.6rem;
-        padding: $bs-gutter ($bs-gutter * 2);
+        font-size: $ernie;
+        padding: $gap $gap-double;
       }
     }
   }

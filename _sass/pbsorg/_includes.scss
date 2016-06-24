@@ -1,7 +1,5 @@
 // SCSS that doesn't produce CSS, but is used elsewhere
 @import './includes/compass-breakpoint/stylesheets/breakpoint'; // for media queries
 @import './includes/colors'; // our color variables, which will feed into bootstrap, and elsewhere
-@import './includes/bootstrap-variables'; // customized bootstrap;
 @import './includes/variables'; // sitewide variables and mixins, based on settings in bootstrap;
-@import './includes/extends'; // extended styles
 @import './includes/mixins'; // the various mixins used throughout the site

@@ -1,14 +1,13 @@
 'use strict';
 
-let React = window.React || require('react'),
-  ReactDOM = window.ReactDOM || require('react-dom'),
-  PureRenderMixin = React.addons.PureRenderMixin,
-  ReactCSSTransitionGroup = React.addons.CSSTransitionGroup,
-  GridItem = require('./react-show-poster-grid-item'),
-  ShowPosterGrid;
+import React from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-ShowPosterGrid = React.createClass({
-  
+const GridItem = require('./react-show-poster-grid-item');
+
+const ShowPosterGrid = React.createClass({
+
   /**
    * Array of any mixin libraries for react
    */
@@ -21,7 +20,7 @@ ShowPosterGrid = React.createClass({
 
     let component = this,
       content = this.props.shows.map((show, index) => {
-        return (component.props.gridItem) ? <component.props.gridItem show={show} />: <GridItem show={show} />;
+        return (component.props.gridItem) ? <component.props.gridItem show={show} key={index} />: <GridItem show={show} key={index} />;
       });
 
     return (
@@ -31,9 +30,9 @@ ShowPosterGrid = React.createClass({
           transitionEnterTimeout={500}
           transitionLeaveTimeout={300}
           className="show-poster-grid">
-          
+
           {content}
-        
+
         </ReactCSSTransitionGroup>
     );
   }

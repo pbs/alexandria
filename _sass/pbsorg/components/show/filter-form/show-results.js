@@ -1,12 +1,13 @@
 'use strict';
 
-let jQuery = window.jQuery || require('jquery'),
-  Grid = require('../../global/react-show-poster-grid'),
-  GridItem = require('./show-results-grid-item'),
-  List = require('./show-results-list'),
-  Results;
+import jQuery from 'jquery';
+import React from 'react';
 
-Results = React.createClass({
+const Grid = require('../../global/react-show-poster-grid');
+const GridItem = require('./show-results-grid-item');
+const List = require('./show-results-list');
+
+const Results = React.createClass({
 
   /**
    * Renders component.

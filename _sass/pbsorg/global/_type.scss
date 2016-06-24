@@ -12,78 +12,124 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $headings-font-family;
-  font-weight: $headings-font-weight;
-  line-height: $headings-line-height;
-  color: $headings-color;
+  font-weight: $normal;
+  line-height: 1.1;
+  color: inherit;
 }
 
 h1,
 h2,
 h3 {
-  margin-top: $line-height-computed;
-  margin-bottom: ($line-height-computed / 2);
+  margin-top: $gap;
+  margin-bottom: $gap-half;
 }
 
 h4,
 h5,
 h6 {
-  margin-top: ($line-height-computed / 2);
-  margin-bottom: ($line-height-computed / 2);
+  margin-top: $gap-half;
+  margin-bottom: $gap-half;
 }
 
 h1 {
-  font-size: $font-size-h1;
+  font-size: 3.6rem;
 }
 
-h2 {
-  font-size: $font-size-h2;
+h2,
+.h2 {
+  font-size: 3.0rem;
 }
 
-h3 {
-  font-size: $font-size-h3;
+h3,
+.h3 {
+  font-size: 2.4rem;
 }
 
 h4 {
-  font-size: $font-size-h4;
+  font-size: $oscar;
 }
 
 h5 {
-  font-size: $font-size-h5;
+  font-size: 1rem;
 }
 
 h6 {
-  font-size: $font-size-h6;
+  font-size: $abby;
 }
-
 
 // Body text
 // -------------------------
 
 p {
-  margin: 0 0 ($line-height-computed / 2);
+  margin: 0 0 $gap-half 0;
+
+  &.over-title {
+    color: $gray-dark;
+    font-family: $serif;
+    font-weight: $bold;
+
+    a {
+      color: $gray-dark;
+    }
+  }
+
+  // view all links are typically floated right so they are on the same baseline as the H1 title for the component;
+  &.view-all {
+    margin: $gap-quarter 0 0 0;
+    float: right;
+    font-family: $serif;
+    font-size: $elmo;
+    font-weight: $bold;
+  }
+
+  // view more links are like view-all, but without the float right
+  &.view-more {
+    margin: $gap 0 0 0;
+    font-family: $serif;
+    font-size: $elmo;
+    font-weight: $bold;
+  }
+
+  &.footnote {
+    padding-left: $gap-quad;
+    font-style: italic;
+    font-weight: $light;
+  }
 }
 
-// Emphasis & misc
+// Links
+a {
+  &,
+  &:visited {
+    color: $blue;
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: $focusstate;
+  }
+
+}
+
+// Emphasis & small
 // -------------------------
 
-// Ex: (12px small font / 14px base font) * 100% = about 85%
+strong {
+  font-weight: $semibold;
+}
+
+em {
+  font-style: italic;
+}
+
 small {
-  font-size: floor((100% * $font-size-small / $font-size-base));
-}
-
-// Transformation
-.text-lowercase      { text-transform: lowercase; }
-.text-uppercase      { text-transform: uppercase; }
-.text-capitalize     { text-transform: capitalize; }
-
-// Page header
-// -------------------------
-
-.page-header {
-  padding-bottom: (($line-height-computed / 2) - 1);
-  margin: ($line-height-computed * 2) 0 $line-height-computed;
-  border-bottom: 1px solid $page-header-border-color;
+  font-size: $abby;
 }
 
 
@@ -94,47 +140,29 @@ small {
 ul,
 ol {
   margin-top: 0;
-  margin-bottom: ($line-height-computed / 2);
+  margin-bottom: $gap-half;
   ul,
   ol {
     margin-bottom: 0;
   }
 }
 
-// List options
-
-// [converter] extracted from `.list-unstyled` for libsass compatibility
-@mixin list-unstyled {
+// [converter] extracted as `@mixin list-unstyled` for libsass compatibility
+.list-unstyled {
   padding-left: 0;
   list-style: none;
 }
-// [converter] extracted as `@mixin list-unstyled` for libsass compatibility
-.list-unstyled {
-  @include list-unstyled;
-}
 
-
-// Inline turns list items into inline-block
-.list-inline {
-  @include list-unstyled;
-  margin-left: -5px;
-
-  > li {
-    display: inline-block;
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-}
 
 // Description Lists
 dl {
   margin-top: 0; // Remove browser default
-  margin-bottom: $line-height-computed;
+  margin-bottom: $gap;
 }
 
 dt,
 dd {
-  line-height: $line-height-base;
+  line-height: $line-height;
 }
 
 dt {
@@ -153,15 +181,16 @@ abbr[title],
 // Add data-* attribute to help out our tooltip plugin, per https://github.com/twbs/bootstrap/issues/5257
 abbr[data-original-title] {
   cursor: help;
-  border-bottom: 1px dotted $abbr-border-color;
+  border-bottom: 1px dotted $gray-light;
 }
 
 // Blockquotes
 blockquote {
-  margin: 0 0 $line-height-computed;
-  padding: ($line-height-computed / 2) $line-height-computed;
-  font-size: $blockquote-font-size;
-  border-left: 5px solid $blockquote-border-color;
+  margin: 0 0 $gap 0;
+  padding: $gap-half $gap;
+  font-size: $abby;
+  border-left: 5px solid $white;
+  border-color: $divider-color;
 
   p,
   ul,
@@ -174,7 +203,15 @@ blockquote {
 
 // Addresses
 address {
-  margin-bottom: $line-height-computed;
+  margin-bottom: $gap;
   font-style: normal;
-  line-height: $line-height-base;
+  line-height: $line-height;
+}
+
+// Horizontal rules
+hr {
+  margin-top: $gap;
+  margin-bottom: $gap;
+  border: 0;
+  border-top: $divider;
 }

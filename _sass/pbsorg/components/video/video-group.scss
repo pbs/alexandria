@@ -1,0 +1,7 @@
+.video-group__image {
+  width: 100%;
+}
+
+.video-group__link-container {
+  @include aspect-ratio($grid-ratio-width, $grid-ratio-height);
+}

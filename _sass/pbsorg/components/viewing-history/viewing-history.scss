@@ -1,14 +1,14 @@
 section.history-container{
   background: $gray-lighter;
   margin: 0 auto;
-  padding-bottom: $bs-gutter * 3;
+  padding-bottom: $gap-triple;
 
   @include breakpoint($sm) {
     padding-bottom: 0;
   }
 
   @include breakpoint($lg) {
-    padding-bottom: $bs-gutter * 3;
+    padding-bottom: $gap-triple;
   }
 }
 
@@ -22,22 +22,22 @@ section.history-container{
 article.history-result {
   background: $white;
   color: $gray-primary;
-  border-bottom: 1px solid $gray-light;
-  font-size: 1.6rem;
-  margin: 1px $bs-gutter 0 $bs-gutter;
-  padding: $bs-gutter;
+  border-bottom: $divider;
+  font-size: $ernie;
+  margin: 1px $gap 0 $gap;
+  padding: $gap;
 
   @include breakpoint($sm) {
     margin: 1px 0 0 0;
-    padding: ($bs-gutter * 1.5) $bs-gutter;
+    padding: $gap-large $gap;
   }
 
   @include breakpoint($md) {
-    padding: ($bs-gutter * 2) ($bs-gutter * 2);
+    padding: $gap-double $gap-double;
   }
 
   @include breakpoint($lg) {
-    margin: 1px ($bs-gutter * 2) 0 ($bs-gutter * 2); 
+    margin: 1px $gap-double 0 $gap-double;
   }
 
   .history-poster{
@@ -52,8 +52,8 @@ article.history-result {
   .history-info-table{
     td{
       border-top: 0;
-      padding: 4px;
-      font-size: 1.4rem;
+      padding: $gap-quarter;
+      font-size: $elmo;
       font-weight: $semibold;
     }
   }
@@ -61,9 +61,9 @@ article.history-result {
   .link-remove{
     font-family: $serif;
     font-weight: $bold;
-    font-size: 1.4rem;
+    font-size: $elmo;
     color: $blue;
-    margin-left: 8px;
+    margin-left: $gap-half;
   }
 
   .progress {
@@ -71,8 +71,8 @@ article.history-result {
     border-radius: 0;
     box-shadow: none;
     height: 10px;
-    margin-bottom: 4px;
-    margin-top: 4px;
+    margin-bottom: $gap-quarter;
+    margin-top: $gap-quarter;
     overflow: hidden;
   }
 
@@ -81,20 +81,20 @@ article.history-result {
   }
 
   p.over-title {
-    font-size: 1.2rem;
+    font-size: $abby;
     margin: 0;
     text-transform: uppercase;
 
     @include breakpoint($md) {
-      font-size: 1.4rem;
+      font-size: $elmo;
     }
   }
 
   h1 {
     color: $gray-primary;
-    font-size: 1.8rem;
-    margin: ($bs-gutter / 4) 0 0;
-    padding-bottom: 8px;
+    font-size: $oscar;
+    margin: $gap-quarter 0 0 0;
+    padding-bottom: $gap-half;
 
     @include breakpoint($md) {
       font-size: 2.2rem;
@@ -107,14 +107,14 @@ article.history-result {
 
   }
   p.description {
-    margin: ($bs-gutter / 2) 0 0;
-    font-size: 1.4rem;
+    margin: $gap-half 0 0 0;
+    font-size: $elmo;
   }
 
 
   p.info {
-    font-size: 1.4rem;
-    margin: ($bs-gutter / 2) 0 0;
+    font-size: $elmo;
+    margin: $gap-half 0 0 0;
 
     .passport-logo-wrapper {
       display: inline-block;
@@ -125,7 +125,7 @@ article.history-result {
 
       .passport-logo {
         width: 100%;
-        margin-top: -4px;
+        margin-top: -$gap-quarter;
       }
     }
   }
@@ -139,7 +139,18 @@ article.history-result {
     margin: 0;
 
     @include breakpoint($sm) {
-      margin: 0 0 0 (-$bs-gutter);
+      margin: 0 0 0 (-$gap);
     }
+  }
+}
+
+.viewing-history__cta-btn {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: $blue;
+
+  &:hover {
+    text-decoration: underline;
   }
 }

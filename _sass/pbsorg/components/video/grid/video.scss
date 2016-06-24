@@ -1,0 +1,162 @@
+.video-grid {
+  padding: $gap-quad $gap $gap-triple;
+  padding: $gap-quad $gap $gap-triple $gap;
+
+  @include breakpoint($sm) {
+    padding: $gap-quad $gap-double $gap-double $gap-double;
+  }
+
+  p.section-over-title {
+    background: $gray-medium;
+    color: $gray-primary;
+    font-weight: $bold;
+    font-size: $oscar;
+    margin: (-$gap-double) (-$gap) $gap-double (-$gap);
+    padding: $gap $gap;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    box-shadow: $shadow;
+
+    @include breakpoint($sm) {
+      padding: $gap-half $gap-double;
+      margin: (-$gap-quad) (-$gap-double) $gap-triple (-$gap-double);
+    }
+    @include breakpoint($md) {
+      margin-bottom: $gap-quad;
+    }
+  }
+
+  .section-title {
+    color: $gray-darker;
+    font-weight: $bold;
+    font-size: $snuffy;
+    text-transform: uppercase;
+    margin: 0 0 $gap-half 0;
+    span {
+      font-weight: $bold;
+      margin-left: 5px;
+      padding-left: 12px;
+      position: relative;
+
+      &:before {
+        content: "";
+        display: block;
+        background: $gray-medium;
+        width: 1px;
+        position: absolute;
+        top: 3px;
+        bottom: 3px;
+        left: 0;
+      }
+    }
+  }
+
+  &__items {
+    margin-left: -$gap;
+    margin-right: -$gap;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint($sm) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    // the default - where we hide all but the first two on mobile
+    &--truncated-at-mobile {
+      // hide all but the first two
+      > :nth-child(n + 3) {
+        display: none;
+      }
+
+      // if 1 - 4 items
+      &.video-grid__items--count-4 {
+        > :nth-child(3) {
+          @include breakpoint($sm) {
+            display: block;
+          }
+        }
+
+        > :nth-child(4) {
+          @include breakpoint($md) {
+            display: block;
+          }
+        }
+      }
+
+      // if 8 items
+      &.video-grid__items--count-8 {
+        // this selects items 3 - 6
+        > :nth-child(n + 3):nth-child(-n + 6) {
+          @include breakpoint($sm) {
+            display: block;
+          }
+        }
+
+        > :nth-child(n + 7) {
+          @include breakpoint($md) {
+            display: block;
+          }
+        }
+      }
+    }
+
+    // if we want to show all on mobile, but have the weird $sm breakpoint where we have 3 up
+    &--all-visible-mobile {
+
+      &.video-grid__items--count-4 {
+        > :nth-child(4) {
+          @include breakpoint($sm) {
+            display: none;
+          }
+          @include breakpoint($md) {
+            display: block;
+          }
+        }
+      }
+
+      &.video-grid__items--count-8 {
+        > :nth-child(n + 7) {
+          @include breakpoint($sm) {
+            display: none;
+          }
+          @include breakpoint($md) {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+
+  &__item {
+    padding: 0 $gap;
+
+    // yes we want fixed widths
+    @include breakpoint($sm) {
+      width: 33.33%;
+    }
+
+    @include breakpoint($md) {
+      width: 25%;
+    }
+  }
+
+  // only visible on mobile;
+  p.learn-more {
+    margin: 0 0 $gap-half 0;
+    text-align: center;
+    text-transform: capitalize;
+
+    .btn:hover {
+      background: rgba($blue, 0.1);
+    }
+  }
+
+  .video & {
+    .appended-shows {
+      display:none;
+    }
+  }
+
+}

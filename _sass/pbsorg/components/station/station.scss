@@ -9,29 +9,32 @@
   }
   // container for all the content in this component;
   .section-body {
-    padding: ($bs-gutter * 2) $bs-gutter ($bs-gutter * 4) $bs-gutter;
+    padding: $gap-double $gap $gap-quad $gap;
     background-position: bottom center;
-    background-attachment: fixed; //to get the parallax effect
 
-    @include breakpoint(max-width $screen-xs-max) {
+    .no-touchevents & {
+      background-attachment: fixed; //to get the parallax effect, but only on non-touch devices
+    }
+
+    @include breakpoint($below-sm) {
       background-image: none !important; // don't want a background below sm, overriding the JS with !important
     }
 
     @include breakpoint($sm) {
-      padding: ($bs-gutter * 1.5) ($bs-gutter * 2.5);
+      padding: $gap-large $gap-larger;
       background-size: cover;
     }
 
     @include breakpoint($md) {
       padding-left: 0;
       padding-right: 0;
-      padding-top: $bs-gutter*4;
+      padding-top: $gap-quad;
     }
 
     @include breakpoint($lg) {
-      padding-left: $bs-gutter*3;
-      padding-right: $bs-gutter*3;
-      padding-top: $bs-gutter*4;
+      padding-left: $gap-triple;
+      padding-right: $gap-triple;
+      padding-top: $gap-quad;
       background-size: 1280px auto;
     }
 
@@ -42,12 +45,12 @@
 
   // translucent box wrapping content
   .station__wrapper {
-    @extend %clearfix;
+    @include clearfix();
     background: $white;
     background: rgba($white, .95);
 
     @include breakpoint($sm) {
-      padding: ($bs-gutter*1.5) $bs-gutter ($bs-gutter*1.5) $bs-gutter;
+      padding: $gap-large $gap;
       margin: 0 0 20rem 0;
     }
 
@@ -58,19 +61,19 @@
     > [class*="col"] {
 
       @include breakpoint($sm) {
-        padding-top: $bs-gutter;
+        padding-top: $gap;
       }
 
       &:nth-child(2) {
         padding-left: 0;
 
         @include breakpoint($sm) {
-          border-left: solid 1px $gray-light;
+          border-left: $divider;
         }
 
         @include breakpoint($md) {
-          padding-left: $bs-gutter;
-          border-right: solid 1px $gray-light;
+          padding-left: $gap;
+          border-right: $divider;
         }
       }
       &:last-child {
@@ -83,14 +86,14 @@
   // this is the target of JS that sets equal heights;
   .section-content {
     position: relative;
-    margin-bottom: $bs-gutter / 2;
+    margin-bottom: $gap-half;
 
     // left column;
     &.station-donate {
-      padding-top: $bs-gutter;
-      padding-bottom: $bs-gutter;
+      padding-top: $gap;
+      padding-bottom: $gap;
       @include breakpoint($sm) {
-        padding-right: $bs-gutter;
+        padding-right: $gap;
       }
 
     }
@@ -102,30 +105,26 @@
         display: block;
       }
 
-      margin-bottom: $bs-gutter * 2;
+      margin-bottom: $gap-double;
       color: $gray-dark;
       font-family: $serif;
-      font-size: 1.3rem;
+      font-size: $elmo;
       font-weight: $bold;
       text-align: center;
     }
-    // middle and right column;
-    &.station-links {
-      padding-right: $bs-gutter;
-      padding-left: $bs-gutter;
 
-      // at mobile these are stacked, so no border for the second column;
-      @include breakpoint($xs-only) {
-        padding: ($bs-gutter * 2) 0 0;
-      }
+    // middle column
+    &.station-links {
+
+      padding: $gap-double 0 0 0;
 
       @include breakpoint($sm) {
-        padding-left: $bs-gutter * 4;
+        padding: 0 $gap 0 $gap-quad;
       }
 
       @include breakpoint($md) {
-        padding-right: $bs-gutter * 1.5;
-        padding-left: $bs-gutter * 3;
+        padding-right: $gap-large;
+        padding-left: $gap-triple;
       }
 
       li:first-child {
@@ -134,20 +133,20 @@
 
       li:last-child {
         padding-bottom: 0;
-        margin-bottom: $bs-gutter;
+        margin-bottom: $gap;
       }
     }
 
     // right column (when visible);
     &.station-schedule {
-      padding-left: $bs-gutter;
+      padding-left: $gap;
 
       &--just-link {
         text-align: center;
       }
 
       .section-title {
-        margin-bottom: $bs-gutter;
+        margin-bottom: $gap;
         font-size: 2.4rem;
       }
     }
@@ -157,13 +156,13 @@
   .section-title {
     @include typography-l1-header();
     margin: 0;
-    font-size: 1.9rem;
+    font-size: $snuffy;
     text-align: center;
   }
 
   // container for the sponsor logo;
   .sponsor {
-    margin: ($bs-gutter) 0;
+    margin: $gap 0;
 
     .station-logo {
       @include breakpoint($md-only) {
@@ -191,7 +190,7 @@
     text-align: center;
 
     @include breakpoint($sm) {
-      padding: $bs-gutter;
+      padding: $gap;
     }
 
     .station-donate {
@@ -203,17 +202,17 @@
   // center column;
   // list of links for this station;
   ul {
-    font-size: 1.7rem;
+    font-size: $oscar;
     font-weight: $semibold;
     margin: 0;
 
     @include breakpoint($sm) {
-      font-size: 1.6rem;
+      font-size: $ernie;
     }
   }
 
   li {
-    margin-bottom: $bs-gutter * 2; // 32px
+    margin-bottom: $gap-double;
     padding: 0;
     text-align: center;
 
@@ -225,8 +224,8 @@
   // right column;
   // view whole schedule
   p.view-all {
-    font-size: 1.5rem;
-    margin: -2px 0 0; // negative margin to it lines up with the h2;
+    font-size: $zoe;
+    margin-top: -2px; // negative margin to it lines up with the h2;
   }
 
   // schedule header;
@@ -234,17 +233,17 @@
     margin: 0;
     color: $gray-darker;
     font-weight: $bold;
-    font-size: 1.5rem;
+    font-size: $zoe;
     text-transform: uppercase;
   }
 
   // schedule table;
   .table-striped {
     color: $gray-primary;
-    font-size: 1.6rem;
-    margin: ($bs-gutter / 2) 0 0;
+    font-size: $ernie;
+    margin: $gap-half 0 0 0;
 
-    tr {
+    tbody > tr {
       background: transparent;
 
       &:first-child td {
@@ -254,7 +253,7 @@
 
     td {
       border-color: $divider-color;
-      padding: $bs-gutter ($bs-gutter / 2);
+      padding: $gap $gap-half;
 
       &:first-child {
         padding-left: 0;
@@ -268,16 +267,16 @@
   text-align: center;
 
   .station-intro {
-    font-size: 2rem;
-    padding-top: $bs-gutter;
+    font-size: $snuffy;
+    padding-top: $gap;
   }
 
   .station-links {
     text-align: left;
-    padding: ($bs-gutter * 2) ($bs-gutter * 3);
+    padding: $gap-double $gap-triple;
 
     .station-links-header {
-      font-size: 1.6rem;
+      font-size: $ernie;
       font-weight: $bold;
       padding-bottom: 3px;
       border-bottom: 2px solid $divider-color;
@@ -286,13 +285,13 @@
     .padded-div { // for increased specificity to override styles in page-header.scss
 
       .local-station-regular {
-        font-size: 2rem;
+        font-size: $snuffy;
         font-weight: $semibold;
         color: $blue;
         line-height: 1;
         display: block;
         height: auto;
-        padding: $bs-gutter 0;
+        padding: $gap 0;
         text-align: left;
       }
     }

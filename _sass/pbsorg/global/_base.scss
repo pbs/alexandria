@@ -1,202 +1,71 @@
+// Reset the box-sizing
+
+* {
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 // Base elements
-
 html {
-  /*
-  // set a base font size for everything to be based off of;
-  // this way we can easily adjust font sizes per device;
-  // the mobile base font size is the largest;
-  font-size: $font-size-base + 4;
-
-  // as the screen gets larger;
-  @include breakpoint($sm) {
-    font-size: $font-size-base + 2;
-  }
-
-  // the base font gets smaller;
-  @include breakpoint($md) {
-    font-size: $font-size-base;
-  }
-  */
-  // the above is for future use, for now i just want consistent font sizes;
   font-size: $font-size-base;
   -webkit-tap-highlight-color: rgba($black, 0);
+
+  // Okay, so we were having a *bunch* of issues with the page header in iOS.
+  // For reasons that are still a mystery, when the left hand menu was opened,
+  // it didn't stay fixed to the top of the page.
+  // There seems to be a weird layout that gets invoked with pages
+  // that expand beyond the viewport and fixed elements, such as the header.
+  // So, for reasons that are also still a mystery, if we give the <html> element an overflow value
+  // that is *not* the default (which is `visible`) the layout rights itself.
+  // Using "auto" seemed like a safe choice that won't wreak havok,
+  // as it's up to the browser to decide what the overflow should be.
+  overflow: auto;
 }
 
 body {
+  transition: all $duration;
   background: $gray-lighter;
   color: $gray-primary;
   font-family: $sans-serif;
   font-weight: $normal;
-  line-height: $line-height-base;
+  line-height: $line-height;
   overflow-x: hidden;
 
   @include breakpoint($lg) {
     background: $gray-lighter url('../images/container-shadow.png') repeat-y top center;
   }
-}
-
-// Structure
-
-// accounting for the fixed menu
-main {
-  padding-top: 50px;
-
-  @include breakpoint($md) {
-    padding-top: 71px;
-  }
-
-  &:focus {
-    box-shadow: none;
-    outline: none;
-  }
-}
-
-.clearfix {
-  @extend %clearfix;
-}
-
-// This is for the l-container layout method
-.l-container {
-  &__outer {
-    @extend %clearfix; // applying a proper clearfix
-  }
-
-  &__inner {
-    max-width: $screen-lg;
-    margin: 0 auto;
-  }
-}
-
-// Quick Flexbox Grid for equal height rows
-
-.row--flex {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-
-  &--sm {
-    @include breakpoint($sm) {
-      display: flex;
-      flex-direction: row;
-      align-items: stretch;
-    }
-  }
-
-  &--md {
-    @include breakpoint($md) {
-      display: flex;
-      flex-direction: row;
-      align-items: stretch;
-    }
-  }
-
-  &--lg {
-    @include breakpoint($lg) {
-      display: flex;
-      flex-direction: row;
-      align-items: stretch;
-    }
-  }
-}
-
-// Links
-
-a {
-  &,
-  &:link,
-  &:visited {
-    color: $blue;
-    text-decoration: none;
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    text-decoration: underline;
-  }
-
-  &:focus {
-    //outline: dashed 1px $gray-primary;
-  }
 
 }
 
-// Typography
 
-blockquote {
-  border-color: $divider-color;
-}
-
-hr {
-  border-color: $divider-color;
-}
-
-p {
-  // base styles for the over-title element;
-  &.over-title {
-    color: $gray-dark;
-    font-family: $serif;
-    font-weight: $bold;
-
-    a {
-      color: $gray-dark;
-    }
-  }
-
-  // view all links are typically floated right so they are on the same baseline as the H1 title for the component;
-  &.view-all {
-    font-family: $serif;
-    font-weight: $bold;
-    font-size: 1.4rem;
-    float: right;
-    margin: 4px 0 0; // margin is not $bs-gutter based (it just happens to be the same value);
-  }
-
-  // view more links are like view-all, but without the float right
-  &.view-more {
-    font-family: $serif;
-    font-weight: $bold;
-    font-size: 1.4rem;
-    margin: 16px 0 0; // margin is not $bs-gutter based (it just happens to be
-  }
-
-  &.footnote {
-    font-weight: $light;
-    font-style: italic;
-    padding-left: ($bs-gutter * 4);
-  }
-}
-
-pre {
-  border-color: $divider-color;
-}
-
-// truncate titles that should be one line;
-.truncate {
-  line-height: 1.4; // need this so descenders don't get cut off;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-
-// Forms
-button,
-[type="submit"]{
-  &:focus {
-    outline: dashed 1px $gray-primary;
-  }
-}
-
-[type="search"],
-[type="text"] {
-  padding: 10px;
-  border: solid 1px $gray-light;
-}
 
 // Media
+
+// Figures
+//
+// We reset this here because previously Normalize had no `figure` margins. This
+// ensures we don't break anyone's use of the element.
+
+figure {
+  margin: 0;
+}
+
+// Images
+
+img {
+  vertical-align: middle;
+}
+
+// Responsive images (ensure images don't scale beyond their parents)
 .img-responsive {
+  display: block;
   width: 100%;
+  max-width: 100%; // Part 1: Set a maximum relative to the parent
+  height: auto;
 }
 
 // container used in the responsive images jQuery plugin;
@@ -214,42 +83,43 @@ picture {
 .theme-lighter,
 .theme-lightest {
   position: relative;
+  overflow: auto;
 
   // dropshadow (looks like it's applied to the element above this component);
-  &:after {
-    content: "";
+  &::after {
     display: block;
-    height: 3px;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to bottom, $gray-medium 0%, rgba($black, 0) 100%);
     position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(to bottom, $gray-medium 0%, rgba($black, 0) 100%);
+    content: '';
     z-index: 1;
   }
 }
+
 .theme-darker {
   background: $gray-darker;
 }
+
 .theme-dark {
   background: $gray-dark;
 }
+
 .theme-light {
   background: $gray-light;
 }
+
 .theme-lighter {
   background: $gray-lighter;
 }
+
 .theme-lightest {
   background: $white;
 }
 
 // Helper classes
-
-// a hold over from bootstrap
-.pull-right {
-  float: right !important;
-}
 
 // Used for hidden objects that are sometimes revealed
 .is-hidden {
@@ -271,8 +141,8 @@ picture {
   margin: -1px;
   padding: 0;
   border: 0;
-  clip: rect(0 0 0 0);
   overflow: hidden;
+  clip: rect(0 0 0 0);
 
   // Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638
   &.focusable {
@@ -293,11 +163,20 @@ picture {
   visibility: hidden;
 }
 
+// Component animations
+.fade {
+  opacity: 0;
+  transition: opacity .15s linear;
+  &.in {
+    opacity: 1;
+  }
+}
+
 //for all times formatted by js
 .schedule__time {
+  transition: opacity 100ms linear 150ms;
   opacity: 0;
   overflow: hidden;
-  transition: opacity 100ms linear 150ms;
 }
 
 .schedule__time--formatted {

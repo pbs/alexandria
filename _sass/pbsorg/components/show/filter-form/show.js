@@ -1,17 +1,17 @@
 'use strict';
 
-let jQuery = window.jQuery || require('jquery'),
-  React = window.React || require('react'),
-  ReactDOM = window.ReactDOM || require('react-dom'),
-  FilterBar = require('./show-filter-bar'),
-  Results = require('./show-results'),
-  InfiniteScrollReactMixin = require('../../../scripts/_infinite-scroll-react-mixin'),
-  ShowsFilterForm;
+import jQuery from 'jquery';
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const FilterBar = require('./show-filter-bar');
+const Results = require('./show-results');
+const InfiniteScrollReactMixin = require('../../../scripts/_infinite-scroll-react-mixin');
 
 require('../../../scripts/jquery.history');
 require('../../../scripts/jquery.pbs.cookie.js');
 
-ShowsFilterForm = React.createClass({
+const ShowsFilterForm = React.createClass({
 
   /**
    * Array of any mixin libraries for react.

@@ -1,0 +1,20 @@
+.search-results__header {
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  padding: $gap;
+
+  &-title {
+    font-size: 2.4rem;
+    font-weight: 300;
+    margin: 0;
+    @include breakpoint($sm) {
+      font-size: 3.4rem;
+    }
+  }
+
+  @include breakpoint($sm) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

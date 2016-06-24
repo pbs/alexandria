@@ -1,0 +1,252 @@
+// custom breakpoints for fallback image text
+$sm-fallback: (min-width: 400px);
+$md-fallback: (min-width: 540px);
+
+// Styles for refactored featured results components
+.search-results-featured-container {
+  display: flex;
+  margin-bottom: 3px;
+  padding: $gap;
+  background-color: $white;
+  list-style-type: none;
+}
+
+.search-result-featured-poster {
+  margin-right: $gap;
+  position: relative;
+  width: 100%;
+
+  &.poster-single {
+    display: none;
+
+    @include breakpoint($md-alt) {
+      display: block;
+      width: 230px;
+      min-width: 230px;
+      min-height: 357px;
+    }
+
+    .fallback-image__text {
+      font-size: 2.6rem;
+    }
+    &.fallback-image__container {
+      max-height: 357px;
+    }
+  }
+
+  &.poster-multiple {
+    @include aspect-ratio(9, 13.5);
+
+    &.fallback-image__container::after {
+      display: none;
+    }
+
+    @include breakpoint($md-alt) {
+      width: 189px;
+    }
+  }
+
+  &.fallback-image__container {
+    box-shadow: $shadow;
+  }
+
+  &__image-container {
+    position: relative;
+
+    &-image {
+      box-shadow: $shadow;
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  .fallback-image__text {
+    font-size: 0.9rem;
+    left: 50%;
+    padding-bottom: 0;
+    padding-top: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    &-container {
+      @include aspect-ratio(9, 13.5);
+    }
+
+    @include breakpoint($sm-fallback) {
+      font-size: $abby;
+    }
+
+    @include breakpoint($md-fallback) {
+      font-size: $oscar;
+    }
+
+
+    @include breakpoint($md) {
+      font-size: $snuffy;
+    }
+
+  }
+}
+
+.search-result-featured-content {
+  display: flex;
+  min-width: 33%;
+
+  @include breakpoint($sm) {
+    min-width: 25%;
+  }
+
+  &__details {
+    width: 100%;
+  }
+
+  &__show-title {
+    margin: 0;
+    font-size: 3.2rem;
+    font-weight: $semibold;
+  }
+
+  &__broadcast-info {
+    margin: 5px 0 2px 0;
+    font-size: $oscar;
+    font-style: italic;
+    font-weight: $light;
+
+    @include breakpoint($sm) {
+      font-size: $snuffy;
+    }
+  }
+
+  &__description {
+    margin: $gap-half 0;
+    font-size: $elmo;
+
+    @include breakpoint($sm) {
+      font-size: $zoe;
+    }
+
+    @include breakpoint($lg) {
+      font-size: $ernie;
+    }
+  }
+
+  &__see-all-link {
+    font-family: $serif;
+    font-size: $elmo;
+
+    @include breakpoint($sm) {
+      font-size: $ernie;
+    }
+  }
+
+  &__episodes {
+    margin-top: $gap-double;
+
+    &-header {
+      margin: 0 0 $gap-half 0;
+      padding-bottom: 5px;
+      border-bottom: $divider;
+      color: $gray-dark;
+      font-size: $abby;
+      font-weight: $bold;
+      text-transform: uppercase;
+
+      @include breakpoint($sm) {
+        font-size: $elmo;
+      }
+
+      &--longer {
+        display: none;
+
+        @include breakpoint($sm) {
+          display: inline;
+        }
+      }
+    }
+
+    &-list {
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+      list-style-type: none;
+    }
+  }
+
+  &__episode {
+    width: 50%;
+    margin-right: $gap;
+
+    &:nth-of-type(2) {
+      margin-right: 0;
+
+      @include breakpoint($sm) {
+        margin-right: $gap;
+      }
+    }
+
+    &:nth-of-type(3) {
+      display: none;
+
+      @include breakpoint($sm) {
+        display: block;
+        margin-right: 0;
+      }
+    }
+
+    &__image-link {
+      @include aspect-ratio(16, 9);
+      width: 100%;
+      margin-right: $gap;
+    }
+
+    &__image-container-image {
+      @include aspect-ratio(16, 9);
+      position: absolute;
+      box-shadow: $shadow;
+    }
+
+    &__info {
+      margin-top: 7px;
+    }
+
+    // Need full class name here to override link styles
+    .search-result-featured-content__episode__video-title {
+      color: $gray-primary;
+      font-size: $elmo;
+
+      @include breakpoint($sm) {
+        font-size: $ernie;
+      }
+    }
+
+    .passport-logo-wrapper {
+      display: inline-block;
+      position: relative;
+      width: 15px;
+      height: 15px;
+      margin-right: 5px;
+
+      @include breakpoint($sm) {
+        width: 16px;
+        height: 16px;
+      }
+
+      .passport-logo {
+        width: 100%;
+        margin-top: -5px;
+        box-shadow: none;
+      }
+    }
+
+    &__video-duration {
+      font-size: $elmo;
+      font-weight: $light;
+      line-height: 2;
+
+      @include breakpoint($sm) {
+        font-size: $ernie;
+        font-weight: $normal;
+      }
+    }
+  }
+}

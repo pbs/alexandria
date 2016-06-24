@@ -1,7 +1,7 @@
 'use strict';
 
-let jQuery = window.jQuery = require('jquery');
-let Utils = require('../../scripts/_utils');
+import jQuery from 'jquery';
+import { replaceWithFormattedTime } from '../../scripts/modules/utils';
 
 jQuery(($) => {
 
@@ -24,7 +24,7 @@ jQuery(($) => {
   let _formatTimes = () => {
 
     // format times in home schedule section
-    Utils.replaceWithFormattedTime($('.home-schedule__table-cell-time'));
+    replaceWithFormattedTime($('.home-schedule__table-cell-time'));
 
   };
 

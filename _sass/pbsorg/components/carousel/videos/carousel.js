@@ -46,6 +46,7 @@ jQuery(($) => {
 
     let options = {
         carousel: _cache.carousel,
+        removeAriaLive: true,
         settings: {
           autoplay: true,
           autoplaySpeed: 11500

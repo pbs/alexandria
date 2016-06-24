@@ -1,28 +1,28 @@
 // more content (grid and list - depends on the breakpoint);
 .legos {
-  padding: $bs-gutter;
+  padding: $gap;
 
   @include breakpoint($sm) {
-    padding: ($bs-gutter * 2) ($bs-gutter * 2) ($bs-gutter * 4);
+    padding: $gap-double $gap-double $gap-quad $gap-double;
   }
 
   @include breakpoint($md) {
-    padding: ($bs-gutter * 2) ($bs-gutter * 4) ($bs-gutter * 4);
+    padding: $gap-double $gap-quad $gap-quad $gap-quad;
   }
 
   @include breakpoint($lg) {
-    padding: ($bs-gutter * 2) ($bs-gutter * 6) ($bs-gutter * 4);
+    padding: $gap-double ($gap * 6) $gap-quad ($gap * 6);
   }
 
   &__section-title {
-    margin: ($bs-gutter * 2) 0 ($bs-gutter / 2);
+    margin: $gap-double 0 $gap-half 0;
     color: $gray-primary;
-    font-size: 1.6rem;
+    font-size: $ernie;
     font-weight: $semibold;
     text-transform: uppercase;
 
     @include breakpoint($sm) {
-      font-size: 2rem;
+      font-size: $snuffy;
     }
   }
 
@@ -38,8 +38,8 @@
 
     .lego {
       width: 100%;
-      margin: 8px 0;
-      padding: $bs-gutter;
+      margin: $gap-half 0;
+      padding: $gap;
       border: 1px solid $gray-medium;
       background-color: $white;
       overflow: hidden;
@@ -54,7 +54,7 @@
       }
 
       &__article-body {
-        margin: 0 0 0 (-$bs-gutter);
+        margin-left: (-$gap);
         padding: 0;
 
         &:after {
@@ -64,16 +64,16 @@
         &__title {
           @include typography-truncate();
           margin: 0;
-          font-size: 1.6rem;
+          font-size: $ernie;
 
           @include breakpoint($sm) {
-            font-size: 1.8rem;
+            font-size: $oscar;
           }
         }
 
         &__description {
-          margin: ($bs-gutter / 2) 0 0;
-          font-size: 1.4rem;
+          margin: $gap-half 0 0 0;
+          font-size: $elmo;
         }
       }
     }

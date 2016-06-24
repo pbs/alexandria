@@ -1,6 +1,6 @@
 .shows-dropdown {
   padding: 20px 50px;
-  font-size: 1.4rem;
+  font-size: $elmo;
 
   a {
     color: $gray-darker;
@@ -14,16 +14,16 @@
     }
 
     &-shows {
-      margin-top: -($bs-gutter);
-      margin-bottom: $bs-gutter;
+      margin-top: -$gap;
+      margin-bottom: $gap;
 
       @include breakpoint($lg) {
         columns: 2;
-        column-gap: 16px;
+        column-gap: $gap;
       }
 
       li {
-        padding-top: $bs-gutter;
+        padding-top: $gap;
 
         @include breakpoint($lg) {
           margin: 0;
@@ -35,26 +35,26 @@
   }
 
   &__local {
-    padding: 0 ($bs-gutter * 2);
+    padding: 0 $gap-double;
     line-height: 20px;
 
     &-shows {
-      margin-bottom: $bs-gutter;
+      margin-bottom: $gap;
 
       &__individual {
-        margin-bottom: $bs-gutter;
+        margin-bottom: $gap;
       }
     }
   }
 
   &__featured {
-    padding: 0 ($bs-gutter * 2);
+    padding: 0 $gap-double;
 
     &__show-poster {
       max-width: 140px;
-      margin-right: 16px;
+      margin-right: $gap;
       color: $white;
-      font-size: 1.4rem;
+      font-size: $elmo;
       text-align: center;
     }
 
@@ -66,52 +66,48 @@
 
   &__btn {
     margin-top: 10px;
-    padding: 6px $bs-gutter;
+    padding: 6px $gap;
     line-height: 30px;
     color: $blue !important; //important is for Firefox
-    font-size: 1.4rem;
-
-    &:hover {
-      text-decoration: none;
-    }
+    font-size: $elmo;
   }
 
   .fallback-image__container {
-    width: 87%;
     @include aspect-ratio(9, 13.45);
+    max-width: 140px;
   }
 
   // titles for each column of links;
   &__section-title {
     margin: 0;
-    padding: $bs-gutter 0;
+    padding: $gap 0;
     color: $gray-darker;
-    font-size: 15px;
+    font-size: $zoe;
     font-weight: $semibold;
     text-align: center;
     text-transform: uppercase;
 
     @include breakpoint($sm) {
-      margin: 0 0 $bs-gutter/4;
+      margin-bottom: $gap-quarter;
       padding: 0;
       text-align: left;
     }
 
     @include breakpoint($md) {
-      margin: 0 0 $bs-gutter/2;
+      margin-bottom: $gap-half;
     }
 
     @include breakpoint($lg) {
-      margin: 0 0 $bs-gutter;
+      margin-bottom: $gap;
     }
   }
 
   .row-with-dividers {
-    padding-bottom: 4px;
+    padding-bottom: $gap-quarter;
     // use the > so we don't target the nested grid;
 
     > [class*="col"] {
-      border-right: solid 1px $gray-light;
+      border-right: $divider;
 
       &:last-child {
         border: 0;

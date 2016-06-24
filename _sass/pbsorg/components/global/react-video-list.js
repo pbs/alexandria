@@ -3,7 +3,7 @@ let
   React = window.React || require('react'),
   ReactDOM = window.ReactDOM || require('react-dom'),
   InfiniteScrollReactMixin = require('../../scripts/_infinite-scroll-react-mixin'),
-  PureRenderMixin = React.addons.PureRenderMixin,
+  // PureRenderMixin = React.addons.PureRenderMixin,
   VideoList;
 
 /**
@@ -17,7 +17,7 @@ VideoList = React.createClass({
   /**
    * Array of any mixin libraries for react
    */
-  mixins: [InfiniteScrollReactMixin, PureRenderMixin],
+  mixins: [InfiniteScrollReactMixin],
 
   /**
    * Renders component.

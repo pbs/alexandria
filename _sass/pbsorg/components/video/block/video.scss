@@ -1,16 +1,16 @@
 .video-block {
-  padding: ($bs-gutter * 4) $bs-gutter ($bs-gutter * 3) $bs-gutter ;
+  padding: $gap-quad $gap $gap-triple $gap ;
 
   @include breakpoint($sm) {
-    padding: ($bs-gutter * 4) ($bs-gutter * 2) 0 ($bs-gutter * 2);
+    padding: $gap-quad $gap-double 0 $gap-double;
   }
 
   .section-title {
     color: $gray-darker;
     font-weight: $bold;
-    font-size: 2.1rem;
+    font-size: $snuffy;
     text-transform: uppercase;
-    margin: 0 0 ($bs-gutter / 2);
+    margin: 0 0 $gap-half 0;
 
     span {
       font-weight: $bold;
@@ -35,12 +35,12 @@
   article.featured {
     background: $white;
     box-shadow: $shadow;
-    font-size: 1.5rem;
+    font-size: $zoe;
     color: $gray-primary;
     // if there is a row of content after this, give that row some space;
     + div.row {
       @include breakpoint($sm) {
-        margin-top: ($bs-gutter * 2);
+        margin-top: $gap-double;
       }
     }
 
@@ -48,54 +48,51 @@
       height: 100%;
 
       @include breakpoint($sm) {
-        padding-top: $bs-gutter;
+        padding-top: $gap;
       }
 
       @include breakpoint($md) {
         width: auto;
-        margin: $bs-gutter $bs-gutter (-$bs-gutter) (-$bs-gutter);
-        padding: 0 0 0 $bs-gutter;
+        margin: $gap $gap (-$gap) (-$gap);
+        padding: 0 0 0 $gap;
       }
       @include breakpoint($lg) {
-        margin: $bs-gutter $bs-gutter (-$bs-gutter) $bs-gutter;
+        margin: $gap $gap (-$gap) $gap;
         padding: 0;
       }
     }
     // to counteract the large white space on the right of the picture at larger breakpoints
     .col-sm-7.col-md-7 {
-      @include breakpoint($md) {
-        overflow: hidden;
-      }
       @include breakpoint($lg) {
         padding-right: 0;
       }
     }
     .col-sm-5.col-md-5 {
       @include breakpoint($sm) {
-        padding-left: ($bs-gutter / 2);
+        padding-left: $gap-half;
       }
 
       @include breakpoint($md) {
         min-height: 100%;
         position: relative;
-        padding-left: $bs-gutter;
+        padding-left: $gap;
       }
     }
 
     .episode-details__title {
       @include typography-l2-header();
-      font-size: 2rem;
+      font-size: $snuffy;
       color: $gray-primary;
       line-height: 1.2;
-      margin: ($bs-gutter / 4) $bs-gutter $bs-gutter 0;
+      margin: $gap-quarter $gap $gap 0;
       @include breakpoint($sm) {
-        font-size: 2.1rem;
-        margin-bottom: ($bs-gutter / 4);
+        font-size: $snuffy;
+        margin-bottom: $gap-quarter;
         @include typography-truncate;
       }
       @include breakpoint($md) {
         font-size: 3rem;
-        margin: ($bs-gutter / 4) $bs-gutter $bs-gutter 0;
+        margin: $gap-quarter $gap $gap 0;
         white-space: normal;
       }
       @include breakpoint($lg) {
@@ -107,12 +104,12 @@
     }
 
     p {
-      font-size: 1.4rem;
+      font-size: $elmo;
     }
 
     .description {
-      font-size: 1.4rem;
-      margin-right: $bs-gutter;
+      font-size: $elmo;
+      margin-right: $gap;
       display: none;
 
       @include breakpoint($sm) {
@@ -120,12 +117,12 @@
       }
 
       @include breakpoint($md) {
-        font-size: 1.6rem;
+        font-size: $ernie;
       }
     }
 
     .duration {
-      margin: $bs-gutter 0 0;
+      margin: $gap 0 0 0;
 
       @include breakpoint($sm-only) {
         margin-top: 0;
@@ -144,14 +141,14 @@
       }
     }
     .watchlist {
-      margin: $bs-gutter 0 0;
+      margin: $gap 0 0 0;
 
       .btn--watchlist {
-        font-size: 1.4rem;
+        font-size: $elmo;
         padding: 12px 30px;
 
         @include breakpoint($md) {
-          font-size: 1.6rem;
+          font-size: $ernie;
         }
       }
     }
@@ -164,10 +161,10 @@
     }
     .share {
       border-top: $divider;
-      font-size: 1.2rem;
-      margin-top: $bs-gutter;
-      padding: $bs-gutter 0;
-      right: $bs-gutter;
+      font-size: $abby;
+      margin-top: $gap;
+      padding: $gap 0;
+      right: $gap;
       z-index: 1;
       display: none;
       @include breakpoint($md) {
@@ -179,7 +176,7 @@
         width: 90%;
       }
       a {
-        font-size: 2rem;
+        font-size: $snuffy;
         line-height: 1;
         margin-left: 0.5rem;
         vertical-align: middle;
@@ -187,22 +184,84 @@
     }
     .over-title {
       color: $gray-dark;
-      font-size: 1.2rem;
+      font-size: $abby;
       text-transform: uppercase;
       margin: 0;
     }
   }
 
+  // the collections link bar that appears at the bottom of the video block
+  &__collections {
+    margin: 0px (-$gap) (-$gap-triple) (-$gap); // extra parens needed to avoid math on compile
+    padding-top: $gap-double;
+    padding-bottom: $gap-double;
+    background: $white;
 
+    @include breakpoint($sm) {
+      margin: 0 (-$gap-double);
+    }
+
+    @include breakpoint($md) {
+      display: flex;
+      align-items: center;
+    }
+
+    &__title {
+      margin: 0 0 $gap 0;
+      font-weight: $light;
+      font-size: $snuffy;
+      text-align: center;
+
+      @include breakpoint($md) {
+        margin-left: $gap-double;
+        margin-right: $gap;
+        margin-bottom: 0;
+      }
+    }
+
+    &__links {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+
+      @include breakpoint($sm) {
+        display: flex;
+        justify-content: space-around;
+      }
+    }
+
+    &__item {
+      margin: 0;
+
+      @include breakpoint($md) {
+        margin-right: $gap;
+      }
+    }
+
+    &__link {
+      display: block;
+      padding: $gap-half $gap;
+      width: 100%;
+      text-align: center;
+      font-family: $serif;
+      font-size: $zoe;
+      font-weight: $bold;
+
+      @include breakpoint($sm) {
+        @include btn(); // shared button styling
+      }
+    }
+  }
 
   // container for the explore-more button at the bottom of this component;
   .explore-more {
     margin: 0;
     text-align: center;
     text-transform: capitalize;
-    @include breakpoint($screen-sm) {
-      margin-top: ($bs-gutter * 1);
-      margin-bottom: $bs-gutter * 2;
+
+    @include breakpoint($sm) {
+      margin-top: $gap;
+      margin-bottom: $gap-double;
     }
 
     .btn:hover {
@@ -219,5 +278,4 @@
     }
 
   }
-
 }

@@ -1,29 +1,33 @@
 .show-filter-form {
   form {
     background: $gray-light;
-    padding: 18px $bs-gutter 6px $bs-gutter;
+    padding: 18px $gap 6px $gap;
     border-bottom: 1px solid $gray-medium;
     border-top: 1px solid $gray-medium;
 
     label,
     span {
       color: $gray-primary;
-      font-size: 1.4rem;
+      font-size: $elmo;
       font-weight: normal;
-      padding-bottom: ($bs-gutter / 2);
+      padding-bottom: $gap-half;
       display: block;
+    }
+
+    .show-filter-form__genre-label {
+      padding-bottom: 3px;
     }
 
     .btn {
       background: none repeat scroll 0 0 transparent;
-      border: 0 none;
+      border: 0;
       border-radius: $radius;
       color: $gray-darker;
-      margin-right: 8px;
+      margin-right: $gap-half;
       padding: 0px 10px;
-      font-size: 1.5rem;
+      font-size: $zoe;
       @include breakpoint($sm) {
-        margin-right: 8px;
+        margin-right: $gap-half;
         padding: 6px 10px;
       }
 
@@ -31,20 +35,20 @@
       &:focus,
       &.selected-btn {
         background: none repeat scroll 0 0 $blue;
-        border: 0 none;
-        border-radius: 2px;
+        border: 0;
+        border-radius: $radius;
         color: $white;
-        margin-right: 8px;
+        margin-right: $gap-half;
         padding: 6px 10px;
-        span{
-          color:white;
+        span {
+          color: $white;
         }
       }
 
-      span{
+      span {
         color: $gray-darker;
         display: inline;
-        font-size: 1.8rem;
+        font-size: $oscar;
         font-weight: normal;
         padding-bottom: 0;
       }
@@ -57,7 +61,7 @@
 
     .top-sort-row {
       margin: 0;
-      padding: $bs-gutter 0 ($bs-gutter * 2) 0;
+      padding: $gap 0 $gap-double 0;
       .sort-buttons {
         display: inline-block;
       }
@@ -65,7 +69,6 @@
     }
 
     .station-search {
-      width: auto;
       margin-top: 10px;
       p {
         margin-bottom: 10px;
@@ -78,22 +81,22 @@
         display: inline-block;
         margin-left: 10px;
       }
-      @include breakpoint($md) {
-        margin-left: 2rem;
+      @include breakpoint($sm) {
+        margin-top: 0;
       }
     }
 
     .has-feedback input {
-      font-size: 16px;
+      font-size: $ernie;
       height: 40px;
       margin-top: -5px;
       padding: 6px;
-      border:1px solid $gray-medium;
+      border: 1px solid $gray-medium;
       border-radius: 0;
     }
     .form-control-feedback {
       top: 33px;
-      font-size: 16px;
+      font-size: $ernie;
     }
     //Taking out the 'x' that automatically appears in textboxes in IE
     input[type=text]::-ms-clear {
@@ -105,18 +108,14 @@
       height: 40px;
       overflow: hidden;
       background: url('../images/select_arrow.png') no-repeat right $white;
-      border:1px solid $gray-medium;
-    }
-
-    .styled-select select:focus {
-      outline: rgba(102, 175, 233, 0.3) auto 3px;
+      border: 1px solid $gray-medium;
     }
 
     .styled-select select {
       background: transparent;
       width: 100%;
       padding: 5px;
-      font-size: 16px;
+      font-size: $ernie;
       line-height: 1;
       border-radius: 0;
       height: 38px;
@@ -127,7 +126,9 @@
     }
 
     .large-filters{
+      display: flex;
       float: right;
+
       div{
         display: inline-block;
       }
@@ -136,7 +137,7 @@
         padding: 0;
       }
       @include breakpoint($lg) {
-        padding-left: ($bs-gutter / 2);
+        padding-left: $gap-half;
       }
     }
 
@@ -164,6 +165,7 @@
     display: inline-block;
     margin-left: 20px;
     @include breakpoint($md) {
+      height: 59px;
       margin-right: 0;
       margin-left: 14px;
       width: auto;
@@ -175,28 +177,28 @@
   }
 
   .divider{
-    border-right:1px solid $gray-medium;
+    border-right: 1px solid $gray-medium;
     padding-right: 3px;
     margin-right: 10px;
     display: inline-block;
     @include breakpoint($sm) {
       padding-right: 20px;
-      margin-right: ($bs-gutter * 2);
-      padding-right: ($bs-gutter);
+      margin-right: $gap-double;
+      padding-right: $gap;
     }
     @include breakpoint($md) {
       margin-right: 0;
       padding-right: 0;
     }
     @include breakpoint($lg) {
-      margin-right: ($bs-gutter * 2);
-      padding-right: ($bs-gutter/2);
+      margin-right: $gap-double;
+      padding-right: $gap-half;
     }
   }
 
   span.inline {
     display: inline !important;
-    padding-left: ($bs-gutter / 4);
+    padding-left: $gap-quarter;
   }
 
   .results {
@@ -208,19 +210,19 @@
     // list results;
     .table-bordered {
       border-collapse: collapse;
-      border: solid $gray-lighter;
+      border: 3px solid $gray-lighter;
     }
     .table-bordered > thead > tr > th {
-      margin-left: 8px;
+      margin-left: $gap-half;
       color: $gray-darker;
       text-transform: uppercase;
-      padding: $bs-gutter;
+      padding: $gap;
     }
     .table-bordered > thead > tr > th,
     .table-bordered > tbody > tr > td {
       border: 1px solid $gray-medium;
     }
-    @include breakpoint($xs-only) {
+    @include breakpoint($below-sm) {
       .table-bordered > tbody > tr > td{
         border: 0;
         border-bottom: 1px solid $gray-medium;
@@ -233,10 +235,10 @@
     }
 
     table {
-      margin: 4px 0 0;
-      font-size: 16px;
+      margin-top: $gap-quarter;
+      font-size: $ernie;
 
-      @include breakpoint($xs-only) {
+      @include breakpoint($below-sm) {
         table {
           margin: 0;
         }
@@ -245,7 +247,7 @@
       th{
         font-family: $serif;
         font-weight: $bold;
-        font-size: 13px;
+        font-size: $elmo;
         background-color: $gray-light;
       }
       td{
@@ -295,6 +297,14 @@
 }
 
 .shows-landing__no-results-header {
-  font-size: 18px;
-  padding: 0 20px 20px;
+  font-size: $oscar;
+  padding: 0 20px 20px 20px;
+}
+
+.station-selector {
+  display: flex;
+
+  @include breakpoint($sm) {
+    margin-top: 15px;
+  }
 }

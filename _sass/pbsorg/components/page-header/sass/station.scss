@@ -9,18 +9,58 @@
 }
 
 .choose-station {
+  position: relative;
   background-color: transparent;
   border: 0;
-  height: 54px;
-  padding-right: 5px;
-  padding-left: 5px;
+  height: 50px;
+  padding-right: 10px;
+  padding-left: 10px;
   line-height: 35px;
+
+  // avoid text jumping to accommodate border when it appears
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
 
   @include breakpoint($md) {
     height: 70px;
     padding-right: 12px;
     padding-left: 12px;
     line-height: 65px;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 9px;
+    bottom: 9px;
+    left: 0;
+    width: 1px;
+    background: $divider-color;
+    content: '';
+
+    @include breakpoint($md) {
+      top: 20px;
+      bottom: 20px;
+    }
+  }
+
+  &::after {
+    right: 0;
+    left: 100%;
+  }
+
+  &:hover,
+  &:focus {
+    .no-touchevents & {
+      border-right: $divider;
+      border-left: $divider;
+      background-color: $gray-lighter;
+
+      &::before,
+      &::after {
+        width: 0;
+      }
+    }
   }
 
   &__text {
@@ -31,9 +71,11 @@
     margin-bottom: -7px;
     color: $blue;
     font-family: $sans-serif;
-    font-size: 16px;
-    font-weight: $semibold;
+    font-size: $ernie;
+    font-weight: $bold;
     overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
   }
 }
 
@@ -61,20 +103,25 @@
     outline: solid 1px transparent; // don't ask me why this fixes IE11 and 100vh, but it does
   }
 
-  @include breakpoint($md){
+  @include breakpoint($md) {
     display: none;
     visibility: visible;
     position: absolute;
     left: 0;
     right: auto;
     top: $page-header-height;
-    width: 100%;
+    width: auto;
     min-height: 0;
-    max-width: $max-width;
     margin: 0;
-    padding: ($bs-gutter * 3) ($bs-gutter * 2) ($bs-gutter * 2) $bs-gutter;
+    margin-right: $gap;
+    padding: $gap-triple $gap-triple $gap $gap;
     box-shadow: none;
     border-bottom: $divider;
+
+    &.station-content--full-header {
+      width: 100%;
+      max-width: $max-width;
+    }
 
     .page-header__station-container:hover & {
       .no-touchevents & {
@@ -83,43 +130,37 @@
     }
 
     .station-is-open & {
+      display: flex;
       height: auto;
-
-      .touchevents & {
-        display: flex;
-      }
     }
   }
 
   .station-info {
-    font-size: 1.7rem;
+    font-size: $oscar;
     text-align: center;
-    padding: 15px 40px;
+    padding: 15px $gap-larger;
     background: $white;
     box-shadow: $inset-shadow-left;
     @include breakpoint($md) {
       background: transparent;
       box-shadow: none;
       min-width: 30%;
-      font-size: 1.5rem;
-      padding: 0 8px;
+      font-size: $ernie;
+      padding: 0 $gap-half;
     }
 
     @include breakpoint($lg) {
       min-width: 26%;
     }
 
-    &__intro {
-      @include breakpoint($md) {
-        text-align: left;
-        margin-left: (-$bs-gutter * 4);
-      }
+    &__link {
+      display: block;
     }
 
     &__logo {
       display: block;
       max-width: 200px;
-      margin: 10px auto;
+      margin: 10px auto 0 auto;
       padding-bottom: 10px;
 
       @include breakpoint($md) {
@@ -127,18 +168,26 @@
       }
     }
 
-    a {
+    &__button {
+      padding: 13px $gap-double;
+
       &:hover,
       &:focus {
-        text-decoration: none;
+        text-decoration: underline;
       }
     }
 
     &__change-station {
       display: block;
-      margin-top: ($bs-gutter * 2);
-      margin-bottom: 10px;
+      margin: $gap-double auto 10px auto;
+      border: 0;
+      background-color: transparent;
+      color: $blue;
       font-weight: $semibold;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
@@ -153,24 +202,23 @@
       box-shadow: none;
       min-width: 23%;
       border-left: $divider;
-      border-right: $divider;
-      margin: -($bs-gutter * 2) 0 $bs-gutter;
-      padding: ($bs-gutter * 2) $bs-gutter ($bs-gutter * 2) ($bs-gutter * 2);
+      margin: (-$gap-double) 0 $gap 0;
+      padding: $gap-double 0 $gap-double $gap-double;
     }
 
     @include breakpoint($lg) {
-      min-width: 28%;
+      min-width: 22%;
     }
 
     &__header {
       text-transform: uppercase;
       color: $gray-darker;
-      margin-bottom: $bs-gutter;
+      margin-bottom: $gap;
       padding-bottom: 3px;
       border-bottom: 2px solid $divider-color;
-      font-size: 1.6rem;
+      font-size: $ernie;
       font-weight: $bold;
-      margin: 0 40px 20px 40px;
+      margin: 0 $gap-larger 20px $gap-larger;
 
       @include breakpoint($md) {
         display: none;
@@ -178,13 +226,13 @@
     }
 
     &__link-list {
-      font-size: 2rem;
+      font-size: $snuffy;
       font-weight: $semibold;
 
       @include breakpoint($md) {
-        font-size: 1.6rem;
+        font-size: $ernie;
         font-weight: $normal;
-        padding: 0 ($bs-gutter * 2);
+        padding: 0 $gap 0 $gap-double;
       }
 
       li {
@@ -193,7 +241,7 @@
 
         @include breakpoint($md) {
           height: auto;
-          margin-bottom: $bs-gutter;
+          margin-bottom: $gap;
         }
       }
     }
@@ -202,46 +250,61 @@
   .station-schedule {
     @include breakpoint($md) {
       min-width: 35%;
-      padding-right: $bs-gutter;
-      margin-left: ($bs-gutter * 3);
-      font-size: 1.6rem;
+      margin: (-$gap-double) 0 $gap $gap;
+      padding: 0 $gap 0 $gap-triple;
+      border-left: $divider;
+      font-size: $ernie;
     }
 
     @include breakpoint($lg) {
-      min-width: 40%;
-      padding-right: ($bs-gutter * 4);
+      min-width: 43%;
+      padding-right: $gap-quad;
     }
 
     &__title {
       color: $gray-darker;
-      font-size: 15px;
+      font-size: $zoe;
       font-weight: $semibold;
+
+      @include breakpoint($md) {
+        position: relative;
+        top: $gap-double;
+      }
     }
 
     &__schedule--individual-show {
-      padding: 0 0 $bs-gutter 0;
-      margin: 0 0 $bs-gutter 0;
+      padding-bottom: $gap;
+      margin-bottom: $gap;
     }
 
     &__full-schedule {
       height: auto;
       color: $blue;
       font-family: $serif;
-      font-size: 1.4rem;
+      font-size: $elmo;
       font-weight: $semibold;
       letter-spacing: 1px;
       line-height: 24px;
+
+      @include breakpoint($md) {
+        float: right;
+        position: relative;
+        top: $gap-double;
+      }
     }
 
     &__schedule {
-      padding-top: ($bs-gutter * 2);
       padding-left: 0;
+
+      @include breakpoint($md) {
+        padding-top: $gap-quad;
+      }
 
       &--individual-show {
         display: flex;
         border-bottom: $divider;
         flex-direction: row;
-        font-size: 1.4rem;
+        font-size: $elmo;
         font-weight: $normal;
 
         &:last-of-type {
@@ -249,7 +312,7 @@
         }
 
         &__title {
-          padding-left: $bs-gutter;
+          padding-left: $gap;
         }
 
         .schedule__time {

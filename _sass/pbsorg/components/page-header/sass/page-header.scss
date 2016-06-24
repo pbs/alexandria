@@ -5,19 +5,19 @@
   width: 100%;
   height: 0;
   background: $white;
-  font-size: 1.8rem;
+  font-size: $oscar;
   text-align: center;
   overflow: hidden;
   z-index: 2000;
 
   &:focus {
     height: auto;
-    padding: $bs-gutter;
+    padding: $gap;
   }
 }
 
 .page-header {
-  @extend %mobile-menu;
+  @include mobile-menu();
 
   // clearing out bootstrap styles
   padding-bottom: 0;
@@ -29,6 +29,7 @@
   right: 0;
   left: 0;
   width: 100vw;
+  max-width: 100%;
   height: 50px;
   z-index: 5;
   background: $white;
@@ -46,7 +47,10 @@
     padding-right: 5px;
 
     @include breakpoint($md) {
-      padding: 10px 20px;
+      padding: 10px $gap;
+      width: 112px;
+      flex-shrink: 0;
+      flex-basis: auto;
     }
 
     .pbs-logo {
@@ -74,7 +78,7 @@
     }
 
     .icon-pbs-menu-hamburger {
-      padding: 3px $bs-gutter 0;
+      padding: 3px $gap 0 $gap;
       color: $gray-dark;
       font-size: 2.6rem;
 
@@ -90,10 +94,12 @@
     // avoid text jumping to accommodate border when it appears
     border-right: 1px solid transparent;
     border-left: 1px solid transparent;
+    flex-shrink: 0;
+    flex-basis: auto;
 
     .station-is-open & {
-      border-right: 1px solid $gray-light;
-      border-left: 1px solid $gray-light;
+      border-right: $divider;
+      border-left: $divider;
       background-color: $gray-lighter;
     }
 
@@ -101,8 +107,8 @@
     &:focus {
       .station-is-open &,
       .no-touchevents & {
-        border-right: 1px solid $gray-light;
-        border-left: 1px solid $gray-light;
+        border-right: $divider;
+        border-left: $divider;
         background-color: $gray-lighter;
 
         @include breakpoint($md) {
@@ -128,7 +134,7 @@
     background: transparent;
 
     @include breakpoint($md) {
-      width: 100%;
+      width: 127px;
       height: $page-header-height;
 
       // this is here because firefox acts strangely when buttons have flexbox applied to it
@@ -144,9 +150,12 @@
       }
     }
 
-    &:hover,
-    &:focus {
+    &:hover {
       outline: none;
+    }
+
+    &:focus {
+      outline: $focusstate;
     }
 
     &::before,
@@ -177,15 +186,22 @@
     }
 
     &::after {
-      right: 0;
-      left: 100%;
+      display: none;
+
+      @include breakpoint($md) {
+        display: block;
+        right: 0;
+        left: 100%;
+      }
     }
   }
 
   &__nav-items {
+    display: flex;
     position: absolute;
     top: 0;
     left: -$mobile-menu-ratio;
+    flex-direction: column;
     width: $mobile-menu-ratio;
     max-width: $mobile-menu-width;
     margin: 0;
@@ -200,7 +216,7 @@
     }
 
     @include breakpoint($md) {
-      display: flex;
+      flex-direction: row;
       min-height: 0;
       position: static;
       flex-grow: 1;
@@ -224,7 +240,7 @@
 .caret-position {
   display: inline-block;
   width: 15px;
-  height: auto;
+  height: 15px;
   margin-left: 6px;
 
   .page-header__station-trigger & {
@@ -237,7 +253,8 @@
     @include breakpoint($md) {
       transform: none;
 
-      .page-header__station-container:hover & {
+      .page-header__station-container:hover &,
+      .page-header__station-container:focus &  {
         .no-touchevents & {
           transform: rotate(180deg);
         }
@@ -254,9 +271,10 @@
 
     @include breakpoint($md) {
       display: inline-block;
+      margin-right: $gap-half;
     }
 
-    .user-dropdown-is-open & {
+    .desktop-user-menu-is-open & {
       transform: rotate(180deg);
     }
   }
@@ -269,14 +287,10 @@
 }
 
 .nav-item {
-  padding-bottom: 40px;
-  padding-left: 20px;
   list-style-type: none;
 
   @include breakpoint($md) {
     display: flex;
-    align-items: center;
-    padding: 10px 20px;
     // avoid text jumping to accommodate border when it appears
     border-right: 1px solid transparent;
     border-left: 1px solid transparent;
@@ -285,18 +299,29 @@
     &:focus,
     &.is-open {
       height: $page-header-height;
-      padding-bottom: 11px;
-      border-right: 1px solid $gray-light;
-      border-left: 1px solid $gray-light;
+      border-right: $divider;
+      border-left: $divider;
       background-color: $gray-lighter;
+    }
+
+    &--home,
+    &--video,
+    &--user {
+      &:hover,
+      &:focus,
+      &.is-open {
+        height: $page-header-height - 1;
+      }
     }
   }
 
   > a {
     display: flex;
+    padding-bottom: 30px;
+    padding-left: 20px;
     align-items: center;
     color: $gray-primary;
-    font-size: 2rem;
+    font-size: $snuffy;
     font-weight: $light;
 
     &:hover,
@@ -305,8 +330,22 @@
     }
 
     @include breakpoint($md) {
-      font-size: 1.6rem;
+      padding: 10px 20px;
+      height: $page-header-height - 1;
+      font-size: $ernie;
       font-weight: $normal;
+    }
+  }
+
+
+
+  &--search {
+    margin-bottom: $gap-half;
+    order: -1;
+
+    @include breakpoint($md) {
+      margin: 0;
+      order: 0;
     }
   }
 
@@ -315,127 +354,7 @@
 
     @include breakpoint($md) {
       display: block;
-    }
-  }
-
-  &--search {
-    padding-bottom: 25px;
-    padding-left: 20px;
-
-    @include breakpoint($md) {
-      order: 1;
-      padding-bottom: 10px;
-    }
-  }
-
-  &--user {
-    position: relative;
-    padding-bottom: 20px;
-    padding-left: 0;
-
-    @include breakpoint($md) {
-      position: static; // needed or IE11 and flexbox don't play well
-      height: 70px;
-      margin-right: auto;
-      margin-left: -1px;
-      padding: 10px 15px;
-
-      &:hover,
-      &:focus {
-        .no-touchevents & {
-          border-right: 1px solid $gray-light;
-          border-left: 1px solid $gray-light;
-          background-color: $gray-lighter;
-
-          &:before {
-            width: 0;
-          }
-        }
-
-        .touchevents & {
-          border-right: 1px solid transparent;
-          border-left: 1px solid transparent;
-          background-color: transparent;
-        }
-      }
-
-      .user-dropdown-is-open & {
-        .touchevents & {
-          border-right: 1px solid $gray-light;
-          border-left: 1px solid $gray-light;
-          background-color: $gray-lighter;
-
-          &:before {
-            width: 0;
-          }
-        }
-      }
-    }
-  }
-
-  &--home {
-    padding-left: 20px;
-
-    @include breakpoint($md) {
-      display: none;
-    }
-
-    @include breakpoint($lg) {
-      display: flex;
-    }
-  }
-
-  &--shop {
-    position: relative;
-  }
-
-  &--resume-video {
-    padding: 0 10px 30px;
-
-    &.is-hidden {
-      display: none;
-    }
-
-    img {
-      width: 100%;
-    }
-
-    .progress {
-      position: relative;
-      height: 12px;
-      margin-top: -20px;
-      margin-bottom: 4px;
-      border-radius: 0;
-      background-color: rgba($gray-light, .7);
-      box-shadow: none;
-      overflow: hidden;
-    }
-
-    .progress-bar-success {
-      height: 13px;
-      background-color: $green;
-    }
-
-    .resume-video__link {
-      margin-bottom: ($bs-gutter / 2);
-      padding: 0;
-    }
-
-    &__title {
-      padding-bottom: 4px;
-      border-bottom: 1px solid $gray-medium;
-      color: $gray-primary;
-      font-size: 1.4rem;
-      font-weight: $bold;
-      text-transform: uppercase;
-    }
-
-    &__label {
-      font-size: 1.4rem;
-    }
-
-    @include breakpoint($md) {
-      display: none;
+      line-height: 52px;
     }
   }
 
@@ -460,17 +379,164 @@
       }
     }
   }
+
+
+  &--user {
+    position: relative;
+    padding-bottom: 20px;
+    padding-left: 0;
+
+    @include breakpoint($md) {
+      position: static; // needed or IE11 and flexbox don't play well
+      height: 70px;
+      margin-right: auto;
+      margin-left: -1px;
+
+
+      &:hover,
+      &:focus {
+        .no-touchevents & {
+          border-right: $divider;
+          border-left: $divider;
+          background-color: $gray-lighter;
+
+          &:before {
+            width: 0;
+          }
+        }
+
+        .touchevents & {
+          border-right: 1px solid transparent;
+          border-left: 1px solid transparent;
+          background-color: transparent;
+        }
+      }
+
+      .desktop-user-menu-is-open & {
+        .touchevents & {
+          border-right: $divider;
+          border-left: $divider;
+          background-color: $gray-lighter;
+
+          &:before {
+            width: 0;
+          }
+        }
+      }
+
+      .user-is-signed-in & {
+        &:hover,
+        &:focus,
+        &.is-open {
+          height: $page-header-height;
+        }
+      }
+    }
+  }
+
+  &--home {
+
+    @include breakpoint($md) {
+      display: none;
+    }
+
+    @include breakpoint($lg) {
+      display: flex;
+    }
+  }
+
+
+  .tv-schedules--disabled-btn,
+  .donate--disabled-btn {
+    display: flex;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    border: 0;
+    background: transparent;
+    color: $gray-primary;
+    font-size: $snuffy;
+    font-weight: $light;
+
+    @include breakpoint($md) {
+      height: $page-header-height - 1;
+      padding: 23px 20px;
+      font-size: $ernie;
+      font-weight: $normal;
+    }
+  }
+
+  &--shop {
+    position: relative;
+  }
+
+  &--resume-video {
+    padding: 0 10px 30px 10px;
+
+    &.is-hidden {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      position: static;
+    }
+
+    .progress {
+      position: relative;
+      height: 12px;
+      margin-top: -20px;
+      margin-bottom: $gap-quarter;
+      border-radius: 0;
+      background-color: rgba($gray-light, .7);
+      box-shadow: none;
+      overflow: hidden;
+
+      @include breakpoint($md) {
+        margin-top: -20px;
+      }
+    }
+
+    .progress-bar-success {
+      height: 13px;
+      background-color: $green;
+    }
+
+    .resume-video__link {
+      margin-bottom: $gap-half;
+      padding: 0;
+    }
+
+    &__title {
+      padding-bottom: $gap-quarter;
+      border-bottom: 1px solid $gray-medium;
+      color: $gray-primary;
+      font-size: $elmo;
+      font-weight: $bold;
+      text-transform: uppercase;
+    }
+
+    .user-dropdown__viewing-history__video__label,
+    &__label {
+      padding-top: 5px;
+      font-size: $elmo;
+    }
+
+    @include breakpoint($md) {
+      display: none;
+    }
+  }
+
+
 }
 
 .dropdown {
-  //display: none;
   position: absolute;
   top: $page-header-height;
   left: 0;
   width: 100%;
   max-width: $max-width;
   padding: 20px;
-  border: 1px solid $gray-light;
+  border: $divider;
   border-top: 0;
   background: $gray-lighter;
   z-index: 2;

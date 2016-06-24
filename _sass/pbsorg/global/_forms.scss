@@ -1,3 +1,22 @@
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+// iOS "clickable elements" fix for role="button"
+//
+// Fixes "clickability" issue (and more generally, the firing of events such as focus as well)
+// for traditionally non-focusable elements with role="button"
+// see https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+
+[role="button"] {
+  cursor: pointer;
+}
 
 label {
   display: inline-block;
@@ -14,13 +33,13 @@ label {
 
 // Override content-box in Normalize (* isn't specific enough)
 input[type="search"] {
-  @include box-sizing(border-box);
+  box-sizing: border-box;
 }
 
 // Position radios and checkboxes better
 input[type="radio"],
 input[type="checkbox"] {
-  margin: 4px 0 0;
+  margin: 4px 0 0 0;
   line-height: normal;
 }
 
@@ -36,20 +55,13 @@ select[size] {
   height: auto;
 }
 
-// Focus for file, radio, and checkbox
-input[type="file"]:focus,
-input[type="radio"]:focus,
-input[type="checkbox"]:focus {
-  @include tab-focus;
-}
-
 // Adjust output element
 output {
   display: block;
   padding-top: ($padding-base-vertical + 1);
+  color: $gray-primary;
   font-size: $font-size-base;
-  line-height: $line-height-base;
-  color: $input-color;
+  line-height: $line-height;
 }
 
 // Search inputs in iOS
@@ -59,43 +71,47 @@ output {
 // be added to `.form-control` as it's not specific enough. For details, see
 // https://github.com/twbs/bootstrap/issues/11586.
 
-input[type="search"] {
+input[type="search"],
+[type="text"] {
+  padding: 10px;
   -webkit-appearance: none;
 }
 
-// Inline forms
-// Heads up! This is mixin-ed into `.navbar-form` in navbars.less.
-
-@mixin form-inline {
-
-  //leavig empty so we can still compile
+button,
+[type="submit"],
+select,
+[type="checkbox"],
+[type="file"],
+[type="radio"],
+[type="text"],
+[type="search"] {
+  &:focus {
+    outline: $focusstate;
+  }
 }
 
+// Inline forms
 .form-group {
   margin-bottom: $form-group-margin-bottom;
 }
 
 .form-control {
+  box-shadow: inset 0 1px 1px rgba($black, .075);
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   display: block;
   width: 100%;
   height: $input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
   padding: $padding-base-vertical $padding-base-horizontal;
-  font-size: $font-size-base;
-  line-height: $line-height-base;
-  color: $input-color;
-  background-color: $input-bg;
+  border: 1px solid $gray-primary;
+  border-radius: $border-radius-base; // Note: This has no effect on <select>s in some browsers, due to the limited stylability of <select>s in CSS.
+  background-color: $white;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-  border: 1px solid $input-border;
-  border-radius: $input-border-radius; // Note: This has no effect on <select>s in some browsers, due to the limited stylability of <select>s in CSS.
-  @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
-  @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
-
-  // Customize the `:focus` state to imitate native WebKit styles.
-  @include form-control-focus;
+  color: $gray-primary;
+  font-size: $font-size-base;
+  line-height: $line-height;
 
   // Placeholder
   @include placeholder;
-
   // Disabled and read-only inputs
   //
   // HTML5 says that controls under a fieldset > legend:first-child won't be
@@ -118,15 +134,15 @@ input[type="search"] {
 
 // Feedback icon (requires .glyphicon classes)
 .form-control-feedback {
+  display: block;
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 2; // Ensure icon is above input groups
-  display: block;
   width: $input-height-base;
   height: $input-height-base;
   line-height: $input-height-base;
   text-align: center;
+  z-index: 2; // Ensure icon is above input groups
   pointer-events: none;
 }
 

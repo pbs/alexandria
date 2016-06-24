@@ -1,45 +1,45 @@
 .content {
-  padding: $bs-gutter;
+  padding: $gap;
 
   @include breakpoint($md) {
-    padding: $bs-gutter * 2;
+    padding: $gap-double;
   }
 
   h1 {
-    margin-bottom: $bs-gutter * 2;
-    font-size: 2rem;
+    margin-bottom: $gap-double;
+    font-size: $snuffy;
     font-weight: $semibold;
     text-transform: uppercase;
   }
 
   h2 {
-    margin-top: $bs-gutter * 2;
-    font-size: 1.6rem;
+    margin-top: $gap-double;
+    font-size: $ernie;
     font-weight: $bold;
     text-transform: uppercase;
 
     @include breakpoint($md) {
-      margin-left: $bs-gutter * 2;
-      margin-right: $bs-gutter * 2;
+      margin-left: $gap-double;
+      margin-right: $gap-double;
     }
   }
 
   p,
   li {
-    font-size: 1.4rem;
+    font-size: $elmo;
     line-height: 1.6;
 
     @include breakpoint($md) {
-      margin-left: $bs-gutter * 2;
-      margin-right: $bs-gutter * 2;
+      margin-left: $gap-double;
+      margin-right: $gap-double;
     }
   }
 
   ol,
   ul {
     @include breakpoint($md) {
-      margin-left: $bs-gutter * 2;
-      margin-right: $bs-gutter * 2;
+      margin-left: $gap-double;
+      margin-right: $gap-double;
     }
   }
 }

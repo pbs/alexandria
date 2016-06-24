@@ -1,16 +1,16 @@
 .carousel-show-strip {
-  padding: ($bs-gutter * 4) $bs-gutter;
+  padding: $gap-quad $gap;
 
-  @include breakpoint($screen-sm) {
-    padding-right: ($bs-gutter * 2);
-    padding-left: ($bs-gutter * 2);
+  @include breakpoint($sm) {
+    padding-right: $gap-double;
+    padding-left: $gap-double;
   }
 
   .section-title {
-    margin: 0 0 ($bs-gutter / 2);
+    margin: 0 0 $gap-half 0;
     color: $gray-darker;
     font-weight: $bold;
-    font-size: 2.1rem;
+    font-size: $snuffy;
     text-transform: uppercase;
   }
 
@@ -21,23 +21,27 @@
     overflow: hidden;
     // right margin: expand the carousel into the gutter set by the component container so images bleed off the page;
     // left margin: expand the carousel into the gutter so the padding (for the drop shadow) doesn't offset the image;
-    margin: 0 (-$bs-gutter) 0 -5px;
+    margin: 0 (-$gap) 0 -5px;
     white-space: nowrap;
 
     // provide more space for images to bleed off the page;
     @include breakpoint($sm) {
-      margin-right: (-$bs-gutter * 2);
+      margin-right: (-$gap-double);
     }
+  }
+
+  .slick-list {
+    padding-left: 2px;
   }
 
   .show-promo {
     // need a little padding to let box shadow be seen
     padding-top: 3px;
-    padding-right: $bs-gutter;
+    padding-right: $gap;
     padding-bottom: 3px;
 
     @include breakpoint($sm) {
-      padding-right: ($bs-gutter * 2);
+      padding-right: $gap-double;
     }
 
     a,

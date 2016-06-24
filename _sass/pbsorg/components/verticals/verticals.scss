@@ -1,11 +1,11 @@
 .verticals {
-  padding: 0 $bs-gutter*2 $bs-gutter*2 0;
+  padding: 0 $gap-double $gap-double 0;
   -webkit-font-smoothing: antialiased;
 
   article {
     border: $divider;
-    margin: 0 0 $bs-gutter;
-    padding: $bs-gutter;
+    margin: 0 0 $gap 0;
+    padding: $gap;
   }
 
   .slick-track {
@@ -15,25 +15,25 @@
   }
 
   p:not(.view-more) {
-    font-size: 1.6rem;
+    font-size: $ernie;
     margin: 0;
 
     &.view-all {
       text-align: right;
-      font-size: 1.4rem;
+      font-size: $elmo;
     }
   }
 
   &__cta {
-    margin: ($bs-gutter / 2) 0 0;
+    margin: $gap-half 0 0 0;
     font-family: $serif;
-    font-size: 1.6rem;
+    font-size: $ernie;
     font-weight: $bold;
   }
 
   // break into the gutter with the body content;
   div.article-body {
-    margin: 0 0 0 (-$bs-gutter);
+    margin: 0 0 0 (-$gap);
   }
 
   .img-responsive {

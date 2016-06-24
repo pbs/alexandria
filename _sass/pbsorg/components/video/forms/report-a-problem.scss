@@ -1,0 +1,102 @@
+$over670: 670px;
+
+.report-problem {
+  &__dialog {
+    margin: 0 auto;
+
+    @include breakpoint($over670) {
+      margin-top: 15%;
+      top: 0;
+      transform: none;
+    }
+  }
+
+  &__body {
+
+    // custom xs styles for this modal
+    .modal-window__topbar {
+      @include breakpoint($below-sm) {
+        height: 55px;
+      }
+
+      &__title {
+        @include breakpoint($below-sm) {
+          padding-top: 9px;
+        }
+      }
+
+      .btn--close {
+        @include breakpoint($below-sm) {
+          top: 3px;
+        }
+      }
+    }
+
+    .modal-window__content {
+      @include breakpoint($below-sm) {
+        padding: 20px $gap;
+      }
+    }
+  }
+
+  &__form {
+    color: $gray-dark;
+    padding: 15px 0 5px 0;
+
+    &-label {
+      margin-right: 10px;
+      font-size: $ernie;
+      line-height: 1.375;
+    }
+
+    &-select {
+      border: 1px solid $gray-medium;
+      font-size: $ernie;
+      font-weight: 700;
+      padding: 2px;
+      width: 100%;
+
+      @include breakpoint($xs) {
+        width: 300px;
+      }
+    }
+
+    &-more-details {
+      display: none;
+      padding-top: 10px;
+
+      &.report-problem__form--visible {
+        display: block;
+      }
+    }
+
+    &-section--hidden {
+      display: none;
+    }
+
+    &-textarea {
+      display: block;
+      height: 70px;
+      width: 100%;
+      resize: vertical;
+      max-height: 300px;
+    }
+
+    &-button {
+      &-container {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: $gap-large;
+      }
+
+      padding: $gap-half;
+
+      @include breakpoint($md) {
+        padding: $gap $gap-double;
+      }
+      &:last-of-type {
+        margin-left: 14px;
+      }
+    }
+  }
+}

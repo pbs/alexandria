@@ -1,0 +1,100 @@
+.collections {
+
+  &__title {
+    margin: $gap-quad 0 $gap-half $gap;
+    color: $gray-darker;
+    font-size: $snuffy;
+    font-weight: $bold;
+    text-transform: uppercase;
+
+    @include breakpoint($sm) {
+      margin-left: $gap * 2;
+    }
+
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0 $gap-half $gap $gap-half;
+
+    @include breakpoint($sm) {
+      flex-direction: row;
+      margin: 0 $gap $gap $gap;
+    }
+  }
+}
+
+.collection {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
+  margin: 0 $gap-half $gap $gap-half;
+  padding: $gap;
+
+  background-color: $gray-primary;
+  background-position: 50% 0;
+  background-size: cover;
+  color: $white;
+  text-align: center;
+  text-shadow: $shadow;
+  box-shadow: $shadow;
+
+  @include breakpoint($sm) {
+    min-width: calc(33% - #{$gap * 2});
+    margin: 0 $gap ($gap * 2) $gap;
+  }
+
+  &:link,
+  &:visited {
+    color: $white;
+  }
+
+  &::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    transition: background-color $duration;
+    background-color: rgba($black, .2);
+    content: '';
+    z-index: 0;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+
+    &::after {
+      background-color: rgba($black, .4);
+    }
+  }
+
+  > * {
+    z-index: 1;
+  }
+
+  &__title {
+    display: inline-block;
+    width: 100%; // because IE11 was having this block level element run out of the box
+    font-size: $snuffy;
+    font-weight: $semibold;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    display: inline-block;
+    width: 100%; // because IE11 was having this block level element run out of the box
+    font-size: $ernie;
+    font-weight: $semibold;
+  }
+}

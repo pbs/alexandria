@@ -1,14 +1,14 @@
 // actual page-title component;
 .page-title {
   background: $gray-lighter;
-  padding: ($bs-gutter * 2) $bs-gutter $bs-gutter $bs-gutter;
+  padding: $gap-double $gap $gap $gap;
 
   @include breakpoint($md) {
-    padding: ($bs-gutter * 3) $bs-gutter;
+    padding: $gap-triple $gap;
   }
 
   @include breakpoint($lg) {
-    padding: ($bs-gutter * 3) ($bs-gutter * 2);
+    padding: $gap-triple $gap-double;
   }
 
   h1 {
@@ -20,7 +20,7 @@
       font-size: 4.5rem;
     }
 
-    @include breakpoint($xs-only) {
+    @include breakpoint($below-sm) {
       font-size: 3.0rem;
     }
   }

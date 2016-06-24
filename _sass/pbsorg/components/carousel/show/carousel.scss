@@ -1,5 +1,5 @@
 .carousel--show {
-  padding: 0 0 24px;
+  padding-bottom: $gap-large;
 
   @include breakpoint($sm) {
     padding: 0;
@@ -34,18 +34,23 @@
   &__headline--text {
     display: inline;
     max-width: 260px;
-    margin: 0 0 0 ($bs-gutter * 2);
+    margin: 0 0 0 $gap-double;
     color: $white;
     font-weight: $normal;
+  }
+
+  &__headline--logo__logo {
+    filter: drop-shadow($shadow);
   }
 
   &__headline--text {
     position: relative;
     top: -7px;
+    text-shadow: $shadow;
   }
 
   .btn--favorite {
-    margin-left: ($bs-gutter * 2);
+    margin-left: $gap-double;
     color: $gray-dark;
     height: 50px;
 
@@ -72,23 +77,10 @@
 
   // only the background image, not the logo;
   picture {
-    bottom: 0;
-    overflow: hidden; // without this, the :after element oddly wraps from left to right;
+    @include overlay-shadow(4);
     position: absolute;
     top: 0;
-
-    // add a background gradient (between image and text) so the text is easier to read;
-    &:after {
-      content: "";
-      display: block;
-      bottom: 0;
-      right: 0;
-      position: absolute;
-      width: 1000px;
-      height: 800px;
-      margin: 0 700px -400px 0;
-      background: radial-gradient(ellipse at center, rgba($black, 0.75) 0%, rgba($white, 0) 70%);
-    }
+    bottom: 0;
 
     img.img-responsive {
       max-width: none;
@@ -102,18 +94,19 @@
       }
     }
   }
+
   // container for the content placed on top of the image;
   &__slide__body {
     position: absolute;
-    right: $bs-gutter;
-    bottom: $bs-gutter;
-    left: $bs-gutter;
+    right: $gap;
+    bottom: $gap;
+    left: $gap;
     font-weight: $light;
 
     @include breakpoint($sm) {
       right: auto;
-      bottom: ($bs-gutter * 2);
-      left: ($bs-gutter * 5);
+      bottom: $gap-double;
+      left: ($gap * 5);
       z-index: 1;
     }
   }
@@ -150,15 +143,15 @@
     position: absolute;
     left: 0;
     right: 0;
-    z-index: 3;
-    padding: ($bs-gutter / 2) $bs-gutter $bs-gutter;
+    z-index: 4;
+    padding: $gap-half $gap $gap $gap;
 
-    @include breakpoint($xs-only) {
+    @include breakpoint($below-sm) {
       bottom: 0;
     }
 
     @include breakpoint($sm) {
-      padding: $bs-gutter;
+      padding: $gap;
       width: 200px;
       left: auto;
       top: 10%;
@@ -171,7 +164,7 @@
 
   p.over-title {
     color: $white;
-    font-size: 1.5rem;
+    font-size: $zoe;
     font-family: $sans-serif;
     font-weight: $light;
     font-style: italic;
@@ -179,7 +172,7 @@
 
     @include breakpoint($md) {
       + h1 {
-        margin: ($bs-gutter / 4) 0 0;
+        margin-top: $gap-quarter;
       }
     }
   }
@@ -191,20 +184,16 @@
     margin: 0;
 
     @include breakpoint($sm) {
-      font-size: 2rem;
+      font-size: $snuffy;
       line-height: 1.3;
     }
   }
 
   p.info {
-    font-size: 1.4rem;
+    margin: $gap-quarter 0 0 0;
+    font-size: $elmo;
     font-weight: $light;
     line-height: 2;
-    margin: ($bs-gutter / 4) 0 0;
-
-    @include breakpoint($md) {
-      font-size: 1.3rem;
-    }
   }
 
   // hide the additional slides until the carousel is initialized;
@@ -216,7 +205,7 @@
 // Styling what displays in the absence of a carousel
 .degraded-title {
   background-color: $white;
-  padding: ($bs-gutter * 2) ($bs-gutter * 2) 0 ($bs-gutter * 3);
+  padding: $gap-double $gap-double 0 $gap-triple;
 
   h1 {
     display: inline-block;

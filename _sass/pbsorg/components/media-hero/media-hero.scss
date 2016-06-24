@@ -1,0 +1,167 @@
+.media-hero {
+  @include overlay-shadow();
+  display: block;
+  position: relative;
+  max-height: 720px;
+  background-color: $white;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+
+  @include breakpoint($sm) {
+    padding-top: $video-ratio;
+    background-color: $gray-primary;
+    background-size: cover;
+  }
+
+  @include breakpoint($lg) {
+    height: 487px;
+    padding-top: 0;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+
+    @include breakpoint($sm) {
+      position: absolute;
+      right: $gap * 2;
+      bottom: $gap * 2;
+      left: $gap * 2;
+      width: 65%;
+      max-width: 450px;
+    }
+  }
+
+  &__title-wrapper {
+    position: relative;
+    padding-top: $video-ratio;
+
+    @include breakpoint($sm) {
+      padding-top: 0;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    right: $gap;
+    bottom: $gap;
+    left: $gap;
+    margin: 0;
+
+    color: $white;
+    font-size: 2.8rem;
+    line-height: 1.4;
+    text-shadow: $shadow;
+
+    @include breakpoint($sm) {
+      position: static;
+      margin-bottom: $gap;
+      padding-bottom: $gap;
+      border-bottom: solid 1px $white;
+      font-size: 4rem;
+      line-height: 1.2;
+    }
+
+    .media-hero__title__link {
+      color: $white;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+
+    .passport-logo {
+      position: relative;
+      top: -3px;
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__description {
+    margin: $gap $gap 0 $gap;
+    font-size: $ernie;
+
+    @include breakpoint($sm) {
+      margin: 0 0 $gap 0;
+      color: $white;
+      font-size: $zoe;
+      text-shadow: $shadow;
+    }
+
+    .media-hero__description__link {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+
+      @include breakpoint($sm) {
+        color: $white;
+      }
+    }
+  }
+
+  &__links {
+    margin: 0 $gap;
+    padding: 0;
+  }
+
+  .media-hero__link {
+    display: block;
+    padding: ($gap * 1.5) 0;
+    border-bottom: solid 1px $gray-light;
+    font-size: $ernie;
+
+    @include breakpoint($sm) {
+      margin-bottom: $gap - 4;
+      padding: 0;
+      border-bottom: 0;
+      color: $white;
+      font-size: $oscar;
+      text-shadow: $shadow;
+    }
+  }
+
+  &__link-li {
+    list-style: none;
+
+    @include breakpoint($sm) {
+      color: $white;
+      text-shadow: $shadow;
+      list-style-type: disc;
+    }
+
+    &:last-child {
+      .media-hero__link {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  &__wrap-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  &__video {
+    width: 100%;
+
+    &::-webkit-media-controls-start-playback-button {
+      display: none;
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+}

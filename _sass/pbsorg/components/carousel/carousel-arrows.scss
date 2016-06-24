@@ -15,38 +15,34 @@
       width: $bw;
       position: absolute;
       top: 50%;
-      margin: (-$bh / 2) 0 0;
+      margin-top: (-$bh / 2);
       padding: 0;
       z-index: 3;
       border: 0;
       cursor: pointer;
       transition: opacity 0.3s;
 
-      &:focus {
-        outline: none;
-      }
-
-      svg {
+      img {
         position: absolute;
         top: $p;
         width: $iw;
         height: $ih;
-        filter: drop-shadow(0 2px 2px rgba($black, 0.5));
       }
     }
 
     button.slick-next {
       right: 0;
 
-      svg {
+      img {
         right: $p;
       }
     }
 
     button.slick-prev {
+      transform: rotate(180deg);
       left: 0;
 
-      svg {
+      img {
         left: $p;
       }
     }
@@ -57,16 +53,29 @@
 // one large (big buttons because of wide padding);
 // one small (small buttons because of narrow padding);
 
-$image-height: 67px;
-$image-width: 26px;
-$padding: $bs-gutter; // how much padding to put around the icon;
+$image-height: 52px;
+$image-width: 20px;
+$padding: $gap; // how much padding to put around the icon;
 $button-height: ($image-height + ($padding * 2)); // width + padding on each side the size fo the gutter;
 $button-width: ($image-width + ($padding * 2)); // width + padding on each side the size fo the gutter;
 @include build-carousel-buttons (".carousel-nav-lg", $image-height, $image-width, $padding, $button-height, $button-width);
 
-$image-height: 67px;
-$image-width: 26px;
+$image-height: 52px;
+$image-width: 20px;
 $padding: 1px;
 $button-height: ($image-height + ($padding * 2));
 $button-width: ($image-width + ($padding * 2));
 @include build-carousel-buttons (".carousel-nav-sm", $image-height, $image-width, $padding, $button-height, $button-width);
+
+// styles specific to the right-facing arrow on certain small carousels
+// this arrow hugs the edge of the page too closely otherwise, so specific styles are needed
+.carousel-show-strip,
+.carousel--verticals {
+  button.slick-next {
+    right: 15px;
+
+    @include breakpoint($sm) {
+      right: 30px;
+    }
+  }
+}

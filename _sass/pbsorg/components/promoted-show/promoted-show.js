@@ -3,7 +3,7 @@ var
   PBS = require("../../scripts/_pbs");
 
 //require("slick-carousel"); // jQuery carousel plugin;
-require("picturefill");    // responsive image processor, and its handlebars helper;
+require("picturefill");    // responsive image processor
 
 jQuery(($) => {
   var $window = $(window);

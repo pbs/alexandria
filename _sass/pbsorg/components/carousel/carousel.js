@@ -37,6 +37,7 @@ const Carousel = class Carousel {
       carousel: undefined,
       smoothScrolling: true,
       loaded: false,
+      removeAriaLive: false,
       slides: [],
       slideImages: [],
       onInit: undefined,
@@ -49,8 +50,8 @@ const Carousel = class Carousel {
         pauseOnHover: false,
         slidesToShow: 1,
         // @todo: this should be markup, not in JS
-        prevArrow: '<button type="button" data-role="none" class="slick-prev" aria-label="previous">' + this.getSvgArrow('prev') + '</button>',
-        nextArrow: '<button type="button" data-role="none" class="slick-next" aria-label="next">' + this.getSvgArrow('next') + '</button>',
+        prevArrow: '<button type="button" data-role="none" class="slick-prev" aria-label="previous"><img src="'+ window.PBS_STATIC_URL + 'images/fpo/carousel/carousel-arrow.png" alt=""></button>',
+        nextArrow: '<button type="button" data-role="none" class="slick-next" aria-label="next"><img src="'+ window.PBS_STATIC_URL + 'images/fpo/carousel/carousel-arrow.png" alt=""></button>',
         responsive: []
       },
       allowFallbackImages: true
@@ -58,18 +59,6 @@ const Carousel = class Carousel {
 
     // loop through all defaults and set value to any options passed in
     this.updateDefaults(this, defaults, options);
-  }
-
-  /**
-   * Builds SVG arrows for carousel navigation.
-   * @param {string} direction - direction arrow should point
-   * @returns {string} svg markup
-   */
-  getSvgArrow(direction) {
-
-    const points = (direction === 'prev') ? '23.6,60.8 6.7,32 23.6,3.2 25.3,4.2 9,32 25.3,59.8' : '8.4,3.2 25.3,32 8.4,60.8 6.7,59.8 23,32 6.7,4.2';
-    return '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 64" enable-background="new 0 0 32 64" xml:space="preserve"><polygon fill="#fff" points="' + points + ' "/></svg>';
-
   }
 
   /**
@@ -148,6 +137,18 @@ const Carousel = class Carousel {
   }
 
   /**
+   * Removes Aria Live
+   * By default, slick carousel has aria-live="polite", which in many cases
+   * is really annoying. We now have an option, when we set our carousel
+   * options to remove it - removeAriaLive: true.
+   */
+  setAriaLiveOff() {
+    this.carousel.on('init', function(event, slick){
+      slick.$slider.find('.slick-list').attr('aria-live', 'off');
+    });
+  }
+
+  /**
    * Sets up carousel using slick caorusel.
    */
   setupCarousel() {
@@ -159,8 +160,14 @@ const Carousel = class Carousel {
       this.addSmoothScrollingSettings();
     }
 
+    // if removeAriaLive is set to true, invoke setAriaLiveOff
+    if (this.removeAriaLive) {
+      this.setAriaLiveOff();
+    }
+
     // actually init slick carousel
     this.carousel.slick(this.settings);
+
     if (this.onInit) {
       this.onInit();
     }

@@ -6,6 +6,7 @@
     color: $gray-primary;
   }
 }
+
 @mixin typography-l2-header () {
   color: $gray-primary;
   font-weight: $light;
@@ -14,6 +15,7 @@
     color: $gray-primary;
   }
 }
+
 @mixin typography-truncate () {
   line-height: 1.4; // so descenders don't get cut off;
   overflow: hidden;
@@ -24,36 +26,124 @@
 @mixin aspect-ratio($width, $height) {
   height: inherit;
   position: relative;
+
   &::after {
     display: block;
-    content: '';
     width: 100%;
     padding-bottom: ($height / $width) * 100%;
+    content: '';
   }
 }
 
-@mixin fallback-gradient($color1, $color2, $color3, $middlePercent) {
-  background: -moz-radial-gradient(center, ellipse cover, $color3 0%, $color2 $middlePercent, $color2 $middlePercent, $color1 100%);
-  background: -webkit-radial-gradient(center, ellipse cover, $color3 0%, $color2 $middlePercent, $color2 $middlePercent, $color1 100%);
-  background: radial-gradient(ellipse at center, $color3 0%, $color2 $middlePercent, $color2 $middlePercent, $color1 100%);
+@mixin fallback-gradient($color1, $color2, $color3, $middle-percent) {
+  background: radial-gradient(ellipse at center, $color3 0%, $color2 $middle-percent, $color2 $middle-percent, $color1 100%);
 }
 
 @mixin fallback-text($data-attr) {
   position: relative;
+
   &::before {
-    color: $white;
-    content: attr($data-attr) '';
-    font-size: 1.4rem;
     position: absolute;
-    padding: 65px 10px 10px 10px;
     top: 0;
+    width: 100%;
+    padding: 65px 10px 10px 10px;
+    color: $white;
+    font-size: $elmo;
     text-align: center;
     text-shadow: 1px 1px 1px rgba($black, .8);
-    width: 100%;
     white-space: pre-wrap;
+    content: attr($data-attr) '';
+
     @include breakpoint($sm) {
-      font-size: 1.8rem;
+      font-size: $oscar;
     }
+  }
+}
+
+@mixin clearfix() {
+  &::before,
+  &::after {
+    content: ''; /* 1 */
+    display: table; /* 2 */
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+@mixin mobile-menu() {
+  transition: all $duration;
+
+  .nav-is-open & {
+    transform: translateX($mobile-menu-ratio);
+
+    @include breakpoint($mobile-menu-cap) {
+      transform: translateX($mobile-menu-width);
+    }
+
+
+  }
+
+  .station-is-open & {
+    transform: translateX(-$mobile-menu-ratio);
+
+    @include breakpoint($mobile-menu-cap) {
+      transform: translateX(-$mobile-menu-width);
+    }
+
+    @include breakpoint($md) {
+      transform: none;
+    }
+  }
+}
+
+@mixin grey-serif-title() {
+  font-family: $serif;
+  font-size: $elmo;
+  font-weight: $bold;
+  text-transform: uppercase;
+
+  @include breakpoint($sm) {
+    font-size: $abby;
+  }
+
+  &,
+  &:link,
+  &:visited {
+    color: $gray-dark;
+  }
+}
+
+@mixin btn() {
+  display: inline-block;
+  margin-bottom: 0;
+  padding: $gap $gap-double;
+  vertical-align: middle;
+  touch-action: manipulation;
+  background: transparent;
+  border: 1px solid $blue;
+  border-radius: $radius;
+  color: $blue;
+  font-family: $serif;
+  font-weight: $bold;
+  -webkit-font-smoothing: antialiased;
+  font-size: $ernie;
+  line-height: 1;
+  text-align: center;
+
+  &:visited,
+  &:hover,
+  &:focus,
+  &:active {
+    background: rgba($blue, .1);
+    border-color: $blue;
+    color: $blue;
+    text-decoration: underline;
+  }
+
+  &:active {
+    box-shadow: none;
   }
 }
 
@@ -66,5 +156,211 @@
   &:focus,
   &:active {
     @content
+  }
+}
+
+@mixin grey-serif-title() {
+  font-family: $serif;
+  font-size: $elmo;
+  font-weight: $bold;
+  text-transform: uppercase;
+
+  @include breakpoint($sm) {
+    font-size: $abby;
+  }
+
+  &,
+  &:link,
+  &:visited {
+    color: $gray-dark;
+  }
+}
+
+@mixin dark-sans-title() {
+  font-size: $oscar;
+  line-height: 1.33;
+
+  @include breakpoint($sm) {
+    font-size: $ernie;
+  }
+
+  &,
+  &:link,
+  &:visited {
+    color: $gray-primary;
+  }
+}
+
+// used on things like the hero carousel and media hero so text has some darkness behind it. Accepts an optional z-index number value
+@mixin overlay-shadow($z-index: null) {
+  overflow: hidden; // without this, the :after element oddly wraps from left to right;
+
+  &::after {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 500px;
+    height: 400px;
+    margin: 0 0 -200px -250px;
+    background: radial-gradient(ellipse at center, rgba($black, .75) 0%, rgba($white, 0) 70%);
+    content: '';
+    @if ($z-index){
+      z-index: $z-index;
+    }
+
+    @include breakpoint($sm) {
+      width: 800px;
+      height: 640px;
+      margin: 0 0 -320px -400px;
+    }
+
+    @include breakpoint($lg) {
+      width: 1000px;
+      height: 800px;
+      margin: 0 0 -400px -500px;
+    }
+  }
+}
+
+// used to move the relevant page elements left or right when the mobile menu is invoked
+@mixin mobile-menu() {
+
+  transition: all $duration;
+
+  .nav-is-open & {
+    transform: translateX($mobile-menu-ratio);
+
+    @include breakpoint($mobile-menu-cap) {
+      transform: translateX($mobile-menu-width);
+    }
+  }
+
+  .station-is-open & {
+    transform: translateX(-$mobile-menu-ratio);
+
+    @include breakpoint($mobile-menu-cap) {
+      transform: translateX(-$mobile-menu-width);
+    }
+
+    @include breakpoint($md) {
+      transform: none;
+    }
+  }
+}
+
+// Grid stuff
+
+// Framework grid generation
+//
+// Used only by Bootstrap to generate the correct number of grid classes given
+// any value of `$grid-columns`.
+
+// [converter] This is defined recursively in LESS, but Sass supports real loops
+@mixin make-grid-columns($i: 1, $list: ".col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}") {
+  @for $i from (1 + 1) through $grid-columns {
+    $list: "#{$list}, .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}";
+  }
+  #{$list} {
+    position: relative;
+    // Prevent columns from collapsing when empty
+    min-height: 1px;
+    // Inner gutter via padding
+    padding-left:  ceil(($grid-gutter-width / 2));
+    padding-right: floor(($grid-gutter-width / 2));
+  }
+}
+
+
+// [converter] This is defined recursively in LESS, but Sass supports real loops
+@mixin float-grid-columns($class, $i: 1, $list: ".col-#{$class}-#{$i}") {
+  @for $i from (1 + 1) through $grid-columns {
+    $list: "#{$list}, .col-#{$class}-#{$i}";
+  }
+  #{$list} {
+    float: left;
+  }
+}
+
+@mixin calc-grid-column($index, $class, $type) {
+  @if ($type == width) and ($index > 0) {
+    .col-#{$class}-#{$index} {
+      width: percentage(($index / $grid-columns));
+    }
+  }
+  @if ($type == offset) {
+    .col-#{$class}-offset-#{$index} {
+      margin-left: percentage(($index / $grid-columns));
+    }
+  }
+}
+
+// [converter] This is defined recursively in LESS, but Sass supports real loops
+@mixin loop-grid-columns($columns, $class, $type) {
+  @for $i from 0 through $columns {
+    @include calc-grid-column($i, $class, $type);
+  }
+}
+
+// Create grid for specific class
+@mixin make-grid($class) {
+  @include float-grid-columns($class);
+  @include loop-grid-columns($grid-columns, $class, width);
+  @include loop-grid-columns($grid-columns, $class, offset);
+}
+
+// Grid system
+//
+// Generate semantic grid columns with these mixins.
+
+// Creates a wrapper for a series of columns
+@mixin make-row($gutter: $grid-gutter-width) {
+  margin-left:  ceil(($gutter / -2));
+  margin-right: floor(($gutter / -2));
+  @include clearfix;
+}
+
+// Placeholder text
+@mixin placeholder($color: $input-color-placeholder) {
+  // Firefox
+  &::-moz-placeholder {
+    color: $color;
+    opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+  }
+  // Internet Explorer 10+
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  // Safari and Chrome
+  &::-webkit-input-placeholder  {
+    color: $color;
+  }
+}
+
+// Progress bars
+
+@mixin progress-bar-variant($color) {
+  background-color: $color;
+}
+
+
+// Responsive utilities
+
+// More easily include all the states for responsive-utilities.less.
+// [converter] $parent hack
+@mixin responsive-visibility($parent) {
+  #{$parent} {
+    display: block !important;
+  }
+  table#{$parent}  { display: table !important; }
+  tr#{$parent}     { display: table-row !important; }
+  th#{$parent},
+  td#{$parent}     { display: table-cell !important; }
+}
+
+// [converter] $parent hack
+@mixin responsive-invisibility($parent) {
+  #{$parent} {
+    display: none !important;
   }
 }

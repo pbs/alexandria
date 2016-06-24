@@ -13,7 +13,7 @@
 
   // because of the custom layout, we need a custom row;
   .slide-row {
-    @extend %clearfix;
+    @include clearfix();
 
     @include breakpoint($md) {
       position: relative;
@@ -27,8 +27,8 @@
   // this column (66.6%) contains the large featured article;
   .slide-col-featured {
     @include breakpoint($md) {
-      float: left;
       width: 66.66%;
+      float: left;
     }
   }
 
@@ -39,53 +39,54 @@
 
     @include breakpoint($md) {
       display: block;
-      float: left;
       width: 33.34%;
+      float: left;
     }
   }
 
   &__slide {
-    color: $white;
     position: relative;
-    text-shadow: 0 1px 2px rgba($black, 0.66);
+    color: $white;
+    text-shadow: 0 1px 2px rgba($black, .66);
   }
 
   // positioned content on top of the image;
   &__slide__body {
     position: absolute;
-    bottom: $bs-gutter;
-    left: $bs-gutter;
-    right: $bs-gutter;
+    right: $gap;
+    bottom: $gap;
+    left: $gap;
 
     @include breakpoint($sm) {
-      bottom: ($bs-gutter * 2);
-      left: ($bs-gutter * 2);
+      bottom: $gap-double;
+      left: $gap-double;
     }
   }
 
   // show title;
   .over-title {
+    margin: 0;
     color: $white;
     font-size: 1rem;
-    margin: 0;
-    text-transform: uppercase;
     -webkit-font-smoothing: antialiased;
+    text-transform: uppercase;
+
+    @include breakpoint($sm) {
+      font-size: $elmo;
+    }
 
     a {
       color: $white;
-    }
-
-    @include breakpoint($sm) {
-      font-size: 1.4rem;
     }
   }
 
   // episode title;
   &__slide__title {
-    font-weight: $light;
-    font-size: 2rem;
-    line-height: 1.4;
     margin: 0;
+    font-size: $snuffy;
+    font-weight: $light;
+    line-height: 1.4;
+
 
     @include breakpoint($md) {
       font-size: 3.2rem;
@@ -101,63 +102,31 @@
   }
 
   picture {
-    overflow: hidden; // without this, the :after element oddly wraps from left to right;
+    @include overlay-shadow();
     position: relative;
-
-    // add a background gradient (between image and text) so the text is easier to read;
-    &:after {
-      content: "";
-      display: block;
-      bottom: 0;
-      left: 0;
-      position: absolute;
-      width: 500px;
-      height: 400px;
-      margin: 0 0 -200px -250px;
-      background: radial-gradient(ellipse at center,  rgba($black, 0.75) 0%, rgba($white, 0) 70%);
-
-      @include breakpoint($sm) {
-        width: 800px;
-        height: 640px;
-        margin: 0 0 -320px -400px;
-      }
-
-      @include breakpoint($lg) {
-        width: 1000px;
-        height: 800px;
-        margin: 0 0 -400px -500px;
-      }
-    }
   }
 
   // adjust article styles for the related content;
   .slide-col-related {
 
     .carousel--videos__slide__body {
-      bottom: $bs-gutter;
-      left: $bs-gutter
+      bottom: $gap;
+      left: $gap;
     }
 
     .over-title {
-      font-size: 1.2rem;
+      font-size: $abby;
     }
 
     .carousel--videos__slide__title {
       @include typography-truncate();
-      font-size: 1.8rem;
+      font-size: $oscar;
     }
 
     picture {
-      &:after {
-        content: "";
-        display: block;
-        bottom: 0;
-        left: 0;
-        position: absolute;
-        width: 500px;
+      &::after {
+        width: 500px; // fixing the size of these gradients
         height: 400px;
-        margin: 0 0 -200px -250px;
-        background: radial-gradient(ellipse at center,  rgba($black, 0.75) 0%, rgba($white, 0) 70%);
       }
     }
   }

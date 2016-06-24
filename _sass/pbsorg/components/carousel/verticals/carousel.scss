@@ -1,9 +1,9 @@
 .carousel--verticals {
   font-weight: $light;
-  padding: ($bs-gutter * 4) $bs-gutter;
+  padding: $gap-quad $gap;
 
   @include breakpoint($sm) {
-    padding: ($bs-gutter * 4) ($bs-gutter * 2) ($bs-gutter * 2);
+    padding: $gap-quad $gap-double $gap-double $gap-double;
   }
 
   // carousel of brands (below the featured brands);
@@ -11,11 +11,11 @@
     overflow-x: hidden;
     // right margin: expand the carousel into the gutter set by the component container so images bleed off the page;
     // left margin: expand the carousel into the gutter so the padding (for the drop shadow) doesn't offset the image;
-    margin: 0 (-$bs-gutter) 0 -5px;
+    margin: 0 (-$gap) 0 -5px;
 
     // provide more space for images to bleed off the page;
     @include breakpoint($sm) {
-      margin-right: (-$bs-gutter * 2);
+      margin-right: (-$gap-double);
     }
   }
   .slick-track {
@@ -23,7 +23,7 @@
     flex-direction: row;
     align-items: stretch;
 
-    .slick-slide {
+    div.slick-slide {
       height: auto;
       display: flex;
       flex-direction: row;
@@ -31,18 +31,18 @@
     }
   }
   // hide additional slides before JS is initialized;
-  article + article {
+  &__article + &__article {
     display: none;
   }
 
   // once Slick is init, re-show the slides;
-  .slick-initialized article + article {
+  .slick-initialized &__article + &__article {
     display: block;
   }
 
   // hide the carousel arrows on mobile;
   .touchevents & {
-    @include breakpoint($xs-only) {
+    @include breakpoint($below-sm) {
       button.slick-next,
       button.slick-prev {
         display: none !important; // need to override inline styles set by the jQuery plugin;
@@ -54,27 +54,27 @@
   // this way the last ARTICLE tag (slide) can be cut off;
   // the width of the visible slides will be adjusted to fill this space;
   div.slick-list {
-    margin-right: (-$bs-gutter * 6);
+    margin-right: (-$gap * 6);
   }
 
   // title above the carousel;
   .section-title {
     color: $gray-darker;
     font-weight: $bold;
-    font-size: 2.1rem;
+    font-size: $snuffy;
     text-transform: uppercase;
-    margin: 0 0 ($bs-gutter / 2);
+    margin: 0 0 $gap-half 0;
   }
 
   // each slide in the carousel;
-  article {
+  &__article {
     float: left;
     margin-right: 10px; // space out each slide;
     padding: 5px; // provide room for the dropshadow;
     width: 300px; // generic size pre-JS init;
 
     @include breakpoint($sm) {
-      margin-right: ($bs-gutter * 2);
+      margin-right: $gap-double;
     }
 
     // wrapper to house the drop shadow;
@@ -86,12 +86,12 @@
     }
 
     p {
-      padding: 0 $bs-gutter;
+      padding: 0 $gap;
 
       &.description {
         color: $gray-primary;
-        font-size: 1.4rem;
-        margin: $bs-gutter 0 0;
+        font-size: $elmo;
+        margin: $gap 0 0 0;
 
         a {
           color: $gray-primary;

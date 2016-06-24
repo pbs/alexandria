@@ -1,5 +1,5 @@
 .carousel--hero {
-  padding: 0 0 24px;
+  padding-bottom: $gap-large;
   background: $white;
   color: $white;
   line-height: 1.2;
@@ -44,34 +44,9 @@
 
   // some styles needed on the <picture> element
   &__picture {
+    @include overlay-shadow();
     position: relative;
     height: 100%;
-    overflow: hidden; // without this, the :after element oddly wraps from left to right;
-
-    // add a background gradient (between image and text) so the text is easier to read;
-    &:after {
-      display: block;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 500px;
-      height: 400px;
-      margin: 0 0 -200px -250px;
-      background: radial-gradient(ellipse at center, rgba($black, .75) 0%, rgba($white, 0) 70%);
-      content: '';
-
-      @include breakpoint($sm) {
-        width: 800px;
-        height: 640px;
-        margin: 0 0 -320px -400px;
-      }
-
-      @include breakpoint($lg) {
-        width: 1000px;
-        height: 800px;
-        margin: 0 0 -400px -500px;
-      }
-    }
   }
 
   // only the background image;
@@ -83,15 +58,15 @@
   // container for the content placed on top of the image;
   &__slide__body {
     position: absolute;
-    right: $bs-gutter;
-    bottom: $bs-gutter;
-    left: $bs-gutter;
+    right: $gap;
+    bottom: $gap;
+    left: $gap;
     font-weight: $light;
 
     @include breakpoint($sm) {
       right: auto;
-      bottom: ($bs-gutter * 2);
-      left: ($bs-gutter * 5);
+      bottom: $gap-double;
+      left: ($gap * 5);
       z-index: 1;
     }
   }
@@ -99,7 +74,7 @@
   // hidden except for mobile;
   // duplicate of content inside div.article-body (that is hidden at moblie);
   .article-body-xs {
-    padding: $bs-gutter $bs-gutter ($bs-gutter * 2);
+    padding: $gap $gap $gap-double $gap;
   }
 
   a {
@@ -115,11 +90,13 @@
     max-height: 190px;
     margin: 0;
     font-size: 4rem;
+    filter: drop-shadow($shadow);
+
     @include breakpoint($sm) {
       width: auto;
     }
     @include breakpoint($lg) {
-      margin-bottom: $bs-gutter/2;
+      margin-bottom: $gap-half;
     }
   }
 
@@ -137,7 +114,7 @@
 
   hr {
     height: 1px;
-    margin: $bs-gutter 0;
+    margin: $gap 0;
     border: 0;
     background: $white;
     opacity: .5;
@@ -147,24 +124,24 @@
   .sub-title {
     max-width: 250px;
     margin: 0;
-    font-size: 1.6rem;
+    font-size: $ernie;
     font-style: italic;
     font-weight: $light;
 
     @include breakpoint($sm) {
       max-width: none;
-      font-size: 2rem;
+      font-size: $snuffy;
     }
   }
 
   // under the sub-title (duplicated in div.article-body-xs);
   .description {
     margin: 0;
-    font-size: 1.6rem;
+    font-size: $ernie;
     line-height: 1.4;
 
     @include breakpoint($sm) {
-      font-size: 1.5rem;
+      font-size: $zoe;
     }
 
     @include breakpoint($md) {
@@ -182,20 +159,20 @@
 
   .related-links {
     margin: 0;
-    font-size: 1.6rem;
+    font-size: $ernie;
 
     @include breakpoint($sm) {
-      margin: $bs-gutter 0 0;
-      padding: 0 0 0 19px;
-      font-size: 1.8rem;
+      margin-top: $gap;
+      padding-left: 19px;
+      font-size: $oscar;
     }
   }
 
   .related-link-wrapper {
-    padding: ($bs-gutter * 1.5) 0;
+    padding: $gap-large 0;
 
     @include breakpoint($sm) {
-      padding: ($bs-gutter / 2) 0;
+      padding: $gap-half 0;
     }
 
     + .related-link-wrapper {

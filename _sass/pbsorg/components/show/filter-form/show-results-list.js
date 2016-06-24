@@ -1,11 +1,12 @@
 'use strict';
 
-let ListItem = require('./show-results-list-item'),
-  PureRenderMixin = React.addons.PureRenderMixin,
-  List;
+import React from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 
-List = React.createClass({
-  
+const ListItem = require('./show-results-list-item');
+
+const List = React.createClass({
+
   /**
    * Array of any mixin libraries for react
    */
@@ -16,7 +17,7 @@ List = React.createClass({
    */
   render() {
     let rows = this.props.shows.map(function (show, index) {
-      return <ListItem show={show} />;
+      return <ListItem show={show} key={index} />;
     });
     return (
       <div className="results-table">

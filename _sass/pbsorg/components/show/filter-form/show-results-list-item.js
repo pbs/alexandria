@@ -1,7 +1,9 @@
 'use strict';
 
-let PureRenderMixin = React.addons.PureRenderMixin,
-  ListItem = React.createClass({
+import React from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
+
+const ListItem = React.createClass({
 
   /**
    * Array of any mixin libraries for react

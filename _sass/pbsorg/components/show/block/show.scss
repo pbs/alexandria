@@ -1,0 +1,78 @@
+.show-block {
+  padding-top: $gap * 2;
+
+  @include breakpoint($md) {
+    padding-top: 0;
+    margin-bottom: -($gap * 2);
+  }
+
+  &__title {
+    margin: 0 0 $gap-half $gap;
+    color: $gray-darker;
+    font-weight: $bold;
+    font-size: $snuffy;
+    text-transform: uppercase;
+
+    @include breakpoint($sm) {
+      margin-left: $gap * 2;
+    }
+    @include breakpoint($md) {
+      margin-left: $gap / 2;
+    }
+  }
+
+  &__shows {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    margin: 0 $gap-half $gap-half $gap-half;
+
+    @include breakpoint($sm) {
+      margin: 0 $gap $gap $gap;
+    }
+
+    @include breakpoint($md) {
+      padding: 0;
+      margin: 0 -8px; // easiest way to even out the grid
+    }
+  }
+
+  .show-promo {
+    margin: 0 $gap-half $gap $gap-half;
+    flex-basis: calc(50% - #{$gap}); // flex basis works better than min-width
+
+    @include breakpoint($xs) {
+      flex-basis: calc(33.33% - #{$gap});
+    }
+
+    @include breakpoint($sm) {
+      margin: 0 $gap ($gap * 2) $gap;
+      flex-basis: calc(25% - #{$gap * 2};
+    }
+
+
+    &__image-link {
+      @include aspect-ratio(9, 13.45);
+      @include fallback-text(data-gtm-label);
+      @include fallback-gradient(#09385d, $blue, #1879C4, 20%);
+      display: block;
+
+      .lazyload {
+        @include fallback-gradient($gray-medium, $gray-light, $gray-lighter, 50%);
+      }
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &__image {
+      display: block;
+      box-shadow: $shadow;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+}

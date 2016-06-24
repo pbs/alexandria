@@ -5,7 +5,7 @@ body.watchlist {
 }
 
 .watchlist-wrapper{
-  padding: 0 $bs-gutter ($bs-gutter * 4);
+  padding: 0 $gap $gap-quad $gap;
   background-color: $gray-lighter;
 
   @include breakpoint($sm) {
@@ -13,23 +13,23 @@ body.watchlist {
   }
 
   @include breakpoint($lg) {
-    padding: 0 ($bs-gutter * 2) ($bs-gutter * 4);
+    padding: 0 $gap-double $gap-quad $gap-double;
   }
 }
 
 .limit-message {
   position: relative;
-  font-size: 1.4rem;
-  margin: 0 ($bs-gutter * 2) $bs-gutter 0;
+  font-size: $elmo;
+  margin: 0 $gap-double $gap 0;
 
   @include breakpoint($sm) {
-    font-size: 1.6rem;
-    margin: 0 ($bs-gutter * 3) ($bs-gutter * 1.5) 18px;
+    font-size: $ernie;
+    margin: 0 $gap-triple $gap-large 18px;
   }
 
   @include breakpoint($md) {
-    font-size: 1.8rem;
-    margin-top: -($bs-gutter * 1.5);
+    font-size: $oscar;
+    margin-top: -$gap-large;
     width: 575px;
   }
 
@@ -50,15 +50,15 @@ div.watchlist-container {
 
 article.watchlist-result {
   background: $white;
-  border: 1px solid $gray-light;
+  border: $divider;
   border-width: 1px 0;
   color: $gray-primary;
-  font-size: 1.6rem;
+  font-size: $ernie;
   margin-top: -1px;
-  padding: $bs-gutter;
+  padding: $gap;
 
   @include breakpoint($md) {
-    padding: ($bs-gutter * 2);
+    padding: $gap-double;
   }
 
   &:first-child {
@@ -74,7 +74,7 @@ article.watchlist-result {
 
   .sort-col {
     @include breakpoint($md) {
-      padding-right: 4px;
+      padding-right: $gap-quarter;
     }
   }
 
@@ -93,7 +93,7 @@ article.watchlist-result {
   .watchlist-handle {
 
     @include breakpoint($sm-only) {
-      padding: 0 ($bs-gutter/2);
+      padding: 0 $gap-half;
     }
 
     .watchlist-grabber {
@@ -136,7 +136,7 @@ article.watchlist-result {
     margin-left: 3px;
 
     @include breakpoint($sm-only) {
-      font-size: 2rem;
+      font-size: $snuffy;
       height: 29px;
       width: 32px;
     }
@@ -145,9 +145,9 @@ article.watchlist-result {
   .link-remove {
     font-family: $serif;
     font-weight: $bold;
-    font-size: 1.4rem;
+    font-size: $elmo;
     color: $blue;
-    margin-left: 8px;
+    margin-left: $gap-half;
   }
 
   .progress {
@@ -155,8 +155,8 @@ article.watchlist-result {
     border-radius: 0;
     box-shadow: none;
     height: 10px;
-    margin-bottom: 4px;
-    margin-top: 4px;
+    margin-bottom: $gap-quarter;
+    margin-top: $gap-quarter;
     overflow: hidden;
   }
 
@@ -166,20 +166,20 @@ article.watchlist-result {
   }
 
   p.over-title {
-    font-size: 1.2rem;
+    font-size: $abby;
     margin: 0;
     text-transform: uppercase;
 
     @include breakpoint($md) {
-      font-size: 1.4rem;
+      font-size: $elmo;
     }
   }
 
   .watchlist-result__title {
-    font-size: 1.8rem;
+    font-size: $oscar;
     color: $gray-primary;
-    margin: ($bs-gutter / 4) 0 0;
-    padding-bottom: 8px;
+    margin: $gap-quarter 0 0 0;
+    padding-bottom: $gap-half;
 
     @include breakpoint($md) {
       font-size: 2.2rem;
@@ -191,14 +191,14 @@ article.watchlist-result {
   }
 
   p.description {
-    margin: ($bs-gutter / 2) 0 0;
-    padding: ($bs-gutter / 2) 0;
-    font-size: 1.4rem;
+    margin: $gap-half 0 0 0;
+    padding: $gap-half 0;
+    font-size: $elmo;
   }
 
   p.info {
-    font-size: 1.4rem;
-    margin: ($bs-gutter / 2) 0 0;
+    font-size: $elmo;
+    margin: $gap-half 0 0 0;
 
     .passport-logo-wrapper {
       display: inline-block;
@@ -215,7 +215,7 @@ article.watchlist-result {
   }
 
   .info-space {
-    padding-right: 32px
+    padding-right: $gap-double
   }
 
   .remove-links {
@@ -225,12 +225,21 @@ article.watchlist-result {
 
   // right column - lets break it out of the grid, and into the gutter so it's closer to the image;
   div.article-body {
-    margin: 0 0 0 (-$bs-gutter);
+    margin: 0 0 0 (-$gap);
 
-    @include breakpoint($xs-only) {
+    @include breakpoint($below-sm) {
       margin: 0;
     }
-
   }
+}
 
+.watchlist__cta-btn {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: $blue;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

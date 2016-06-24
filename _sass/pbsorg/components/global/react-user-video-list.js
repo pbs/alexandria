@@ -1,9 +1,10 @@
-let
-  jQuery = window.jQuery || require('jquery'),
-  React = window.React || require('react'),
-  ReactDOM = window.ReactDOM || require('react-dom'),
-  ReactVideoList = require('../global/react-video-list'),
-  UserVideoList;
+'use strict';
+
+import jQuery from 'jquery';
+import React, { PropTypes, Component } from 'react';
+import * as Profile from '../../scripts/modules/profile';
+
+const ReactVideoList = require('../global/react-video-list');
 
 require('../../scripts/jquery.pbs.cookie.js');
 
@@ -15,14 +16,15 @@ require('../../scripts/jquery.pbs.cookie.js');
  * @prop {String} endpoint - endpoint string
  * @prop {String} profileProperty - property to remove on PROFILE
  */
-UserVideoList = React.createClass({
+class UserVideoList extends Component {
 
   /**
    * Returns the initial state before the component is mounted.
    * @returns {Object} - initial state object
    */
-  getInitialState() {
-    return {
+  constructor(props) {
+    super(props);
+    this.state = {
       videos: [],
       loggedIn: this.isLoggedIn(),
       fetched: false,
@@ -30,7 +32,7 @@ UserVideoList = React.createClass({
       stopFetching: false,
       currentPage: 0
     };
-  },
+  }
 
   /**
    * Renders component.
@@ -38,7 +40,7 @@ UserVideoList = React.createClass({
   render() {
 
     return (
-      <section className="watchlist-container">
+      <section className='watchlist-container'>
         <this.props.noVideosComponent
           videos={this.state.videos}
           fetched={this.state.fetched}
@@ -47,12 +49,12 @@ UserVideoList = React.createClass({
           videos={this.state.videos}
           videoComponent={this.props.videoComponent}
           offset={200}
-          onRemoveButtonClick={this.onRemoveButtonClick}
+          onRemoveButtonClick={this.onRemoveButtonClick.bind(this)}
           listTitle={this.props.listTitle}
-          fetchNextPage={this.fetchVideoList} />
+          fetchNextPage={this.fetchVideoList.bind(this)} />
       </section>
     );
-  },
+  }
 
   /**
    * Callback invoked immediately after initial render.
@@ -62,7 +64,7 @@ UserVideoList = React.createClass({
     // fetch data
     this.fetchVideoList();
 
-  },
+  }
 
   /**
    * Callback invoked immediately before render.
@@ -75,25 +77,30 @@ UserVideoList = React.createClass({
     }
     return true;
 
-  },
+  }
 
   /**
    * Callback for when remove button is clicked.
    * @param {String} videoId - video id to remove from list
    */
   onRemoveButtonClick(videoId) {
-    let Profile = window.PBS.Profile,
-      updatedList = this.filterListById(videoId);
+
+    const updatedList = this.filterListById(videoId);
+    const { profileProperty } = this.props;
 
     // invoke method to remove from list
-    if (Profile && Profile[this.props.profileProperty]) {
-      Profile[this.props.profileProperty].remove(videoId);
-    }
+    Profile
+      .remove(profileProperty, {
+        id: videoId
+      })
+      .done(function() {
 
-    // set current state to filtered list
-    this.setState({videos: updatedList});
+        // set current state to filtered list
+        this.setState({videos: updatedList});
 
-  },
+      }.bind(this));
+
+  }
 
   /**
    * Checks if user is logged in by looking for cookie.
@@ -103,7 +110,7 @@ UserVideoList = React.createClass({
 
     return jQuery.cookie('pbs_uid') ? true : false;
 
-  },
+  }
 
   /**
    * Filter out an id from video list
@@ -122,7 +129,7 @@ UserVideoList = React.createClass({
 
     });
 
-  },
+  }
 
   /**
    * Fetches video list for a user.
@@ -137,27 +144,27 @@ UserVideoList = React.createClass({
       this.setState({fetching: true});
 
       jQuery.ajax({
-        url: '/'+ this.props.endpoint + '/page/' + nextPage + '/',
+        url: '/' + this.props.endpoint + '/page/' + nextPage + '/',
         context: document.body
-      }).always(this.onFetchVideos);
+      }).always(this.onFetchVideos.bind(this));
 
     }
 
-  },
+  }
 
   /**
    * Once video data is fetched.
    */
   onFetchVideos(data) {
     let updatedState = {
-        fetched: true,
-        fetching: false
+      fetched: true,
+      fetching: false
     };
 
     if (data.videos) {
 
       // if there were videos returned
-      if (data.videos.length > 0 && this.isMounted()) {
+      if (data.videos.length > 0) {
         updatedState.currentPage = data.currentPage;
         updatedState.videos = this.state.videos.concat(data.videos);
       }
@@ -173,7 +180,14 @@ UserVideoList = React.createClass({
     this.setState(updatedState);
   }
 
-});
+}
+
+UserVideoList.propTypes = {
+  videoComponent: PropTypes.func.isRequired,
+  listTitle: PropTypes.string.isRequired,
+  profileProperty: PropTypes.string.isRequired,
+  endpoint: PropTypes.string.isRequired
+};
 
 module.exports = UserVideoList;
 

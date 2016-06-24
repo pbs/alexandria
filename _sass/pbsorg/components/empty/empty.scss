@@ -1,11 +1,11 @@
 section.empty {
   background: $gray-lighter;
   color: $gray-primary;
-  padding: ($bs-gutter * 2) $bs-gutter ($bs-gutter * 4);
+  padding: $gap-double $gap $gap-quad $gap;
   text-align: center;
 
   @include breakpoint($sm) {
-    padding: ($bs-gutter * 2) ($bs-gutter * 2) ($bs-gutter * 6);
+    padding: $gap-double $gap-double ($gap * 6) $gap-double;
   }
 
   // wrapper for all content;
@@ -21,11 +21,11 @@ section.empty {
   }
 
   h1 {
-    font-size: 1.8rem;
-    margin: 22px 0 0;
+    font-size: $oscar;
+    margin-top: 22px;
 
     @include breakpoint($md) {
-      font-size: 2rem;
+      font-size: $snuffy;
     }
 
     @include breakpoint($lg) {
@@ -34,11 +34,11 @@ section.empty {
   }
 
   p {
-    font-size: 1.4rem;
-    margin: $bs-gutter 0 0;
+    font-size: $elmo;
+    margin-top: $gap;
 
     @include breakpoint($md) {
-      font-size: 1.6rem;
+      font-size: $ernie;
     }
   }
 }

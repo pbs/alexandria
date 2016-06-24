@@ -1,14 +1,14 @@
 section.carousel-might-also-like {
-  padding: ($bs-gutter * 4) $bs-gutter $bs-gutter;
+  padding: $gap-quad $gap $gap $gap;
 
-  @include breakpoint($screen-sm) {
-    padding: ($bs-gutter * 4) ($bs-gutter * 2) ($bs-gutter * 2);
+  @include breakpoint($sm) {
+    padding: $gap-quad $gap-double $gap-double $gap-double;
   }
 
   h1.section-title {
     @include typography-l2-header();
     font-size: 3.2rem;
-    margin: 0 0 $bs-gutter;
+    margin-bottom: $gap;
   }
 
   // carousel strip at the top of the component;
@@ -18,11 +18,11 @@ section.carousel-might-also-like {
     overflow-x: hidden;
     // right margin: expand the carousel into the gutter set by the component container so images bleed off the page;
     // left margin: expand the carousel into the gutter so the padding (for the drop shadow) doesn't offset the image;
-    margin: 0 (-$bs-gutter) 0 -5px;
+    margin: 0 (-$gap) 0 -5px;
     white-space: nowrap;
 
     article {
-      padding-right: $bs-gutter;
+      padding-right: $gap;
 
       a,
       img {
@@ -42,10 +42,10 @@ section.carousel-might-also-like {
 
     // provide more space for images to bleed off the page;
     @include breakpoint($sm) {
-      margin-right: (-$bs-gutter * 2);
+      margin-right: -$gap-double;
 
       article {
-        padding-right: ($bs-gutter * 2);
+        padding-right: $gap-double;
       }
     }
   }
@@ -64,6 +64,6 @@ section.carousel-might-also-like {
   // this way the last ARTICLE tag (slide) can be cut off;
   // the width of the visible slides will be adjusted to fill this space;
   div.slick-list {
-    margin-right: (-$bs-gutter * 6);
+    margin-right: (-$gap * 6);
   }
 }

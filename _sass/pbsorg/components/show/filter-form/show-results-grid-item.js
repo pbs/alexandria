@@ -1,12 +1,15 @@
-let jQuery = window.jQuery || require('jquery'),
-  PureRenderMixin = React.addons.PureRenderMixin,
-  ImageWithFallback = require('../../global/react-image-with-fallback'),
-  GridItem;
+'use strict';
 
-require('../../../scripts/_buttons');
+import jQuery from 'jquery';
+import React from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 import Popover from '../../popover/popover';
 
-GridItem = React.createClass({
+const ImageWithFallback = require('../../global/react-image-with-fallback');
+
+require('../../../scripts/_buttons');
+
+const GridItem = React.createClass({
 
   /**
    * Array of any mixin libraries for react
@@ -87,6 +90,9 @@ GridItem = React.createClass({
         </a>
         {(this.props.show.description) ? /* Build popover template */
         <article className="popover-content hidden-xs hidden-sm" ref="show-popover">
+          <p className="over-title">
+             <a href={this.props.show.url} className="over-title__link">{this.props.show.title}</a>
+          </p>
           <p className="description" dangerouslySetInnerHTML={{__html: this.props.show.description }}></p>
           <p className="button">
             <a href={this.props.show.url} className="btn btn--ripple">Watch Videos</a>

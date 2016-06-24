@@ -1,12 +1,27 @@
-// pulling from the bootstrap variables;
 // gutter widths;
-$bs-gutter: $grid-gutter-width / 2;
+// these should be used for margin, padding, top, left, right, bottom
+$gap: 16px;
+// smaller
+$gap-half: ($gap / 2); // 8px
+$gap-quarter: ($gap / 4); // 4px
+// larger
+$gap-large: ($gap * 1.5); // 24px
+$gap-double: ($gap * 2); // 32px
+$gap-larger: ($gap * 2.5); // 40px
+$gap-triple: ($gap * 3); // 48px
+$gap-quad: ($gap * 4); // 64px
 
 // breakpoint variables
-$xs: $screen-xs;
-$sm: $screen-sm; // 768
-$md: $screen-md; // 1024
-$lg: $screen-lg; // 1280
+$xs: 480px;
+$sm: 768px;
+$md: 1024px;
+$lg: 1280px;
+
+// "special" breakpoints: contain styles within lower/upper bounds
+$below-sm: (max-width: $sm - 1);
+$sm-only: (min-width: $sm, max-width: $md - 1);
+$below-md: (max-width: $md - 1);
+$md-only: (min-width: $md, max-width: $lg - 1);
 
 $max-width: $lg; // used sometimes
 
@@ -18,19 +33,18 @@ $mobile-menu-width: $mobile-menu-cap * .8;
 // page header
 $page-header-height: 71px;
 
-// the smallest breakpoint size does not have a min-width
-$xs-only: (max-width: $screen-sm - 1);
-$sm-only: (min-width: $screen-sm, max-width: $screen-md - 1);
-$sm-xs-only: (max-width: $screen-md - 1);
-$sm-xs-md-only:(max-width: $screen-lg - 1);
-$md-only: (min-width: $screen-md, max-width: $screen-lg - 1);
-
 // box shadow used on landing page components;
 $shadow: 0 1px 3px rgba($black, .45);
 
 // for inset shadows, mainly used in menus
 $inset-shadow-right: inset -10px 0 10px -10px rgba($black, .25);
-$inset-shadow-left: inset 10px 0 10px -10px rgba($black,.25);
+$inset-shadow-left: inset 10px 0 10px -10px rgba($black, .25);
+
+// Font/text base size
+$font-size-base: 10px;
+
+// line heights
+$line-height: 1.42857;
 
 // variables used in font weight declarations
 $light: 300;
@@ -38,15 +52,20 @@ $normal: 400;
 $semibold: 600;
 $bold: 700;
 
+// Font size variables - selected based on frequency of use
+$abby: 1.2rem;
+$elmo: 1.4rem;
+$zoe: 1.5rem;
+$ernie: 1.6rem;
+$oscar: 1.8rem;
+$snuffy: 2rem;
+
 // Font Stacks
 $sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif: Arvo, Garamond, "Times New Roman", serif;
 
 // for border radius usage:
 $radius: 2px;
-
-// line heights
-$line-height: 1.42857;
 
 // for animations and transitions
 $duration: .3s;
@@ -58,4 +77,53 @@ $divider: 1px solid $divider-color;
 $screen: 'all';
 
 // focus state
-$focusstate: $blue-light auto 5px;
+$focusstate: 3px solid $blue-light;
+
+$video-ratio: 56.25%; // 16:9
+$grid-ratio-width: 16;
+$grid-ratio-height: 8.95;
+
+// Spacing and style variables ported over from _bootstrap-variables.scss
+$grid-gutter-width:       32px;
+$grid-columns:            12;
+$table-bg:                transparent;
+$table-cell-padding:      8px !default;
+$table-border-color:      $gray-light;
+$table-bg-accent:         $gray-lighter;
+$padding-base-vertical:   6px !default;
+$form-group-margin-bottom: 15px !default;
+$input-height-base:       28px;
+$padding-base-horizontal: 12px !default;
+$border-radius-base:      4px;
+$border-radius-large:     6px !default;
+$input-border-focus:      $blue;
+$input-color-placeholder: $gray-dark;
+$input-bg-disabled:       $white;
+$cursor-disabled:         not-allowed !default;
+
+// Modal variable definitions, only used within bootstrap files
+// To be removed when bootstrap is removed
+$zindex-modal:                          1050 !default;
+$zindex-modal-background:               1040 !default;
+$modal-content-bg:                      $white;
+$modal-content-fallback-border-color:   $gray-dark;
+$modal-content-border-color:            rgba(0, 0, 0, .2) !default;
+$modal-backdrop-bg:                     $black !default;
+$modal-backdrop-opacity:                .5 !default;
+$modal-title-padding:                   15px !default;
+$modal-header-border-color:             $gray-light !default;
+$modal-title-line-height:               $line-height !default;
+$modal-inner-padding:                   15px !default;
+$modal-footer-border-color:             $modal-header-border-color !default;
+$modal-lg:                              900px !default;
+$modal-md:                              600px !default;
+$modal-sm:                              300px !default;
+
+// Redundant screen size variables, only used within bootstrap files
+// To be removed when bootstrap is removed
+$screen-sm-min: $sm;
+$screen-md-min: $md;
+$screen-lg-min: $lg;
+$screen-xs-max: 767px;
+$screen-sm-max: 1023px;
+$screen-md-max: 1279px;

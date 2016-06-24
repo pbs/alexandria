@@ -1,0 +1,141 @@
+// Overrides and additions to the bootstrap print stylesheet
+
+@media print {
+
+  @page {
+    size: 430mm 554mm; // don't ask me why, but chrome only responds to mm
+    margin: 14mm;
+  }
+
+  // Ported from Bootstrap print styles
+  *,
+  *:before,
+  *:after {
+      background: transparent !important;
+      color: #000 !important; // Black prints faster: h5bp.com/s
+      box-shadow: none !important;
+      text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+      text-decoration: underline;
+  }
+
+  // Don't show links that are fragment identifiers,
+  // or use the `javascript:` pseudo protocol
+  a[href^="#"]:after,
+  a[href^="/"]:after,
+  a[href^="javascript:"]:after {
+      content: "";
+  }
+
+  pre,
+  blockquote {
+      border: 1px solid #999;
+      page-break-inside: avoid;
+  }
+
+  thead {
+      display: table-header-group; // h5bp.com/t
+  }
+
+  tr,
+  img {
+      page-break-inside: avoid;
+  }
+
+  img {
+      max-width: 100% !important;
+  }
+
+  p,
+  h2,
+  h3 {
+      orphans: 3;
+      widows: 3;
+  }
+
+  h2,
+  h3 {
+      page-break-after: avoid;
+  }
+
+  .btn,
+  .dropup > .btn {
+      > .caret {
+          border-top-color: #000 !important;
+      }
+  }
+  .label {
+      border: 1px solid #000;
+  }
+
+  .table {
+      border-collapse: collapse !important;
+
+      td,
+      th {
+          background-color: #fff !important;
+      }
+  }
+  .table-bordered {
+      th,
+      td {
+          border: 1px solid #ddd !important;
+      }
+  }
+
+  // Bootstrap specific changes end
+
+  .page-header__main-nav-trigger,
+  .page-header__nav-items,
+  .page-footer,
+  .ad,
+  .video-player-ad,
+  .col-ad,
+  .social-media,
+  .carousel-show-strip,
+  .carousel--verticals {
+    display: none !important;
+  }
+
+  .page-header {
+    position: absolute !important;
+  }
+
+  // Make this stretch to take up ad space
+  .col-content {
+    width: 100% !important;
+  }
+
+  // This logo image was being stretched unnaturally with bootstrap style
+  .carousel--hero__headline__logo {
+    width: auto !important;
+  }
+
+  // Prevents multiple slides appearing at once
+  .carousel-container,
+  .carousel--hero__image {
+    width: 1280px !important;
+  }
+
+  // This text needs to be readable against an image, can't be black
+  .carousel {
+    a,
+    p {
+      color: $white !important;
+    }
+  }
+
+  // Style the URLs shown after links
+  a[href]:after {
+    font-size: $ernie !important;
+    font-family: $sans-serif !important;
+    font-weight: $normal !important;
+  }
+
+  abbr[title]:after {
+    content: '';
+  }
+}

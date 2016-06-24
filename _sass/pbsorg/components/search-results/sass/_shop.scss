@@ -1,0 +1,132 @@
+// Uses custom $md-alt breakpoint from _layout.scss
+
+// we have lots of special designs that are only true between $sm and $md
+// creating this one-off variable here, as this is the only place where this is true
+$sm-md: (min-width: $sm, max-width: $md);
+
+.search-results-shop {
+
+  @include breakpoint($sm-md) {
+    padding-bottom: 1px; // to deal with the button's margin collapsing
+    background-color: $white;
+  }
+
+  @include breakpoint($md-alt) {
+    width: 300px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: $gap-quarter;
+    padding: 0 $gap 0 0;
+    background: $white;
+
+    @include breakpoint($sm-md) {
+      justify-content: center;
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    font-family: $serif;
+    font-size: $ernie;
+
+    @include breakpoint($sm-md) {
+      display: none;
+    }
+  }
+
+  &__button {
+    display: none;
+    margin: $gap auto;
+
+    @include breakpoint($sm-md) {
+      display: table; // oddly enough, this works for centering with the margin: auto but without declaring a fixed width
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: $gap-double;
+    padding: 0;
+    list-style-type: none;
+
+    @include breakpoint($sm-md) {
+      flex-direction: row;
+      align-items: stretch;
+      margin-bottom: 0;
+    }
+
+    &__item {
+      margin-bottom: $gap-quarter;
+      padding: 0;
+      font-size: $ernie;
+      line-height: 1.5;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      @include breakpoint($sm-md) {
+        display: flex;
+        flex-basis: 0;
+        flex-direction: column;
+        flex-grow: 1;
+        justify-content: stretch;
+        margin-bottom: 0;
+        border-right: $divider;
+
+        &:last-of-type {
+          border-right: 0;
+        }
+      }
+
+      &__link {
+        display: flex;
+        align-items: flex-start;
+        padding: $gap-half $gap;
+        transition: background-color $duration;
+        background-color: $white;
+
+        &:hover,
+        &:focus {
+          background-color: rgba($blue, .1);
+          text-decoration: none;
+          cursor: pointer;
+        }
+
+        @include breakpoint($sm-md) {
+          display: flex;
+          align-items: flex-start;
+          flex-direction: column;
+          flex-grow: 1;
+          flex-basis: auto;
+        }
+      }
+
+      &__image {
+        max-width: 128px;
+        flex-shrink: 0;
+
+        @include breakpoint($sm-md) {
+          margin: 0 auto $gap auto;
+        }
+      }
+
+      &__title {
+        margin-left: $gap;
+
+        @include breakpoint($sm-md) {
+          display: block;
+          width: 100%;
+          margin: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,134 +1,59 @@
-
-// header above the search results;
-header.results-header {
-  margin: $bs-gutter 0;
+.search-header {
+  background-color: $gray-light;
+  font-size: $oscar;
+  min-height: 85px;
+  padding-top: $gap;
   position: relative;
-  padding: 0 10px;
-
-  @include breakpoint($md) {
-    margin: ($bs-gutter * 2) 0 $bs-gutter;
-  }
-
-  // has a CLASS because the sort form is nested within this header (and it has an H1 too);
-  h1.results-header-title {
-    color: $gray-primary;
-    font-size: 2.4rem;
-    font-weight: $light;
-    margin: 0;
-
-    @include breakpoint($sm) {
-      font-size: 3.4rem;
-    }
-  }
-}
-
-// list of links (in the results-header) used to change the sort order of the results;
-div.results-sort {
-  color: $gray-dark;
-  font-family: $serif;
-  font-weight: $bold;
-  font-size: 1.4rem;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  white-space: nowrap;
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-
-  h1 {
-    display: inline-block;
-    font-size: 1.4rem;
-    margin: 0 8px;
-  }
-
-  a {
-    font-size: 1.4rem;
-    color: $gray-dark;
-    cursor: pointer;
-    border-radius: 5px;
-    padding: 4px 8px;
-
-    @include breakpoint($md) {
-      margin-left: 20px;
-    }
-
-    // one links should always be selected (the results have to be ordered);
-    &.selected {
-      color: $white;
-      background: $blue;
-    }
-  }
-}
-
-// visible sort on mobile;
-div.results-sort-dropdown {
-  position: absolute;
-  right: 10px;
-  bottom: 0;
-  margin: 0;
-  color: $gray-dark;
-  font-family: $serif;
-  font-size: 1.6rem;
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-  font-weight: $bold;
-  line-height: 1;
-  text-align: right;
-  white-space: nowrap;
-
   @include breakpoint($sm) {
-    right: 0;
-  }
-
-  .caret {
-    display: inline-block;
-    width: 0;
-    height: 0;
-    margin-left: 2px;
-    border-top: 4px dashed;
-    border-right: 4px solid transparent;
-    border-left: 4px solid transparent;
-    vertical-align: middle;
-  }
-
-  &-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    left: auto;
-    width: 150px;
-    padding: 0;
-    border: 2px solid $white;
-    border-radius: 0;
-    background: $white;
-    font-size: 1.3rem;
-    box-shadow: none;
-    z-index: 3;
-
-    .open &,
-    .results-sort-dropdown:hover &,
-    .results-sort-dropdown:focus & {
-      .no-touchevents & {
-        display: block;
-      }
-    }
-
-    .open & {
-      .touchevents & {
-        display: block;
-      }
-    }
-
-    a {
-      background-color: $gray-lighter;
-      display: block;
-      padding: $bs-gutter;
-      text-align: right;
-
-      + a {
-        margin-top: 1px;
-      }
-    }
+    min-height: 78px;
+    padding-top: 0;
   }
 }
+
+.search-input-container {
+  padding-left: $gap;
+  padding-right: $gap;
+  @include breakpoint($sm) {
+    position: absolute;
+    padding: 0;
+    left: $gap-double;
+    top: $gap;
+  }
+}
+
+.search-header__form-title {
+  display: none;
+  @include breakpoint($md) {
+    display: inline-block;
+    font-size: $oscar;
+    margin-right: 0.5em;
+  }
+}
+
+.search-header__form {
+  position: relative;
+  width: 100%;
+  @include breakpoint($sm) {
+    width: 300px;
+  }
+  @include breakpoint($md) {
+    display: inline-block;
+    width: 400px;
+  }
+}
+
+.search-header__input {
+  border: 1px solid $gray-medium;
+  padding-right: 50px;
+  width: 100%;
+}
+
+.search-header__input-button {
+  bottom: $gap-quarter;
+  padding-top: 12px;
+  position: absolute;
+  right: $gap-quarter;
+  top: $gap-quarter;
+}
+
+@import './filters';

@@ -20,15 +20,15 @@ $over400: 400px;
   background-color: $gray-light;
   max-width: 400px;
   float: none;
-  padding: $bs-gutter;
+  padding: $gap;
 
   @include breakpoint($over400) {
     max-width: 500px;
-    padding: ($bs-gutter * 2) ($bs-gutter * 4);
+    padding: $gap-double $gap-quad;
   }
 
   @include breakpoint($sm) {
-    margin: -($bs-gutter) 0 0 0;
+    margin: (-$gap) 0 0 0;
     max-width: 400px;
     border-left: 2px solid $gray-lighter;
     border-right: 2px solid $gray-lighter;
@@ -39,7 +39,7 @@ $over400: 400px;
 
   @include breakpoint($lg) {
     min-width: 250px;
-    margin-left: -($bs-gutter);
+    margin-left: -$gap;
     padding: 14px 20px 14px 20px;
 
   }
@@ -90,7 +90,7 @@ $over400: 400px;
     margin-top: 0;
 
     @include breakpoint($over400) {
-      font-size: 1.2rem;
+      font-size: $abby;
     }
 
     @include breakpoint($sm) {
@@ -107,16 +107,20 @@ $over400: 400px;
       min-width: 100%;
     }
 
+    .subtitle {
+      color: $gray-darker;
+    }
+
     .featured-link {
       display: inline-block;
-      font-size: 1.4rem;
+      font-size: $elmo;
 
       @include breakpoint($over400) {
-        font-size: 1.6rem;
+        font-size: $ernie;
       }
 
       @include breakpoint($md) {
-        font-size: 1.8rem;
+        font-size: $oscar;
       }
 
     }
@@ -126,7 +130,7 @@ $over400: 400px;
     padding: 25px 15px 0px 25px;
     text-align: left;
     margin: 0 auto;
-    font-size: 1.7rem;
+    font-size: $oscar;
 
     @include breakpoint($md) {
       padding-top: 15px;
@@ -140,8 +144,8 @@ $over400: 400px;
 
     + li {
       border-top: $divider;
-      margin-top: $bs-gutter;
-      padding-top: $bs-gutter;
+      margin-top: $gap;
+      padding-top: $gap;
     }
   }
 }
@@ -155,9 +159,9 @@ $over400: 400px;
           .subtitle {
               text-transform: uppercase;
               font-family: $sans-serif;
-              font-size: 12px;
+              font-size: $abby;
               font-weight: bold;
-              color: gray;
+              color: $gray-darker;
               text-align: left;
               padding: 10px 0px;
               margin-bottom: 0;

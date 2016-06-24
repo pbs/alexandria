@@ -1,5 +1,5 @@
 var jQuery = window.jQuery = require("jquery");
-// responsive image processor, and its handlebars helper;
+// responsive image processor
 require("picturefill");
 
 jQuery(($) => {

@@ -1,0 +1,116 @@
+.search-sort {
+  color: $gray-dark;
+  display: flex;
+  font-family: $serif;
+  font-weight: 500;
+  justify-content: flex-end;
+  position: relative;
+
+  &__title {
+    display: none;
+    font-size: $elmo;
+    margin: 0;
+    @include breakpoint($sm) {
+      align-items: flex-end;
+      display: inline-block;
+      line-height: 2.4rem;
+      padding-top: 1px;
+      vertical-align: bottom;
+    }
+  }
+
+  &__list {
+    border-bottom: 1px solid $white;
+    border-left: 1px solid $white;
+    border-right: 1px solid $white;
+    display: none;
+    list-style-type: none;
+    padding: 0;
+    position: absolute;
+    margin: 0;
+    min-width: 160px;
+    right: 0;
+    // must be 4 for fallback images and header
+    z-index: 4;
+
+    &:hover,
+    &--is-visible {
+      display: block;
+    }
+
+    @include breakpoint($sm) {
+      display: block;
+      border: 0;
+      position: relative;
+    }
+
+    &-item {
+      background-color: $gray-lighter;
+      border-top: 1px solid $white;
+      cursor: pointer;
+      font-size: $elmo;
+      font-weight: 300;
+      text-align: right;
+
+      @include breakpoint($sm) {
+        background-color: transparent;
+        border-top: 0;
+        color: $white;
+        display: inline-block;
+        padding-left: 1rem;
+      }
+    }
+
+    &-link {
+      display: block;
+      padding: 1.4rem 1rem;
+      border: 0;
+      background: transparent;
+      width: 100%;
+      @include breakpoint($sm) {
+        color: $gray-dark;
+        padding: 0.5rem 1rem;
+        &:hover {
+          color: $gray-dark;
+        }
+
+        &--selected {
+          background-color: $blue;
+          border-radius: 5px;
+          color: white;
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+
+  &__dropdown {
+    &-label {
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      font-size: $zoe;
+      .caret {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin-left: 7px;
+      }
+
+      &:hover {
+        + .search-sort__list {
+          display: block;
+        }
+      }
+
+      &:focus {
+        outline: none;
+      }
+      @include breakpoint($sm) {
+        display: none;
+      }
+    }
+  }
+}

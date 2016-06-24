@@ -4,7 +4,7 @@ let jQuery = window.jQuery = require('jquery'),
   Carousel = require('../carousel'),
   PBS = require('../../../scripts/_pbs');
 
-// responsive image processor, and its handlebars helper;
+// responsive image processor
 require('picturefill');
 
 jQuery(($) => {
@@ -15,7 +15,7 @@ jQuery(($) => {
     window.picturefill();
 
     setupCarousel();
-  
+
   },
 
   /**

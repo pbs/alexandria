@@ -2,7 +2,7 @@
   display: none;
   position: relative;
   height: 100px;
-  padding: 0 ($bs-gutter * 2);
+  padding: 0 $gap-double;
   background-color: lighten($gray-medium, 8%);
 
   @include breakpoint($sm) {
@@ -12,7 +12,7 @@
 
   &__title {
     max-width: 370px;
-    padding-right: ($bs-gutter * 2);
+    padding-right: $gap-double;
     text-align: left;
 
     @include breakpoint($md) {
@@ -32,22 +32,19 @@
 
   &__logo--text {
     color: $black;
-    font-size: 2rem;
+    font-size: $snuffy;
   }
 
-  &__logo-link {
+  &__logo-link,
+  &__logo-link:visited {
     display: inline-block;
+    color: $black;
     vertical-align: middle;
-
-    &:hover,
-    &:focus {
-      text-decoration: none;
-    }
   }
 
   .favorite {
     margin-right: auto;
-    padding-right: ($bs-gutter * 4);
+    padding-right: $gap-quad;
   }
 
   &__link--website {
@@ -56,7 +53,7 @@
     a {
       color: $blue;
       font-family: $serif;
-      font-size: 1.4rem;
+      font-size: $elmo;
       font-weight: $bold;
     }
   }

@@ -1,7 +1,9 @@
 import jQuery from 'jquery';
-import newModal from '../../../scripts/new-modal';
-const PBS = require('../../../scripts/_pbs');
-const Utils = require('../../../scripts/_utils');
+import Modal from '../../modal/modal';
+import * as ReportProblemForm from '../forms/report-a-problem';
+import * as EmbedModalSelect from './embed-modal-child';
+import { checkForZeroNaturalImageWidth } from '../../../scripts/modules/utils';
+
 const FallbackLogo = require('../../../scripts/_fallback-logo');
 
 // include button actions
@@ -10,23 +12,14 @@ require('../../../scripts/_buttons');
 jQuery(($) => {
 
   let _cache = {};
-  let embedModal = undefined;
-  // let reportProblemModal = undefined;
-  // let reportProblemTrigger = $('.video-issues');
 
   /**
-   * Initializes.
+   * @const _modals
+   * Object to store references to modals so we only create them once.
    */
-  const init = () => {
-
-    setupCache();
-    checkForBrokenLogos();
-    addEvents();
-    updateFunderLinks();
-    hideShareOptionsForExpiredVideos();
-    setupEmbedModal();
-    // setupReportProblemModal();
-
+  const _modals = {
+    embedModal: undefined,
+    reportProblemModal: undefined
   };
 
   /**
@@ -34,19 +27,9 @@ jQuery(($) => {
    */
   const setupCache = () => {
 
-    _cache.videoPlayerSection = $('.video-player');
     _cache.logos = $('.video-player__logo');
-
-  };
-
-  /**
-   * Adds event handlers.
-   */
-  const addEvents = () => {
-
-    $('body').on('click', '.video-issues', onBodyClick);
-    $('.embed-modal-trigger').on('click', onEmbedClick);
-    // reportProblemTrigger.on('click', onReportProblemClick);
+    _cache.embedModalTrigger = $('.embed-modal-trigger');
+    _cache.reportProblemTrigger = $('.video-issues');
 
   };
 
@@ -56,74 +39,75 @@ jQuery(($) => {
   const setupEmbedModal = () => {
     const options = {
       modalId: '#embedModal',
-      modalTrigger: '.icon-pbs-embed2',
-      focusTarget: '.embed-text'
+      modalTrigger: '.embed-modal-trigger',
+      focusTarget: '#modal-embed__dialog',
+      childView: EmbedModalSelect
     };
-    embedModal = new newModal(options);
+
+    _modals.embedModal = new Modal(options);
   };
 
-// TODO Report A Problem Modal Refactor
-  // const setupReportProblemModal = () => {
-  //   // initial instantiation here
-  //   // define parameters
-  //   // pass them to base modal class
-  //   const options = {
-  //     modalId: '#reportProblemModal',
-  //     url: '/feedback/submit/',
-  //     action: 'submitFeedback()',
-  //     modalTrigger: '#video-issues',
-  //     focusTarget: '.troubleshooting-link',
-  //     params: {
-  //       videoTitle: window.PBS.playerConfig.title,
-  //       videoId: window.PBS.playerConfig.id
-  //     }
-  //   };
-  //
-  //   reportProblemModal = new Modal(options);
-  // };
+  /**
+   * Sets up report a problem modal.
+   */
+  const setupReportProblemModal = () => {
+
+    const options = {
+      modalId: '#reportProblemModal',
+      modalTrigger: '.video-issues',
+      focusTarget: '#report-problem__dialog',
+      lastFocusableEl: '#close-report-problem',
+      childView: ReportProblemForm
+    };
+
+    _modals.reportProblemModal = new Modal(options);
+
+  };
 
   /**
-   * Adds REL attributes to funder links so they open in a new window.
+   * Shows a modal.
+   * @param {jQuery event} e
    */
-  const updateFunderLinks = () => {
+  const _showModal = (e, modal) => {
+    e.preventDefault();
+    e.stopPropagation();
 
-    _cache.videoPlayerSection.find('.funding a').attr('rel', 'external');
-
+    if (_modals[modal]) {
+      _modals[modal].show();
+    }
   };
 
   /**
    * Shows the Embed Modal when the specific trigger is clicked
    */
   const onEmbedClick = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    // show modal here
-    if (embedModal) {
-      embedModal.showModal();
-    }
+
+    _showModal(e, 'embedModal');
+
   };
 
-  // const onReportProblemClick = (e) => {
-  //   e.preventDefault();
-  //   e.stopPropagation();
-  //   if (reportProblemModal) {
-  //     reportProblemModal.showModal();
-  //   }
-  // };
+  /**
+   * On report a problem link click.
+   */
+  const onReportProblemClick = (e) => {
+
+    _showModal(e, 'reportProblemModal');
+
+  };
 
   /**
    * Do not display the share options if the video is expired
    */
   const hideShareOptionsForExpiredVideos = () => {
 
-    var $utilities = $('.utilities'),
-        expiration = $utilities.data('expiration');
+    const $utilities = $('.video-player__utilities');
+    const expiration = $utilities.data('expiration');
 
     if (expiration) {
-      var expDate = new Date(expiration),
-          actualDate = new Date();
+      const expDate = new Date(expiration);
+      const actualDate = new Date();
       if (expDate >= actualDate) {
-          $utilities.removeClass('is-hidden');
+        $utilities.removeClass('is-hidden');
       }
     } else if (expiration === '') {
       $utilities.removeClass('is-hidden');
@@ -131,27 +115,19 @@ jQuery(($) => {
   };
 
   /**
-   * Callback for when body is clicked.
-   * @note listening for the video problem link, init a modal
+   * Instantiates new fallback logo.
+   * @param {HTML element} logo - logo element to replace
    */
-  const onBodyClick = (e) => {
+  const createFallbackLogo = (logo) => {
 
-    e.preventDefault();
+    const fallbackLogo = new FallbackLogo({
+      el: logo,
+      element: 'span',
+      text: logo.getAttribute('alt'),
+      className: 'video-player__logo--text'
+    });
 
-    let settings = {
-      'modalWindow': '#videoProblemModalWindow',
-      'url': '/feedback/submit/',
-      'action': 'submitFeedback()',
-      'params': {
-        'videoTitle': window.PBS.playerConfig.title,
-        'videoId': window.PBS.playerConfig.id
-      }
-    };
-
-    if (Modal) {
-      Modal.init(settings);
-      Modal.show();
-    }
+    fallbackLogo.init();
 
   };
 
@@ -160,13 +136,12 @@ jQuery(($) => {
    */
   const checkForBrokenLogos = () => {
 
-    let logo,
-      fallback;
+    let logo;
 
-    for (let i = 0; i < _cache.logos.length; i++) {
+    for (let i = 0; i < _cache.logos.length; i += 1) {
       logo = _cache.logos[i];
 
-      Utils.checkForZeroNaturalImageWidth(logo)
+      checkForZeroNaturalImageWidth(logo)
         .fail((image) => {
 
           // if broken, create fallback logo element.
@@ -179,19 +154,26 @@ jQuery(($) => {
   };
 
   /**
-   * Instantiates new fallback logo.
-   * @param {HTML element} logo - logo element to replace
+   * Adds event handlers.
    */
-  const createFallbackLogo = (logo) => {
+  const addEvents = () => {
 
-    let fallbackLogo = new FallbackLogo({
-        el: logo,
-        element: 'span',
-        text: logo.getAttribute('alt'),
-        className: 'video-player__logo--text'
-      });
+    _cache.embedModalTrigger.on('click', onEmbedClick);
+    _cache.reportProblemTrigger.on('click', onReportProblemClick);
 
-    fallbackLogo.init();
+  };
+
+  /**
+   * Initializes.
+   */
+  const init = () => {
+
+    setupCache();
+    checkForBrokenLogos();
+    addEvents();
+    hideShareOptionsForExpiredVideos();
+    setupEmbedModal();
+    setupReportProblemModal();
 
   };
 

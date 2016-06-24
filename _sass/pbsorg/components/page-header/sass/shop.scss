@@ -4,11 +4,11 @@
   width: 190px;
 
   li {
-    padding-bottom: $bs-gutter;
+    padding-bottom: $gap;
 
     a {
       color: $gray-darker;
-      font-size: 1.4rem;
+      font-size: $elmo;
     }
   }
 }

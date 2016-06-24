@@ -1,63 +1,87 @@
-var
-  jQuery = window.jQuery = require("jquery"),
-  carousel               = require("../carousel-config"),
-  PBS                    = require("../../../scripts/_pbs");
+'use strict';
 
+import jQuery from 'jquery';
+
+const Carousel = require('../carousel');
+const PBS = require('../../../scripts/_pbs');
 
 // responsive image processor;
-require("picturefill");
+require('picturefill');
 
 jQuery(($) => {
-  var $window = $(window);
 
-  $(".carousel--verticals").each(function () {
-    var $section = $(this),
-        // create a copy of the settings object (we dont want changes here to be reflected everywhere);
-        settings = jQuery.extend({}, carousel.settings);
+  const _cache = {},
 
-    // add more params to the global settings;
-    settings.dots = false;
-    settings.slidesToShow = 4;
-    settings.slidesToScroll = 2;
-    settings.responsive = [
-      {
-        breakpoint: PBS.breakpoints.slick.lg,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 2
-        }
-      },
-      {
-        breakpoint: PBS.breakpoints.slick.md,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2
-        }
-      },
-      {
-        breakpoint: PBS.breakpoints.slick.sm,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2
-        }
-      },
-      {
-        breakpoint: PBS.breakpoints.slick.smaller,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
-        }
-      }
-    ];
+  /**
+   * Initializes component.
+   */
+  _init = () => {
 
-    $section
-      .find(".carousel-container")
-      // init the carousel;
-      .slick(settings);
+    _setupCache();
 
-    // init the responsive images plugin;
+    // init the responsive images plugin
     window.picturefill({
-      "elements": $section.find("img[srcset]").get()
+      elements: _cache.carousel.find('.carousel__slide-image').filter('[srcset]')
     });
-  });
+
+    _setupCarousel();
+
+  },
+
+  /**
+   * Caches re-used elements
+   */
+  _setupCache = () => {
+    _cache.carousel = $('.carousel--verticals').find('.carousel-container');
+  },
+
+  /**
+   * Creates a carousel instance with custom settings.
+   */
+  _setupCarousel = () => {
+
+    const options = {
+      carousel: _cache.carousel,
+      smoothScrolling: false,
+      settings: {
+        infinite: true,
+        dots: false,
+        slidesToShow: 4,
+        responsive: [
+          {
+            breakpoint: PBS.breakpoints.slick.lg,
+            settings: {
+              slidesToShow: 4
+            }
+          },
+          {
+            breakpoint: PBS.breakpoints.slick.md,
+            settings: {
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: PBS.breakpoints.slick.sm,
+            settings: {
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: PBS.breakpoints.slick.smaller,
+            settings: {
+              slidesToShow: 2
+            }
+          }
+        ]
+      }
+
+    },
+
+    // create new carousel instance and init
+    carousel = new Carousel(options);
+
+  };
+
+  _init();
+
 });
