@@ -12,7 +12,7 @@ permalink: /design-elements/
 
 * * *
 
-## <a name="type"></a>Type
+## Type
 
 * * *
 
@@ -205,7 +205,7 @@ Monospace Text wrapped in "pre" tags:
 
 * * *
 
-## <a name="colors"></a>Colors
+## Colors
 
 * * *
 
@@ -232,7 +232,7 @@ Monospace Text wrapped in "pre" tags:
 
 * * *
 
-## <a name="icons"></a>Icons
+## Icons
 
 * * *
 
@@ -341,7 +341,7 @@ Monospace Text wrapped in "pre" tags:
 
 * * *
 
-## <a name="buttons"></a>Buttons
+## Buttons
 
 * * *
 
@@ -369,7 +369,7 @@ An Inverted button
 
 * * *
 
-## <a name="forms"></a>Forms
+## Forms
 
 * * *
 
@@ -404,7 +404,8 @@ An Inverted button
       <textarea id="text_area" readonly>I'm readonly</textarea>
     </p>
 
-    <p><label for="select_element">Select Element:</label><br />
+    <p><label for="select_element">Select Element:</label></p>
+    <div class="styled-select">
       <select id="select_element">
         <optgroup label="Option Group 1">
           <option value="1">Option 1</option>
@@ -416,7 +417,8 @@ An Inverted button
           <option value="3" disabled>Disabled Option</option>
         </optgroup>
       </select>
-    </p>
+    </div>
+
 
     <p><label for="select_element_disabled">Disabled Select Element:</label><br/>
       <select id="select_element_disabled" disabled>
@@ -500,13 +502,11 @@ An Inverted button
       <output name="result" id="output">42</output>
     </p>
 
-    <p><label for="progress">Progress:</label><br />
-      <progress id="progress" value="65" max="100"></progress>
-    </p>
+    <p><label for="progress">Progress:</label></p>
+    <div class="progress user-dropdown__viewing-history__video__progress">
+      <div class="progress-bar progress-bar-success" style="width: 66%;"></div>
+    </div>
 
-    <p><label for="meter">Meter:</label><br />
-      <meter id="meter" min="200" max="500" value="350">350 degrees</meter>
-    </p>
 
   </form>
 
