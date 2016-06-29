@@ -357,6 +357,13 @@ A Call to Action button
 An Inverted button
 </button>
 
+<div class="passport">
+  <button class="btn green-activation">
+  An Activation button
+  </button>
+</div>
+
+
 <button class="btn btn--watchlist btn--ripple">
   <i class="icon-pbs-checkmark"></i>
   <span class="btn--text" data-text-default="Add to Watchlist" data-text-selected="In My Watchlist">Add to Watchlist</span>

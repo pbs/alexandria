@@ -5,6 +5,7 @@ date:   2015-09-10
 category: content
 products:
 - bento
+product-version: 3.x
 status: in development
 code: c14
 example: |
