@@ -8,7 +8,8 @@ product: pbs-org
 {% include product-nav.html %}
 
 <ul class="post-list">
-  {% for component in site.components %}
+  {% assign components = site.components | sort: 'code' %}
+  {% for component in components %}
   {% if component.products contains 'pbs-org' %}
     {% include post-li.html %}
   {% endif %}
