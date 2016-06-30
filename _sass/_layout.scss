@@ -1,38 +1,202 @@
 /**
- * Site header
+ * Site Nav Bar
  */
 
- $header-height: 70px;
+$nav-height: 70px;
 
-.site-header {
+.al-nav {
+
+  &__outer {
+    width: 100%;
+    background: $blue-light;
+  }
+
   @include clearfix;
-  // border-bottom: 1px solid $grey-color-light;
-  min-height: $header-height;
-  // Positioning context for the mobile navigation icon
+  min-height: $nav-height;
   position: relative;
-  background: $white;
-  padding: 0 $gap;
-  border-bottom: $divider;
-
-  margin: 0;
   display: flex;
-
-
+  flex-direction: row-reverse;
+  margin: 0;
+  padding: 0 $gap;
+  color: $white;
   z-index: 5;
-  background: $blue;
-  border-bottom: $divider;
-  @include breakpoint($md) {
+
+  @include breakpoint($sm) {
     justify-content: flex-start;
+    flex-direction: row;
     margin: 0 auto;
   }
 
-  &__inner {
-    width: 100%;
+  &__logo {
+    width: 80px;
+    margin-top: $gap;
+
+    &-link {
+      &:focus {
+        outline-color: $white;
+      }
+    }
   }
 
-  color: $white;
+  &__menu-icon {
+    display: block;
+    float: left;
+    width: 36px;
+    height: 26px;
+    line-height: 0;
+    padding-top: 10px;
+    text-align: center;
 
+    > svg {
+      width: 18px;
+      height: 15px;
+      position: relative;
+      top: -4px;
+      path {
+        fill: $gray-primary;
+      }
+    }
+
+    @include breakpoint($sm) {
+      display: none;
+    }
+  }
+
+  &__site-nav {
+
+    position: absolute;
+    top: $gap-large;
+    left: $gap;
+    background-color: $white;
+    border: 1px solid $gray-primary;
+    border-radius: 5px;
+
+
+    @include breakpoint($sm) {
+      float: right;
+      left: auto;
+      right: $gap-half;
+      border: 0;
+      background-color: transparent;
+      text-align: right;
+    }
+
+    &__menu {
+      clear: both;
+      display: none;
+
+      @include breakpoint($sm) {
+        display: block;
+      }
+    }
+
+    &:hover &__menu,
+    &:focus &__menu  {
+      display: block;
+      padding-bottom: 5px;
+    }
+
+
+    &__page-link {
+      display: block;
+      padding: 5px $gap-half;
+      color: $text-color;
+      line-height: $base-line-height;
+
+      @include breakpoint($sm) {
+        display: inline;
+        margin-left: 20px;
+        color: $white;
+
+        &:visited {
+          color: $white; // overrides default link styling
+        }
+
+        &:focus {
+          outline-color: white;
+        }
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+
+    }
+
+    &__label {
+      margin-left: $gap-half;
+      color: $gray-primary;
+      font-style: italic;
+      font-size: 85%;
+
+      @include breakpoint($sm) {
+        font-size: inherit;
+        font-style: normal;
+        margin-right: -$gap;
+      }
+    }
+  }
 }
+
+.al-header {
+  padding: $gap;
+
+  @include breakpoint($sm) {
+    padding: $gap-double $gap;
+  }
+
+  &__headers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__subtitle {
+    margin: 0;
+    font-size: $oscar;
+
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+
+    @include breakpoint($sm) {
+      position: static;
+      width: auto;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      clip: none;
+    }
+  }
+
+  &__meta {
+    width: 100%;
+    padding-top: $gap;
+    margin-bottom: - $gap-half;
+
+    @include breakpoint($sm) {
+      width: 50%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      > * {
+        flex-basis: 50%;
+      }
+    }
+  }
+}
+
 
 .site-title {
   font-size: 20px;
@@ -44,67 +208,11 @@
   &:visited {
     color: $grey-color-dark;
   }
-  &__logo {
-    outline: solid 1px red;
-    width: 80px;
-  }
+
 }
 
 .site-nav {
-  float: right;
-  line-height: 56px;
 
-  .menu-icon {
-    display: none;
-  }
-
-  .page-link {
-    margin-left: 20px;
-    color: $text-color;
-    line-height: $base-line-height;
-    // Gaps between nav items, but not on the first one
-    &:first-child {
-      margin-left: 0;
-    }
-  }
-
-  @include media-query($on-palm) {
-    position: absolute;
-    top: 9px;
-    right: 30px;
-    background-color: $background-color;
-    border: 1px solid $grey-color-light;
-    border-radius: 5px;
-    text-align: right;
-    .menu-icon {
-      display: block;
-      float: right;
-      width: 36px;
-      height: 26px;
-      line-height: 0;
-      padding-top: 10px;
-      text-align: center;
-      > svg {
-        width: 18px;
-        height: 15px;
-        path {
-          fill: $grey-color-dark;
-        }
-      }
-    }
-    .trigger {
-      clear: both;
-      display: none;
-    }
-    &:hover .trigger {
-      display: block;
-      padding-bottom: 5px;
-    }
-    .page-link {
-      display: block;
-      padding: 5px 10px;
-    }
-  }
 }
 
 
@@ -254,11 +362,10 @@
 }
 
 .post--example {
-  border-top: $divider;
   border-bottom: $divider;
   background: $white;
   padding: $gap;
-  margin: $gap-double (- $gap);
+  margin: 0 (- $gap) $gap (- $gap);
 }
 
 .component-nav {

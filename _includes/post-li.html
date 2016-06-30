@@ -8,14 +8,7 @@
       Product{% if component.products.size > 1 %}s{% endif %}:
 
       {% for product in component.products %}
-        <a href="/components/{{ product }}">
-        {% if product == 'pbs-org' %}
-          PBS.org
-        {% else %}
-          {{ product|capitalize }}
-        {% endif %}
-        </a>
-        {% if forloop.last == false %}, {% endif %}
+        <a href="/components/{{ product }}">{{ product | capitalize | replace: 'Pbs-org','PBS.org' }}</a>{% if forloop.last == false %}, {% endif %}
       {% endfor %}
     </p>
   {% endif %}

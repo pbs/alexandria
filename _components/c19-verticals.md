@@ -5,7 +5,8 @@ date:   2016-02-16
 category: content
 products:
 - pbs-org
-status: in development
+- bento
+status: in use
 code: c19
 example: |
   <div class="row--flex content-row">

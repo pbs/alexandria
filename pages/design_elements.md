@@ -4,11 +4,38 @@ title: Design Elements
 permalink: /design-elements/
 ---
 
-- [Type](#type)
 - [Colors](#colors)
+- [Type](#type)
 - [Icons](#icons)
 - [Buttons](#buttons)
 - [Forms](#forms)
+
+* * *
+
+## Colors
+
+* * *
+
+
+### Neutrals
+
+<div class="swatch" style="background-color: #000000; color: #ffffff;">$black: #000000<br />(mainly used for shadows)</div>
+<div class="swatch" style="background-color: #222222; color: #ffffff;">$gray-primary: #222222</div>
+<div class="swatch" style="background-color: #4b4b4b; color: #ffffff;">$gray-darker: #4b4b4b</div>
+<div class="swatch" style="background-color: #707070; color: #ffffff;">$gray-dark: #707070</div>
+<div class="swatch" style="background-color: #b3b3b3;">$gray-medium: #b3b3b3</div>
+<div class="swatch" style="background-color: #e0e0e0;">$gray-light: #e0e0e0 <br />(aka $divider)</div>
+<div class="swatch" style="background-color: #f3f3f3;">$gray-lighter: #f3f3f3</div>
+<div class="swatch" style="background-color: #ffffff;">$white: #ffffff;</div>
+
+### Hues
+
+<div class="swatch" style="background-color: #126eb5; color: #ffffff;">$blue: #126eb5 <br />(aka $link-color)</div>
+<div class="swatch" style="background-color: #8fa6bc;">$blue-muted: #8fa6bc</div>
+<div class="swatch" style="background-color: #00aaeb;">$blue-light: #00aaeb</div>
+<div class="swatch" style="background-color: #ac031f; color: white;">$red: #ac031f</div>
+<div class="swatch" style="background-color: #e9ba15;">$yellow: #e9ba15</div>
+<div class="swatch" style="background-color: #70B406;">$green: #70B406</div>
 
 * * *
 
@@ -203,32 +230,7 @@ Monospace Text wrapped in "pre" tags:
 | Division 1     | Division 2     | Division 3     |
 
 
-* * *
 
-## Colors
-
-* * *
-
-
-### Neutrals
-
-<div class="swatch" style="background-color: #000000; color: #ffffff;">$black: #000000<br />(mainly used for shadows)</div>
-<div class="swatch" style="background-color: #222222; color: #ffffff;">$gray-primary: #222222</div>
-<div class="swatch" style="background-color: #4b4b4b; color: #ffffff;">$gray-darker: #4b4b4b</div>
-<div class="swatch" style="background-color: #707070; color: #ffffff;">$gray-dark: #707070</div>
-<div class="swatch" style="background-color: #b3b3b3;">$gray-medium: #b3b3b3</div>
-<div class="swatch" style="background-color: #e0e0e0;">$gray-light: #e0e0e0 <br />(aka $divider)</div>
-<div class="swatch" style="background-color: #f3f3f3;">$gray-lighter: #f3f3f3</div>
-<div class="swatch" style="background-color: #ffffff;">$white: #ffffff;</div>
-
-### Hues
-
-<div class="swatch" style="background-color: #126eb5; color: #ffffff;">$blue: #126eb5 <br />(aka $link-color)</div>
-<div class="swatch" style="background-color: #8fa6bc;">$blue-muted: #8fa6bc</div>
-<div class="swatch" style="background-color: #00aaeb;">$blue-light: #00aaeb</div>
-<div class="swatch" style="background-color: #ac031f; color: white;">$red: #ac031f</div>
-<div class="swatch" style="background-color: #e9ba15;">$yellow: #e9ba15</div>
-<div class="swatch" style="background-color: #70B406;">$green: #70B406</div>
 
 * * *
 

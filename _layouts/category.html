@@ -3,7 +3,7 @@ layout: default
 ---
 <div class="post">
 
-  <h1>{{ page.title }}</h1>
+ <article class="post-content">
 
   {% if page.product %}
 
@@ -11,7 +11,7 @@ layout: default
 
   {% endif %}
 
-  <ul>
+  <ul class="post-list">
 
   {% assign components = site.components | sort: 'code' %}
 
@@ -32,5 +32,5 @@ layout: default
 
   {% endfor %}
   </ul>
-
+  </article>
 </div>

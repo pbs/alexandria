@@ -1,10 +1,27 @@
 <ul class="component-nav component-nav--{{ page.product }}">
+  {% assign prodnum = 0 %}
+  {% for component in site.components %}
+    {% if component.products contains page.product %}
+      {% assign prodnum = prodnum | plus:1%}
+    {% endif %}
+  {% endfor %}
   <li class="component-nav--item">
-    <a href="/components/{{ page.product }}/">All {{ page.product|capitalize }} Products</a>
+    <a href="/components/{{ page.product }}/">All {{ page.product | capitalize | replace: 'Pbs-org','PBS.org' }} Components ({{prodnum}})</a>
   </li>
+
   {% for category in site.data.categories  %}
+    {% assign catnum = 0 %}
+    {% for component in site.components %}
+      {% assign categorylc = category.name | downcase %}
+      {% if component.products contains page.product and component.category contains categorylc %}
+          {% assign catnum = catnum | plus:1%}
+      {% endif %}
+    {% endfor %}
+    {% if catnum > 0 %}
+
   <li class="component-nav--item">
-    <a href="/components/{{ page.product }}/{{ category.slug }}">{{ category.name }}</a>
+    <a href="/components/{{ page.product }}/{{ category.slug }}">{{ category.name }} ({{catnum}})</a>
   </li>
+    {% endif %}
   {% endfor %}
 </ul>
