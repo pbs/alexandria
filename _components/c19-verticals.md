@@ -59,8 +59,9 @@ example: |
 
 ---
 
-Donec ante. Sed at velit. Vestibulum at purus at urna porttitor sodales. Nullam pulvinar, urna interdum eleifend sodales, eros est tempus quam, quis ultricies nibh elit vitae urna. Donec pretium arcu at quam. Quisque tristique, lacus id tempor blandit, quam massa imperdiet lorem, porta fermentum quam ante ac tortor. Curabitur mauris lectus, dapibus ut, ornare sit amet, vulputate sit amet, erat.
+The **verticals** component is a simple promotional component used to link directly to prominent destinations.
 
-Blah.
-
+- Includes a corresponding logo
+- In its current implementation, it is not visible below 1024px. It is part of the 'row with ad', along with the [Schedule component](c13-schedule.html)
+- The link at the bottom of the component is a skip link to a collection of links further down the page
 

@@ -4,7 +4,16 @@ title: All Products
 permalink: /all-products/
 ---
 
+## All Product Components
+
 <ul class="category-list category-list--all">
+  {% assign compnum = 0 %}
+  {% for component in site.components %}
+    {% assign compnum = compnum | plus:1%}
+  {% endfor %}
+  <li class="component-nav--item">
+    <a href="/components/">All Components ({{compnum}})</a>
+  </li>
   {% for category in site.data.categories  %}
     {% assign catnum = 0 %}
     {% for component in site.components %}
@@ -42,7 +51,7 @@ permalink: /all-products/
       {% assign categorylc = category.name | downcase %}
       {% if component.products contains product.slug and component.category contains categorylc %}
           {% assign print = true %}
-          {% assign num = num | plus:1%}
+          {% assign num = num | plus:1 %}
       {% endif %}
     {% endfor %}
 

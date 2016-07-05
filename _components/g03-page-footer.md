@@ -121,8 +121,6 @@ example: |
 
 ---
 
-Donec ante. Sed at velit. Vestibulum at purus at urna porttitor sodales. Nullam pulvinar, urna interdum eleifend sodales, eros est tempus quam, quis ultricies nibh elit vitae urna. Donec pretium arcu at quam. Quisque tristique, lacus id tempor blandit, quam massa imperdiet lorem, porta fermentum quam ante ac tortor. Curabitur mauris lectus, dapibus ut, ornare sit amet, vulputate sit amet, erat.
-
-Blah.
+The **page footer** is a global component on PBS.org. It is found on most pages. It includes mostly links-that-we-need-to-have-on-the-site, but are rarely accessed (see: Terms of Use).
 
 

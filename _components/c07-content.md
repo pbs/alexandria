@@ -4,6 +4,7 @@ title: Content
 date: 2016-06-30
 category:
   - content
+  - video
 products:
   - pbs-org
 status: in development

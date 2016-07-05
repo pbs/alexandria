@@ -54,8 +54,10 @@ example: |
 
 ---
 
-Donec ante. Sed at velit. Vestibulum at purus at urna porttitor sodales. Nullam pulvinar, urna interdum eleifend sodales, eros est tempus quam, quis ultricies nibh elit vitae urna. Donec pretium arcu at quam. Quisque tristique, lacus id tempor blandit, quam massa imperdiet lorem, porta fermentum quam ante ac tortor. Curabitur mauris lectus, dapibus ut, ornare sit amet, vulputate sit amet, erat.
+The **Schedule** component displays a current TV schedule of the user's localized station. This component is not visible in a non-localized state.
 
-Blah.
+- Includes the logo of the localized station (WETA shown)
+- In its current implementation, it is not visible below 1024px. It is part of the 'row with ad', along with the [Verticals component](c19-verticals.html)
+- The "Full Schedule" link at the bottom goes to the TV Schedule page on the localzied station's website
 
 
