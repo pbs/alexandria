@@ -19,23 +19,26 @@ permalink: /design-elements/
 
 ### Neutrals
 
-<div class="swatch" style="background-color: #000000; color: #ffffff;">$black: #000000<br />(mainly used for shadows)</div>
-<div class="swatch" style="background-color: #222222; color: #ffffff;">$gray-primary: #222222</div>
-<div class="swatch" style="background-color: #4b4b4b; color: #ffffff;">$gray-darker: #4b4b4b</div>
-<div class="swatch" style="background-color: #707070; color: #ffffff;">$gray-dark: #707070</div>
-<div class="swatch" style="background-color: #b3b3b3;">$gray-medium: #b3b3b3</div>
-<div class="swatch" style="background-color: #e0e0e0;">$gray-light: #e0e0e0 <br />(aka $divider)</div>
-<div class="swatch" style="background-color: #f3f3f3;">$gray-lighter: #f3f3f3</div>
-<div class="swatch" style="background-color: #ffffff;">$white: #ffffff;</div>
+<div class="swatch" style="background-color: #000000; color: #ffffff;">$gray-100: #000000<br />(mainly used for shadows)</div>
+<div class="swatch" style="background-color: #222222; color: #ffffff;">$gray-87: #222222</div>
+<div class="swatch" style="background-color: #4b4b4b; color: #ffffff;">$gray-71: #4b4b4b</div>
+<div class="swatch" style="background-color: #707070; color: #ffffff;">$gray-56: #707070</div>
+<div class="swatch" style="background-color: #b3b3b3;">$gray-30: #b3b3b3</div>
+<div class="swatch" style="background-color: #e0e0e0;">$gray-12: #e0e0e0 <br />(aka $divider)</div>
+<div class="swatch" style="background-color: #f3f3f3;">$gray-5: #f3f3f3</div>
+<div class="swatch" style="background-color: #f8f8f8;">$gray-3: #f8f8f8</div>
+<div class="swatch" style="background-color: #ffffff;">$gray-0: #ffffff;</div>
 
 ### Hues
 
-<div class="swatch" style="background-color: #126eb5; color: #ffffff;">$blue: #126eb5 <br />(aka $link-color)</div>
-<div class="swatch" style="background-color: #8fa6bc;">$blue-muted: #8fa6bc</div>
-<div class="swatch" style="background-color: #00aaeb;">$blue-light: #00aaeb</div>
+<div class="swatch" style="background-color: #126eb5; color: #ffffff;">$blue-digital: #126eb5</div>
+<div class="swatch" style="background-color: #8fa6bc;">$blue-antique: #8fa6bc</div>
+<div class="swatch" style="background-color: #00aaeb;">$blue-brand: #00aaeb</div>
 <div class="swatch" style="background-color: #ac031f; color: white;">$red: #ac031f</div>
 <div class="swatch" style="background-color: #e9ba15;">$yellow: #e9ba15</div>
 <div class="swatch" style="background-color: #70B406;">$green: #70B406</div>
+<div class="swatch" style="background-color: #ce255d; color: #ffffff;">$magenta: #ce255d</div>
+<div class="swatch" style="background-color: #EE7101; color: #ffffff;">$orange: #EE7101</div>
 
 * * *
 
@@ -43,193 +46,40 @@ permalink: /design-elements/
 
 * * *
 
-# Heading 1
-
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
-
-##### Heading 5
-
-###### Heading 6
+The needs of typography vary greatly from project to project, so we tend to not be very prescriptive. There are some general rules listed below. Note that we don't tend to rely much on global generic styles - components tend to supply their needed styling through class names.
 
 * * *
 
-### Headings with Text
+### Typefaces
 
-# Heading 1
-
-Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.
-
-## Heading 2
-
-Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.
-
-### Heading 3
-
-Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.
-
-#### Heading 4
-
-Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.
-
-##### Heading 5
-
-Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.
-
-###### Heading 6
-
-Lorem ipsum dolor sit amet, adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.
+We rely on two typefaces: [Open Sans](https://www.google.com/fonts/specimen/Open+Sans) and, as an accent typeface, [Arvo](https://www.google.com/fonts/specimen/Arvo).
 
 * * *
 
-### Block Elements
+### Open Sans
 
-#### Paragraphs and Images
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor.
-
-![Placeholder Image and Some Alt Text](http://placehold.it/350x150 "A title element for this placeholder image.")
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem.
-
-#### Blockquote
-
-This is a standard paragraph. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-
-> "This is a blockquote. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl."
-
-This is a standard paragraph. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-
-*Note: the [Figure-Figcaption](http://html5doctor.com/the-figure-figcaption-elements/) and [Details-Summary](http://html5doctor.com/the-details-and-summary-elements/) elements are not currently supported in markdown.*
+- We make use of the **300, 400, 600** and **700** weights
+- Of the four weights, within a given project **choose three**
+- Italics are rarely used, and are usually just when associated with funders or meta information. Think hard before including the actual italic font in consideration of file size. [Faux italics](http://www.marksimonson.com/notebook/view/FakevsTrueItalics) are acceptable if not detrimental to the overall aesthetic.
+- Use of the 300 weight is restricted to type sizes of 16px/pt or greater, or the same size as the overall body copy - whichever is greater
 
 * * *
 
-###  Text Elements
+{: .al-accent-type }
+### Arvo
 
-The [a element](#) and [external a element](http://example.com) examples
-
-The <abbr>abbr element</abbr> and an <abbr title="Abbreviation">abbr</abbr> element with title examples
-
-The <acronym title="A Cowboy Ran One New York Marathon">ACRONYM</acronym> element example
-
-The **b element** example
-
-The <cite>cite element</cite> example
-
-The `code element` example
-
-The <data value="3967381398">data element</data> example
-
-The ~~del element~~ example
-
-The <dfn>dfn element</dfn> and <dfn title="Title text">dfn element with title</dfn> examples
-
-The _em element_ example
-
-The _i element_ example
-
-The <ins>ins element</ins> example
-
-The <kbd>kbd element</kbd> example
-
-The <mark>mark element</mark> example
-
-The <q>q element</q> example
-
-The <q>q element <q>inside</q> a q element</q> example
-
-The <s>s element</s> example
-
-The <samp>samp element</samp> example
-
-The <small>small element</small> example
-
-The <span>span element</span> example
-
-The **strong element** example
-
-The <sub>sub element</sub> example
-
-The <sup>sup element</sup> example
-
-The <time datetime="2005-05-15 19:00">time element</time> example
-
-The <u>u element</u> example
-
-The <var>var element</var> example
+- Is an **accent** typeface, to be used sparingly. It is not present at all in some projects.
+- When used to present the title of a show, is set in <span class="al-accent-type">[ALL CAPS](use-of-all-caps)</span>
+- Is used a lot in [buttons](#buttons), but not *always*
 
 * * *
 
-### Monospace / Preformatted
+### Use of ALL CAPS
 
-Code block wrapped in "pre" and "code" tags:
-
-```javascript
-// Loop through Divs using Javascript.
-var divs = document.querySelectorAll('div'), i;
-
-for (i = 0; i < divs.length; ++i) {
-  divs[i].style.color = "green";
-}
-```
-
-Monospace Text wrapped in "pre" tags:
-
-<pre>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.</pre>
-
-* * *
-
-### List Types
-
-#### Ordered List
-
-1. List Item 1
-2. List Item 2
-3. List Item 3
-    1. List Item 3.1
-    2. List Item 3.2
-        1. List Item 3.2.1
-        2. List Item 3.2 2
-    3. List Item 3.3
-4. List Item 4
-
-#### Unordered List
-
-* List Item 1
-* List Item 2
-* List Item 3
-    * List Item 3.1
-    * List Item 3.2
-        * List Item 3.2.1
-        * List Item 3.2 2
-    * List Item 3.3
-* List Item 4
-
-#### Definition List
-
-<dl>
-  <dt>Definition Term 1</dt>
-  <dd>Definition Description 1</dd>
-  <dt>Definition Term 2</dt>
-  <dd>Definition Description 2</dd>
-</dl>
-
-* * *
-
-### Tables
-
-| Table Header 1 | Table Header 2 | Table Header 3 |
-| -------------- | -------------- | -------------- |
-| Division 1     | Division 2     | Division 3     |
-| Division 1     | Division 2     | Division 3     |
-| Division 1     | Division 2     | Division 3     |
-
-
+- Usually used to present meta information of some kind - as an "over title" or other similar concept
+- Can be used in a tabbed interface for the tab names
+- Must be 20px or smaller
+- Keep use restricted to places where you will typically have four words or less - e.g. show titles
 
 
 * * *
