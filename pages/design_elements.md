@@ -48,10 +48,6 @@ permalink: /design-elements/
 
 The needs of typography vary greatly from project to project, so we tend to not be very prescriptive. There are some general rules listed below. Note that we don't tend to rely much on global generic styles - components tend to supply their needed styling through class names.
 
-* * *
-
-### Typefaces
-
 We rely on two typefaces: [Open Sans](https://www.google.com/fonts/specimen/Open+Sans) and, as an accent typeface, [Arvo](https://www.google.com/fonts/specimen/Arvo).
 
 * * *
