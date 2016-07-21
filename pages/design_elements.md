@@ -70,7 +70,7 @@ We rely on two typefaces: [Open Sans](https://www.google.com/fonts/specimen/Open
 
 * * *
 
-### Use of ALL CAPS
+### Use of <span class="al-over-title">ALL CAPS</span>
 
 - Usually used to present meta information of some kind - as an "over title" or other similar concept
 - Can be used in a tabbed interface for the tab names
