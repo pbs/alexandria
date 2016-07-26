@@ -12,7 +12,7 @@ permalink: /all-products/
     {% assign compnum = compnum | plus:1%}
   {% endfor %}
   <li class="component-nav--item">
-    <a href="/components/">All Components ({{compnum}})</a>
+    <a href="{{ site.github.url }}/components/">All Components ({{compnum}})</a>
   </li>
   {% for category in site.data.categories  %}
     {% assign catnum = 0 %}
@@ -24,7 +24,7 @@ permalink: /all-products/
     {% endfor %}
   {% if catnum > 0 %}
   <li class="component-nav--item">
-    <a href="/components/{{ category.slug }}">{{ category.name }} ({{catnum}})</a>
+    <a href="{{ site.github.url }}/components/{{ category.slug }}">{{ category.name }} ({{catnum}})</a>
   </li>
   {% endif %}
   {% endfor %}
@@ -40,7 +40,7 @@ permalink: /all-products/
         {% assign prodnum = prodnum | plus:1%}
       {% endif %}
     {% endfor %}
-    <a href="/components/{{ product.slug }}/">All {{ product.name }} Components ({{prodnum}})</a>
+    <a href="{{ site.github.url }}/components/{{ product.slug }}/">All {{ product.name }} Components ({{prodnum}})</a>
   </li>
 
   {% for category in site.data.categories  %}
@@ -57,7 +57,7 @@ permalink: /all-products/
 
     {% if print %}
       <li class="component-nav--item">
-        <a href="/components/{{ product.slug }}/{{ category.slug }}">{{ category.name }} ({{num}})</a>
+        <a href="{{ site.github.url }}/components/{{ product.slug }}/{{ category.slug }}">{{ category.name }} ({{num}})</a>
       </li>
     {% endif %}
 
