@@ -6,7 +6,7 @@
     {% endif %}
   {% endfor %}
   <li class="component-nav--item">
-    <a href="/components/{{ page.product }}/">All {{ page.product | capitalize | replace: 'Pbs-org','PBS.org' }} Components ({{prodnum}})</a>
+    <a href="{{ site.github.url }}/components/{{ page.product }}/">All {{ page.product | capitalize | replace: 'Pbs-org','PBS.org' }} Components ({{prodnum}})</a>
   </li>
 
   {% for category in site.data.categories  %}
@@ -20,7 +20,7 @@
     {% if catnum > 0 %}
 
   <li class="component-nav--item">
-    <a href="/components/{{ page.product }}/{{ category.slug }}">{{ category.name }} ({{catnum}})</a>
+    <a href="{{ site.github.url }}/components/{{ page.product }}/{{ category.slug }}">{{ category.name }} ({{catnum}})</a>
   </li>
     {% endif %}
   {% endfor %}
