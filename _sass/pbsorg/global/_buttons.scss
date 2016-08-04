@@ -31,7 +31,7 @@
   &--favorite {
     @include btn-states() {
       background: $gray-lighter;
-      border-color: $divider-color;
+      border-color: $gray-medium;
       color: $gray-dark;
     }
 
@@ -158,6 +158,56 @@
     width: 50px;
     height: 50px;
     animation: ripple-animation 2s;
+  }
+
+  &--magenta {
+    @include fill-btn($magenta);
+  }
+
+  &--orange {
+    @include fill-btn($orange);
+  }
+
+  &--red {
+    @include fill-btn($red);
+  }
+
+  &--green {
+    @include fill-btn($green);
+  }
+
+  &--blue-digital {
+    @include fill-btn($blue-digital);
+  }
+
+  &--blue-antique {
+    @include fill-btn($blue-antique);
+  }
+
+  &--blue-brand {
+    @include fill-btn($blue-brand);
+  }
+
+  &--gray-56 {
+    @include fill-btn($gray-56);
+  }
+
+  &--gray-30 {
+    @include fill-btn($gray-30);
+  }
+
+  &--ghost {
+    &--red {
+      @include ghost-btn($red);
+    }
+
+    &--green {
+      @include ghost-btn($green);
+    }
+
+    &--gray-100 {
+      @include ghost-btn($gray-100);
+    }
   }
 }
 

@@ -147,6 +147,42 @@
   }
 }
 
+@mixin fill-btn($color: $black){
+  border: 0;
+  background: $color;
+  color: $white;
+  transition: background $duration;
+
+  &:hover,
+  &:focus {
+    background: $color;
+    color: $white;
+    text-decoration: underline;
+  }
+
+  &:active {
+    background: mix($black, $color, 20);
+  }
+}
+
+@mixin ghost-btn($color: $black){
+  border: 1px solid $color;
+  background: transparent;
+  color: $color;
+  transition: background $duration;
+
+  // &:hover,
+  // &:focus {
+  //   background: $color;
+  //   color: $white;
+  //   text-decoration: underline;
+  // }
+
+  // &:active {
+  //   background: mix($black, $color, 20);
+  // }
+}
+
 // used in creating buttons to make sure we have all states covered
 @mixin btn-states() {
   &,

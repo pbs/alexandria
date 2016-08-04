@@ -193,11 +193,27 @@ We rely on two typefaces: [Open Sans](https://www.google.com/fonts/specimen/Open
 
 * * *
 
-<button class="btn">
-A default button
-</button>
+There are a set of rules that we have around buttons:
 
-<button class="btn btn--cta">
+- Typefaces: Open Sans (400 weight or greater), or Arvo (700 weight only)
+- Border radius is **always 2px**
+- Icons, if used, always appear on the left, and are the same color as the text of the button. Pipes are used to separate the icons only in the case of [social sign on](#social-sign-in-buttons) buttons
+
+### Fill buttons
+<button class="btn btn--blue-digital">A $blue-digital button</button>
+<button class="btn btn--red">A $red button</button>
+<button class="btn btn--green">A $green button</button>
+<button class="btn btn--magenta">A $magenta button</button>
+<button class="btn btn--orange">An $orange button</button>
+<button class="btn btn--blue-antique">An $blue-antique button</button>
+<button class="btn btn--blue-brand">A $blue-brand button</button>
+
+<button class="btn btn--gray-56">A $gray-56 button</button>
+<button class="btn btn--gray-30">A $gray-30 button</button>
+
+
+
+<!-- <button class="btn btn--cta">
 A Call to Action button
 </button>
 
@@ -209,8 +225,32 @@ An Inverted button
   <button class="btn green-activation">
   An Activation button
   </button>
-</div>
+</div> -->
 
+- Colors: All [hues](#hues) are availble, though $yellow is reserved for an activated state (e.g. a favorited show). $gray-56 and $gray-30 are also available.
+- Text is always $gray-0 (aka white)
+- No border - UNLESS the button's default state is a "ghost" button, and it fills in when active (e.g. a favorited show) - in that case, retain the original border color
+- Hover/Focus state: text underline
+- Active state: 20% darker color
+
+
+### "Ghost" Buttons
+<button class="btn"> A $blue-digital ghost button
+</button>
+<button class="btn btn--ghost--red">
+A $red ghost button
+</button>
+<button class="btn btn--ghost--green">
+A $green ghost button
+</button>
+<button class="btn btn--ghost--gray-100">
+A $gray-100 ghost button
+</button>
+
+
+
+
+### "Grey" Button
 
 <button class="btn btn--watchlist btn--ripple">
   <i class="icon-pbs-checkmark"></i>
@@ -221,6 +261,29 @@ An Inverted button
   <i class="icon-pbs-favorite" aria-hidden="true"></i>
   <span class="btn--text" data-text-default="Favorite This Show" data-text-selected="Favorite Show">Favorite This Show</span>
 </button>
+
+### Social Sign In Buttons
+
+<ul id="signInServiceList" class="sign-in__service-list" style="max-width: 300px; margin: 0 0 20px 0;">
+  <li class="sign-in__link sign-in__link--google">
+    <a href="{{ PBS_GOOGLE_AUTHORIZATION_URL }}">
+      <span class="sign-in__icon"><i class="icon-pbs-google"></i></span>
+      <span class="sign-in__text">Sign in with Google</span>
+    </a>
+  </li>
+  <li class="sign-in__link sign-in__link--facebook">
+    <a href="{{ PBS_FACEBOOK_AUTHORIZATION_URL }}">
+      <span class="sign-in__icon"><i class="icon-pbs-facebook"></i></span>
+      <span class="sign-in__text">Sign in with Facebook</span>
+    </a>
+  </li>
+  <li class="sign-in__link sign-in__link--pbs">
+    <a href="{{ PBS_PBS_AUTHORIZATION_URL }}">
+      <span class="sign-in__icon"><i class="icon-pbs-pbshead"></i></span>
+      <span class="sign-in__text">Sign in with PBS Account</span>
+    </a>
+  </li>
+</ul>
 
 * * *
 
