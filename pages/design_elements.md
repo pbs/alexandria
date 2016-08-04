@@ -195,7 +195,7 @@ We rely on two typefaces: [Open Sans](https://www.google.com/fonts/specimen/Open
 
 There are a set of rules that we have around buttons:
 
-- Typefaces: Open Sans (400 weight or greater), or Arvo (700 weight only)
+- Typefaces: Open Sans (400 weight or greater), or Arvo (700 weight only). Please use *one* typeface within your project for your buttons.
 - Border radius is **always 2px**
 - Icons, if used, always appear on the left, and are the same color as the text of the button. Pipes are used to separate the icons only in the case of [social sign on](#social-sign-in-buttons) buttons
 
@@ -235,31 +235,37 @@ An Inverted button
 
 
 ### "Ghost" Buttons
-<button class="btn"> A $blue-digital ghost button
-</button>
-<button class="btn btn--ghost--red">
-A $red ghost button
-</button>
-<button class="btn btn--ghost--green">
-A $green ghost button
-</button>
-<button class="btn btn--ghost--gray-100">
-A $gray-100 ghost button
-</button>
+<button class="btn"> A $blue-digital ghost button </button>
+<button class="btn btn--ghost--red"> A $red ghost button</button>
+<button class="btn btn--ghost--green"> A $green ghost button</button>
+<button class="btn btn--ghost--gray-100"> A $gray-100 ghost button</button>
+
+- Border and text colors are the same
+- Background is transparent
+- Hover/Focus state: there is a fill that is a slight tint of the text color
+- Active state: a fill that is a slightly darker tint of the text color
 
 
-
-
-### "Grey" Button
+### "Grey" Buttons (with their Active State)
 
 <button class="btn btn--watchlist btn--ripple">
   <i class="icon-pbs-checkmark"></i>
   <span class="btn--text" data-text-default="Add to Watchlist" data-text-selected="In My Watchlist">Add to Watchlist</span>
 </button>
 
+<button class="btn btn--watchlist btn--ripple selected">
+  <i class="icon-pbs-checkmark"></i>
+  <span class="btn--text" data-text-default="Add to Watchlist" data-text-selected="In My Watchlist">In My Watchlist</span>
+</button>
+
 <button class="btn btn--favorite btn--ripple">
   <i class="icon-pbs-favorite" aria-hidden="true"></i>
   <span class="btn--text" data-text-default="Favorite This Show" data-text-selected="Favorite Show">Favorite This Show</span>
+</button>
+
+<button class="btn btn--favorite btn--ripple selected">
+  <i class="icon-pbs-favorite" aria-hidden="true"></i>
+  <span class="btn--text" data-text-default="Favorite This Show" data-text-selected="Favorite Show">Favorited Show</span>
 </button>
 
 ### Social Sign In Buttons

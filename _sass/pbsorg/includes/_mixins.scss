@@ -169,18 +169,21 @@
   border: 1px solid $color;
   background: transparent;
   color: $color;
-  transition: background $duration;
+  transition: all $duration;
 
-  // &:hover,
-  // &:focus {
-  //   background: $color;
-  //   color: $white;
-  //   text-decoration: underline;
-  // }
+  &:hover,
+  &:focus {
+    background: mix($white, $color, 90);
+    color: $color;
+    border-color: $color;
+    text-decoration: none;
+  }
 
-  // &:active {
-  //   background: mix($black, $color, 20);
-  // }
+  &:active {
+    background: mix($white, $color, 70);
+    color: $color;
+    border-color: $color;
+  }
 }
 
 // used in creating buttons to make sure we have all states covered
