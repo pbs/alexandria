@@ -80,7 +80,7 @@ permalink: /design-elements/
 
 ### Color Combinations
 
-We strive to meet WCAG 2.0 color contrast ratios to ensure accessibility. These are solid backgrounds with neutral text on top, with indications of what passes the required contrast ratios.
+We strive to meet [WCAG 2.0 color contrast ratios](https://www.w3.org/TR/WCAG20-TECHS/G18.html) to ensure accessibility. These are solid backgrounds with neutral text on top, with indications of what passes the required contrast ratios.
 
 - <i class="icon-pbs-checkmark"></i> passes for all type sizes;
 - <strong class="icon">&#9888;</strong> passes for large type sizes (above 18px or 14px/bold);
