@@ -658,10 +658,10 @@ We strive to meet [WCAG 2.0 color contrast ratios](https://www.w3.org/TR/WCAG20-
     <div class="contrast-table__swatch" style="background: #418bc4; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #418bc4; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #418bc4; color: #b3b3b3;">$gray-30 text <i class="icon-pbs-remove"></i></div>
-    <div class="contrast-table__swatch" style="background: #418bc4; color: #e0e0e0;">$gray-12 text <strong class="icon">&#9888;</strong></div>
-    <div class="contrast-table__swatch" style="background: #418bc4; color: #f3f3f3;">$gray-5 text <i class="icon-pbs-checkmark"></i></div>
-    <div class="contrast-table__swatch" style="background: #418bc4; color: #f8f8f8;">$gray-3 text <i class="icon-pbs-checkmark"></i></div>
-    <div class="contrast-table__swatch" style="background: #418bc4; color: #ffffff;">$gray-0 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #418bc4; color: #e0e0e0;">$gray-12 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #418bc4; color: #f3f3f3;">$gray-5 text <strong class="icon">&#9888;</strong></div>
+    <div class="contrast-table__swatch" style="background: #418bc4; color: #f8f8f8;">$gray-3 text <strong class="icon">&#9888;</strong></div>
+    <div class="contrast-table__swatch" style="background: #418bc4; color: #ffffff;">$gray-0 text <strong class="icon">&#9888;</strong></div>
   </div>
 
   <div class="contrast-table__group">
@@ -693,8 +693,8 @@ We strive to meet [WCAG 2.0 color contrast ratios](https://www.w3.org/TR/WCAG20-
     <div class="contrast-table__swatch" style="background: #bd354c; color: #222222;">$gray-87 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #bd354c; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #bd354c; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
-    <div class="contrast-table__swatch" style="background: #bd354c; color: #b3b3b3;">$gray-30 text <strong class="icon">&#9888;</strong></div>
-    <div class="contrast-table__swatch" style="background: #bd354c; color: #e0e0e0;">$gray-12 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #bd354c; color: #b3b3b3;">$gray-30 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #bd354c; color: #e0e0e0;">$gray-12 text <strong class="icon">&#9888;</strong></div>
     <div class="contrast-table__swatch" style="background: #bd354c; color: #f3f3f3;">$gray-5 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #bd354c; color: #f8f8f8;">$gray-3 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #bd354c; color: #ffffff;">$gray-0 text <i class="icon-pbs-checkmark"></i></div>
@@ -704,7 +704,7 @@ We strive to meet [WCAG 2.0 color contrast ratios](https://www.w3.org/TR/WCAG20-
     <h4>$yellow-lighten-20</h4>
     <div class="contrast-table__swatch" style="background: #edc844; color: #222222;">$gray-87 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #edc844; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-checkmark"></i></div>
-    <div class="contrast-table__swatch" style="background: #edc844; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #edc844; color: #707070;">$gray-56 text <strong class="icon">&#9888;</strong></div>
     <div class="contrast-table__swatch" style="background: #edc844; color: #b3b3b3;">$gray-30 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #edc844; color: #e0e0e0;">$gray-12 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #edc844; color: #f3f3f3;">$gray-5 text <i class="icon-pbs-remove"></i></div>
@@ -726,26 +726,26 @@ We strive to meet [WCAG 2.0 color contrast ratios](https://www.w3.org/TR/WCAG20-
 
   <div class="contrast-table__group">
     <h4>$magenta-lighten-20</h4>
-    <div class="contrast-table__swatch" style="background: #d8517d; color: #222222;">$gray-87 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #d8517d; color: #222222;">$gray-87 text <strong class="icon">&#9888;</strong></div>
     <div class="contrast-table__swatch" style="background: #d8517d; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #d8517d; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #d8517d; color: #b3b3b3;">$gray-30 text <i class="icon-pbs-remove"></i></div>
-    <div class="contrast-table__swatch" style="background: #d8517d; color: #e0e0e0;">$gray-12 text <strong class="icon">&#9888;</strong></div>
-    <div class="contrast-table__swatch" style="background: #d8517d; color: #f3f3f3;">$gray-5 text <i class="icon-pbs-checkmark"></i></div>
-    <div class="contrast-table__swatch" style="background: #d8517d; color: #f8f8f8;">$gray-3 text <i class="icon-pbs-checkmark"></i></div>
-    <div class="contrast-table__swatch" style="background: #d8517d; color: #ffffff;">$gray-0 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #d8517d; color: #e0e0e0;">$gray-12 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #d8517d; color: #f3f3f3;">$gray-5 text <strong class="icon">&#9888;</strong></div>
+    <div class="contrast-table__swatch" style="background: #d8517d; color: #f8f8f8;">$gray-3 text <strong class="icon">&#9888;</strong></div>
+    <div class="contrast-table__swatch" style="background: #d8517d; color: #ffffff;">$gray-0 text <strong class="icon">&#9888;</strong></div>
   </div>
 
   <div class="contrast-table__group">
     <h4>$orange-lighten-20</h4>
     <div class="contrast-table__swatch" style="background: #f18d34; color: #222222;">$gray-87 text <i class="icon-pbs-checkmark"></i></div>
-    <div class="contrast-table__swatch" style="background: #f18d34; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #f18d34; color: #4b4b4b;">$gray-71 text <strong class="icon">&#9888;</strong></div>
     <div class="contrast-table__swatch" style="background: #f18d34; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #f18d34; color: #b3b3b3;">$gray-30 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #f18d34; color: #e0e0e0;">$gray-12 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #f18d34; color: #f3f3f3;">$gray-5 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #f18d34; color: #f8f8f8;">$gray-3 text <i class="icon-pbs-remove"></i></div>
-    <div class="contrast-table__swatch" style="background: #f18d34; color: #ffffff;">$gray-0 text <strong class="icon">&#9888;</strong></div>
+    <div class="contrast-table__swatch" style="background: #f18d34; color: #ffffff;">$gray-0 text <i class="icon-pbs-remove"></i></div>
   </div>
 </div>
 
