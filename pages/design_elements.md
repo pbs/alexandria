@@ -51,6 +51,12 @@ permalink: /design-elements/
 
 ### Hues
 
+We have a collection of eight 'pure' hues. Using the pure hues whenever possible is encouraged.
+
+However, if there is a situation where there is not sufficient contrast, tints of 10% and 20%, both in darkening and lightening, are allowed.
+
+Tints can be acheived in design software by overlaying the pure hue with a layer of white or black, set to 10% or 20% opacity.
+
 <div class="swatch-group">
   <div class="swatch-tint-stack">
     <div class="swatch-tint" style="background-color: #0e5891; color: #ffffff;">$blue-digital-darken-20: #0e5891</div>
@@ -131,9 +137,6 @@ permalink: /design-elements/
     <div class="swatch-tint" style="background-color: #f07f1a; color: #ffffff;">$orange-lighten-10: #f07f1a</div>
     <div class="swatch-tint" style="background-color: #f18d34; color: #ffffff;">$orange-lighten-20: #f18d34</div>
   </div>
-
-
-
 
 </div>
 
