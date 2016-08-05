@@ -19,26 +19,64 @@ permalink: /design-elements/
 
 ### Neutrals
 
-<div class="swatch" style="background-color: #000000; color: #ffffff;">$gray-100: #000000<br />(mainly used for shadows)</div>
-<div class="swatch" style="background-color: #222222; color: #ffffff;">$gray-87: #222222</div>
-<div class="swatch" style="background-color: #4b4b4b; color: #ffffff;">$gray-71: #4b4b4b</div>
-<div class="swatch" style="background-color: #707070; color: #ffffff;">$gray-56: #707070</div>
-<div class="swatch" style="background-color: #b3b3b3;">$gray-30: #b3b3b3</div>
-<div class="swatch" style="background-color: #e0e0e0;">$gray-12: #e0e0e0 <br />(aka $divider)</div>
-<div class="swatch" style="background-color: #f3f3f3;">$gray-5: #f3f3f3</div>
-<div class="swatch" style="background-color: #f8f8f8;">$gray-3: #f8f8f8</div>
-<div class="swatch" style="background-color: #ffffff;">$gray-0: #ffffff;</div>
+<div class="swatch-group">
+  <div class="swatch" style="background-color: #000000; color: #ffffff;">
+  $gray-100: #000000<br />rgb(0, 0, 0)<br />hsl(0, 0%, 0%)<br />(for shadows)
+  </div>
+  <div class="swatch" style="background-color: #222222; color: #ffffff;">
+  $gray-87: #222222<br />rgb(34, 34, 34)<br />hsl(0, 0%, 13%)
+  </div>
+  <div class="swatch" style="background-color: #4b4b4b; color: #ffffff;">
+  $gray-71: #4b4b4b<br />rgb(75, 75, 75)<br />hsl(0, 0%, 29%)
+  </div>
+  <div class="swatch" style="background-color: #707070; color: #ffffff;">
+  $gray-56: #707070<br />rgb(112, 112, 112)<br />hsl(0, 0%, 44%)
+  </div>
+  <div class="swatch" style="background-color: #b3b3b3;">
+  $gray-30: #b3b3b3<br />rgb(179, 179, 179)<br />hsl(0, 0%, 70%)
+  </div>
+  <div class="swatch" style="background-color: #e0e0e0;">
+  $gray-12: #e0e0e0<br />rgb(224, 224, 224)<br />hsl(0, 0%, 88%) <br />(aka $divider)
+  </div>
+  <div class="swatch" style="background-color: #f3f3f3;">
+  $gray-5: #f3f3f3<br />rgb(243, 243, 243)<br />hsl(0, 0%, 95%)
+  </div>
+  <div class="swatch" style="background-color: #f8f8f8;">
+  $gray-3: #f8f8f8<br />rgb(248, 248, 248)<br />hsl(0, 0%, 97%)
+  </div>
+  <div class="swatch" style="background-color: #ffffff;">
+  $gray-0: #ffffff<br />rgb(255, 255, 255)<br />hsl(0, 0%, 100%)
+  </div>
+</div>
 
 ### Hues
 
-<div class="swatch" style="background-color: #126eb5; color: #ffffff;">$blue-digital: #126eb5</div>
-<div class="swatch" style="background-color: #8fa6bc;">$blue-antique: #8fa6bc</div>
-<div class="swatch" style="background-color: #00aaeb;">$blue-brand: #00aaeb</div>
-<div class="swatch" style="background-color: #ac031f; color: white;">$red: #ac031f</div>
-<div class="swatch" style="background-color: #e9ba15;">$yellow: #e9ba15</div>
-<div class="swatch" style="background-color: #70B406;">$green: #70B406</div>
-<div class="swatch" style="background-color: #ce255d; color: #ffffff;">$magenta: #ce255d</div>
-<div class="swatch" style="background-color: #EE7101; color: #ffffff;">$orange: #EE7101</div>
+<div class="swatch-group">
+  <div class="swatch" style="background-color: #126eb5; color: #ffffff;">
+  $blue-digital: #126eb5<br />rgb(18, 110, 181)<br />hsl(206, 82%, 39%)
+  </div>
+  <div class="swatch" style="background-color: #8fa6bc;">
+  $blue-antique: #8fa6bc<br />rgb(255, 255, 255)<br />hsl(0, 0%, 100%)
+  </div>
+  <div class="swatch" style="background-color: #00aaeb;">
+  $blue-brand: #00aaeb<br />rgb(255, 255, 255)<br />hsl(0, 0%, 100%)
+  </div>
+  <div class="swatch" style="background-color: #ac031f; color: white;">
+  $red: #ac031f<br />rgb(255, 255, 255)<br />hsl(0, 0%, 100%)
+  </div>
+  <div class="swatch" style="background-color: #e9ba15;">
+  $yellow: #e9ba15<br />rgb(255, 255, 255)<br />hsl(0, 0%, 100%)
+  </div>
+  <div class="swatch" style="background-color: #70B406;">
+  $green: #70B406<br />rgb(255, 255, 255)<br />hsl(0, 0%, 100%)
+  </div>
+  <div class="swatch" style="background-color: #ce255d; color: #ffffff;">
+  $magenta: #ce255d<br />rgb(255, 255, 255)<br />hsl(0, 0%, 100%)
+  </div>
+  <div class="swatch" style="background-color: #EE7101; color: #ffffff;">
+  $orange: #EE7101<br />rgb(255, 255, 255)<br />hsl(0, 0%, 100%)
+  </div>
+</div>
 
 ### Color Combinations
 
@@ -331,109 +369,110 @@ We rely on two typefaces: [Open Sans](https://www.google.com/fonts/specimen/Open
 
 * * *
 
-<div class="swatch swatch--icon">
-<i class="icon-pbs-twitter-square"></i>
+<div class="swatch-group">
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-twitter-square"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-twitter"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-facebook"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-retweet"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-reply-mail"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-mail"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-favorite"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-facebook-square"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-instagram"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-pinterest"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-youtube"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-youtube-2"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-tumblr"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-tumblr-square"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-checkmark"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-share"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-embed2"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-cheveron-down"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-cheveron-up"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-search"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-pbshead"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-grid"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-menu-hamburger"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-remove"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-refresh"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-google"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-google-plus"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-google-plus2"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-cc"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-filter"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-play"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-pause"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-play-2"></i>
+  </div>
+  <div class="swatch swatch--icon">
+    <i class="icon-pbs-pause-2"></i>
+  </div>
 </div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-twitter"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-facebook"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-retweet"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-reply-mail"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-mail"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-favorite"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-facebook-square"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-instagram"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-pinterest"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-youtube"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-youtube-2"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-tumblr"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-tumblr-square"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-checkmark"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-share"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-embed2"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-cheveron-down"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-cheveron-up"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-search"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-pbshead"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-grid"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-menu-hamburger"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-remove"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-refresh"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-google"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-google-plus"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-google-plus2"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-cc"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-filter"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-play"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-pause"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-play-2"></i>
-</div>
-<div class="swatch swatch--icon">
-<i class="icon-pbs-pause-2"></i>
-</div>
-
 * * *
 
 ## Buttons

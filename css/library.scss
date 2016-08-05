@@ -51,18 +51,40 @@ $on-laptop:        800px;
         "syntax-highlighting"
 ;
 
+.swatch-group {
+  margin-right: -$gap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
 .swatch {
-  display: inline-block;
-  width: 150px;
-  height: 150px;
-  padding: 15px;
+  width: 100%;
+
+  @include breakpoint($xs) {
+    width: calc(50% - #{$gap});
+  }
+
+  @include breakpoint($sm) {
+    width: calc(33.33% - #{$gap});
+  }
+
+  @include breakpoint($md) {
+    width: calc(25% - #{$gap});
+  }
+
+  padding: $gap;
   border: solid 1px $gray-medium;
-  margin-right: 15px;
-  margin-bottom: 15px;
+  margin-right: $gap;
+  margin-bottom: $gap;
   text-align: center;
   vertical-align: top;
   line-height: 1.4;
-  border-radius: 2px;
+  border-radius: $radius;
 
   &--icon {
     height: auto;
@@ -82,11 +104,20 @@ $on-laptop:        800px;
           justify-content: space-between;
 
   &__group {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-    min-width: 25%;
-    padding-right: $gap;
+    width: 100%;
+    margin-right: $gap;
+
+    @include breakpoint($xs) {
+      width: calc(50% - #{$gap});
+    }
+
+    @include breakpoint($sm) {
+      width: calc(33.33% - #{$gap});
+    }
+
+    @include breakpoint($md) {
+      width: calc(25% - #{$gap});
+    }
   }
 
   &__swatch {
