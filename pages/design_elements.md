@@ -561,9 +561,9 @@ We strive to meet [WCAG 2.0 color contrast ratios](https://www.w3.org/TR/WCAG20-
     <div class="contrast-table__swatch" style="background: #2a7dbc; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #2a7dbc; color: #b3b3b3;">$gray-30 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #2a7dbc; color: #e0e0e0;">$gray-12 text <strong class="icon">&#9888;</strong></div>
-    <div class="contrast-table__swatch" style="background: #2a7dbc; color: #f3f3f3;">$gray-5 text <i class="icon-pbs-checkmark"></i></div>
-    <div class="contrast-table__swatch" style="background: #2a7dbc; color: #f8f8f8;">$gray-3 text <i class="icon-pbs-checkmark"></i></div>
-    <div class="contrast-table__swatch" style="background: #2a7dbc; color: #ffffff;">$gray-0 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #2a7dbc; color: #f3f3f3;">$gray-5 text <strong class="icon">&#9888;</strong></div>
+    <div class="contrast-table__swatch" style="background: #2a7dbc; color: #f8f8f8;">$gray-3 text <strong class="icon">&#9888;</strong></div>
+    <div class="contrast-table__swatch" style="background: #2a7dbc; color: #ffffff;">$gray-0 text <strong class="icon">&#9888;</strong></div>
   </div>
 
   <div class="contrast-table__group">
@@ -633,21 +633,21 @@ We strive to meet [WCAG 2.0 color contrast ratios](https://www.w3.org/TR/WCAG20-
     <div class="contrast-table__swatch" style="background: #d33b6d; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #d33b6d; color: #b3b3b3;">$gray-30 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #d33b6d; color: #e0e0e0;">$gray-12 text <strong class="icon">&#9888;</strong></div>
-    <div class="contrast-table__swatch" style="background: #d33b6d; color: #f3f3f3;">$gray-5 text <i class="icon-pbs-checkmark"></i></div>
-    <div class="contrast-table__swatch" style="background: #d33b6d; color: #f8f8f8;">$gray-3 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #d33b6d; color: #f3f3f3;">$gray-5 text <strong class="icon">&#9888;</strong></div>
+    <div class="contrast-table__swatch" style="background: #d33b6d; color: #f8f8f8;">$gray-3 text <strong class="icon">&#9888;</strong></div>
     <div class="contrast-table__swatch" style="background: #d33b6d; color: #ffffff;">$gray-0 text <i class="icon-pbs-checkmark"></i></div>
   </div>
 
   <div class="contrast-table__group">
     <h4>$orange-lighten-10</h4>
     <div class="contrast-table__swatch" style="background: #f07f1a; color: #222222;">$gray-87 text <i class="icon-pbs-checkmark"></i></div>
-    <div class="contrast-table__swatch" style="background: #f07f1a; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #f07f1a; color: #4b4b4b;">$gray-71 text <strong class="icon">&#9888;</strong></div>
     <div class="contrast-table__swatch" style="background: #f07f1a; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #f07f1a; color: #b3b3b3;">$gray-30 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #f07f1a; color: #e0e0e0;">$gray-12 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #f07f1a; color: #f3f3f3;">$gray-5 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #f07f1a; color: #f8f8f8;">$gray-3 text <i class="icon-pbs-remove"></i></div>
-    <div class="contrast-table__swatch" style="background: #f07f1a; color: #ffffff;">$gray-0 text <strong class="icon">&#9888;</strong></div>
+    <div class="contrast-table__swatch" style="background: #f07f1a; color: #ffffff;">$gray-0 text <i class="icon-pbs-remove"></i></div>
   </div>
 </div>
 
