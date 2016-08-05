@@ -70,4 +70,31 @@ $on-laptop:        800px;
   }
 }
 
+.contrast-table {
+  margin-right: -$gap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 
+  &__group {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    min-width: 25%;
+    padding-right: $gap;
+  }
+
+  &__swatch {
+    padding: $gap-quarter $gap;
+    margin-bottom: $gap-quarter;
+
+    [class^="icon"] {
+      float: right;
+    }
+  }
+}

@@ -40,6 +40,253 @@ permalink: /design-elements/
 <div class="swatch" style="background-color: #ce255d; color: #ffffff;">$magenta: #ce255d</div>
 <div class="swatch" style="background-color: #EE7101; color: #ffffff;">$orange: #EE7101</div>
 
+### Color Combinations
+
+We strive to meet WCAG 2.0 color contrast ratios to ensure accessibility. These are solid backgrounds with neutral text on top, with indications of what passes the required contrast ratios.
+
+- <i class="icon-pbs-checkmark"></i> passes for all type sizes;
+- <strong class="icon">&#9888;</strong> passes for large type sizes (above 18px or 14px/bold);
+- <i class="icon-pbs-remove"></i> fails at all sizes
+
+<button class="btn" id="contrast-swatch-toggle">Show Only Passing Combinations</button>
+
+<div class="contrast-table">
+  <div class="contrast-table__group">
+    <h4>$gray-87</h4>
+    <div class="contrast-table__swatch" style="background: #222222; color: #000000;">$gray-100 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #222222; color: #222222;">$gray-87 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #222222; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #222222; color: #707070;">$gray-56 text <strong class="icon">&#9888;</strong></div>
+    <div class="contrast-table__swatch" style="background: #222222; color: #b3b3b3;">$gray-30 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #222222; color: #e0e0e0;">$gray-12 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #222222; color: #f3f3f3;">$gray-5 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #222222; color: #f8f8f8;">$gray-3 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #222222; color: #ffffff;">$gray-0 text <i class="icon-pbs-checkmark"></i></div>
+  </div>
+
+  <div class="contrast-table__group">
+    <h4>$gray-71</h4>
+    <div class="contrast-table__swatch" style="background: #4b4b4b; color: #000000;">$gray-100 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #4b4b4b; color: #222222;">$gray-87 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #4b4b4b; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #4b4b4b; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #4b4b4b; color: #b3b3b3;">$gray-30 text <strong class="icon">&#9888;</strong></div>
+    <div class="contrast-table__swatch" style="background: #4b4b4b; color: #e0e0e0;">$gray-12 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #4b4b4b; color: #f3f3f3;">$gray-5 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #4b4b4b; color: #f8f8f8;">$gray-3 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #4b4b4b; color: #ffffff;">$gray-0 text <i class="icon-pbs-checkmark"></i></div>
+  </div>
+
+  <div class="contrast-table__group">
+    <h4>$gray-56</h4>
+    <div class="contrast-table__swatch" style="background: #707070; color: #000000;">$gray-100 text <strong class="icon">&#9888;</strong></div>
+    <div class="contrast-table__swatch" style="background: #707070; color: #222222;">$gray-87 text <strong class="icon">&#9888;</strong></div>
+    <div class="contrast-table__swatch" style="background: #707070; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #707070; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #707070; color: #b3b3b3;">$gray-30 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #707070; color: #e0e0e0;">$gray-12 text <strong class="icon">&#9888;</strong></div>
+    <div class="contrast-table__swatch" style="background: #707070; color: #f3f3f3;">$gray-5 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #707070; color: #f8f8f8;">$gray-3 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #707070; color: #ffffff;">$gray-0 text <i class="icon-pbs-checkmark"></i></div>
+  </div>
+
+  <div class="contrast-table__group">
+    <h4>$gray-30</h4>
+    <div class="contrast-table__swatch" style="background: #b3b3b3; color: #000000;">$gray-100 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #b3b3b3; color: #222222;">$gray-87 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #b3b3b3; color: #4b4b4b;">$gray-71 text <strong class="icon">&#9888;</strong></div>
+    <div class="contrast-table__swatch" style="background: #b3b3b3; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #b3b3b3; color: #b3b3b3;">$gray-30 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #b3b3b3; color: #e0e0e0;">$gray-12 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #b3b3b3; color: #f3f3f3;">$gray-5 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #b3b3b3; color: #f8f8f8;">$gray-3 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #b3b3b3; color: #ffffff;">$gray-0 text <i class="icon-pbs-remove"></i></div>
+  </div>
+
+  <div class="contrast-table__group">
+    <h4>$gray-12</h4>
+    <div class="contrast-table__swatch" style="background: #e0e0e0; color: #000000;">$gray-100 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #e0e0e0; color: #222222;">$gray-87 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #e0e0e0; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #e0e0e0; color: #707070;">$gray-56 text <strong class="icon">&#9888;</strong></div>
+    <div class="contrast-table__swatch" style="background: #e0e0e0; color: #b3b3b3;">$gray-30 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #e0e0e0; color: #e0e0e0;">$gray-12 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #e0e0e0; color: #f3f3f3;">$gray-5 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #e0e0e0; color: #f8f8f8;">$gray-3 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #e0e0e0; color: #ffffff;">$gray-0 text <i class="icon-pbs-remove"></i></div>
+  </div>
+
+  <div class="contrast-table__group">
+    <h4>$gray-5</h4>
+    <div class="contrast-table__swatch" style="background: #f3f3f3; color: #000000;">$gray-100 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #f3f3f3; color: #222222;">$gray-87 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #f3f3f3; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #f3f3f3; color: #707070;">$gray-56 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #f3f3f3; color: #b3b3b3;">$gray-30 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #f3f3f3; color: #e0e0e0;">$gray-12 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #f3f3f3; color: #f3f3f3;">$gray-5 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #f3f3f3; color: #f8f8f8;">$gray-3 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #f3f3f3; color: #ffffff;">$gray-0 text <i class="icon-pbs-remove"></i></div>
+  </div>
+
+  <div class="contrast-table__group">
+    <h4>$gray-3</h4>
+    <div class="contrast-table__swatch" style="background: #f8f8f8; color: #000000;">$gray-100 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #f8f8f8; color: #222222;">$gray-87 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #f8f8f8; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #f8f8f8; color: #707070;">$gray-56 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #f8f8f8; color: #b3b3b3;">$gray-30 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #f8f8f8; color: #e0e0e0;">$gray-12 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #f8f8f8; color: #f3f3f3;">$gray-5 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #f8f8f8; color: #f8f8f8;">$gray-3 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #f8f8f8; color: #ffffff;">$gray-0 text <i class="icon-pbs-remove"></i></div>
+  </div>
+
+  <div class="contrast-table__group">
+    <h4>$gray-0</h4>
+    <div class="contrast-table__swatch" style="background: #ffffff; color: #000000;">$gray-100 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #ffffff; color: #222222;">$gray-87 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #ffffff; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #ffffff; color: #707070;">$gray-56 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #ffffff; color: #b3b3b3;">$gray-30 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #ffffff; color: #e0e0e0;">$gray-12 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #ffffff; color: #f3f3f3;">$gray-5 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #ffffff; color: #f8f8f8;">$gray-3 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #ffffff; color: #ffffff;">$gray-0 text <i class="icon-pbs-remove"></i></div>
+  </div>
+
+  <div class="contrast-table__group">
+    <h4>$blue-digital</h4>
+    <div class="contrast-table__swatch" style="background: #126eb5; color: #000000;">$gray-100 text <strong class="icon">&#9888;</strong></div>
+    <div class="contrast-table__swatch" style="background: #126eb5; color: #222222;">$gray-87 text <strong class="icon">&#9888;</strong></div>
+    <div class="contrast-table__swatch" style="background: #126eb5; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #126eb5; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #126eb5; color: #b3b3b3;">$gray-30 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #126eb5; color: #e0e0e0;">$gray-12 text <strong class="icon">&#9888;</strong></div>
+    <div class="contrast-table__swatch" style="background: #126eb5; color: #f3f3f3;">$gray-5 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #126eb5; color: #f8f8f8;">$gray-3 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #126eb5; color: #ffffff;">$gray-0 text <i class="icon-pbs-checkmark"></i></div>
+  </div>
+
+  <div class="contrast-table__group">
+    <h4>$blue-antique</h4>
+    <div class="contrast-table__swatch" style="background: #8fa6bc; color: #000000;">$gray-100 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #8fa6bc; color: #222222;">$gray-87 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #8fa6bc; color: #4b4b4b;">$gray-71 text <strong class="icon">&#9888;</strong></div>
+    <div class="contrast-table__swatch" style="background: #8fa6bc; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #8fa6bc; color: #b3b3b3;">$gray-30 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #8fa6bc; color: #e0e0e0;">$gray-12 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #8fa6bc; color: #f3f3f3;">$gray-5 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #8fa6bc; color: #f8f8f8;">$gray-3 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #8fa6bc; color: #ffffff;">$gray-0 text <i class="icon-pbs-remove"></i></div>
+  </div>
+
+  <div class="contrast-table__group">
+    <h4>$blue-brand</h4>
+    <div class="contrast-table__swatch" style="background: #00aaeb; color: #000000;">$gray-100 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #00aaeb; color: #222222;">$gray-87 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #00aaeb; color: #4b4b4b;">$gray-71 text <strong class="icon">&#9888;</strong></div>
+    <div class="contrast-table__swatch" style="background: #00aaeb; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #00aaeb; color: #b3b3b3;">$gray-30 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #00aaeb; color: #e0e0e0;">$gray-12 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #00aaeb; color: #f3f3f3;">$gray-5 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #00aaeb; color: #f8f8f8;">$gray-3 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #00aaeb; color: #ffffff;">$gray-0 text <i class="icon-pbs-remove"></i></div>
+  </div>
+
+  <div class="contrast-table__group">
+    <h4>$red</h4>
+    <div class="contrast-table__swatch" style="background: #ac031f; color: #000000;">$gray-100 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #ac031f; color: #222222;">$gray-87 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #ac031f; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #ac031f; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #ac031f; color: #b3b3b3;">$gray-30 text <strong class="icon">&#9888;</strong></div>
+    <div class="contrast-table__swatch" style="background: #ac031f; color: #e0e0e0;">$gray-12 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #ac031f; color: #f3f3f3;">$gray-5 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #ac031f; color: #f8f8f8;">$gray-3 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #ac031f; color: #ffffff;">$gray-0 text <i class="icon-pbs-checkmark"></i></div>
+  </div>
+
+  <div class="contrast-table__group">
+    <h4>$yellow</h4>
+    <div class="contrast-table__swatch" style="background: #e9ba15; color: #000000;">$gray-100 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #e9ba15; color: #222222;">$gray-87 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #e9ba15; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #e9ba15; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #e9ba15; color: #b3b3b3;">$gray-30 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #e9ba15; color: #e0e0e0;">$gray-12 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #e9ba15; color: #f3f3f3;">$gray-5 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #e9ba15; color: #f8f8f8;">$gray-3 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #e9ba15; color: #ffffff;">$gray-0 text <i class="icon-pbs-remove"></i></div>
+  </div>
+
+  <div class="contrast-table__group">
+    <h4>$green</h4>
+    <div class="contrast-table__swatch" style="background: #70B406; color: #000000;">$gray-100 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #70B406; color: #222222;">$gray-87 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #70B406; color: #4b4b4b;">$gray-71 text <strong class="icon">&#9888;</strong></div>
+    <div class="contrast-table__swatch" style="background: #70B406; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #70B406; color: #b3b3b3;">$gray-30 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #70B406; color: #e0e0e0;">$gray-12 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #70B406; color: #f3f3f3;">$gray-5 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #70B406; color: #f8f8f8;">$gray-3 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #70B406; color: #ffffff;">$gray-0 text <i class="icon-pbs-remove"></i></div>
+  </div>
+
+  <div class="contrast-table__group">
+    <h4>$magenta</h4>
+    <div class="contrast-table__swatch" style="background: #ce255d; color: #000000;">$gray-100 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #ce255d; color: #222222;">$gray-87 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #ce255d; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #ce255d; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #ce255d; color: #b3b3b3;">$gray-30 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #ce255d; color: #e0e0e0;">$gray-12 text <strong class="icon">&#9888;</strong></div>
+    <div class="contrast-table__swatch" style="background: #ce255d; color: #f3f3f3;">$gray-5 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #ce255d; color: #f8f8f8;">$gray-3 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #ce255d; color: #ffffff;">$gray-0 text <i class="icon-pbs-checkmark"></i></div>
+  </div>
+
+  <div class="contrast-table__group">
+    <h4>$orange</h4>
+    <div class="contrast-table__swatch" style="background: #EE7101; color: #000000;">$gray-100 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #EE7101; color: #222222;">$gray-87 text <i class="icon-pbs-checkmark"></i></div>
+    <div class="contrast-table__swatch" style="background: #EE7101; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #EE7101; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #EE7101; color: #b3b3b3;">$gray-30 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #EE7101; color: #e0e0e0;">$gray-12 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #EE7101; color: #f3f3f3;">$gray-5 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #EE7101; color: #f8f8f8;">$gray-3 text <i class="icon-pbs-remove"></i></div>
+    <div class="contrast-table__swatch" style="background: #EE7101; color: #ffffff;">$gray-0 text <strong class="icon">&#9888;</strong></div>
+  </div>
+</div>
+
+<script>
+// Provides the toggling to show only passing colors
+var toggle = document.querySelector('#contrast-swatch-toggle');
+var swatches = document.querySelectorAll('.contrast-table__swatch');
+
+toggle.addEventListener('click', function() {
+
+  if (toggle.classList.contains('toggled')) {
+    toggle.classList.remove('toggled');
+    toggle.innerHTML = 'Show Only Passing Combinations';
+    Array.prototype.map.call(swatches, function(swatch){
+      if(swatch.classList.contains('is-hidden')){
+        swatch.classList.remove('is-hidden');
+      }
+    });
+  } else {
+    toggle.classList.add('toggled');
+    toggle.innerHTML = 'Show All Combinations';
+    Array.prototype.map.call(swatches, function(swatch){
+      if(swatch.innerHTML.includes('icon-pbs-remove')){
+        swatch.classList.add('is-hidden');
+      }
+    });
+  }
+});
+</script>
+
 * * *
 
 ## Type
@@ -238,7 +485,7 @@ An Inverted button
 <button class="btn"> A $blue-digital ghost button </button>
 <button class="btn btn--ghost--red"> A $red ghost button</button>
 <button class="btn btn--ghost--green"> A $green ghost button</button>
-<button class="btn btn--ghost--gray-100"> A $gray-100 ghost button</button>
+<button class="btn btn--ghost--gray-87"> A $gray-87 ghost button</button>
 
 - Border and text colors are the same
 - Background is transparent
