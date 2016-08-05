@@ -56,25 +56,25 @@ permalink: /design-elements/
   $blue-digital: #126eb5<br />rgb(18, 110, 181)<br />hsl(206, 82%, 39%)
   </div>
   <div class="swatch" style="background-color: #8fa6bc;">
-  $blue-antique: #8fa6bc<br />rgb(255, 255, 255)<br />hsl(0, 0%, 100%)
+  $blue-antique: #8fa6bc<br />rgb(143, 166, 188)<br />hsl(209, 25%, 65%)
   </div>
   <div class="swatch" style="background-color: #00aaeb;">
-  $blue-brand: #00aaeb<br />rgb(255, 255, 255)<br />hsl(0, 0%, 100%)
+  $blue-brand: #00aaeb<br />rgb(0, 170, 235)<br />hsl(197, 100%, 46%)
   </div>
   <div class="swatch" style="background-color: #ac031f; color: white;">
-  $red: #ac031f<br />rgb(255, 255, 255)<br />hsl(0, 0%, 100%)
+  $red: #ac031f<br />rgb(172, 3, 31)<br />hsl(350, 97%, 34%)
   </div>
   <div class="swatch" style="background-color: #e9ba15;">
-  $yellow: #e9ba15<br />rgb(255, 255, 255)<br />hsl(0, 0%, 100%)
+  $yellow: #e9ba15<br />rgb(233, 186, 21)<br />hsl(47, 83%, 50%)
   </div>
   <div class="swatch" style="background-color: #70B406;">
-  $green: #70B406<br />rgb(255, 255, 255)<br />hsl(0, 0%, 100%)
+  $green: #70B406<br />rgb(112, 180, 6)<br />hsl(83, 94%, 36%)
   </div>
   <div class="swatch" style="background-color: #ce255d; color: #ffffff;">
-  $magenta: #ce255d<br />rgb(255, 255, 255)<br />hsl(0, 0%, 100%)
+  $magenta: #ce255d<br />rgb(206, 37, 93)<br />hsl(340, 70%, 48%)
   </div>
   <div class="swatch" style="background-color: #EE7101; color: #ffffff;">
-  $orange: #EE7101<br />rgb(255, 255, 255)<br />hsl(0, 0%, 100%)
+  $orange: #EE7101<br />rgb(238, 113, 1)<br />hsl(28, 99%, 47%)
   </div>
 </div>
 
