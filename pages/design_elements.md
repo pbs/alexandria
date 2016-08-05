@@ -91,7 +91,6 @@ We strive to meet WCAG 2.0 color contrast ratios to ensure accessibility. These 
 <div class="contrast-table">
   <div class="contrast-table__group">
     <h4>$gray-87</h4>
-    <div class="contrast-table__swatch" style="background: #222222; color: #000000;">$gray-100 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #222222; color: #222222;">$gray-87 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #222222; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #222222; color: #707070;">$gray-56 text <strong class="icon">&#9888;</strong></div>
@@ -104,7 +103,6 @@ We strive to meet WCAG 2.0 color contrast ratios to ensure accessibility. These 
 
   <div class="contrast-table__group">
     <h4>$gray-71</h4>
-    <div class="contrast-table__swatch" style="background: #4b4b4b; color: #000000;">$gray-100 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #4b4b4b; color: #222222;">$gray-87 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #4b4b4b; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #4b4b4b; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
@@ -117,7 +115,6 @@ We strive to meet WCAG 2.0 color contrast ratios to ensure accessibility. These 
 
   <div class="contrast-table__group">
     <h4>$gray-56</h4>
-    <div class="contrast-table__swatch" style="background: #707070; color: #000000;">$gray-100 text <strong class="icon">&#9888;</strong></div>
     <div class="contrast-table__swatch" style="background: #707070; color: #222222;">$gray-87 text <strong class="icon">&#9888;</strong></div>
     <div class="contrast-table__swatch" style="background: #707070; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #707070; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
@@ -130,7 +127,6 @@ We strive to meet WCAG 2.0 color contrast ratios to ensure accessibility. These 
 
   <div class="contrast-table__group">
     <h4>$gray-30</h4>
-    <div class="contrast-table__swatch" style="background: #b3b3b3; color: #000000;">$gray-100 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #b3b3b3; color: #222222;">$gray-87 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #b3b3b3; color: #4b4b4b;">$gray-71 text <strong class="icon">&#9888;</strong></div>
     <div class="contrast-table__swatch" style="background: #b3b3b3; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
@@ -143,7 +139,6 @@ We strive to meet WCAG 2.0 color contrast ratios to ensure accessibility. These 
 
   <div class="contrast-table__group">
     <h4>$gray-12</h4>
-    <div class="contrast-table__swatch" style="background: #e0e0e0; color: #000000;">$gray-100 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #e0e0e0; color: #222222;">$gray-87 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #e0e0e0; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #e0e0e0; color: #707070;">$gray-56 text <strong class="icon">&#9888;</strong></div>
@@ -156,7 +151,6 @@ We strive to meet WCAG 2.0 color contrast ratios to ensure accessibility. These 
 
   <div class="contrast-table__group">
     <h4>$gray-5</h4>
-    <div class="contrast-table__swatch" style="background: #f3f3f3; color: #000000;">$gray-100 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #f3f3f3; color: #222222;">$gray-87 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #f3f3f3; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #f3f3f3; color: #707070;">$gray-56 text <i class="icon-pbs-checkmark"></i></div>
@@ -169,7 +163,6 @@ We strive to meet WCAG 2.0 color contrast ratios to ensure accessibility. These 
 
   <div class="contrast-table__group">
     <h4>$gray-3</h4>
-    <div class="contrast-table__swatch" style="background: #f8f8f8; color: #000000;">$gray-100 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #f8f8f8; color: #222222;">$gray-87 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #f8f8f8; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #f8f8f8; color: #707070;">$gray-56 text <i class="icon-pbs-checkmark"></i></div>
@@ -182,7 +175,6 @@ We strive to meet WCAG 2.0 color contrast ratios to ensure accessibility. These 
 
   <div class="contrast-table__group">
     <h4>$gray-0</h4>
-    <div class="contrast-table__swatch" style="background: #ffffff; color: #000000;">$gray-100 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #ffffff; color: #222222;">$gray-87 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #ffffff; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #ffffff; color: #707070;">$gray-56 text <i class="icon-pbs-checkmark"></i></div>
@@ -195,7 +187,6 @@ We strive to meet WCAG 2.0 color contrast ratios to ensure accessibility. These 
 
   <div class="contrast-table__group">
     <h4>$blue-digital</h4>
-    <div class="contrast-table__swatch" style="background: #126eb5; color: #000000;">$gray-100 text <strong class="icon">&#9888;</strong></div>
     <div class="contrast-table__swatch" style="background: #126eb5; color: #222222;">$gray-87 text <strong class="icon">&#9888;</strong></div>
     <div class="contrast-table__swatch" style="background: #126eb5; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #126eb5; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
@@ -208,7 +199,6 @@ We strive to meet WCAG 2.0 color contrast ratios to ensure accessibility. These 
 
   <div class="contrast-table__group">
     <h4>$blue-antique</h4>
-    <div class="contrast-table__swatch" style="background: #8fa6bc; color: #000000;">$gray-100 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #8fa6bc; color: #222222;">$gray-87 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #8fa6bc; color: #4b4b4b;">$gray-71 text <strong class="icon">&#9888;</strong></div>
     <div class="contrast-table__swatch" style="background: #8fa6bc; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
@@ -221,7 +211,6 @@ We strive to meet WCAG 2.0 color contrast ratios to ensure accessibility. These 
 
   <div class="contrast-table__group">
     <h4>$blue-brand</h4>
-    <div class="contrast-table__swatch" style="background: #00aaeb; color: #000000;">$gray-100 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #00aaeb; color: #222222;">$gray-87 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #00aaeb; color: #4b4b4b;">$gray-71 text <strong class="icon">&#9888;</strong></div>
     <div class="contrast-table__swatch" style="background: #00aaeb; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
@@ -234,7 +223,6 @@ We strive to meet WCAG 2.0 color contrast ratios to ensure accessibility. These 
 
   <div class="contrast-table__group">
     <h4>$red</h4>
-    <div class="contrast-table__swatch" style="background: #ac031f; color: #000000;">$gray-100 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #ac031f; color: #222222;">$gray-87 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #ac031f; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #ac031f; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
@@ -247,7 +235,6 @@ We strive to meet WCAG 2.0 color contrast ratios to ensure accessibility. These 
 
   <div class="contrast-table__group">
     <h4>$yellow</h4>
-    <div class="contrast-table__swatch" style="background: #e9ba15; color: #000000;">$gray-100 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #e9ba15; color: #222222;">$gray-87 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #e9ba15; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #e9ba15; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
@@ -260,7 +247,6 @@ We strive to meet WCAG 2.0 color contrast ratios to ensure accessibility. These 
 
   <div class="contrast-table__group">
     <h4>$green</h4>
-    <div class="contrast-table__swatch" style="background: #70B406; color: #000000;">$gray-100 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #70B406; color: #222222;">$gray-87 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #70B406; color: #4b4b4b;">$gray-71 text <strong class="icon">&#9888;</strong></div>
     <div class="contrast-table__swatch" style="background: #70B406; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
@@ -273,7 +259,6 @@ We strive to meet WCAG 2.0 color contrast ratios to ensure accessibility. These 
 
   <div class="contrast-table__group">
     <h4>$magenta</h4>
-    <div class="contrast-table__swatch" style="background: #ce255d; color: #000000;">$gray-100 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #ce255d; color: #222222;">$gray-87 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #ce255d; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #ce255d; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
@@ -286,7 +271,6 @@ We strive to meet WCAG 2.0 color contrast ratios to ensure accessibility. These 
 
   <div class="contrast-table__group">
     <h4>$orange</h4>
-    <div class="contrast-table__swatch" style="background: #EE7101; color: #000000;">$gray-100 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #EE7101; color: #222222;">$gray-87 text <i class="icon-pbs-checkmark"></i></div>
     <div class="contrast-table__swatch" style="background: #EE7101; color: #4b4b4b;">$gray-71 text <i class="icon-pbs-remove"></i></div>
     <div class="contrast-table__swatch" style="background: #EE7101; color: #707070;">$gray-56 text <i class="icon-pbs-remove"></i></div>
