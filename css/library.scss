@@ -61,30 +61,51 @@ $on-laptop:        800px;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+
+  > .swatch,
+  > .swatch-tint-stack {
+    width: 100%;
+
+    @include breakpoint($xs) {
+      width: calc(50% - #{$gap});
+    }
+
+    @include breakpoint($sm) {
+      width: calc(33.33% - #{$gap});
+    }
+
+    @include breakpoint($md) {
+      width: calc(25% - #{$gap});
+    }
+
+    border: solid 1px $gray-medium;
+    margin-right: $gap;
+    margin-bottom: $gap;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    > * {
+      flex-grow: 1;
+    }
+
+    > .swatch {
+      height: 120px;
+    }
+
+  }
 }
-.swatch {
-  width: 100%;
 
-  @include breakpoint($xs) {
-    width: calc(50% - #{$gap});
-  }
 
-  @include breakpoint($sm) {
-    width: calc(33.33% - #{$gap});
-  }
+.swatch,
+.swatch-tint {
 
-  @include breakpoint($md) {
-    width: calc(25% - #{$gap});
-  }
 
   padding: $gap;
-  border: solid 1px $gray-medium;
-  margin-right: $gap;
-  margin-bottom: $gap;
   text-align: center;
   vertical-align: top;
   line-height: 1.4;
-  border-radius: $radius;
 
   &--icon {
     height: auto;

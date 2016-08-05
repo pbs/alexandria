@@ -24,6 +24,11 @@ $gray-0: #ffffff;
 // Hues
 $blue: #126eb5;
 $blue-digital: #126eb5;
+$blue-digital-darken-10: mix($black, $blue-digital, 10);
+$blue-digital-darken-20: mix($black, $blue-digital, 20);
+$blue-digital-lighten-10: mix($white, $blue-digital, 10);
+$blue-digital-lighten-20: mix($white, $blue-digital, 20);
+
 $blue-muted: #8fa6bc;
 $blue-antique: #8fa6bc;
 $blue-light: #00aaeb;
