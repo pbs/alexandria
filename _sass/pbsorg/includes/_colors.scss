@@ -23,6 +23,7 @@ $gray-0: #ffffff;
 
 // Hues
 $blue: #126eb5;
+
 $blue-digital: #126eb5;
 $blue-digital-darken-10: mix($black, $blue-digital, 10);
 $blue-digital-darken-20: mix($black, $blue-digital, 20);
@@ -31,15 +32,47 @@ $blue-digital-lighten-20: mix($white, $blue-digital, 20);
 
 $blue-muted: #8fa6bc;
 $blue-antique: #8fa6bc;
+$blue-antique-darken-10: mix($black, $blue-antique, 10);
+$blue-antique-darken-20: mix($black, $blue-antique, 20);
+$blue-antique-lighten-10: mix($white, $blue-antique, 10);
+$blue-antique-lighten-20: mix($white, $blue-antique, 20);
+
 $blue-light: #00aaeb;
 $blue-brand: #00aaeb;
+$blue-brand-darken-10: mix($black, $blue-brand, 10);
+$blue-brand-darken-20: mix($black, $blue-brand, 20);
+$blue-brand-lighten-10: mix($white, $blue-brand, 10);
+$blue-brand-lighten-20: mix($white, $blue-brand, 20);
 
 $red: #ac031f;
+$red-darken-10: mix($black, $red, 10);
+$red-darken-20: mix($black, $red, 20);
+$red-lighten-10: mix($white, $red, 10);
+$red-lighten-20: mix($white, $red, 20);
+
 $yellow: #e9ba15;
+$yellow-darken-10: mix($black, $yellow, 10);
+$yellow-darken-20: mix($black, $yellow, 20);
+$yellow-lighten-10: mix($white, $yellow, 10);
+$yellow-lighten-20: mix($white, $yellow, 20);
+
 $green: #70B406;
+$green-darken-10: mix($black, $green, 10);
+$green-darken-20: mix($black, $green, 20);
+$green-lighten-10: mix($white, $green, 10);
+$green-lighten-20: mix($white, $green, 20);
 
 $magenta: #ce255d;
+$magenta-darken-10: mix($black, $magenta, 10);
+$magenta-darken-20: mix($black, $magenta, 20);
+$magenta-lighten-10: mix($white, $magenta, 10);
+$magenta-lighten-20: mix($white, $magenta, 20);
+
 $orange: #EE7101;
+$orange-darken-10: mix($black, $orange, 10);
+$orange-darken-20: mix($black, $orange, 20);
+$orange-lighten-10: mix($white, $orange, 10);
+$orange-lighten-20: mix($white, $orange, 20);
 
 //3rd party brand colors
 $facebook-blue: #3b5999;

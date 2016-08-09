@@ -30,9 +30,9 @@
   // add show to favorites
   &--favorite {
     @include btn-states() {
-      background: $gray-lighter;
-      border-color: $gray-medium;
-      color: $gray-dark;
+      background: $gray-5;
+      border-color: $gray-30;
+      color: $gray-56;
     }
 
     .btn--ripple-effect {
@@ -58,9 +58,9 @@
   // add video to watchlist
   &--watchlist {
     @include btn-states() {
-      background: $gray-lighter;
-      border-color: $gray-medium;
-      color: $gray-dark;
+      background: $gray-5;
+      border-color: $gray-30;
+      color: $gray-56;
     }
 
     .btn--ripple-effect {
@@ -73,9 +73,9 @@
     }
 
     &.selected {
-      background: $brand-success;
+      background: $green-darken-10;
       border-color: darken($green, 15%);
-      color: $white;
+      color: $gray-0;
     }
   }
 
@@ -87,7 +87,7 @@
     line-height: 0.4;
     padding: 6px 6px 9px 6px;
     height: 24px;
-    background-color: $gray-lighter;
+    background-color: $gray-5;
     color: $blue-muted;
     border: 1px solid $blue-muted;
   }
@@ -173,7 +173,7 @@
   }
 
   &--green {
-    @include fill-btn($green);
+    @include fill-btn($green-darken-10);
   }
 
   &--blue-digital {
@@ -181,11 +181,11 @@
   }
 
   &--blue-antique {
-    @include fill-btn($blue-antique);
+    @include fill-btn($blue-antique-darken-10);
   }
 
   &--blue-brand {
-    @include fill-btn($blue-brand);
+    @include fill-btn($blue-brand-darken-10);
   }
 
   &--gray-56 {
@@ -202,7 +202,7 @@
     }
 
     &--green {
-      @include ghost-btn($green);
+      @include ghost-btn($green-darken-10);
     }
 
     &--gray-87 {

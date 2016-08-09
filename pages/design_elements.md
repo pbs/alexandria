@@ -957,34 +957,18 @@ There are a set of rules that we have around buttons:
 ### Fill buttons
 <button class="btn btn--blue-digital">A $blue-digital button</button>
 <button class="btn btn--red">A $red button</button>
-<button class="btn btn--green">A $green button</button>
+<button class="btn btn--green">A $green button*</button>
 <button class="btn btn--magenta">A $magenta button</button>
 <button class="btn btn--orange">An $orange button</button>
-<button class="btn btn--blue-antique">An $blue-antique button</button>
-<button class="btn btn--blue-brand">A $blue-brand button</button>
-
+<button class="btn btn--blue-antique">A $blue-antique button*</button>
+<button class="btn btn--blue-brand">A $blue-brand button*</button>
 <button class="btn btn--gray-56">A $gray-56 button</button>
-<button class="btn btn--gray-30">A $gray-30 button</button>
 
 
-
-<!-- <button class="btn btn--cta">
-A Call to Action button
-</button>
-
-<button class="btn btn--inverse">
-An Inverted button
-</button>
-
-<div class="passport">
-  <button class="btn green-activation">
-  An Activation button
-  </button>
-</div> -->
-
-- Colors: All [hues](#hues) are availble, though $yellow is reserved for an activated state (e.g. a favorited show). $gray-56 and $gray-30 are also available.
-- Text is always $gray-0 (aka white)
-- No border - UNLESS the button's default state is a "ghost" button, and it fills in when active (e.g. a favorited show) - in that case, retain the original border color
+- Colors: The above hues and $gray-56 are availble for regular fill buttons
+- Text is always $gray-0 (i.e., white)
+- No border - *unless* the button's default state is a "ghost" button, and it fills in when active (e.g. a favorited show) - in that case, retain the original border color
+- \* These buttons need the "darken 10" variation of the hue to pass contrast tests
 - Hover/Focus state: text underline
 - Active state: 20% darker color
 
@@ -1006,9 +990,7 @@ An Inverted button
 <button class="btn btn--watchlist btn--ripple">
   <i class="icon-pbs-checkmark"></i>
   <span class="btn--text" data-text-default="Add to Watchlist" data-text-selected="In My Watchlist">Add to Watchlist</span>
-</button>
-
-<button class="btn btn--watchlist btn--ripple selected">
+</button> <button class="btn btn--watchlist btn--ripple selected">
   <i class="icon-pbs-checkmark"></i>
   <span class="btn--text" data-text-default="Add to Watchlist" data-text-selected="In My Watchlist">In My Watchlist</span>
 </button>
@@ -1016,12 +998,16 @@ An Inverted button
 <button class="btn btn--favorite btn--ripple">
   <i class="icon-pbs-favorite" aria-hidden="true"></i>
   <span class="btn--text" data-text-default="Favorite This Show" data-text-selected="Favorite Show">Favorite This Show</span>
-</button>
-
-<button class="btn btn--favorite btn--ripple selected">
+</button> <button class="btn btn--favorite btn--ripple selected">
   <i class="icon-pbs-favorite" aria-hidden="true"></i>
   <span class="btn--text" data-text-default="Favorite This Show" data-text-selected="Favorite Show">Favorited Show</span>
 </button>
+
+- These are buttons that are meant to convey the "default/activated" state of a related object (usually a video or show).
+- The "default state" border is $gray-30, the text is $gray-56, and the fill is $gray-5.
+- There usually is an icon on the left, that does not change with the state
+- The *text label* in the button changes with state
+- The "activated" state can have either a $green-darken-10 fill, or a $yellow fill (the yellow state may be revised due to accessibility concerns)
 
 ### Social Sign In Buttons
 
@@ -1045,6 +1031,21 @@ An Inverted button
     </a>
   </li>
 </ul>
+
+### Button Sizes
+
+<button class="btn">This is a default button</button>
+<button class="btn btn--min">This is min button</button>
+<button class="btn btn--max">This is a max button</button>
+
+<div class="al-layout-container">
+  <button class="btn btn--half">This is button that takes half it's contianer</button>
+</div>
+
+<div class="al-layout-container">
+  <button class="btn btn--half">This is min button</button>
+</div>
+
 
 * * *
 
