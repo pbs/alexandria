@@ -1034,18 +1034,20 @@ There are a set of rules that we have around buttons:
 
 ### Button Sizes
 
-<button class="btn">This is a default button</button>
-<button class="btn btn--min">This is min button</button>
-<button class="btn btn--max">This is a max button</button>
+<button class="btn btn--blue-digital">Default button</button>
+<button class="btn  btn--blue-digital btn--min">Min button</button>
 
 <div class="al-layout-container">
-  <button class="btn btn--half">This is button that takes half it's contianer</button>
+  <button class="btn  btn--blue-digital btn--half">This button takes half of its container</button>
 </div>
 
 <div class="al-layout-container">
-  <button class="btn btn--half">This is min button</button>
+  <button class="btn  btn--blue-digital btn--full">This button takes all of its container</button>
 </div>
 
+- Buttons have a default amount of padding
+- There is a "min" variation with half the padding in both directions
+- There are also "half" and "full" variations that have widths relative to their containers
 
 * * *
 

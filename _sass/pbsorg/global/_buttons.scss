@@ -209,6 +209,20 @@
       @include ghost-btn($gray-100);
     }
   }
+
+  &--min {
+    padding: $gap-half $gap;
+  }
+
+  &--half {
+    display: inline-block;
+    width: 50%;
+  }
+
+  &--full {
+    display: block;
+    width: 100%;
+  }
 }
 
 @keyframes ripple-animation {

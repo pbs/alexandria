@@ -150,3 +150,11 @@ $on-laptop:        800px;
     }
   }
 }
+
+.al-layout-container {
+  padding: $gap;
+  margin-bottom: $gap-double;
+  margin: $gap-double 0;
+  max-width: 600px;
+  border: 3px dashed $gray-medium;
+}
