@@ -148,7 +148,7 @@ We strive to meet [WCAG 2.0 color contrast ratios](https://www.w3.org/TR/WCAG20-
 - <strong class="icon">&#9888;</strong> passes for large type sizes (above 18px or 14px/bold);
 - <i class="icon-pbs-remove"></i> fails at all sizes
 
-<button class="btn" id="contrast-swatch-toggle">Show Only Passing Combinations</button>
+<button class="btn btn--min" id="contrast-swatch-toggle">Show Only Passing Combinations</button>
 
 #### Neutrals
 
@@ -1055,6 +1055,83 @@ There are a set of rules that we have around buttons:
 
 * * *
 
+### "Box" Inputs
+
+
+<div class="al-box-inputs">
+
+  <p>
+    <label for="text_field">Text Field:</label>
+    <input type="text" id="text_field" placeholder="Placeholder text"/>
+  </p>
+
+  <p>
+    <label for="text_field_disabled">Disabled Text Field:</label>
+    <input type="text" id="text_field_disabled" disabled value="I'm disabled" />
+  </p>
+
+  <p>
+    <label for="text_field_readonly">Readonly Text Field:</label>
+    <input type="text" id="text_field_readonly" readonly value="I'm readonly" />
+  </p>
+
+  <p>
+    <label for="text_area">Text Area:</label>
+    <textarea id="text_area"></textarea>
+  </p>
+
+  <p>
+    <label for="text_area_disabled">Disabled Text Area:</label>
+    <textarea id="text_area_disabled" disabled>I'm disabled</textarea>
+  </p>
+
+  <p>
+    <label for="text_area">Readonly Text Area:</label>
+    <textarea id="text_area" readonly>I'm readonly</textarea>
+  </p>
+
+  <p>
+    <label for="password">Password:</label>
+    <input type="password" class="password" id="password" />
+  </p>
+
+  <p>
+    <label for="email">Email:</label>
+    <input type="email" id="email" />
+  </p>
+
+  <p>
+    <label for="url">URL:</label>
+    <input type="url" id="url" />
+  </p>
+
+  <p>
+    <label for="tel">Telephone:</label>
+    <input type="tel" id="tel" />
+  </p>
+
+  <p>
+    <label for="number">Number:</label>
+    <input type="number" id="number" min="0" max="10" step="1" value="5" />
+  </p>
+
+  <p>
+    <label for="search">Search:</label>
+    <input type="search" id="search" />
+  </p>
+
+  <p>
+    <label for="date">Date:</label>
+    <input type="date" id="date" />
+  </p>
+
+  <p>
+    <label for="time">Time:</label>
+    <input type="time" id="time" />
+  </p>
+
+</div>
+
 <p>The Fieldset:</p>
 <fieldset>
   <legend>Legend</legend>
@@ -1062,44 +1139,37 @@ There are a set of rules that we have around buttons:
   <p>The Form:</p>
 
   <form>
-    <p><label for="text_field">Text Field:</label><br />
-      <input type="text" id="text_field" />
+    <p>
     </p>
 
-    <p><label for="text_field_disabled">Disabled Text Field:</label><br />
-      <input type="text" id="text_field_disabled" disabled value="I'm disabled" />
+    <p>
     </p>
 
-    <p><label for="text_field_readonly">Readonly Text Field:</label><br />
-      <input type="text" id="text_field_readonly" readonly value="I'm readonly" />
+    <p>
     </p>
 
-    <p><label for="text_area">Text Area:</label><br />
-      <textarea id="text_area"></textarea>
+    <p>
     </p>
 
-    <p><label for="text_area_disabled">Disabled Text Area:</label><br />
-      <textarea id="text_area_disabled" disabled>I'm disabled</textarea>
+    <p>
     </p>
 
-    <p><label for="text_area">Readonly Text Area:</label><br />
-      <textarea id="text_area" readonly>I'm readonly</textarea>
+    <p>
     </p>
 
-    <p><label for="select_element">Select Element:</label></p>
-    <div class="styled-select">
-      <select id="select_element">
-        <optgroup label="Option Group 1">
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-        </optgroup>
-        <optgroup label="Option Group 2">
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-          <option value="3" disabled>Disabled Option</option>
-        </optgroup>
-      </select>
-    </div>
+    <label for="select_element">Select Element:</label>
+    <select id="select_element">
+      <optgroup label="Option Group 1">
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+      </optgroup>
+      <optgroup label="Option Group 2">
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3" disabled>Disabled Option</option>
+      </optgroup>
+    </select>
+
 
 
     <p><label for="select_element_disabled">Disabled Select Element:</label><br/>
@@ -1123,8 +1193,7 @@ There are a set of rules that we have around buttons:
       <label><input type="checkbox" class="checkbox" name="checkboxes" value="check_4" disabled /> Checkbox Disabled</label><br/>
     </p>
 
-    <p><label for="password">Password:</label><br />
-      <input type="password" class="password" id="password" />
+    <p>
     </p>
 
     <p><label for="file">File Input:</label><br />
@@ -1133,33 +1202,7 @@ There are a set of rules that we have around buttons:
 
     <h3>HTML5-specific Form Elements</h3>
 
-    <p><label for="email">Email:</label><br />
-      <input type="email" id="email" />
-    </p>
 
-    <p><label for="url">URL:</label><br />
-      <input type="url" id="url" />
-    </p>
-
-    <p><label for="tel">Telephone:</label><br />
-      <input type="tel" id="tel" />
-    </p>
-
-    <p><label for="number">Number:</label><br />
-      <input type="number" id="number" min="0" max="10" step="1" value="5" />
-    </p>
-
-    <p><label for="search">Search:</label><br />
-      <input type="search" id="search" />
-    </p>
-
-    <p><label for="date">Date:</label><br />
-      <input type="date" id="date" />
-    </p>
-
-    <p><label for="time">Time:</label><br />
-      <input type="time" id="time" />
-    </p>
 
     <p><label for="color">Color:</label><br />
       <input type="color" id="color" />

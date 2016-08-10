@@ -72,10 +72,30 @@ output {
 // https://github.com/twbs/bootstrap/issues/11586.
 
 input[type="search"],
-[type="text"] {
-  padding: 10px;
+[type="text"],
+[type="number"],
+[type="email"],
+[type="url"],
+[type="password"],
+[type="tel"],
+[type="date"],
+[type="time"],
+[type="datalist"],
+textarea {
+  padding: $gap-half;
+  border: 1px solid $gray-56;
   -webkit-appearance: none;
+
+  &[disabled] {
+    border: 1px dashed $gray-56;
+    color: $gray-56;
+    &:hover {
+      cursor: disabled;
+    }
+  }
 }
+
+
 
 button,
 [type="submit"],
@@ -122,6 +142,7 @@ select,
   fieldset[disabled] & {
     background-color: $input-bg-disabled;
     opacity: 1; // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
+    color: $gray-56;
   }
 
   &[disabled],

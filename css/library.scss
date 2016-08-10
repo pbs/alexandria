@@ -158,3 +158,15 @@ $on-laptop:        800px;
   max-width: 600px;
   border: 3px dashed $gray-medium;
 }
+
+.al-box-inputs {
+  > p {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: no-wrap;
+  }
+
+  label {
+    width: 25%;
+  }
+}
