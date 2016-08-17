@@ -31,7 +31,7 @@
   &--favorite {
     @include btn-states() {
       background: $gray-5;
-      border-color: $gray-30;
+      border-color: $gray-56;
       color: $gray-56;
     }
 
@@ -45,8 +45,8 @@
     }
 
     &.selected {
-      background: $yellow;
-      border-color: darken($yellow, 15%);
+      background: $magenta;
+      // border-color: darken($yellow, 15%);
       color: $white;
     }
 
@@ -59,7 +59,7 @@
   &--watchlist {
     @include btn-states() {
       background: $gray-5;
-      border-color: $gray-30;
+      border-color: $gray-56;
       color: $gray-56;
     }
 
@@ -73,8 +73,8 @@
     }
 
     &.selected {
-      background: $green-darken-10;
-      border-color: darken($green, 15%);
+      background: $green;
+      // border-color: $gray-0;
       color: $gray-0;
     }
   }
@@ -173,7 +173,7 @@
   }
 
   &--green {
-    @include fill-btn($green-darken-10);
+    @include fill-btn($green);
   }
 
   &--blue-digital {
@@ -202,7 +202,15 @@
     }
 
     &--green {
-      @include ghost-btn($green-darken-10);
+      @include ghost-btn($green);
+    }
+
+    &--magenta {
+      @include ghost-btn($magenta);
+    }
+
+    &--orange {
+      @include ghost-btn($orange);
     }
 
     &--gray-87 {

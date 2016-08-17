@@ -17,6 +17,7 @@
     height: 45px;
     margin: 0;
     float: none;
+    border-radius: $radius;
     cursor: pointer;
 
     a {
@@ -40,7 +41,7 @@
 
     &--pbs {
       margin-top: 45px;
-      background-color: $blue-light;
+      background-color: $blue-brand-darken-10;
     }
   }
 
