@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>PBS-edit</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="PBS-edit" fill="#222222">
+            <g id="Group" transform="translate(128.970114, 131.853227) rotate(-320.000000) translate(-128.970114, -131.853227) translate(111.470114, 31.853227)">
+                <path d="M-1.08002496e-12,39.6407718 L35,39.6407718 L35,156.603538 L-1.08002496e-12,156.603538 L-1.08002496e-12,39.6407718 Z M-1.02318154e-12,170.403698 L35,170.403698 L19.9425066,197.318529 C18.5935475,199.729754 16.4052966,199.727688 15.0574934,197.318529 L-1.02318154e-12,170.403698 Z M-1.13686838e-12,3.00214429 C-1.13686838e-12,1.34410578 1.35059566,9.52127266e-13 2.99921059,9.52127266e-13 L32.0007894,9.52127266e-13 C33.6572077,9.52127266e-13 35,1.35292078 35,3.00214429 L35,25.840611 L-1.13686838e-12,25.840611 L-1.13686838e-12,3.00214429 Z" id="Combined-Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

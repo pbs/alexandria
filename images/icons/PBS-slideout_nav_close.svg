@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>PBS-slideout_nav_close</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="PBS-slideout_nav_close" fill="#222222">
+            <g id="Group" transform="translate(49.500000, 128.500000) scale(-1, 1) translate(-49.500000, -128.500000) translate(24.000000, 103.000000)">
+                <path d="M17.93978,33.1453838 L17.93978,10.0324052 C17.93978,8.92528944 17.0445219,8.02494392 15.9401651,8.02494392 L9.93939503,8.02494392 C8.82721334,8.02494392 7.93978005,8.92371493 7.93978005,10.0324052 L7.93978005,41.0174827 C7.93978005,41.5914506 8.18040327,42.1098439 8.56603849,42.4760178 C8.93377502,42.8876984 9.47025081,43.1453838 10.0676812,43.1453838 L41.0527587,43.1453838 C42.1598744,43.1453838 43.06022,42.2501257 43.06022,41.1457688 L43.06022,35.1449988 C43.06022,34.0328171 42.1614489,33.1453838 41.0527587,33.1453838 L17.93978,33.1453838 Z" id="Combined-Shape" transform="translate(25.500000, 25.585164) scale(-1, 1) rotate(-315.000000) translate(-25.500000, -25.585164) "></path>
+            </g>
+            <rect id="Rectangle-3" x="82" y="73" width="150" height="20" rx="2"></rect>
+            <rect id="Rectangle-3-Copy" x="82" y="118" width="150" height="20" rx="2"></rect>
+            <rect id="Rectangle-3-Copy-2" x="82" y="163" width="150" height="20" rx="2"></rect>
+        </g>
+    </g>
+</svg>

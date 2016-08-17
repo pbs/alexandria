@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>PBS-mail</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="PBS-mail">
+            <g id="Group" transform="translate(40.000000, 67.000000)">
+                <path d="M173.993115,0 C175.101487,0 176,0.902048518 176,2.00698939 L176,120.993011 C176,122.10144 175.095019,123 173.993115,123 L2.00688501,123 C0.898513025,123 0,122.097951 0,120.993011 L0,2.00698939 C0,0.898559755 0.904981107,0 2.00688501,0 L173.993115,0 Z M161,15 L161,108 L15,108 L15,15 L161,15 Z" id="Combined-Shape" fill="#222222"></path>
+                <path d="M9.94263697,12.33999 C9.94263697,12.33999 86.966326,77.2020439 88.9932652,77.2020439 C91.0202044,77.2020439 169.057363,12.33999 169.057363,12.33999" id="Path-16" stroke="#222222" stroke-width="15"></path>
+            </g>
+        </g>
+    </g>
+</svg>

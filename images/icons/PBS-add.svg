@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>PBS-add</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="PBS-add" fill="#222222">
+            <path d="M137,118 L137,43.9911224 C137,42.9047976 136.108691,42 135.009205,42 L118.990795,42 C117.898212,42 117,42.8914559 117,43.9911224 L117,118 L42.9911224,118 C41.9047976,118 41,118.891309 41,119.990795 L41,136.009205 C41,137.101788 41.8914559,138 42.9911224,138 L117,138 L117,212.008878 C117,213.095202 117.891309,214 118.990795,214 L135.009205,214 C136.101788,214 137,213.108544 137,212.008878 L137,138 L211.008878,138 C212.095202,138 213,137.108691 213,136.009205 L213,119.990795 C213,118.898212 212.108544,118 211.008878,118 L137,118 Z" id="Combined-Shape"></path>
+        </g>
+    </g>
+</svg>

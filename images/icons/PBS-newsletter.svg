@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>PBS-newsletter</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="PBS-newsletter" fill="#222222">
+            <g id="Group" transform="translate(62.000000, 43.000000)">
+                <text id="NEWS" font-family="OpenSans-Extrabold, Open Sans" font-size="26" font-weight="600">
+                    <tspan x="29" y="45">NEWS</tspan>
+                </text>
+                <path d="M1.99431266,6.73166346e-16 C0.892884191,8.03878318e-16 0,0.896365681 0,1.99854238 L0,7.68292683 L0,160.317073 L6.71741656e-16,166.001458 C8.02176989e-16,167.105222 0.89446861,168 1.99431266,168 L7.66666667,168 L130.333333,168 L136.005687,168 C137.107116,168 138,167.103634 138,166.001458 L138,160.317073 L138,7.68292683 L138,1.99854238 C138,0.894777901 137.105531,0 136.005687,0 L130.333333,0 L7.66666667,0 L1.99431266,6.73166346e-16 Z M17.8440051,15.8780488 C16.7396783,15.8780488 15.8444444,16.7707513 15.8444444,17.8837672 L15.8444444,22.1087151 L15.8444444,145.891285 L15.8444444,150.116233 C15.8444444,151.223961 16.741465,152.121951 17.8440051,152.121951 L21.7506173,152.121951 L116.249383,152.121951 L120.155995,152.121951 C121.260322,152.121951 122.155556,151.229249 122.155556,150.116233 L122.155556,145.891285 L122.155556,22.1087151 L122.155556,17.8837672 C122.155556,16.7760395 121.258535,15.8780488 120.155995,15.8780488 L116.249383,15.8780488 L21.7506173,15.8780488 L17.8440051,15.8780488 Z" id="Combined-Shape"></path>
+                <rect id="Rectangle-2" x="57" y="72" width="26" height="31" rx="2"></rect>
+            </g>
+            <rect id="Rectangle-7" x="92" y="99" width="77" height="10" rx="2"></rect>
+            <rect id="Rectangle-7-Copy-5" x="92" y="154" width="77" height="10" rx="2"></rect>
+            <rect id="Rectangle-7-Copy-6" x="92" y="171" width="77" height="10" rx="2"></rect>
+            <rect id="Rectangle-7-Copy" x="92" y="120" width="20" height="10" rx="2"></rect>
+            <rect id="Rectangle-7-Copy-3" x="149" y="120" width="20" height="10" rx="2"></rect>
+            <rect id="Rectangle-7-Copy-2" x="92" y="136" width="20" height="10" rx="2"></rect>
+            <rect id="Rectangle-7-Copy-4" x="149" y="136" width="20" height="10" rx="2"></rect>
+        </g>
+    </g>
+</svg>

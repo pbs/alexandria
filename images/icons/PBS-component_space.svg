@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>PBS-component_space</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="PBS-component_space" fill="#222222">
+            <rect id="Rectangle-3" x="29" y="65" width="200" height="20" rx="2"></rect>
+            <rect id="Rectangle-3-Copy" x="29" y="173" width="200" height="20" rx="2"></rect>
+            <path d="M129.14419,98.4512385 L146.721372,118.185759 C147.455623,119.010129 147.146932,119.678413 146.042175,119.678413 L111.175843,119.678413 C110.066482,119.678413 109.764232,119.008066 110.496646,118.185759 L128.073829,98.4512385 C128.369401,98.1193895 128.847812,98.1184847 129.14419,98.4512385 Z" id="Triangle-2"></path>
+            <path d="M129.258038,159.538763 L147.31559,139.264915 C147.78454,138.738408 147.592473,138.311589 146.882045,138.311589 L110.563669,138.311589 C109.855279,138.311589 109.658683,138.73561 110.130125,139.264915 L128.187677,159.538763 C128.483249,159.870612 128.96166,159.871517 129.258038,159.538763" id="Triangle-2"></path>
+        </g>
+    </g>
+</svg>
