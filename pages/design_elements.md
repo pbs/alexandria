@@ -55,6 +55,8 @@ We have a collection of eight 'pure' hues. Using the pure hues whenever possible
 
 However, if there is a situation where there is not sufficient contrast, tints of 10% and 20%, both in darkening and lightening, are allowed.
 
+In Sass, these colors should be acheived using the `mix` function with the hue and `$gray-0` or `$gray-100`, *not* the default `darken` or `lighten` function.
+
 Tints can be acheived in design software by overlaying the pure hue with a layer of white or black, set to 10% or 20% opacity.
 
 <div class="swatch-group">
@@ -778,6 +780,7 @@ toggle.addEventListener('click', function() {
   }
 });
 
+// toggles the pure hue contrast tables and the tints
 var tintSelector = document.querySelector('#tint-selector');
 var hueTables = document.querySelectorAll('.contrast-table--hue');
 
@@ -838,110 +841,368 @@ We rely on two typefaces: [Open Sans](https://www.google.com/fonts/specimen/Open
 
 * * *
 
+### Brand
+
 <div class="swatch-group">
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-twitter-square"></i>
+  <div class="swatch swatch--icon" title="Logo">
+   <img src="../images/icons/PBS-logo.svg" alt="Logo Icon" />
   </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-twitter"></i>
+  <div class="swatch swatch--icon" title="Logotype">
+   <img src="../images/icons/PBS-logotype.svg" alt="Logotype Icon" />
   </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-facebook"></i>
+  <div class="swatch swatch--icon" title="Passport Compass Rose">
+    <img src="../images/icons/PBS-passport_compass_rose.svg" alt="Passport Compass Rose Icon" />
   </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-retweet"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-reply-mail"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-mail"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-favorite"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-facebook-square"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-instagram"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-pinterest"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-youtube"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-youtube-2"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-tumblr"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-tumblr-square"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-checkmark"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-share"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-embed2"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-cheveron-down"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-cheveron-up"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-search"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-pbshead"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-grid"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-menu-hamburger"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-remove"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-refresh"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-google"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-google-plus"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-google-plus2"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-cc"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-filter"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-play"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-pause"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-play-2"></i>
-  </div>
-  <div class="swatch swatch--icon">
-    <i class="icon-pbs-pause-2"></i>
+  <div class="swatch swatch--icon" title="Passport Logo">
+    <img src="../images/icons/PBS-passport_logo.svg" alt="Passport Logo Icon" />
   </div>
 </div>
+
+### Media Playback
+
+<div class="swatch-group">
+  <div class="swatch swatch--icon" title="Pause">
+    <img src="../images/icons/PBS-pause.svg" alt="Pause Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Pause Circle">
+    <img src="../images/icons/PBS-pause_circle.svg" alt="Pause Circle Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Play">
+    <img src="../images/icons/PBS-play.svg" alt="Play Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Play Circle">
+    <img src="../images/icons/PBS-play_circle.svg" alt="Play Circle Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Rewind">
+    <img src="../images/icons/PBS-rewind.svg" alt="Rewind Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Closed Caption">
+    <img src="../images/icons/PBS-closed_caption.svg" alt="Closed Caption Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Closed Caption Line">
+    <img src="../images/icons/PBS-closed_caption_line.svg" alt="Closed Caption Line Icon" />
+  </div>
+</div>
+
+### Interface
+
+<div class="swatch-group">
+
+  <div class="swatch swatch--icon" title="Up Caret">
+    <img src="../images/icons/PBS-up_caret.svg" alt="Up Caret Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Down Caret">
+    <img src="../images/icons/PBS-down_caret.svg" alt="Down Caret Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Left Caret">
+    <img src="../images/icons/PBS-left_caret.svg" alt="Left Caret Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Right Caret">
+    <img src="../images/icons/PBS-right_caret.svg" alt="Right Caret Icon" />
+  </div>
+
+  <div class="swatch swatch--icon" title="Collapse">
+    <img src="../images/icons/PBS-collapse.svg" alt="Collapse Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Expand">
+    <img src="../images/icons/PBS-expand.svg" alt="Expand Icon" />
+  </div>
+
+  <div class="swatch swatch--icon" title="Hamburger">
+    <img src="../images/icons/PBS-hamburger.svg" alt="Hamburger Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Slideout Nav Close">
+    <img src="../images/icons/PBS-slideout_nav_close.svg" alt="Slideout Nav Close Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Slideout Nav Open">
+    <img src="../images/icons/PBS-slideout_nav_open.svg" alt="Slideout Nav Open Icon" />
+  </div>
+
+  <div class="swatch swatch--icon" title="Add">
+    <img src="../images/icons/PBS-add.svg" alt="Add Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Archive">
+    <img src="../images/icons/PBS-archive.svg" alt="Archive Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Calendar">
+    <img src="../images/icons/PBS-calendar.svg" alt="Calendar Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Certificate">
+    <img src="../images/icons/PBS-certificate.svg" alt="Certificate Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Check">
+    <img src="../images/icons/PBS-check.svg" alt="Check Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Circle">
+    <img src="../images/icons/PBS-circle.svg" alt="Circle Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Close">
+    <img src="../images/icons/PBS-close.svg" alt="Close Icon" />
+  </div>
+
+  <div class="swatch swatch--icon" title="Columns">
+    <img src="../images/icons/PBS-columns.svg" alt="Columns Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Copy">
+    <img src="../images/icons/PBS-copy.svg" alt="Copy Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Copyright">
+    <img src="../images/icons/PBS-copyright.svg" alt="Copyright Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Countdown">
+    <img src="../images/icons/PBS-countdown.svg" alt="Countdown Icon" />
+  </div>
+
+
+  <div class="swatch swatch--icon" title="Download">
+    <img src="../images/icons/PBS-download.svg" alt="Download Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Download Circle">
+    <img src="../images/icons/PBS-download_circle.svg" alt="Download Circle Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Duplicate">
+    <img src="../images/icons/PBS-duplicate.svg" alt="Duplicate Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Edit">
+    <img src="../images/icons/PBS-edit.svg" alt="Edit Icon" />
+  </div>
+
+
+  <div class="swatch swatch--icon" title="Favorite">
+    <img src="../images/icons/PBS-favorite.svg" alt="Favorite Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Filter">
+    <img src="../images/icons/PBS-filter.svg" alt="Filter Icon" />
+  </div>
+
+  <div class="swatch swatch--icon" title="Help">
+    <img src="../images/icons/PBS-help.svg" alt="Help Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Help Line">
+    <img src="../images/icons/PBS-help_line.svg" alt="Help Line Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="History Emptyset">
+    <img src="../images/icons/PBS-history_emptyset.svg" alt="History Emptyset Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Home">
+    <img src="../images/icons/PBS-home.svg" alt="Home Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Info">
+    <img src="../images/icons/PBS-info.svg" alt="Info Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Info Line">
+    <img src="../images/icons/PBS-info_line.svg" alt="Info Line Icon" />
+  </div>
+
+  <div class="swatch swatch--icon" title="Link">
+    <img src="../images/icons/PBS-link.svg" alt="Link Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Local Pin">
+    <img src="../images/icons/PBS-local_pin.svg" alt="Local Pin Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Local Pin Line">
+    <img src="../images/icons/PBS-local_pin_line.svg" alt="Local Pin Line Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Mail">
+    <img src="../images/icons/PBS-mail.svg" alt="Mail Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Newsletter">
+    <img src="../images/icons/PBS-newsletter.svg" alt="Newsletter Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Not Published">
+    <img src="../images/icons/PBS-not_published.svg" alt="Not Published Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Notification">
+    <img src="../images/icons/PBS-notification.svg" alt="Notification Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Notification Line">
+    <img src="../images/icons/PBS-notification_line.svg" alt="Notification Line Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Power Off">
+    <img src="../images/icons/PBS-power_off.svg" alt="Power Off Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Preview">
+    <img src="../images/icons/PBS-preview.svg" alt="Preview Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Refresh">
+    <img src="../images/icons/PBS-refresh.svg" alt="Refresh Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Replay Video">
+    <img src="../images/icons/PBS-replay_video.svg" alt="Replay Video Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Reply Mail">
+    <img src="../images/icons/PBS-reply_mail.svg" alt="Reply Mail Icon" />
+  </div>
+
+  <div class="swatch swatch--icon" title="Rss">
+    <img src="../images/icons/PBS-rss.svg" alt="Rss Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Search">
+    <img src="../images/icons/PBS-search.svg" alt="Search Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Settings">
+    <img src="../images/icons/PBS-settings.svg" alt="Settings Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Share">
+    <img src="../images/icons/PBS-share.svg" alt="Share Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Shop">
+    <img src="../images/icons/PBS-shop.svg" alt="Shop Icon" />
+  </div>
+
+  <div class="swatch swatch--icon" title="Text">
+    <img src="../images/icons/PBS-text.svg" alt="Text Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Trash">
+    <img src="../images/icons/PBS-trash.svg" alt="Trash Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="TV Schedule">
+    <img src="../images/icons/PBS-tv_schedule.svg" alt="TV Schedule Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Undo">
+    <img src="../images/icons/PBS-undo.svg" alt="Undo Icon" />
+  </div>
+
+  <div class="swatch swatch--icon" title="Upload">
+    <img src="../images/icons/PBS-upload.svg" alt="Upload Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Upload Circle">
+    <img src="../images/icons/PBS-upload_circle.svg" alt="Upload Circle Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Warning Circle">
+    <img src="../images/icons/PBS-warning_circle.svg" alt="Warning Circle Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Warning Circle line">
+    <img src="../images/icons/PBS-warning_circle_line.svg" alt="Warning Circle line Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Warning Triangle">
+    <img src="../images/icons/PBS-warning_triangle.svg" alt="Warning Triangle Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Warning Triangle line">
+    <img src="../images/icons/PBS-warning_triangle_line.svg" alt="Warning Triangle line Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Wifi">
+    <img src="../images/icons/PBS-wifi.svg" alt="Wifi Icon" />
+  </div>
+</div>
+
+### Components
+
+<div class="swatch-group">
+  <div class="swatch swatch--icon" title="Component Ad Unit">
+    <img src="../images/icons/PBS-component_ad_unit.svg" alt="Component Ad Unit Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Component Add Dropdown">
+    <img src="../images/icons/PBS-component_add_dropdown.svg" alt="Component Add Dropdown Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Component Audio">
+    <img src="../images/icons/PBS-component_audio.svg" alt="Component Audio Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Component Collapse Copy">
+    <img src="../images/icons/PBS-component_collapse_copy.svg" alt="Component Collapse Copy Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Component Embed">
+    <img src="../images/icons/PBS-component_embed.svg" alt="Component Embed Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Component Form">
+    <img src="../images/icons/PBS-component_form.svg" alt="Component Form Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Component Gallery Promo">
+    <img src="../images/icons/PBS-component_gallery_promo.svg" alt="Component Gallery Promo Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Component Grid">
+    <img src="../images/icons/PBS-component_grid.svg" alt="Component Grid Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Component Hero Carousel">
+    <img src="../images/icons/PBS-component_hero_carousel.svg" alt="Component Hero Carousel Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Component Horizontal Linebreak">
+    <img src="../images/icons/PBS-component_horizontal_linebreak.svg" alt="Component Horizontal Linebreak Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Icon Horizontal Linebreak">
+    <img src="../images/icons/PBS-component_icon.svg" alt="Icon Horizontal Linebreak Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Component Image">
+    <img src="../images/icons/PBS-component_image.svg" alt="Component Image Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Component List">
+    <img src="../images/icons/PBS-component_list.svg" alt="Component List Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Component Logos">
+    <img src="../images/icons/PBS-component_logos.svg" alt="Component Logos Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Component Photo Gallery">
+    <img src="../images/icons/PBS-component_photo_gallery.svg" alt="Component Photo Gallery Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Component Promo">
+    <img src="../images/icons/PBS-component_promo.svg" alt="Component Promo Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Component Space">
+    <img src="../images/icons/PBS-component_space.svg" alt="Component Space Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Component Video">
+    <img src="../images/icons/PBS-component_video.svg" alt="Component Video Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Component Video Line">
+    <img src="../images/icons/PBS-component_video_line.svg" alt="Component Video Line Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Component Whats On">
+    <img src="../images/icons/PBS-component_whats_on.svg" alt="Component Whats On Icon" />
+  </div>
+</div>
+
+### Social Media
+
+<div class="swatch-group">
+  <div class="swatch swatch--icon" title="Disqus">
+    <img src="../images/icons/PBS-disqus.svg" alt="Disqus Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Facebook">
+    <img src="../images/icons/PBS-facebook.svg" alt="Facebook Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Facebook Box">
+    <img src="../images/icons/PBS-facebook_box.svg" alt="Facebook Box Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Facebook Like Line">
+    <img src="../images/icons/PBS-facebook_like_line.svg" alt="Facebook Like Line Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Google">
+    <img src="../images/icons/PBS-google.svg" alt="Google Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Instagram">
+    <img src="../images/icons/PBS-instagram.svg" alt="Instagram Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Pinterest">
+    <img src="../images/icons/PBS-pinterest.svg" alt="Pinterest Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Pinterest Box">
+    <img src="../images/icons/PBS-pinterest_box.svg" alt="Pinterest Box Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Pinterest Circle">
+    <img src="../images/icons/PBS-pinterest_circle.svg" alt="Pinterest Circle Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Retweet">
+    <img src="../images/icons/PBS-retweet.svg" alt="Retweet Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Tumblr">
+    <img src="../images/icons/PBS-tumblr.svg" alt="Tumblr Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Tumblr Box">
+    <img src="../images/icons/PBS-tumblr_box.svg" alt="Tumblr Box Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Twitter">
+    <img src="../images/icons/PBS-twitter.svg" alt="Twitter Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Twitter Box">
+    <img src="../images/icons/PBS-twitter_box.svg" alt="Twitter Box Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Youtube">
+    <img src="../images/icons/PBS-youtube.svg" alt="Youtube Icon" />
+  </div>
+</div>
+
+
+
 * * *
 
 ## Buttons
