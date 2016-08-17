@@ -213,8 +213,12 @@
       @include ghost-btn($orange);
     }
 
+    &--gray-56 {
+      @include ghost-btn($gray-56);
+    }
+
     &--gray-87 {
-      @include ghost-btn($gray-100);
+      @include ghost-btn($gray-87);
     }
   }
 

@@ -148,7 +148,7 @@
 }
 
 @mixin fill-btn($color: $black){
-  border: 0;
+  border: 1px solid $color; // needed so fill buttons look equal to ghost buttons
   background: $color;
   color: $white;
   transition: background $duration;

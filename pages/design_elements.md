@@ -1242,6 +1242,7 @@ There are a set of rules that we have around buttons:
 <button class="btn btn--ghost--green"> A $green ghost button</button>
 <button class="btn btn--ghost--orange"> An $orange ghost button</button>
 <button class="btn btn--ghost--gray-87"> A $gray-87 ghost button</button>
+<button class="btn btn--ghost--gray-56"> A $gray-56 ghost button</button>
 
 - Border and text colors are the same
 - Background is transparent
@@ -1319,8 +1320,15 @@ There are a set of rules that we have around buttons:
 
 * * *
 
+- Form inputs should be at least the font size of body copy
+
 ### "Box" Inputs
 
+- Text inputs of all kinds should have a 2px border radius
+- Text inputs should be rendered with a 1px rule all the way around - color should be one of the neutrals that provides sufficient contrast with background
+- Text inputs should have white backgrounds, unless you have a very good reason
+- Default input text color should be the default body copy color
+- Padding in inputs should be consistent *within a product*
 
 <div class="al-box-inputs">
 
@@ -1396,107 +1404,137 @@ There are a set of rules that we have around buttons:
 
 </div>
 
-<p>The Fieldset:</p>
-<fieldset>
-  <legend>Legend</legend>
+### Other Form Inputs
 
-  <p>The Form:</p>
+- Should be left to the platform default
+- Should only be overridden/styled if there is a VERY compelling reason
+- "Stylized" inputs need to replicate the accessibility features of the platform defaults
 
-  <form>
-    <p>
-    </p>
+<div class="al-other-inputs">
 
-    <p>
-    </p>
+  <label for="select_element">Select Element:</label>
+  <select id="select_element">
+    <optgroup label="Option Group 1">
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+    </optgroup>
+    <optgroup label="Option Group 2">
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3" disabled>Disabled Option</option>
+    </optgroup>
+  </select>
 
-    <p>
-    </p>
-
-    <p>
-    </p>
-
-    <p>
-    </p>
-
-    <p>
-    </p>
-
-    <label for="select_element">Select Element:</label>
-    <select id="select_element">
-      <optgroup label="Option Group 1">
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-      </optgroup>
-      <optgroup label="Option Group 2">
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3" disabled>Disabled Option</option>
-      </optgroup>
+  <p>
+    <label for="select_element_disabled">Disabled Select Element:</label>
+    <select id="select_element_disabled" disabled>
+      <option value="1">Unselectable Option</option>
+      <option value="2">This option should not even be seen</option>
     </select>
+  </p>
+
+  <p>Radio Buttons:<br />
+    <label><input type="radio" class="radio" name="radio_button" value="radio_1" /> Radio 1</label><br/>
+    <label><input type="radio" class="radio" name="radio_button" value="radio_2" /> Radio 2</label><br/>
+    <label><input type="radio" class="radio" name="radio_button" value="radio_3" /> Radio 3</label><br/>
+    <label><input type="radio" class="radio" name="radio_button" value="radio_4" disabled /> Radio Disabled</label><br/>
+  </p>
+
+  <p>Checkboxes:<br />
+    <label><input type="checkbox" class="checkbox" name="checkboxes" value="check_1" /> Checkbox 1</label><br/>
+    <label><input type="checkbox" class="checkbox" name="checkboxes" value="check_2" /> Checkbox 2</label><br/>
+    <label><input type="checkbox" class="checkbox" name="checkboxes" value="check_3" /> Checkbox 3</label><br/>
+    <label><input type="checkbox" class="checkbox" name="checkboxes" value="check_4" disabled /> Checkbox Disabled</label><br/>
+  </p>
+
+  <p><label for="file">File Input:</label><br />
+    <input type="file" class="file" id="file" />
+  </p>
+
+  <p>
+    <label for="color">Color:</label><br />
+    <input type="color" id="color" />
+  </p>
+
+  <p><label for="datalist">Datalist:</label><br />
+    <input list="browsers" name="browser" type="datalist" id="datalist" />
+    <datalist id="browsers">
+      <option value="Internet Explorer" />
+      <option value="Firefox" />
+      <option value="Chrome" />
+      <option value="Opera" />
+      <option value="Safari" />
+    </datalist>
+  </p>
+
+  <p><label for="range">Range:</label><br />
+    <input type="range" id="range" name="points" min="1" max="10" />
+  </p>
+
+  <p><label for="output">Output:</label><br />
+    <output name="result" id="output">42</output>
+  </p>
+
+  <p><label for="progress">Progress:</label></p>
+  <div class="progress user-dropdown__viewing-history__video__progress">
+    <div class="progress-bar progress-bar-success" style="width: 66%;"></div>
+  </div>
+
+</div>
+
+### Form layout
+
+- In wide forms, labels to the left, inputs  to the right
+- In narrow forms, labels on top, inputs below
+- It is up to the designer to decide what is “narrow” and what is “wide”
+- At mobile breakpoints, buttons can be 100% wide
+- At non-mobile breakpoints, affirmitive actions (e.g. save) is always bottom, left aligned
+- Affirmative actions are always a fill button
+- At non-mobile breakpoints, secondary (e.g. cancel) buttons are presented next to the affirmative action
+- Secondary buttons are ghost buttons in a neutral
+- At non-mobile breakpoints, destructive (e.g. delete) buttons are right aligned
+- Destructive buttons are ghost buttons in $red, an icon is optional
+
+<form class="al-form-layout--wide">
+
+  <h4>This is a wide form</h4>
+
+  <p>
+    <label for="text_field2">Text Field:</label>
+    <input type="text" id="text_field2" placeholder="Placeholder text"/>
+  </p>
+  <p>
+    <label for="text_area2">Text Area:</label>
+    <textarea id="text_area2"></textarea>
+  </p>
+
+  <div class="al-form__buttons">
+    <button class="btn btn--blue-digital">Save</button>
+    <button class="btn btn--ghost--gray-56">Cancel</button>
+    <button class="btn btn--ghost--red btn--destructive">Delete</button>
+  </div>
+
+</form>
 
 
+<div class="al-form-layout--narrow">
 
-    <p><label for="select_element_disabled">Disabled Select Element:</label><br/>
-      <select id="select_element_disabled" disabled>
-        <option value="1">Unselectable Option</option>
-        <option value="2">This option should not even be seen</option>
-      </select>
-    </p>
+  <h4>This is a narrow form</h4>
 
-    <p>Radio Buttons:<br />
-      <label><input type="radio" class="radio" name="radio_button" value="radio_1" /> Radio 1</label><br/>
-      <label><input type="radio" class="radio" name="radio_button" value="radio_2" /> Radio 2</label><br/>
-      <label><input type="radio" class="radio" name="radio_button" value="radio_3" /> Radio 3</label><br/>
-      <label><input type="radio" class="radio" name="radio_button" value="radio_4" disabled /> Radio Disabled</label><br/>
-    </p>
+  <p>
+    <label for="text_field3">Text Field:</label>
+    <input type="text" id="text_field3" placeholder="Placeholder text"/>
+  </p>
 
-    <p>Checkboxes:<br />
-      <label><input type="checkbox" class="checkbox" name="checkboxes" value="check_1" /> Checkbox 1</label><br/>
-      <label><input type="checkbox" class="checkbox" name="checkboxes" value="check_2" /> Checkbox 2</label><br/>
-      <label><input type="checkbox" class="checkbox" name="checkboxes" value="check_3" /> Checkbox 3</label><br/>
-      <label><input type="checkbox" class="checkbox" name="checkboxes" value="check_4" disabled /> Checkbox Disabled</label><br/>
-    </p>
+  <p>
+    <label for="text_area3">Text Area:</label>
+    <textarea id="text_area3"></textarea>
+  </p>
 
-    <p>
-    </p>
+  <div class="al-form__buttons">
+    <button class="btn btn--blue-digital">Save</button>
+    <button class="btn btn--ghost--gray-56">Cancel</button>
+    <button class="btn btn--ghost--red btn--destructive">Delete</button>
+  </div>
 
-    <p><label for="file">File Input:</label><br />
-      <input type="file" class="file" id="file" />
-    </p>
-
-    <h3>HTML5-specific Form Elements</h3>
-
-
-
-    <p><label for="color">Color:</label><br />
-      <input type="color" id="color" />
-    </p>
-
-    <p><label for="datalist">Datalist:</label><br />
-      <input list="browsers" name="browser" type="datalist" id="datalist" />
-      <datalist id="browsers">
-        <option value="Internet Explorer" />
-        <option value="Firefox" />
-        <option value="Chrome" />
-        <option value="Opera" />
-        <option value="Safari" />
-      </datalist>
-    </p>
-
-    <p><label for="range">Range:</label><br />
-      <input type="range" id="range" name="points" min="1" max="10" />
-    </p>
-
-    <p><label for="output">Output:</label><br />
-      <output name="result" id="output">42</output>
-    </p>
-
-    <p><label for="progress">Progress:</label></p>
-    <div class="progress user-dropdown__viewing-history__video__progress">
-      <div class="progress-bar progress-bar-success" style="width: 66%;"></div>
-    </div>
-
-
-  </form>
-
-</fieldset>
+</div>

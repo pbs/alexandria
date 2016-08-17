@@ -156,7 +156,6 @@ $on-laptop:        800px;
 
 .al-layout-container {
   padding: $gap;
-  margin-bottom: $gap-double;
   margin: $gap-double 0;
   max-width: 600px;
   border: 3px dashed $gray-medium;
@@ -172,4 +171,84 @@ $on-laptop:        800px;
   label {
     width: 25%;
   }
+}
+
+.al-form-layout {
+
+  &--wide {
+    border: 3px dashed $gray-medium;
+    padding: $gap;
+    margin: $gap-double 0;
+    max-width: 1024px;
+
+    > p {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: no-wrap;
+      @include breakpoint($sm) {
+        flex-direction: row;
+      }
+    }
+
+    label {
+      width: 100%;
+      @include breakpoint($sm) {
+        width: 25%;
+      }
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      @include breakpoint($sm) {
+        width: 75%;
+      }
+    }
+
+    textarea {
+      margin-bottom: $gap-double;
+    }
+  }
+
+  &--narrow {
+    border: 3px dashed $gray-medium;
+    padding: $gap;
+    margin: $gap-double 0;
+    max-width: 500px;
+
+    label {
+      width: 100%;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+    }
+
+    textarea {
+      margin-bottom: $gap-double;
+    }
+  }
+}
+
+.al-form__buttons {
+  .btn {
+    width: 100%;
+    margin-bottom: $gap;
+
+    @include breakpoint($xs) {
+      width: auto;
+      margin-right: $gap-half;
+    }
+
+
+    &--destructive {
+      @include breakpoint($xs) {
+        margin-right: 0;
+        float: right;
+      }
+    }
+  }
+
+
 }

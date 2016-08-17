@@ -84,6 +84,7 @@ input[type="search"],
 textarea {
   padding: $gap-half;
   border: 1px solid $gray-56;
+  border-radius: 2px;
   -webkit-appearance: none;
 
   &[disabled] {
