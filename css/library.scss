@@ -84,7 +84,6 @@ $on-laptop:        800px;
 
     display: flex;
     flex-direction: column;
-    align-items: stretch;
 
     > * {
       flex-grow: 1;
@@ -109,7 +108,11 @@ $on-laptop:        800px;
 
   &--icon {
     height: auto;
-    font-size: 4rem;
+    align-items: center;
+
+    img {
+      max-width: 100px;
+    }
   }
 }
 
