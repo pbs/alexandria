@@ -908,7 +908,9 @@ We rely on two typefaces: [Open Sans](https://www.google.com/fonts/specimen/Open
   <div class="swatch swatch--icon" title="Expand">
     <img src="../images/icons/PBS-expand.svg" alt="Expand Icon" />
   </div>
-
+  <div class="swatch swatch--icon" title="Expand">
+    <img src="../images/icons/PBS-move.svg" alt="Move Icon" />
+  </div>
   <div class="swatch swatch--icon" title="Hamburger">
     <img src="../images/icons/PBS-hamburger.svg" alt="Hamburger Icon" />
   </div>
