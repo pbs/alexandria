@@ -16,7 +16,7 @@ permalink: /design-elements/
 
 * * *
 
-[Sass variables](../css/colors.scss) \| [Sketch Palette](../css/pbs_digital.sketchpalette.zip) (requires [Sketch Palettes plugin](https://github.com/andrewfiorillo/sketch-palettes))
+[Sass variables](../css/colors.scss) \| [Sketch Palette](../css/PBS_digital.sketchpalette) (requires [Sketch Palettes plugin](https://github.com/andrewfiorillo/sketch-palettes))
 
 ### Neutrals
 
