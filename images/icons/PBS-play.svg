@@ -1,12 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
-    <title>PBS-play</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="PBS-play" fill="#222222">
-            <path d="M131.864209,66.5035399 C133.326347,64.1604767 135.700059,64.1654754 137.159078,66.5035399 L213.700954,189.161244 C215.163092,191.504307 214.112382,193.403735 211.349374,193.403735 L57.6739122,193.403735 C54.9130329,193.403735 53.863314,191.499308 55.3223324,189.161244 L131.864209,66.5035399 Z" id="Triangle" transform="translate(134.512742, 128.825411) scale(-1, 1) rotate(-90.000000) translate(-134.512742, -128.825411) "></path>
-        </g>
-    </g>
-</svg>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><title>PBS-play</title><path d="M196.835 131.474c2.343-1.462 2.338-3.836 0-5.295L74.177 49.637c-2.343-1.462-4.243-.411-4.243 2.352v153.675c0 2.761 1.905 3.81 4.243 2.352l122.658-76.542z" fill="#222" fill-rule="evenodd"/></svg>

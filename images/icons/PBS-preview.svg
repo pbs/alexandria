@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
-    <title>PBS-preview</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="PBS-preview">
-            <g id="Group" transform="translate(31.000000, 54.000000)">
-                <path d="M0,78.4996972 C0,78.4996972 41.7635286,4 99.0669693,4 C156.37041,4 202.990163,79.1755959 202.990163,79.1755959" id="Path-42" stroke="#222222" stroke-width="20"></path>
-                <path d="M0,68.8580266 C0,68.8580266 41.7635286,143.357724 99.0669693,143.357724 C156.37041,143.357724 201.965088,69.2008417 201.965088,69.2008417" id="Path-42" stroke="#222222" stroke-width="20"></path>
-                <ellipse id="Oval-11" fill="#222222" cx="100.003474" cy="55.1769729" rx="51.3161439" ry="54.2165471"></ellipse>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><title>PBS-preview</title><g transform="translate(31 54)" fill="none" fill-rule="evenodd"><path d="M0 78.5S41.764 4 99.067 4C156.37 4 202.99 79.176 202.99 79.176" stroke="#222" stroke-width="20"/><path d="M0 68.858s41.764 74.5 99.067 74.5c57.303 0 102.898-74.157 102.898-74.157" stroke="#222" stroke-width="20"/><ellipse fill="#222" cx="100.003" cy="55.177" rx="51.316" ry="54.217"/></g></svg>

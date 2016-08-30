@@ -1,13 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
-    <title>PBS-local_pin_line</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="PBS-local_pin_line" stroke="#222222">
-            <path d="M79.5625,98.3125 C79.5625,144.146552 127.375,203.5 127.375,203.5 C127.375,203.5 175.1875,143.81681 175.1875,98.3125 C175.1875,71.9331897 153.75431,50.5 127.375,50.5 C100.99569,50.5 79.5625,71.9331897 79.5625,98.3125 Z" id="Page-1-Copy" stroke-width="15"></path>
-            <path d="M127.375773,118.921703 C116.377851,118.921703 107.426053,109.969905 107.426053,98.9719828 C107.426053,87.9740601 116.377851,79.0222625 127.375773,79.0222625 C138.373696,79.0222625 147.325493,87.9740601 147.325493,98.9719828 C147.581259,109.969905 138.629462,118.921703 127.375773,118.921703" id="Path" stroke-width="12"></path>
-        </g>
-    </g>
-</svg>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><title>PBS-local_pin_line</title><g stroke="#222" fill="none" fill-rule="evenodd"><path d="M79.563 98.313c0 45.834 47.812 105.187 47.812 105.187s47.813-59.683 47.813-105.188c0-26.379-21.434-47.812-47.813-47.812-26.38 0-47.813 21.433-47.813 47.813z" stroke-width="15"/><path d="M127.376 118.922c-10.998 0-19.95-8.952-19.95-19.95s8.952-19.95 19.95-19.95 19.95 8.952 19.95 19.95c.255 10.998-8.697 19.95-19.95 19.95" stroke-width="12"/></g></svg>

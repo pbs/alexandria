@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
-    <title>PBS-mail</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="PBS-mail">
-            <g id="Group" transform="translate(40.000000, 67.000000)">
-                <path d="M173.993115,0 C175.101487,0 176,0.902048518 176,2.00698939 L176,120.993011 C176,122.10144 175.095019,123 173.993115,123 L2.00688501,123 C0.898513025,123 0,122.097951 0,120.993011 L0,2.00698939 C0,0.898559755 0.904981107,0 2.00688501,0 L173.993115,0 Z M161,15 L161,108 L15,108 L15,15 L161,15 Z" id="Combined-Shape" fill="#222222"></path>
-                <path d="M9.94263697,12.33999 C9.94263697,12.33999 86.966326,77.2020439 88.9932652,77.2020439 C91.0202044,77.2020439 169.057363,12.33999 169.057363,12.33999" id="Path-16" stroke="#222222" stroke-width="15"></path>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><title>PBS-mail</title><g fill="none" fill-rule="evenodd"><path d="M213.993 67A2.01 2.01 0 0 1 216 69.007v118.986a2.011 2.011 0 0 1-2.007 2.007H42.007A2.01 2.01 0 0 1 40 187.993V69.007c0-1.108.905-2.007 2.007-2.007h171.986zM201 82v93H55V82h146z" fill="#222"/><path d="M49.943 79.34s77.023 64.862 79.05 64.862c2.027 0 80.064-64.862 80.064-64.862" stroke="#222" stroke-width="15"/></g></svg>

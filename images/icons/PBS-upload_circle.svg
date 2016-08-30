@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
-    <title>PBS-upload_circle</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="PBS-upload_circle">
-            <circle id="Oval-5" stroke="#222222" stroke-width="20" cx="127" cy="128" r="76"></circle>
-            <g id="Group" transform="translate(99.000000, 77.000000)" fill="#222222">
-                <path d="M36.8888641,41.5099983 L52.827611,41.5099983 C53.9273492,41.5099983 54.330092,40.7614239 53.7214203,39.8380105 L27.7795542,0.481709145 C27.3556173,-0.161443809 26.6713014,-0.159695026 26.2485172,0.481709145 L0.306651122,39.8380105 C-0.302961959,40.762852 0.098151464,41.5099983 1.20046039,41.5099983 L16.8888641,41.5099983 L16.8888641,97.0036926 C16.8888641,98.1052696 17.7801735,99 18.8796593,99 L34.898069,99 C35.9906518,99 36.8888641,98.1062227 36.8888641,97.0036926 L36.8888641,41.5099983 Z" id="Combined-Shape"></path>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><title>PBS-upload_circle</title><g fill="none" fill-rule="evenodd"><circle stroke="#222" stroke-width="20" cx="127" cy="128" r="76"/><path d="M135.889 118.51h15.939c1.1 0 1.502-.749.893-1.672L126.78 77.482c-.424-.643-1.109-.642-1.531 0l-25.942 39.356c-.61.925-.209 1.672.893 1.672h15.689v55.494c0 1.101.891 1.996 1.99 1.996h16.02c1.092 0 1.99-.894 1.99-1.996V118.51z" fill="#222"/></g></svg>

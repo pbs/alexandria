@@ -1,14 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
-    <title>PBS-left_caret</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="PBS-left_caret" fill="#222222">
-            <g id="Group" transform="translate(63.000000, 42.000000)">
-                <path d="M49.0940308,120.905969 L49.0940308,27.5506233 C49.0940308,26.4378406 48.1952761,25.5491329 47.086606,25.5491329 L27.5565577,25.5491329 C26.44337,25.5491329 25.5491329,26.4452307 25.5491329,27.5506233 L25.5491329,142.449377 C25.5491329,143.004775 25.7730205,143.504355 26.1351509,143.86548 C26.4993314,144.228101 26.9989083,144.450867 27.5506233,144.450867 L142.449377,144.450867 C143.562159,144.450867 144.450867,143.552112 144.450867,142.443442 L144.450867,122.913394 C144.450867,121.800206 143.554769,120.905969 142.449377,120.905969 L49.0940308,120.905969 Z" id="Combined-Shape" transform="translate(85.000000, 85.000000) rotate(-315.000000) translate(-85.000000, -85.000000) "></path>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><title>PBS-left_caret</title><path d="M97.221 127l66.012-66.012a2 2 0 0 0-.004-2.835l-13.81-13.81a2.002 2.002 0 0 0-2.834-.004l-81.246 81.246a1.998 1.998 0 0 0 0 2.83l81.246 81.246a2 2 0 0 0 2.834-.004l13.81-13.81a2.002 2.002 0 0 0 .004-2.835L97.221 127z" fill="#222" fill-rule="evenodd"/></svg>

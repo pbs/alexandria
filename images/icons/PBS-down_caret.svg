@@ -1,14 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
-    <title>PBS-down_caret</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="PBS-down_caret" fill="#222222">
-            <g id="Group" transform="translate(128.000000, 96.000000) scale(1, -1) rotate(-90.000000) translate(-128.000000, -96.000000) translate(43.000000, 11.000000)">
-                <path d="M48.7623762,121.237624 L48.7623762,27.0075171 C48.7623762,25.8969164 47.8644889,25 46.7568887,25 L27.0054875,25 C25.9024969,25 25,25.898796 25,27.0075171 L25,142.992483 C25,143.548122 25.2247454,144.050274 25.5880571,144.41338 C25.950665,144.7741 26.4528184,145 27.0075171,145 L142.992483,145 C144.103084,145 145,144.102113 145,142.994512 L145,123.243111 C145,122.140121 144.101204,121.237624 142.992483,121.237624 L48.7623762,121.237624 Z" id="Combined-Shape" transform="translate(85.000000, 85.000000) scale(-1, 1) rotate(-315.000000) translate(-85.000000, -85.000000) "></path>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><title>PBS-down_caret</title><path d="M128 147.248L61.37 80.617a2.005 2.005 0 0 0-2.838-.001L44.565 94.582a2.01 2.01 0 0 0 .002 2.838l82.013 82.013a2.002 2.002 0 0 0 2.84 0l82.013-82.013a2.005 2.005 0 0 0 .002-2.838l-13.967-13.966a2.01 2.01 0 0 0-2.837.001L128 147.247z" fill="#222" fill-rule="evenodd"/></svg>

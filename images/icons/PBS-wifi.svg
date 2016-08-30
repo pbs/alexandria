@@ -1,17 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
-    <title>PBS-wifi</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="PBS-wifi">
-            <g id="Page-1" transform="translate(33.000000, 8.000000)">
-                <path d="M95.9901386,152 C107.045229,152 116,160.881135 116,171.869113 C116,182.85678 107.045229,191.757576 95.9901386,191.757576 C84.9481964,191.757576 76,182.85678 76,171.869113 C76,160.881135 84.9481964,152 95.9901386,152 L95.9901386,152 Z" id="Fill-1" fill="#000000"></path>
-                <path d="M38,140.196721 L49.5932203,152 C74.7118644,126.032787 115.674576,126.032787 140.79322,152 L152,140.196721 C120.698305,107.934426 69.6881356,107.934426 38,140.196721" id="Fill-1" fill="#1A1A1A"></path>
-                <path d="M16,114.387097 L27.094431,126 C64.5859564,87.6774194 125.031477,87.6774194 162.523002,126 L174,114.387097 C130.387409,69.8709677 59.6125908,69.8709677 16,114.387097" id="Fill-5" fill="#1A1A1A"></path>
-                <path d="M162,28 C87.9938435,28 28,87.9938435 28,162" id="Oval" stroke="#222222" stroke-width="15" transform="translate(95.000000, 95.000000) rotate(-315.000000) translate(-95.000000, -95.000000) "></path>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><title>PBS-wifi</title><g fill="none" fill-rule="evenodd"><path d="M128.99 160c11.055 0 20.01 8.881 20.01 19.87 0 10.987-8.955 19.888-20.01 19.888-11.042 0-19.99-8.901-19.99-19.889S117.948 160 128.99 160z" fill="#000"/><path d="M71 148.197L82.593 160c25.119-25.967 66.082-25.967 91.2 0L185 148.197c-31.302-32.263-82.312-32.263-114 0" fill="#1A1A1A"/><path d="M49 122.387L60.094 134c37.492-38.323 97.937-38.323 135.429 0L207 122.387c-43.613-44.516-114.387-44.516-158 0" fill="#1A1A1A"/><path d="M222.752 103c-52.33-52.33-137.174-52.33-189.504 0" stroke="#222" stroke-width="15"/></g></svg>
