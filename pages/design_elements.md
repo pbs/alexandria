@@ -16,7 +16,7 @@ permalink: /design-elements/
 
 * * *
 
-[Here is a Sass variables file](https://gist.github.com/chipcullen/571fb02d2f21bd605dc991cb99b63d43) containing the below palette.
+[Sass variables](../css/colors.scss) \| [Sketch Palette](../css/pbs_digital.sketchpalette.zip) (requires [Sketch Palettes plugin](https://github.com/andrewfiorillo/sketch-palettes))
 
 ### Neutrals
 
@@ -842,7 +842,7 @@ We rely on two typefaces: [Open Sans](https://www.google.com/fonts/specimen/Open
 
 * * *
 
-<a href="../images/icons/pbs_icon-font.zip">Icon font</a> \| <a href="../images/icons/pbs_sprite.zip">SVG Sprite</a> \| <a href="../images/icons/pbs_icon-files.zip">SVG Individual Files</a>
+[Icon font](../images/icons/pbs_icon-font.zip) \| [SVG Sprite](../images/icons/pbs_sprite.zip) \| [SVG Individual Files](../images/icons/pbs_icon-files.zip)
 
 ### Brand
 

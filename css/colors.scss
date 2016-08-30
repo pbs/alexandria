@@ -1,0 +1,59 @@
+// Neutrals
+$gray-100: #000000; // true black; used seldomly, usually in shadows, tints
+$gray-87: #222222; // primary text gray
+$gray-71: #4b4b4b;
+$gray-56: #707070;
+$gray-30: #b3b3b3;
+$gray-12: #e0e0e0;
+$gray-5: #f3f3f3;
+$gray-3: #f8f8f8;
+$gray-0: #ffffff; // white
+
+// Hues
+$blue-digital: #126eb5;
+$blue-digital-darken-20: mix($gray-100, $blue-digital, 20); // #0e5891
+$blue-digital-darken-10: mix($gray-100, $blue-digital, 10); // #1063a3
+$blue-digital-lighten-10: mix($gray-0, $blue-digital, 10); // #2a7dbc
+$blue-digital-lighten-20: mix($gray-0, $blue-digital, 20); // #418bc4
+
+$blue-antique: #8fa6bc;
+$blue-antique-darken-20: mix($gray-100, $blue-antique, 20); // #728596
+$blue-antique-darken-10: mix($gray-100, $blue-antique, 10); // #8195a9
+$blue-antique-lighten-10: mix($gray-0, $blue-antique, 10); // #9aafc3
+$blue-antique-lighten-20: mix($gray-0, $blue-antique, 20); // #a5b8c9
+
+$blue-brand: #00aaeb;
+$blue-brand-darken-20: mix($gray-100, $blue-brand, 20); // #0088bc
+$blue-brand-darken-10: mix($gray-100, $blue-brand, 10); // #0099d4
+$blue-brand-lighten-10: mix($gray-0, $blue-brand, 10); // #1ab3ed
+$blue-brand-lighten-20: mix($gray-0, $blue-brand, 20); // #33bbef
+
+$red: #ac031f;
+$red-darken-20: mix($gray-100, $red, 20); // #8a0219
+$red-darken-10: mix($gray-100, $red, 10); // #9b031c
+$red-lighten-10: mix($gray-0, $red, 10); // #b41c35
+$red-lighten-20: mix($gray-0, $red, 20); // #bd354c
+
+$yellow: #e9ba15;
+$yellow-darken-20: mix($gray-100, $yellow, 20); // #ba9511
+$yellow-darken-10: mix($gray-100, $yellow, 10); // #d2a713
+$yellow-lighten-10: mix($gray-0, $yellow, 10); // #ebc12c
+$yellow-lighten-20: mix($gray-0, $yellow, 20); // #edc844
+
+$green: #65a205;
+$green-darken-20: mix($gray-100, $green, 20); // #518204
+$green-darken-10: mix($gray-100, $green, 10); // #5b9205
+$green-lighten-10: mix($gray-0, $green, 10); // #74ab1e
+$green-lighten-20: mix($gray-0, $green, 20); // #84b537
+
+$magenta: #ce255d;
+$magenta-darken-20: mix($gray-100, $magenta, 20); // #a51e4a
+$magenta-darken-10: mix($gray-100, $magenta, 10); // #b92154
+$magenta-lighten-10: mix($gray-0, $magenta, 10); // #d33b6d
+$magenta-lighten-20: mix($gray-0, $magenta, 20); // #d8517d
+
+$orange: #ee7101;
+$orange-darken-20: mix($gray-100, $orange, 20); // #be5a01
+$orange-darken-10: mix($gray-100, $orange, 10); // #d66601
+$orange-lighten-10: mix($gray-0, $orange, 10); // #f07f1a
+$orange-lighten-20: mix($gray-0, $orange, 20); // #f18d34
