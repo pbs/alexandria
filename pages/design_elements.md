@@ -842,6 +842,8 @@ We rely on two typefaces: [Open Sans](https://www.google.com/fonts/specimen/Open
 
 * * *
 
+<a href="../images/icons/pbs_icon-font.zip">Icon font</a> \| <a href="../images/icons/pbs_sprite.zip">SVG Sprite</a> \| <a href="../images/icons/pbs_icon-files.zip">SVG Individual Files</a>
+
 ### Brand
 
 <div class="swatch-group">
