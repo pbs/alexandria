@@ -1,1 +1,6 @@
-<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><title>PBS-not_published</title><g stroke="#222" stroke-width="20" fill="none" fill-rule="evenodd"><circle cx="128" cy="128" r="73"/><path d="M179 180L79 79"/></g></svg>
+<svg width="166" height="166" viewBox="0 0 166 166" xmlns="http://www.w3.org/2000/svg">
+    <title>
+        PBS-not_published
+    </title>
+    <path d="M133.661 120.445l-87.594-88.47C56.445 24.45 69.2 20 83 20c34.794 0 63 28.206 63 63a62.714 62.714 0 0 1-12.339 37.445M20.001 83a62.692 62.692 0 0 1 11.932-36.874l87.43 88.305C109.088 141.709 96.55 146 83 146c-34.794 0-63-28.206-63-63M83 0C37.16 0 0 37.16 0 83s37.16 83 83 83 83-37.16 83-83S128.84 0 83 0" fill-rule="evenodd"/>
+</svg>

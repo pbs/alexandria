@@ -1,1 +1,6 @@
-<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><title>PBS-component_collapse_copy</title><g fill="#222" fill-rule="evenodd"><path d="M223 66c1.105 0 2 .896 2 1.995v123.01a1.992 1.992 0 0 1-2 1.995H33c-1.105 0-2-.896-2-1.995V67.995c0-1.102.886-1.995 2-1.995h190zm-13 15v97H46V81h164z"/><rect x="84" y="120" width="90" height="20" rx="2"/></g></svg>
+<svg width="194" height="127" viewBox="0 0 194 127" xmlns="http://www.w3.org/2000/svg">
+    <title>
+        PBS-component_collapse_copy
+    </title>
+    <path d="M192.001 0C193.105 0 194 .896 194 1.995v123.01a1.991 1.991 0 0 1-1.999 1.995H1.999A1.999 1.999 0 0 1 0 125.005V1.995C0 .893.886 0 1.999 0h190.002zM15 112h164V15H15v97zm38-56.009c0-1.1.891-1.991 2.006-1.991h85.988c1.108 0 2.006.898 2.006 1.991v16.018c0 1.1-.891 1.991-2.006 1.991H55.006A2.003 2.003 0 0 1 53 72.009V55.991z" fill-rule="evenodd"/>
+</svg>

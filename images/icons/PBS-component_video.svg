@@ -1,1 +1,6 @@
-<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><title>PBS-component_video</title><g fill="none" fill-rule="evenodd"><rect fill="#222" x="25" y="42" width="205" height="171" rx="2"/><path d="M162.266 125.495c.958.555.96 1.453 0 2.01L101 163V90l61.266 35.495z" fill="#FFF"/></g></svg>
+<svg width="205" height="171" viewBox="0 0 205 171" xmlns="http://www.w3.org/2000/svg">
+    <title>
+        PBS-component_video
+    </title>
+    <path d="M202.858 0H1.85C.746 0 0 .606 0 1.715v166.982C0 169.807.748 171 1.85 171h201.008c1.104 0 2.142-1.194 2.142-2.303V1.715C205 .606 203.96 0 202.858 0m-65.665 85.211L76 120.706v-73l61.229 35.495c.959.555.924 1.453-.036 2.01" fill-rule="evenodd"/>
+</svg>

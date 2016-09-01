@@ -1,1 +1,6 @@
-<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><title>PBS-play</title><path d="M196.835 131.474c2.343-1.462 2.338-3.836 0-5.295L74.177 49.637c-2.343-1.462-4.243-.411-4.243 2.352v153.675c0 2.761 1.905 3.81 4.243 2.352l122.658-76.542z" fill="#222" fill-rule="evenodd"/></svg>
+<svg width="129" height="160" viewBox="0 0 129 160" xmlns="http://www.w3.org/2000/svg">
+    <title>
+        PBS-play
+    </title>
+    <path d="M126.901 82.496c2.343-1.462 2.338-3.836 0-5.295L4.243.659C1.9-.803 0 .248 0 3.01v153.675c0 2.76 1.905 3.81 4.243 2.352l122.658-76.542z" fill-rule="evenodd"/>
+</svg>

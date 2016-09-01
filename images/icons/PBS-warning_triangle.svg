@@ -1,1 +1,6 @@
-<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><title>PBS-warning_triangle</title><g fill="none" fill-rule="evenodd"><path stroke="#222" stroke-width="20" stroke-linejoin="round" fill="#222" d="M128 53l83 151H45z"/><path d="M128.498 106.5v49.023" stroke="#FFF" stroke-width="20"/><circle fill="#FFF" cx="128.5" cy="175.5" r="10.5"/></g></svg>
+<svg width="183" height="168" viewBox="0 0 183 168" xmlns="http://www.w3.org/2000/svg">
+    <title>
+        PBS-warning_triangle
+    </title>
+    <path d="M91.413 142.48c-5.799 0-10.5-4.702-10.5-10.5 0-5.8 4.701-10.5 10.5-10.5s10.5 4.7 10.5 10.5c0 5.798-4.701 10.5-10.5 10.5zm-10.354-30.707h20v-49h-20v49zm100.843 52.568L93.134 2.822C91.802.398 89.649.39 88.319 2.81L-.449 164.347c-1.332 2.424-.166 4.426 2.599 4.426h177.153c2.774 0 3.928-2.013 2.599-4.432z" fill-rule="evenodd"/>
+</svg>

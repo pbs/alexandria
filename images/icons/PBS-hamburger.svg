@@ -1,1 +1,6 @@
-<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><title>PBS-hamburger</title><g fill="#222" fill-rule="evenodd"><rect x="53" y="73" width="150" height="20" rx="2"/><rect x="53" y="118" width="150" height="20" rx="2"/><rect x="53" y="163" width="150" height="20" rx="2"/></g></svg>
+<svg width="150" height="110" viewBox="0 0 150 110" xmlns="http://www.w3.org/2000/svg">
+    <title>
+        PBS-hamburger
+    </title>
+    <path d="M0 1.991A2 2 0 0 1 2.007.001h145.986A2.001 2.001 0 0 1 150 1.99v16.02a2 2 0 0 1-2.007 1.99H2.007A2.004 2.004 0 0 1 0 18.01V1.99zm0 45a2 2 0 0 1 2.007-1.99h145.986c1.108 0 2.007.897 2.007 1.99V63.01a2 2 0 0 1-2.007 1.99H2.007A2.004 2.004 0 0 1 0 63.01V46.99zm0 45a2 2 0 0 1 2.007-1.99h145.986c1.108 0 2.007.897 2.007 1.99v16.018a2 2 0 0 1-2.007 1.991H2.007A2.004 2.004 0 0 1 0 108.01V91.99z" fill-rule="evenodd"/>
+</svg>

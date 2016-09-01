@@ -1,1 +1,6 @@
-<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><title>PBS-warning_circle</title><g fill="none" fill-rule="evenodd"><circle stroke="#222" stroke-width="20" fill="#222" cx="127" cy="128" r="76"/><path d="M128.498 77.5v70.023" stroke="#FFF" stroke-width="20"/><circle fill="#FFF" cx="128.5" cy="169.5" r="10.5"/></g></svg>
+<svg width="170" height="170" viewBox="0 0 170 170" xmlns="http://www.w3.org/2000/svg">
+    <title>
+        PBS-warning_circle
+    </title>
+    <path d="M85 0C38.056 0 0 38.056 0 85s38.056 85 85 85 85-38.056 85-85S131.944 0 85 0zm.5 137c-5.799 0-10.5-4.701-10.5-10.5S79.701 116 85.5 116 96 120.701 96 126.5 91.299 137 85.5 137zm-10.354-32.706h20v-70h-20v70z" fill-rule="evenodd"/>
+</svg>

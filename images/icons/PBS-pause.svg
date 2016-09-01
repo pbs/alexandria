@@ -1,1 +1,6 @@
-<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><title>PBS-pause</title><g fill="#222" fill-rule="evenodd"><rect x="73" y="42" width="40" height="172" rx="2"/><rect x="143" y="42" width="40" height="172" rx="2"/></g></svg>
+<svg width="110" height="172" viewBox="0 0 110 172" xmlns="http://www.w3.org/2000/svg">
+    <title>
+        PBS-pause
+    </title>
+    <path d="M0 1.991C0 .891.892.001 1.997.001h36.006A2 2 0 0 1 40 1.99v168.02a1.993 1.993 0 0 1-1.997 1.99H1.997A2.003 2.003 0 0 1 0 170.01V1.99zm70 0c0-1.1.892-1.99 1.997-1.99h36.006A2 2 0 0 1 110 1.99v168.02a1.993 1.993 0 0 1-1.997 1.991H71.997A2.003 2.003 0 0 1 70 170.01V1.99z" fill-rule="evenodd"/>
+</svg>
