@@ -103,11 +103,11 @@ $on-laptop:        800px;
   line-height: 1.4;
 
   &--icon {
-    height: auto;
+    padding: $gap-double $gap;
     align-items: center;
 
-    img {
-      max-width: 100px;
+    @include breakpoint($md) {
+      padding: $gap-triple $gap-double;
     }
   }
 }
@@ -146,6 +146,21 @@ $on-laptop:        800px;
 
     [class^="icon"] {
       float: right;
+    }
+  }
+}
+
+#fill-buttons,
+#ghost-buttons {
+  + p {
+
+    overflow: hidden;
+
+    > .btn {
+      display: inline-block;
+      float: left;
+      margin-bottom: $gap-half;
+      margin-right: $gap-half;
     }
   }
 }
