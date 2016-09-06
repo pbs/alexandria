@@ -102,7 +102,7 @@ $nav-height: 70px;
       display: block;
       padding: 5px $gap-half;
       color: $text-color;
-      line-height: $base-line-height;
+      line-height: $line-height;
 
       @include breakpoint($sm) {
         display: inline;
@@ -228,7 +228,7 @@ $nav-height: 70px;
 
   .footer-heading {
     font-size: 18px;
-    margin-bottom: $spacing-unit / 2;
+    margin-bottom: $gap;
   }
 
   .contact-list,
@@ -240,48 +240,48 @@ $nav-height: 70px;
   .footer-col-wrapper {
     font-size: 15px;
     color: $grey-color;
-    margin-left: -$spacing-unit / 2;
+    margin-left: -$gap;
     @extend %clearfix;
   }
 
   .footer-col {
     float: left;
-    margin-bottom: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
+    margin-bottom: $gap;
+    padding-left: $gap;
   }
 
   .footer-col-1 {
-    width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-    width: calc(35% - (#{$spacing-unit} / 2));
+    width: -webkit-calc(35% - $gap);
+    width: calc(35% - $gap);
   }
 
   .footer-col-2 {
-    width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-    width: calc(20% - (#{$spacing-unit} / 2));
+    width: -webkit-calc(20% - $gap);
+    width: calc(20% - $gap);
   }
 
   .footer-col-3 {
-    width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-    width: calc(45% - (#{$spacing-unit} / 2));
+    width: -webkit-calc(45% - $gap);
+    width: calc(45% - $gap);
   }
 
   @include media-query($on-laptop) {
     .footer-col-1,
     .footer-col-2 {
-      width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-      width: calc(50% - (#{$spacing-unit} / 2));
+      width: -webkit-calc(50% - $gap);
+      width: calc(50% - $gap);
     }
     .footer-col-3 {
-      width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-      width: calc(100% - (#{$spacing-unit} / 2));
+      width: -webkit-calc(100% - $gap);
+      width: calc(100% - $gap);
     }
   }
 
   @include media-query($on-palm) {
     .footer-col {
       float: none;
-      width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-      width: calc(100% - (#{$spacing-unit} / 2));
+      width: -webkit-calc(100% - $gap);
+      width: calc(100% - $gap);
     }
   }
 
@@ -313,7 +313,7 @@ $nav-height: 70px;
 }
 
 .post-meta {
-  font-size: $small-font-size;
+  font-size: $abby;
   color: $grey-color;
 }
 
