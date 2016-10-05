@@ -294,8 +294,35 @@ $nav-height: 70px;
   @include clearfix();
   padding: $gap;
   background: $white;
+
+  .al-col-1,
+  .al-col-2 {
+    @media screen and (min-width: 800px) {
+      width: calc(50% - 32px);
+    }
+  }
+
+  .al-col-1 {
+    @media screen and (min-width: 800px) {
+      float: left;
+    }
+  }
+
+  .al-col-2 {
+    @media screen and (min-width: 800px) {
+      float: right;
+    }
+  }
 }
 
+.al-feature-link {
+  &__wrapper {
+    text-align: center;
+  }
+
+  display: inline-block;
+  margin: 0 auto;
+}
 .page-heading {
   font-size: 20px;
 }

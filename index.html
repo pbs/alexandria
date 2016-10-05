@@ -2,11 +2,11 @@
 layout: default
 ---
 
-<div class="home">
+<div class="home al-page-content">
 
-  <h1 class="page-heading">Latest Additions</h1>
+  <h1 class="al-page-heading">Latest Additions</h1>
 
-  <ul class="post-list">
+  <ul class="al-cards al-col-1">
     {% for component in site.components reversed limit:5 %}
 
       {% include post-li.html %}
@@ -14,6 +14,14 @@ layout: default
     {% endfor %}
   </ul>
 
-<!--   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p> -->
+
+  <div class="al-col-2">
+    <p class="al-feature-link__wrapper">
+      <a href="./design-elements" class="btn btn--blue-digital al-feature-link">Design Elements</a>
+    </p>
+
+    <p>Welcome to the PBS Component Library and Design Elements!</p>
+  </div>
+
 
 </div>
