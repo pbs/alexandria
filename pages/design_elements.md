@@ -823,7 +823,7 @@ We rely on two typefaces: [Open Sans](https://www.google.com/fonts/specimen/Open
 ### Arvo
 
 - Is an **accent** typeface, to be used sparingly. It is not present at all in some projects.
-- When used to present the title of a show, is set in <span class="al-accent-type">[ALL CAPS](use-of-all-caps)</span>
+- When used to present the title of a show, is set in <span class="al-accent-type">[ALL CAPS](#use-of-span-classal-over-titleall-capsspan)</span>
 - Is used a lot in [buttons](#buttons), but not *always*
 
 * * *

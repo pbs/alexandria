@@ -1,31 +1,36 @@
 <li class="al-card">
-  <h2 class="al-card__title">
-  <small>{{component.code}}</small> |
-    <a class="component-link" href="{{ component.url | prepend: site.github.url }}">{{ component.title }}</a>
-  </h2>
-  <div class="al-card__meta">
-    {% if component.products %}
-    <p class="al-card__meta__product">
-      Product{% if component.products.size > 1 %}s{% endif %}:
+  <div class="al-card__thumb__wrapper">
+    <div class="al-card__thumb"></div>
+  </div>
+  <div class="al-card__info">
+    <h2 class="al-card__title">
+    <small>[ {{component.code}} ]</small>
+      <a class="component-link" href="{{ component.url | prepend: site.github.url }}">{{ component.title }}</a>
+    </h2>
+    <div class="al-card__meta">
+      {% if component.products %}
+      <p class="al-card__meta__product">
+        Product{% if component.products.size > 1 %}s{% endif %}:
 
-      {% for product in component.products %}
-        <a href="{{ site.github.url }}/components/{{ product }}">{{ product | capitalize | replace: 'Pbs-org','PBS.org' }}</a>{% if forloop.last == false %}, {% endif %}
-      {% endfor %}
-    </p>
-    {% endif %}
-    {% if component.categories %}
-    <p class="al-card__meta__category">Categor{% if component.categories.size > 1 %}ies{% else %}y{% endif %}:
-      {% for category in component.categories %}
-        <a href="{{ site.github.url }}/components/{{ category|downcase }}">
-          {{ category | capitalize }}</a>{% if forloop.last == false %}, {% endif %}
-      {% endfor %}
-    </p>
-    {% endif %}
-    {% if component.status %}
-    <p class="al-card__meta__status">Status: {{component.status| capitalize }}</p>
-    {% endif %}
-    {% if component.date %}
-    <p class="al-card__meta__date">Updated: {{ component.date | date: "%b %-d, %Y" }}</p>
-    {% endif %}
+        {% for product in component.products %}
+          <a href="{{ site.github.url }}/components/{{ product }}">{{ product | capitalize | replace: 'Pbs-org','PBS.org' }}</a>{% if forloop.last == false %}, {% endif %}
+        {% endfor %}
+      </p>
+      {% endif %}
+      {% if component.categories %}
+      <p class="al-card__meta__category">Categor{% if component.categories.size > 1 %}ies{% else %}y{% endif %}:
+        {% for category in component.categories %}
+          <a href="{{ site.github.url }}/components/{{ category|downcase }}">
+            {{ category | capitalize }}</a>{% if forloop.last == false %}, {% endif %}
+        {% endfor %}
+      </p>
+      {% endif %}
+      {% if component.status %}
+      <p class="al-card__meta__status">Status: {{component.status| capitalize }}</p>
+      {% endif %}
+      {% if component.date %}
+      <p class="al-card__meta__date">Updated: {{ component.date | date: "%b %-d, %Y" }}</p>
+      {% endif %}
+    </div>
   </div>
 </li>

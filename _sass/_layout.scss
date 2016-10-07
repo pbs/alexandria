@@ -297,19 +297,19 @@ $nav-height: 70px;
 
   .al-col-1,
   .al-col-2 {
-    @media screen and (min-width: 800px) {
-      width: calc(50% - 32px);
+    @include breakpoint($sm) {
+      width: calc(50% - #{$gap});
     }
   }
 
   .al-col-1 {
-    @media screen and (min-width: 800px) {
+    @include breakpoint($sm) {
       float: left;
     }
   }
 
   .al-col-2 {
-    @media screen and (min-width: 800px) {
+    @include breakpoint($sm) {
       float: right;
     }
   }
@@ -318,11 +318,17 @@ $nav-height: 70px;
 .al-feature-link {
   &__wrapper {
     text-align: center;
+    margin-bottom: $gap-double;
+
+    @include breakpoint($sm) {
+      padding-top: 64px;
+    }
   }
 
   display: inline-block;
   margin: 0 auto;
 }
+
 .page-heading {
   font-size: 20px;
 }
@@ -349,7 +355,87 @@ $nav-height: 70px;
   font-size: 24px;
 }
 
+/**
+ * Component Cards
+ */
+.al-cards {
+  list-style-type: none;
+  margin-left: 0;
+}
 
+.al-card {
+  // outline: solid 1px red;
+  margin-bottom: $gap;
+  background: $gray-5;
+
+  @include breakpoint($xs) {
+    display: flex;
+    flex-direction: row;
+  }
+
+  @include breakpoint($sm) {
+    margin-bottom: $gap-double;
+  }
+
+  &__thumb__wrapper {
+    // outline: solid 1px green;
+    width: 100%;
+    margin-bottom: $gap;
+
+    @include breakpoint($xs) {
+      width: 33%;
+      margin-right: $gap;
+      padding-top: $gap;
+      padding-left: $gap;
+    }
+
+    // @include breakpoint($sm) {
+    //   width: 50%;
+    // }
+
+    // @include breakpoint($md) {
+    //   width: 33%;
+    // }
+  }
+
+  &__thumb {
+    // placeholder values
+    height: 1px;
+    width: 100%;
+    padding: 5px;
+    padding-top: 56%;
+    background: $gray-56;
+    color: $gray-0;
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: $gap;
+    font-size: 2.4rem;
+
+    small {
+      font-size: 66%;
+    }
+  }
+
+  &__info {
+    padding: 0 $gap $gap $gap;
+
+    @include breakpoint($xs) {
+      padding-top: $gap;
+    }
+    p {
+      margin-bottom: $gap-quarter;
+    }
+  }
+  // &__info {
+  //   width: calc(50% - $gap);
+
+  //   @include breakpoint($sm) {
+  //     width: calc(66% - $gap);
+  //   }
+  // }
+}
 /**
  * Posts
  */
