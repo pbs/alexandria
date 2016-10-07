@@ -7,6 +7,7 @@ products:
 - pbs-org
 status: in use
 code: g02
+thumb: pbs-org-g02-footer.png
 example: |
   <div class="l-container__outer">
     <footer class="page-footer l-container__inner theme-light">

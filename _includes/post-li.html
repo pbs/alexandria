@@ -1,6 +1,12 @@
 <li class="al-card">
   <div class="al-card__thumb__wrapper">
-    <div class="al-card__thumb"></div>
+    <a class="al-card__thumb__link" href="{{ component.url | prepend: site.github.url }}">
+    {% if component.thumb %}
+    <img src="{{ site.github.url }}/images/component_thumbs/{{ component.thumb }}" alt="{{ component.title }}" class="al-card__thumb" />
+    {% else %}
+    <div class="al-card__thumb al-card__thumb--placeholder"></div>
+    {% endif %}
+    </a>
   </div>
   <div class="al-card__info">
     <h2 class="al-card__title">

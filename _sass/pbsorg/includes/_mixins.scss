@@ -154,7 +154,8 @@
   transition: background $duration;
 
   &:hover,
-  &:focus {
+  &:focus,
+  &:visited {
     background: $color;
     color: $white;
     text-decoration: underline;

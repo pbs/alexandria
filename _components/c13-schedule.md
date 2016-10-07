@@ -6,6 +6,7 @@ category: content
 products:
 - pbs-org
 status: in use
+thumb: pbs-org-c13-schedule.png
 code: c13
 example: |
   <div class="row-with-ad row-with-ad-at-md hidden-xs row--flex l-container__inner">

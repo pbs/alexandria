@@ -7,6 +7,7 @@ products:
 - pbs-org
 - bento
 status: in use
+thumb: pbs-org-c19-verticals.png
 code: c19
 example: |
   <div class="row-with-ad row-with-ad-at-md hidden-xs row--flex l-container__inner">

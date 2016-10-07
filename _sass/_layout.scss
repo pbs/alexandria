@@ -388,24 +388,19 @@ $nav-height: 70px;
       padding-top: $gap;
       padding-left: $gap;
     }
-
-    // @include breakpoint($sm) {
-    //   width: 50%;
-    // }
-
-    // @include breakpoint($md) {
-    //   width: 33%;
-    // }
   }
 
   &__thumb {
-    // placeholder values
-    height: 1px;
     width: 100%;
-    padding: 5px;
-    padding-top: 56%;
-    background: $gray-56;
-    color: $gray-0;
+    border: 1px solid $gray-56;
+
+    &--placeholder {
+      height: 1px;
+      padding: 5px;
+      padding-top: 56%;
+      background: $gray-56;
+      color: $gray-0;
+    }
   }
 
   &__title {

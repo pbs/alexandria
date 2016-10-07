@@ -8,6 +8,7 @@ category:
 products:
   - pbs-org
 status: in development
+thumb: pbs-org-c07-content.png
 code: c07
 example:
   <div class="l-container__outer">
