@@ -1029,6 +1029,14 @@ We rely on two typefaces: [Open Sans](https://www.google.com/fonts/specimen/Open
   <div class="swatch swatch--icon" title="Preview">
     <img src="../images/icons/PBS-preview.svg" alt="Preview Icon" />
   </div>
+
+  <div class="swatch swatch--icon" title="Profile">
+    <img src="../images/icons/PBS-profile-filled.svg" alt="Profile Icon" />
+  </div>
+  <div class="swatch swatch--icon" title="Profile">
+    <img src="../images/icons/PBS-profile-inverse.svg" alt="Profile Icon" />
+  </div>
+
   <div class="swatch swatch--icon" title="Refresh">
     <img src="../images/icons/PBS-refresh.svg" alt="Refresh Icon" />
   </div>
