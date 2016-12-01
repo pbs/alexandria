@@ -1031,10 +1031,10 @@ We rely on two typefaces: [Open Sans](https://www.google.com/fonts/specimen/Open
   </div>
 
   <div class="swatch swatch--icon" title="Profile">
-    <img src="../images/icons/PBS-profile-filled.svg" alt="Profile Icon" />
+    <img src="../images/icons/PBS-profile_filled.svg" alt="Profile Icon" />
   </div>
   <div class="swatch swatch--icon" title="Profile">
-    <img src="../images/icons/PBS-profile-inverse.svg" alt="Profile Icon" />
+    <img src="../images/icons/PBS-profile_inverse.svg" alt="Profile Icon" />
   </div>
 
   <div class="swatch swatch--icon" title="Refresh">
