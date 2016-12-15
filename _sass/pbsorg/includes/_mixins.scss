@@ -129,7 +129,7 @@
   font-size: $ernie;
   line-height: 1;
   text-align: center;
-  transition: all $duration ease-in;
+  transition: background-color $duration ease-in, border-color $duration ease-in, color $duration ease-in, transform $duration ease-in;
 
   &:hover,
   &:focus,
