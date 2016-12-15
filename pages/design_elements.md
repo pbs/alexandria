@@ -1291,20 +1291,20 @@ There are a set of rules that we have around buttons:
 ### Social Sign In Buttons
 
 <ul id="signInServiceList" class="sign-in__service-list" style="max-width: 300px; margin: 0 0 20px 0;">
-  <li class="sign-in__link sign-in__link--google">
-    <a href="{{ PBS_GOOGLE_AUTHORIZATION_URL }}">
+  <li>
+    <a href="{{ PBS_GOOGLE_AUTHORIZATION_URL }}" class="btn sign-in__link sign-in__link--google">
       <span class="sign-in__icon"><i class="icon-pbs-google"></i></span>
       <span class="sign-in__text">Sign in with Google</span>
     </a>
   </li>
-  <li class="sign-in__link sign-in__link--facebook">
-    <a href="{{ PBS_FACEBOOK_AUTHORIZATION_URL }}">
+  <li>
+    <a href="{{ PBS_FACEBOOK_AUTHORIZATION_URL }}" class="btn sign-in__link sign-in__link--facebook">
       <span class="sign-in__icon"><i class="icon-pbs-facebook"></i></span>
       <span class="sign-in__text">Sign in with Facebook</span>
     </a>
   </li>
-  <li class="sign-in__link sign-in__link--pbs">
-    <a href="{{ PBS_PBS_AUTHORIZATION_URL }}">
+  <li>
+    <a href="{{ PBS_PBS_AUTHORIZATION_URL }}" class="btn sign-in__link sign-in__link--pbs">
       <span class="sign-in__icon"><i class="icon-pbs-pbshead"></i></span>
       <span class="sign-in__text">Sign in with PBS Account</span>
     </a>
