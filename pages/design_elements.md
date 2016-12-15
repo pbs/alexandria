@@ -1224,28 +1224,30 @@ We rely on two typefaces: [Open Sans](https://www.google.com/fonts/specimen/Open
 
 There are a set of rules that we have around buttons:
 
-- Typefaces: Open Sans (400 weight or greater), or Arvo (700 weight only). Please use *one* typeface within your project for your buttons.
+- Typefaces: Open Sans (400 weight or greater).
 - Border radius is **always 2px**
 - Icons, if used, always appear on the left, and are the same color as the text of the button. Pipes are used to separate the icons only in the case of [social sign on](#social-sign-in-buttons) buttons
+- Trasitions are set to .3 seconds / 300 milliseconds
 
 ### Fill buttons
-<button class="btn btn--blue-digital">A $blue-digital button</button>
-<button class="btn btn--red">A $red button</button>
-<button class="btn btn--green">A $green button</button>
-<button class="btn btn--magenta">A $magenta button</button>
-<button class="btn btn--orange">An $orange button</button>
-<button class="btn btn--blue-antique">A $blue-antique button*</button>
-<button class="btn btn--blue-brand">A $blue-brand button*</button>
-<button class="btn btn--gray-56">A $gray-56 button</button>
+<button class="btn btn--fill--blue-digital">A $blue-digital button</button>
+<button class="btn btn--fill--red">A $red button</button>
+<button class="btn btn--fill--green">A $green button</button>
+<button class="btn btn--fill--magenta">A $magenta button</button>
+<button class="btn btn--fill--orange">An $orange button</button>
+<button class="btn btn--fill--blue-antique">A $blue-antique button*</button>
+<button class="btn btn--fill--blue-brand">A $blue-brand button*</button>
+<button class="btn btn--fill--gray-56">A $gray-56 button</button>
 
 
-- Colors: The above hues and $gray-56 are availble for regular fill buttons
+- Colors: The above hues and `$gray-56` are availble for regular fill buttons
 - $yellow is *never* an option, as it doesn't have sufficient contrast with $gray-0
-- Text is always $gray-0 (i.e., white)
+- Text is always `$gray-0` (i.e., white)
 - No border - *unless* the button's default state is a "ghost" button, and it fills in when active (e.g. a favorited show) - in that case, retain the original border color
 - \* These buttons need the "darken 10" variation of the hue to pass contrast tests
-- Hover/Focus state: text underline
-- Active state: 20% darker color
+- Hover/Focus state: 20% darker color
+- Focus state carries the same `$blue-brand` outline that all focusable elements have
+- Active/Pressed state: Scale down by 5%
 
 
 ### "Ghost" Buttons
@@ -1258,8 +1260,8 @@ There are a set of rules that we have around buttons:
 
 - Border and text colors are the same
 - Background is transparent
-- Hover/Focus state: there is a fill that is a 10% tint of the text color
-- Active state: a fill that is a 30% tint of the text color
+- Hover/Focus state: the button fills in with the color, and the text goes to `$gray-0`
+- Active state: the fill is a 20% darker, scale down by 5%
 
 
 ### "Grey" Buttons (with their Active State)

@@ -248,7 +248,7 @@
       font-weight: $bold;
 
       @include breakpoint($sm) {
-        @include btn(); // shared button styling
+        @include ghost-btn($blue-digital); // shared button styling
       }
     }
   }

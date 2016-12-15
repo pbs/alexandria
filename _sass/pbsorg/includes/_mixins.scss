@@ -115,75 +115,70 @@
   }
 }
 
-@mixin btn() {
+@mixin btn($color: $blue-digital) {
   display: inline-block;
   margin-bottom: 0;
   padding: $gap $gap-double;
   vertical-align: middle;
   touch-action: manipulation;
   background: transparent;
-  border: 1px solid $blue;
+  border: 1px solid $color;
   border-radius: $radius;
-  color: $blue;
-  font-family: $serif;
   font-weight: $bold;
   -webkit-font-smoothing: antialiased;
   font-size: $ernie;
   line-height: 1;
   text-align: center;
-
-  &:visited,
-  &:hover,
-  &:focus,
-  &:active {
-    background: rgba($blue, .1);
-    border-color: $blue;
-    color: $blue;
-    text-decoration: underline;
-  }
-
-  &:active {
-    box-shadow: none;
-  }
-}
-
-@mixin fill-btn($color: $black){
-  border: 1px solid $color; // needed so fill buttons look equal to ghost buttons
-  background: $color;
-  color: $white;
-  transition: background $duration;
+  transition: all $duration ease-in;
 
   &:hover,
   &:focus,
-  &:visited {
-    background: $color;
-    color: $white;
-    text-decoration: underline;
-  }
-
   &:active {
-    background: mix($black, $color, 20);
-  }
-}
-
-@mixin ghost-btn($color: $black){
-  border: 1px solid $color;
-  background: transparent;
-  color: $color;
-  transition: all $duration;
-
-  &:hover,
-  &:focus {
-    background: mix($white, $color, 90);
-    color: $color;
-    border-color: $color;
     text-decoration: none;
   }
 
   &:active {
-    background: mix($white, $color, 70);
+    box-shadow: none;
+    transform: scale(.95, .95);
+  }
+}
+
+@mixin ghost-btn($color: $blue-digital) {
+  color: $color;
+  border-color: $color;
+
+  &:visited {
     color: $color;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: $color;
     border-color: $color;
+    color: $gray-0;
+  }
+
+  &:active {
+    background: mix($gray-100, $color, 20);
+    border-color: mix($gray-100, $color, 20);
+  }
+}
+
+@mixin fill-btn($color: $blue-digital){
+  background: $color;
+  color: $gray-0;
+  border-color: $color;
+
+  &:visited {
+    color: $gray-0;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: mix($gray-100, $color, 20);
+    background: mix($gray-100, $color, 20);
+    color: $gray-0;
   }
 }
 

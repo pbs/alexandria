@@ -1,202 +1,19 @@
 // updates to the base Bootstrap button style;
 .btn {
-  @include btn(); // shared button styling
+  @include btn($blue-digital); // default button styling
+  @include ghost-btn($blue-digital);
 
-  .btn--ripple-effect {
-    background: $gray-light;
-  }
-
-  // sign in button seen in side user menu
-  &--sign-in {
-    @include btn-states() {
-      background: $blue;
-      border-color: $blue;
-      color: $white;
-      font-size: $oscar;
-      font-family: $serif;
-      text-decoration: none;
-
-      // turns back into a regular link at md
-      @include breakpoint($md) {
-        background: transparent;
-        border: 0;
-        color: $blue;
-        font-family: $sans-serif;
-        font-size: $ernie;
-      }
-    }
-  }
-
-  // add show to favorites
-  &--favorite {
-    @include btn-states() {
-      background: $gray-5;
-      border-color: $gray-56;
-      color: $gray-56;
-    }
-
-    .btn--ripple-effect {
-      background: $yellow;
-    }
-
-    [class^=icon-] {
-      margin-right: 8px;
-      vertical-align: middle;
-    }
-
-    &.selected {
-      background: $magenta;
-      // border-color: darken($yellow, 15%);
-      color: $white;
-    }
-
-    .no-js & {
-      display: none; //this won't work without javascript
-    }
-  }
-
-  // add video to watchlist
-  &--watchlist {
-    @include btn-states() {
-      background: $gray-5;
-      border-color: $gray-56;
-      color: $gray-56;
-    }
-
-    .btn--ripple-effect {
-      background: $brand-success;
-    }
-
-    [class^=icon-] {
-      margin-right: 8px;
-      vertical-align: middle;
-    }
-
-    &.selected {
-      background: $green;
-      // border-color: $gray-0;
-      color: $gray-0;
-    }
-  }
-
-  // remove an item from viewing history or watchlist
-  &--remove {
-    font-family: $sans-serif;
-    font-weight: $semibold;
-    font-size: $oscar;
-    line-height: 0.4;
-    padding: 6px 6px 9px 6px;
-    height: 24px;
-    background-color: $gray-5;
-    color: $blue-muted;
-    border: 1px solid $blue-muted;
-  }
-
-  // search the website - magnifying glass icon
-  &--search {
-    padding: $gap;
-    border: 0;
-  }
-
-  // CTA - Call To Action - e.g. donate;
-  &--cta {
-    @include btn-states() {
-      background-color: $red;
-      border-color: darken($red, 15%);
-      color: $white;
-    }
-  }
-
-  // visit (for producer website on show-details);
-  // Custom breakpoint for xs screens
-  $over400: 400px;
-  &--visit {
-    @include btn-states() {
-      font-size: $abby;
-      color: $white;
-      background-color: $blue;
-
-      @include breakpoint($over400) {
-        font-size: $elmo;
-      }
-
-      @include breakpoint($md-only) {
-        font-size: $abby;
-      }
-    }
-  }
-
-  // close button used in modals;
-  &--close {
-    position: absolute;
-    right: $gap;
-    top: 10px;
-    border: 0;
-    background: none;
-    color: $white;
-    font-size: 3rem;
-    font-weight: $bold;
-    cursor: pointer;
-  }
-
-  // inverts basic button colors to indicate a 'more important' button in a set of two
-  &--inverse {
-    color: $white;
-    background-color: $blue;
-  }
-
-  // not a specific button type, but a flag to indicate an interaction - the ripple effect;
-  &--ripple {
-    overflow: hidden;
-    position: relative;
-  }
-
-  // applied via JS;
-  &--ripple-effect {
-    position: absolute;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: ripple-animation 2s;
-  }
-
-  &--magenta {
-    @include fill-btn($magenta);
-  }
-
-  &--orange {
-    @include fill-btn($orange);
-  }
-
-  &--red {
-    @include fill-btn($red);
-  }
-
-  &--green {
-    @include fill-btn($green);
-  }
-
-  &--blue-digital {
-    @include fill-btn($blue-digital);
-  }
-
-  &--blue-antique {
-    @include fill-btn($blue-antique-darken-10);
-  }
-
-  &--blue-brand {
-    @include fill-btn($blue-brand-darken-10);
-  }
-
-  &--gray-56 {
-    @include fill-btn($gray-56);
-  }
-
-  &--gray-30 {
-    @include fill-btn($gray-30);
+  &--min {
+    padding: $gap-half $gap;
   }
 
   &--ghost {
+
+    &--blue-digital {
+      // this is the default .btn style
+      @include ghost-btn($blue-digital);
+    }
+
     &--red {
       @include ghost-btn($red);
     }
@@ -222,18 +39,262 @@
     }
   }
 
-  &--min {
-    padding: $gap-half $gap;
+  &--fill {
+
+    &--magenta {
+      @include fill-btn($magenta);
+    }
+
+    &--orange {
+      @include fill-btn($orange);
+    }
+
+    &--red {
+      @include fill-btn($red);
+    }
+
+    &--green {
+      @include fill-btn($green);
+    }
+
+    &--blue-digital {
+      @include fill-btn($blue-digital);
+    }
+
+    &--blue-antique {
+      @include fill-btn($blue-antique-darken-10);
+    }
+
+    &--blue-brand {
+      @include fill-btn($blue-brand-darken-10);
+    }
+
+    &--gray-56 {
+      @include fill-btn($gray-56);
+    }
+
+    &--gray-30 {
+      @include fill-btn($gray-30);
+    }
   }
 
-  &--half {
-    display: inline-block;
-    width: 50%;
+
+
+  // sign in button seen in side user menu
+  &--sign-in {
+    @include btn-states() {
+      background: $blue-digital;
+      border-color: $blue-digital;
+      color: $gray-0;
+      font-family: $serif;
+      font-size: $oscar;
+      text-decoration: none;
+
+      // turns back into a regular link at md
+      @include breakpoint($md) {
+        background: transparent;
+        border: 0;
+        color: $blue-digital;
+        font-family: $sans-serif;
+        font-size: $ernie;
+      }
+    }
   }
 
-  &--full {
-    display: block;
+  // add show to favorites,
+  // or video to watchlist
+  &--favorite,
+  &--watchlist {
+    // display: none; //this won't work without javascript
+
+    // .js & {
+    //   display: inline-block;
+    // }
+
+    @include btn-states() {
+      background-color: $gray-5;
+      border-color: $gray-56;
+      color: $gray-56;
+    }
+
+    &:hover,
+    &:focus {
+      background: $gray-12;
+    }
+
+    .btn--ripple-effect {
+      background-color: $green;
+    }
+
+    .pbs-favorite,
+    .pbs-check {
+      vertical-align: middle;
+      width: 16px;
+      height: 16px;
+    }
+
+    .pbs-favorite {
+      margin-right: 4px;
+      margin-top: -4px;
+      position: relative;
+      right: 6px;
+
+    }
+
+    .pbs-check {
+      margin-right: 8px;
+      padding-bottom: 2px;
+    }
+
+    &.selected {
+      background-color: $green;
+      border-color: darken($green, 15%);
+      color: $gray-0;
+
+      .pbs-favorite path,
+      .pbs-check path {
+        fill: $gray-0;
+      }
+    }
+  }
+
+  // not a specific button type, but a flag to indicate an interaction - the ripple effect;
+  &--ripple {
+    overflow: hidden;
+    position: relative;
+  }
+
+  // applied via JS;
+  &--ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: ripple-animation 2s;
+  }
+
+
+  // remove an item from viewing history or watchlist
+  &--remove {
+    font-family: $sans-serif;
+    font-weight: $semibold;
+    font-size: $oscar;
+    line-height: 0.4;
+    padding: 6px 6px 9px 6px;
+    height: 24px;
+    background-color: $gray-5;
+    color: $blue-antique;
+    border: 1px solid $blue-antique;
+  }
+
+  // search the website - magnifying glass icon
+  &--search {
+    padding: $gap;
+    border: 0;
+  }
+
+
+  // visit (for producer website on show-details);
+  // Custom breakpoint for xs screens
+  $over400: 400px;
+  &--visit {
+    @include btn-states() {
+      font-size: $abby;
+      color: $gray-0;
+      background-color: $blue-digital;
+
+      @include breakpoint($over400) {
+        font-size: $elmo;
+      }
+
+      @include breakpoint($md-only) {
+        font-size: $abby;
+      }
+    }
+  }
+
+  // close button used in modals;
+  &--close {
+    position: absolute;
+    right: $gap;
+    top: 10px;
+    border: 0;
+    background: none;
+    color: $gray-0;
+    font-size: 3rem;
+    font-weight: $bold;
+    cursor: pointer;
+  }
+
+
+  &--activate {
     width: 100%;
+    height: 60px;
+    margin: 10px 0;
+    padding: 11px $gap-double;
+    font-family: $sans-serif;
+    font-size: 2.4rem;
+    font-weight: $normal;
+    text-transform: none;
+
+    &,
+    &:visited {
+      border: 1px solid darken($green, 15%);
+      background-color: $green;
+      color: $gray-0;
+
+    }
+
+    &:hover,
+    &:focus {
+      background: darken($green, 15%);
+      color: $gray-0;
+      text-decoration: none;
+    }
+
+    &.disabled {
+      border-color: $gray-56;
+      background: $gray-30;
+      color: $gray-0;
+      cursor: none;
+      opacity: .4;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+  }
+
+  // used primarily with the activate button,
+  // visibility is toggled with javascript
+  &__spinner {
+    display: none;
+    width: 100px;
+    height: 25px;
+    margin: 0 auto;
+    background: url('../images/ellipsis.svg') no-repeat center -5px;
+    background-size: 50px 35px;
+  }
+
+
+  &--transparent {
+    width: 100%;
+    height: 60px;
+    margin: 10px 0;
+    padding: 11px $gap-double;
+    font-family: $sans-serif;
+    font-size: 2.4rem;
+    font-weight: $normal;
+    text-transform: none;
+
+    // for some reason, :visited needs specifying
+    &,
+    &:visited {
+      border-color: $gray-87;
+      background-color: $gray-0;
+      color: $gray-87;
+    }
   }
 }
 
@@ -245,5 +306,45 @@
   to {
     transform: scale(100);
     opacity: 0;
+  }
+}
+
+.btn--pause {
+  position: absolute;
+  top: $gap;
+  right: $gap;
+  border: 0;
+  outline: none;
+  background-color: transparent;
+  color: rgba($gray-0, .8);
+  cursor: pointer;
+  line-height: 1;
+  z-index: 4;
+
+  @include breakpoint($sm) {
+    top: auto;
+    right: 20px;
+    bottom: $gap;
+  }
+
+  &:focus {
+    outline: $focusstate;
+  }
+
+  .pbs-play-circle,
+  .pbs-pause-circle {
+    position: relative;
+    top: 2px;
+    width: 19px;
+    height: 19px;
+
+    @include breakpoint($md) {
+      width: 25px;
+      height: 25px;
+    }
+
+    path {
+      fill: $gray-12;
+    }
   }
 }
