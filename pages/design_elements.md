@@ -1266,21 +1266,11 @@ There are a set of rules that we have around buttons:
 
 ### "Grey" Buttons (with their Active State)
 
-<button class="btn btn--watchlist btn--ripple">
-  <i class="icon-pbs-checkmark"></i>
-  <span class="btn--text" data-text-default="Add to Watchlist" data-text-selected="In My Watchlist">Add to Watchlist</span>
-</button> <button class="btn btn--watchlist btn--ripple selected">
-  <i class="icon-pbs-checkmark"></i>
-  <span class="btn--text" data-text-default="Add to Watchlist" data-text-selected="In My Watchlist">In My Watchlist</span>
-</button>
+<button class="btn btn--watchlist btn--ripple" data-id="2365814984" data-video-id="2365814984"><svg viewBox="0 0 181 128" xmlns="http://www.w3.org/2000/svg" class="pbs-check" aria-labelledby="pbs-check__title"><title id="pbs-check__title">checkmark</title><path d="M67.819 96.894L16.74 45.816a2.007 2.007 0 0 0-2.838.001L.589 59.131a2.004 2.004 0 0 0-.001 2.837L66.4 127.781a2.006 2.006 0 0 0 2.837-.001l12.714-12.714 98.324-98.324a2.007 2.007 0 0 0 0-2.838L166.962.589a2.006 2.006 0 0 0-2.84 0L67.82 96.894z" fill-rule="evenodd"></path></svg><span class="btn--text" data-text-default="Add to Watchlist" data-text-selected="In My Watchlist">Add to Watchlist</span></button>
+<button class="btn btn--watchlist btn--ripple selected" data-id="2365814984" data-video-id="2365814984"><svg viewBox="0 0 181 128" xmlns="http://www.w3.org/2000/svg" class="pbs-check" aria-labelledby="pbs-check__title"><title id="pbs-check__title">checkmark</title><path d="M67.819 96.894L16.74 45.816a2.007 2.007 0 0 0-2.838.001L.589 59.131a2.004 2.004 0 0 0-.001 2.837L66.4 127.781a2.006 2.006 0 0 0 2.837-.001l12.714-12.714 98.324-98.324a2.007 2.007 0 0 0 0-2.838L166.962.589a2.006 2.006 0 0 0-2.84 0L67.82 96.894z" fill-rule="evenodd"></path></svg><span class="btn--text" data-text-default="Add to Watchlist" data-text-selected="In My Watchlist">In My Watchlist</span></button>
 
-<button class="btn btn--favorite btn--ripple">
-  <i class="icon-pbs-favorite" aria-hidden="true"></i>
-  <span class="btn--text" data-text-default="Favorite This Show" data-text-selected="Favorite Show">Add to Favorites</span>
-</button> <button class="btn btn--favorite btn--ripple selected">
-  <i class="icon-pbs-favorite" aria-hidden="true"></i>
-  <span class="btn--text" data-text-default="Favorite This Show" data-text-selected="Favorite Show">Favorited Show</span>
-</button>
+<button class="btn btn--favorite btn--ripple carousel-focus" data-show-id="chefs-life"><span class="favorite-star"><svg width="174" height="166" viewBox="0 0 174 166" xmlns="http://www.w3.org/2000/svg" class="pbs-favorite" aria-labelledby="pbs-favorite__title"><title id="pbs-favorite__title">Favorite</title><path d="M171.125 69.475l-37.663 36.93 8.775 52.289v1.83c0 1.464-.368 2.926-1.099 3.657-.732 1.1-1.463 1.83-2.925 1.83-1.463 0-2.925-.73-4.388-1.461l-46.8-24.5-46.801 24.5c-1.462.73-2.925 1.462-4.387 1.462-1.463 0-2.562-.731-3.294-1.831-.731-.731-1.099-2.193-1.099-3.656 0-.37 0-1.1.368-1.831l8.775-52.288L2.562 69.475C1.099 67.28 0 65.819 0 64.355c0-2.561 2.193-4.386 5.85-4.755l52.65-7.681L81.9 4.387C83.363 1.462 84.825 0 87.019 0s3.656 1.462 5.119 4.387l23.4 47.532 52.65 7.68c3.656.37 5.85 2.195 5.85 4.757.012 1.463-1.088 3.294-2.913 5.119" fill-rule="evenodd"></path></svg></span><span class="btn--text" data-text-default="Add to Favorites" data-text-selected="Favorite Show">Add to Favorites</span></button>
+<button class="btn btn--favorite btn--ripple carousel-focus selected" data-show-id="chefs-life"><span class="favorite-star"><svg width="174" height="166" viewBox="0 0 174 166" xmlns="http://www.w3.org/2000/svg" class="pbs-favorite" aria-labelledby="pbs-favorite__title"><title id="pbs-favorite__title">Favorite</title><path d="M171.125 69.475l-37.663 36.93 8.775 52.289v1.83c0 1.464-.368 2.926-1.099 3.657-.732 1.1-1.463 1.83-2.925 1.83-1.463 0-2.925-.73-4.388-1.461l-46.8-24.5-46.801 24.5c-1.462.73-2.925 1.462-4.387 1.462-1.463 0-2.562-.731-3.294-1.831-.731-.731-1.099-2.193-1.099-3.656 0-.37 0-1.1.368-1.831l8.775-52.288L2.562 69.475C1.099 67.28 0 65.819 0 64.355c0-2.561 2.193-4.386 5.85-4.755l52.65-7.681L81.9 4.387C83.363 1.462 84.825 0 87.019 0s3.656 1.462 5.119 4.387l23.4 47.532 52.65 7.68c3.656.37 5.85 2.195 5.85 4.757.012 1.463-1.088 3.294-2.913 5.119" fill-rule="evenodd"></path></svg></span><span class="btn--text" data-text-default="Add to Favorites" data-text-selected="Favorite Show">Favorite Show</span></button>
 
 - These are buttons that are meant to convey the "default/activated" state of a related object (usually a video or show).
 - The "default state" border and text are $gray-56, and the fill is $gray-5.

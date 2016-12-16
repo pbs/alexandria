@@ -1,0 +1,110 @@
+.svg,
+.pbs {
+  &-apple path {
+    fill: $gray-56;
+  }
+
+  &-check path {
+    fill: $gray-56;
+  }
+
+  &-closed-caption-line path {
+    fill: $gray-56;
+  }
+
+  &-dvd {
+    &__word,
+    &__symbol {
+      fill: $gray-56;
+    }
+  }
+
+  &-embed path {
+    fill: $blue-digital;
+  }
+
+  &-facebook path,
+  &-facebook-box path {
+    fill: $facebook-blue;
+  }
+
+  &-favorite {
+    path {
+      fill: $gray-56;
+    }
+  }
+
+  &-google path {
+    fill: $gmail-red;
+  }
+
+  &-instagram path {
+    fill: $instagram-blue;
+  }
+
+  &-local-pin path {
+    fill: $gray-30;
+  }
+
+  &-mail path {
+    fill: $blue-digital;
+  }
+
+  &-menu-hamburger path {
+    fill: $gray-56;
+  }
+
+  &-pinterest path {
+    fill: $pinterest-red;
+  }
+
+  &-search {
+    min-width: 12px;
+
+    path {
+      fill: $gray-56;
+    }
+  }
+
+  &-tumblr path {
+    fill: $tumblr-blue;
+  }
+
+  &-twitter path,
+  &-twitter-box path {
+    fill: $twitter-blue;
+  }
+
+}
+
+// inserting the play icon as a pseudo element. using ::before as ::after is being used for fallback gradients
+.has-play-icon {
+
+  &::before {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 64px;
+    height: 64px;
+    margin-top: -$gap-double;
+    margin-left: -$gap-double;
+    background-image: url('../images/svg/play.svg');
+    background-position: 0 0;
+    content: '';
+    pointer-events: none;
+    z-index: 4;
+  }
+
+  &:hover,
+  &:focus {
+    &::before {
+      display: block;
+
+      // ensuring the icon doesn't appear on touch devices
+      .touchevents & {
+        display: none;
+      }
+    }
+  }
+}
