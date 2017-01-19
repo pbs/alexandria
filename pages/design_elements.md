@@ -1512,7 +1512,7 @@ There are a set of rules that we have around buttons:
   </p>
 
   <div class="al-form__buttons">
-    <button class="btn btn--blue-digital">Save</button>
+    <button class="btn btn--fill--blue-digital">Save</button>
     <button class="btn btn--ghost--gray-56">Cancel</button>
     <button class="btn btn--ghost--red btn--destructive">Delete</button>
   </div>
@@ -1535,7 +1535,7 @@ There are a set of rules that we have around buttons:
   </p>
 
   <div class="al-form__buttons">
-    <button class="btn btn--blue-digital">Save</button>
+    <button class="btn btn--fill--blue-digital">Save</button>
     <button class="btn btn--ghost--gray-56">Cancel</button>
     <button class="btn btn--ghost--red btn--destructive">Delete</button>
   </div>
