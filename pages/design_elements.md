@@ -958,6 +958,10 @@ We rely on two typefaces: [Open Sans](https://www.google.com/fonts/specimen/Open
     <img src="../images/icons/PBS-countdown.svg" alt="Countdown Icon" />
   </div>
 
+  <div class="swatch swatch--icon" title="Credit Card">
+    <img src="../images/icons/pbs-credit_card.svg" alt="Credit Card Icon" />
+  </div>
+
 
   <div class="swatch swatch--icon" title="Download">
     <img src="../images/icons/PBS-download.svg" alt="Download Icon" />

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 382.65 240.82" class="pbs-credit-card" aria-labelledby="pbs-credit-card__title">
+  <title id="pbs-credit-card__title">Credit Card</title>
+  <path class="cls-1" d="M376.62,0,4.73,2.11A4.76,4.76,0,0,0,0,6.9l1.24,229.2A4.76,4.76,0,0,0,6,240.82l371.89-2.11a4.76,4.76,0,0,0,4.73-4.79L381.41,4.73A4.76,4.76,0,0,0,376.62,0ZM353,28.69l.14,26.39L28.83,56.93l-.14-26.39ZM29.67,212.14,29.08,104l324.29-1.85L354,210.28Z"/>
+  <rect class="cls-1" x="51.33" y="129.6" width="75.21" height="60.45" transform="translate(-0.86 0.48) rotate(-0.31)"/>
+  <rect class="cls-1" x="212.49" y="161.75" width="32.42" height="28.42" transform="translate(-0.95 1.24) rotate(-0.31)"/>
+  <rect class="cls-1" x="255.32" y="161.75" width="32.42" height="28.42" transform="translate(-0.95 1.47) rotate(-0.31)"/>
+  <rect class="cls-1" x="298.15" y="161.75" width="32.42" height="28.42" transform="translate(-0.94 1.7) rotate(-0.31)"/>
+</svg>
